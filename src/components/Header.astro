@@ -1,0 +1,160 @@
+---
+import Logo from '@/components/Logo.astro';
+import { LOCALES, LOCALE_LABELS, type Locale } from '@/i18n/config';
+import { href, t } from '@/i18n/utils';
+
+interface Props {
+  locale: Locale;
+  /** Current site path without locale prefix, used by the language switcher. */
+  path?: string;
+}
+const { locale, path = '' } = Astro.props;
+const copy = t(locale);
+const home = href(locale);
+const links = [
+  { id: 'about', label: copy.nav.about },
+  { id: 'services', label: copy.nav.services },
+  { id: 'directions', label: copy.nav.directions },
+  { id: 'pavilion', label: copy.nav.pavilion },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
+  <div class="container-page flex h-18 items-center justify-between gap-6">
+    <a href={home} class="text-primary" aria-label={copy.nav.home}>
+      <Logo size="md" />
+    </a>
+
+    <nav aria-label={copy.nav.menu} class="hidden lg:block">
+      <ul class="flex items-center gap-8">
+        {
+          links.map((l) => (
+            <li>
+              <a
+                href={`${home}#${l.id}`}
+                class="text-sm font-semibold text-ink-soft transition-colors hover:text-primary"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="hidden items-center gap-5 lg:flex">
+      <nav aria-label={copy.nav.language}>
+        <ul class="flex items-center gap-1 rounded-pill bg-surface p-1">
+          {
+            LOCALES.map((l) => (
+              <li>
+                <a
+                  href={href(l, path)}
+                  hreflang={l}
+                  lang={l}
+                  aria-current={l === locale ? 'page' : undefined}
+                  class:list={[
+                    'block rounded-pill px-3 py-1.5 text-xs font-bold uppercase tracking-wide transition-colors',
+                    l === locale
+                      ? 'bg-white text-primary shadow-card'
+                      : 'text-muted hover:text-ink',
+                  ]}
+                >
+                  {l}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <a
+        href={`${home}#contacts`}
+        class="rounded-pill bg-primary px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-primary-hover"
+      >
+        {copy.nav.contacts}
+      </a>
+    </div>
+
+    <details class="group relative lg:hidden">
+      <summary
+        class="flex size-11 cursor-pointer list-none items-center justify-center rounded-pill text-ink marker:hidden hover:bg-surface [&::-webkit-details-marker]:hidden"
+        aria-label={copy.nav.menu}
+      >
+        <svg
+          class="size-6 group-open:hidden"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+        <svg
+          class="hidden size-6 group-open:block"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </summary>
+      <div
+        class="absolute top-full right-0 mt-3 w-72 rounded-card border border-line bg-white p-3 shadow-card-hover"
+      >
+        <nav aria-label={copy.nav.menu}>
+          <ul class="flex flex-col">
+            {
+              links.map((l) => (
+                <li>
+                  <a
+                    href={`${home}#${l.id}`}
+                    class="block rounded-lg px-3 py-2.5 text-base font-semibold text-ink hover:bg-surface"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))
+            }
+            <li>
+              <a
+                href={`${home}#contacts`}
+                class="mt-1 block rounded-lg bg-primary px-3 py-2.5 text-center text-base font-bold text-white hover:bg-primary-hover"
+              >
+                {copy.nav.contacts}
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav aria-label={copy.nav.language} class="mt-3 border-t border-line pt-3">
+          <ul class="flex items-center gap-1">
+            {
+              LOCALES.map((l) => (
+                <li class="flex-1">
+                  <a
+                    href={href(l, path)}
+                    hreflang={l}
+                    lang={l}
+                    aria-current={l === locale ? 'page' : undefined}
+                    class:list={[
+                      'block rounded-lg px-3 py-2 text-center text-sm font-semibold',
+                      l === locale
+                        ? 'bg-primary-soft text-primary'
+                        : 'text-ink-soft hover:bg-surface',
+                    ]}
+                  >
+                    {LOCALE_LABELS[l]}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </details>
+  </div>
+</header>

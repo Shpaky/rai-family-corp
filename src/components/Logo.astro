@@ -1,0 +1,42 @@
+---
+/*
+  Mark C "Operator's seal": ring + R + red seal dot. Inline SVG uses currentColor
+  for the ring and letter so it inherits text colour; the dot uses the accent token.
+*/
+interface Props {
+  variant?: 'lockup' | 'mark';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+const { variant = 'lockup', size = 'md', class: className = '' } = Astro.props;
+const px = { sm: 'size-8', md: 'size-10', lg: 'size-14' }[size];
+const text = { sm: 'text-base', md: 'text-lg', lg: 'text-2xl' }[size];
+---
+
+<span class:list={['inline-flex items-center gap-3', className]}>
+  <svg
+    class={px}
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="6"></circle>
+    <path
+      d="M23 46V18h10a8 8 0 0 1 0 16H23"
+      stroke="currentColor"
+      stroke-width="7"
+      stroke-linecap="round"
+      stroke-linejoin="round"></path>
+    <path d="M34 34l9 12" stroke="currentColor" stroke-width="7" stroke-linecap="round"></path>
+    <circle cx="50" cy="50" r="7" class="fill-accent"></circle>
+  </svg>
+  {
+    variant === 'lockup' && (
+      <span class:list={['font-extrabold leading-none tracking-tight', text]}>
+        Rai Family <span class="font-semibold">Corp</span>
+      </span>
+    )
+  }
+</span>
