@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.astro/
+shots/
+.lighthouseci/
+test-results/
+playwright-report/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Brand guide PDF stays local only (12 MB, not for the public repo)
+*.pdf

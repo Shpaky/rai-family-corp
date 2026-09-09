@@ -1,0 +1,48 @@
+---
+import { Font } from 'astro:assets';
+import Seo from '@/components/Seo.astro';
+import type { Locale } from '@/i18n/config';
+import { t } from '@/i18n/utils';
+import '@/styles/global.css';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  path?: string;
+  ogType?: 'website' | 'article';
+}
+
+const { locale, title, description, path, ogType } = Astro.props;
+const copy = t(locale);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const themeColor = '#0634da'; // token-lint-ignore (mirrors --color-brand-blue)
+---
+
+<!doctype html>
+<html lang={locale} dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content={themeColor} />
+    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
+    <link rel="sitemap" href={`${base}/sitemap-index.xml`} />
+    <Seo locale={locale} title={title} description={description} path={path} ogType={ogType} />
+    <Font cssVariable="--font-montserrat" preload />
+    <Font cssVariable="--font-devanagari" preload={locale === 'hi'} />
+  </head>
+  <body class="min-h-dvh flex flex-col">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-pill focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
+      >{copy.nav.skip}</a
+    >
+    <slot name="header" />
+    <main id="main" class="flex-1" tabindex="-1">
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>

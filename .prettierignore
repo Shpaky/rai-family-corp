@@ -1,0 +1,7 @@
+dist
+.astro
+node_modules
+shots
+.lighthouseci
+package-lock.json
+*.pdf

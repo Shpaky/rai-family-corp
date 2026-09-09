@@ -1,0 +1,119 @@
+@import 'tailwindcss';
+
+/*
+  Design tokens. The only place where raw values live (npm run lint:tokens).
+  Palette follows the "Made in Russia" brand guide (руководство к брендированию.pdf, p. 5);
+  the site has its own style built on that palette.
+*/
+@theme {
+  /* Brand palette, raw */
+  --color-brand-cream: #fef1dd;
+  --color-brand-peach: #febda5;
+  --color-brand-sky-light: #8bf6fe;
+  --color-brand-sky: #01cbfe;
+  --color-brand-azure: #0782fe;
+  --color-brand-blue: #0634da;
+  --color-brand-red: #fb0731;
+  --color-brand-red-dark: #a70101;
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-ink: #0b1240;
+  --color-ink-soft: #3a4166;
+  --color-muted: #6b7194;
+  --color-line: #dfe3f0;
+  --color-surface: #f5f7fc;
+  --color-surface-strong: #eaeefb;
+
+  /* Semantic */
+  --color-primary: var(--color-brand-blue);
+  --color-primary-hover: #0529b3;
+  --color-primary-soft: var(--color-surface-strong);
+  --color-accent: var(--color-brand-red);
+  --color-accent-hover: var(--color-brand-red-dark);
+  --color-warm: var(--color-brand-cream);
+  --color-warm-strong: var(--color-brand-peach);
+  --color-focus: var(--color-brand-azure);
+
+  /* Typography — fonts come from Astro's Fonts API (see astro.config.mjs) */
+  --font-sans: var(--font-montserrat), var(--font-devanagari), Arial, sans-serif;
+
+  --text-display: 3.25rem;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-h1: 2.5rem;
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: 2rem;
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.015em;
+  --text-h3: 1.375rem;
+  --text-h3--line-height: 1.3;
+  --text-lead: 1.25rem;
+  --text-lead--line-height: 1.55;
+  --text-eyebrow: 0.8125rem;
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: 0.12em;
+
+  /* Layout */
+  --container-page: 76rem;
+  --spacing-section: 6rem;
+  --spacing-section-sm: 4rem;
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgb(11 18 64 / 0.04), 0 12px 32px -12px rgb(11 18 64 / 0.12);
+  --shadow-card-hover: 0 2px 4px rgb(11 18 64 / 0.06), 0 24px 48px -16px rgb(6 52 218 / 0.25);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: 0.25rem;
+  }
+  ::selection {
+    background: var(--color-brand-sky-light);
+    color: var(--color-ink);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: var(--container-page);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility eyebrow {
+  font-size: var(--text-eyebrow);
+  line-height: var(--text-eyebrow--line-height);
+  letter-spacing: var(--text-eyebrow--letter-spacing);
+  text-transform: uppercase;
+  font-weight: 700;
+}

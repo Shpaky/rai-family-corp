@@ -1,0 +1,23 @@
+---
+import Base from '@/layouts/Base.astro';
+import { href, t } from '@/i18n/utils';
+
+const copy = t('en');
+---
+
+<Base
+  locale="en"
+  title={`${copy.notFound.title} — Rai Family Corp`}
+  description={copy.notFound.text}
+>
+  <section class="container-page py-section">
+    <p class="eyebrow text-primary">404</p>
+    <h1 class="mt-4 text-h1 font-extrabold text-ink">{copy.notFound.title}</h1>
+    <p class="mt-4 max-w-xl text-lead text-ink-soft">{copy.notFound.text}</p>
+    <a
+      href={href('en')}
+      class="mt-8 inline-block rounded-pill bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-hover"
+      >{copy.notFound.back}</a
+    >
+  </section>
+</Base>

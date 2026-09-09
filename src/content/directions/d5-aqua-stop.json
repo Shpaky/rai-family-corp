@@ -1,0 +1,34 @@
+{
+  "order": 30,
+  "brand": "D5",
+  "category": "construction",
+  "status": "active",
+  "audiences": ["distributors", "manufacturers", "institutions"],
+  "site": null,
+  "i18n": {
+    "en": {
+      "title": "D5 Aqua Stop waterproofing",
+      "summary": "A Russian waterproofing mix for foundations, basements and wet rooms, supplied through the pavilion.",
+      "body": [
+        "D5 Aqua Stop is a waterproofing compound that complements the D5 concrete additive. It is aimed at contractors, waterproofing specialists and distributors of construction chemistry in India.",
+        "Application guides, certificates and supply terms will be published on the product site."
+      ]
+    },
+    "ru": {
+      "title": "Гидроизоляция Д5 Aqua Stop",
+      "summary": "Российская гидроизоляционная смесь для фундаментов, подвалов и влажных помещений, поставка через павильон.",
+      "body": [
+        "Д5 Aqua Stop — гидроизоляционная смесь, дополняющая добавку к бетону Д5. Адресована подрядчикам, специалистам по гидроизоляции и дистрибьюторам строительной химии в Индии.",
+        "Инструкции по применению, сертификаты и условия поставки будут опубликованы на сайте продукта."
+      ]
+    },
+    "hi": {
+      "title": "D5 Aqua Stop वॉटरप्रूफ़िंग",
+      "summary": "नींव, बेसमेंट और गीले कमरों के लिए रूसी वॉटरप्रूफ़िंग मिश्रण, पवेलियन के माध्यम से आपूर्ति।",
+      "body": [
+        "D5 Aqua Stop एक वॉटरप्रूफ़िंग यौगिक है जो D5 कंक्रीट एडिटिव का पूरक है। यह भारत में ठेकेदारों, वॉटरप्रूफ़िंग विशेषज्ञों और निर्माण रसायन वितरकों के लिए है।",
+        "उपयोग मार्गदर्शिकाएँ, प्रमाणपत्र और आपूर्ति शर्तें उत्पाद साइट पर प्रकाशित की जाएँगी।"
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "order": 10,
+  "brand": "Soyuzprod",
+  "category": "food-and-drinks",
+  "status": "active",
+  "audiences": ["distributors", "consumers", "institutions"],
+  "site": null,
+  "i18n": {
+    "en": {
+      "title": "Vodka by Soyuzprod",
+      "summary": "Russian vodka for the Indian market, imported and distributed through the REC pavilion.",
+      "body": [
+        "Soyuzprod vodka is the first food-and-drinks direction of the pavilion. It arrives in India with certification, labelling and import documents handled by the operator.",
+        "Detailed brand information, range and trade terms will be published on the product site."
+      ]
+    },
+    "ru": {
+      "title": "Водка Soyuzprod",
+      "summary": "Российская водка для рынка Индии, ввоз и дистрибуция через павильон РЭЦ.",
+      "body": [
+        "Водка Soyuzprod — первое направление павильона в категории продуктов и напитков. В Индию она приходит с сертификацией, маркировкой и импортными документами, оформленными оператором.",
+        "Подробная информация о бренде, ассортименте и торговых условиях будет опубликована на сайте продукта."
+      ]
+    },
+    "hi": {
+      "title": "Soyuzprod वोदका",
+      "summary": "भारतीय बाज़ार के लिए रूसी वोदका, REC पवेलियन के माध्यम से आयातित और वितरित।",
+      "body": [
+        "Soyuzprod वोदका पवेलियन की खाद्य और पेय श्रेणी की पहली दिशा है। यह भारत में प्रमाणन, लेबलिंग और आयात दस्तावेज़ों के साथ आती है, जिन्हें ऑपरेटर संभालता है।",
+        "ब्रांड, रेंज और व्यापार शर्तों की विस्तृत जानकारी उत्पाद साइट पर प्रकाशित की जाएगी।"
+      ]
+    }
+  }
+}
