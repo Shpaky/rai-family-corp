@@ -1,5 +1,6 @@
 ---
 import Base from '@/layouts/Base.astro';
+import Hero from '@/components/sections/Hero.astro';
 import type { Locale } from '@/i18n/config';
 import { localePaths, t } from '@/i18n/utils';
 
@@ -12,9 +13,5 @@ const copy = t(locale);
 ---
 
 <Base locale={locale} title={copy.meta.title} description={copy.meta.description}>
-  <section class="container-page py-section">
-    <p class="eyebrow text-primary">{copy.hero.eyebrow}</p>
-    <h1 class="mt-4 text-h1 font-extrabold text-ink md:text-display">{copy.hero.title}</h1>
-    <p class="mt-6 max-w-2xl text-lead text-ink-soft">{copy.hero.lead}</p>
-  </section>
+  <Hero locale={locale} />
 </Base>
