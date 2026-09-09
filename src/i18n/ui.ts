@@ -18,6 +18,8 @@ interface Copy {
     close: string;
     language: string;
     home: string;
+    footerMenu: string;
+    footerLanguage: string;
   };
   hero: {
     eyebrow: string;
@@ -106,6 +108,8 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       close: 'Close',
       language: 'Language',
       home: 'Rai Family Corp — home',
+      footerMenu: 'Footer navigation',
+      footerLanguage: 'Language, footer',
     },
     hero: {
       eyebrow: 'Official operator of the Russian Export Center pavilion in India',
@@ -284,6 +288,8 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       close: 'Закрыть',
       language: 'Язык',
       home: 'Rai Family Corp — на главную',
+      footerMenu: 'Навигация в подвале',
+      footerLanguage: 'Язык, подвал',
     },
     hero: {
       eyebrow: 'Официальный оператор павильона Российского экспортного центра в Индии',
@@ -461,6 +467,8 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       close: 'बंद करें',
       language: 'भाषा',
       home: 'Rai Family Corp — मुखपृष्ठ',
+      footerMenu: 'फ़ुटर नेविगेशन',
+      footerLanguage: 'भाषा, फ़ुटर',
     },
     hero: {
       eyebrow: 'भारत में रूसी निर्यात केंद्र पवेलियन का आधिकारिक ऑपरेटर',

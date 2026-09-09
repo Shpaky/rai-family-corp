@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import DirectionCard from '@/components/DirectionCard.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import type { Locale } from '@/i18n/config';
+import { t } from '@/i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = t(locale);
+const entries = (await getCollection('directions')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section
+  id="directions"
+  class="scroll-mt-20 bg-surface py-section-sm md:py-section"
+  aria-labelledby="directions-title"
+>
+  <div class="container-page">
+    <SectionHeading
+      id="directions-title"
+      eyebrow={copy.directions.eyebrow}
+      title={copy.directions.title}
+      lead={copy.directions.lead}
+    />
+    <ul class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      {
+        entries.map((entry) => (
+          <li class="relative">
+            <DirectionCard entry={entry} locale={locale} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

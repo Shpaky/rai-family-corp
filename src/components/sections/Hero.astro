@@ -1,0 +1,92 @@
+---
+import Button from '@/components/Button.astro';
+import Logo from '@/components/Logo.astro';
+import type { Locale } from '@/i18n/config';
+import { href, t } from '@/i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = t(locale);
+const home = href(locale);
+const trust = [copy.trust.operator, copy.trust.pavilion, copy.trust.since, copy.trust.mark];
+---
+
+<section class="relative overflow-hidden bg-white">
+  <div
+    class="container-page grid gap-12 py-section-sm lg:grid-cols-12 lg:items-center lg:py-section"
+  >
+    <div class="lg:col-span-7">
+      <p class="eyebrow text-primary">{copy.hero.eyebrow}</p>
+      <h1 class="mt-5 text-h1 font-extrabold text-balance text-ink md:text-display">
+        {copy.hero.title}
+      </h1>
+      <p class="mt-6 max-w-2xl text-lead text-pretty text-ink-soft">{copy.hero.lead}</p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <Button href={`${home}#contacts`} size="lg">{copy.hero.ctaPrimary}</Button>
+        <Button href={`${home}#directions`} size="lg" variant="secondary"
+          >{copy.hero.ctaSecondary}</Button
+        >
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div
+        class="relative overflow-hidden rounded-card bg-primary p-8 text-white shadow-card-hover md:p-10"
+      >
+        <svg
+          class="pointer-events-none absolute -top-24 -right-24 size-96 text-white/10"
+          viewBox="0 0 64 64"
+          fill="none"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <circle cx="32" cy="32" r="30" stroke-width="1"></circle>
+          <circle cx="32" cy="32" r="22" stroke-width="1"></circle>
+          <circle cx="32" cy="32" r="14" stroke-width="1"></circle>
+        </svg>
+        <Logo variant="mark" size="lg" class="relative text-white" />
+        <p
+          class="relative mt-8 text-eyebrow font-bold tracking-widest text-brand-sky-light uppercase"
+        >
+          {copy.trust.operator}
+        </p>
+        <p class="relative mt-3 text-h3 font-extrabold text-balance">{copy.pavilion.title}</p>
+        <p class="relative mt-2 text-sm text-white/80">{copy.about.facts[3].value}</p>
+        <p
+          class="relative mt-8 inline-flex items-center gap-2 rounded-pill bg-white/10 px-4 py-2 text-sm font-semibold"
+        >
+          <span class="size-2 rounded-pill bg-accent" aria-hidden="true"></span>
+          {copy.hero.badge}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-y border-line bg-surface">
+    <ul
+      class="container-page grid grid-cols-2 gap-x-6 gap-y-3 py-5 text-sm font-semibold text-ink-soft md:grid-cols-4"
+    >
+      {
+        trust.map((item) => (
+          <li class="flex items-start gap-2.5">
+            <svg
+              class="mt-0.5 size-4 shrink-0 text-primary"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

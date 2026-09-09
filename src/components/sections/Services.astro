@@ -1,0 +1,67 @@
+---
+import SectionHeading from '@/components/SectionHeading.astro';
+import type { Locale } from '@/i18n/config';
+import type { PillarKey } from '@/i18n/ui';
+import { t } from '@/i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = t(locale);
+const order: PillarKey[] = ['intelligence', 'product', 'development', 'compliance'];
+---
+
+<section
+  id="services"
+  class="scroll-mt-20 bg-white py-section-sm md:py-section"
+  aria-labelledby="services-title"
+>
+  <div class="container-page">
+    <SectionHeading
+      id="services-title"
+      eyebrow={copy.services.eyebrow}
+      title={copy.services.title}
+      lead={copy.services.lead}
+    />
+    <ol class="mt-12 grid gap-5 md:grid-cols-2">
+      {
+        order.map((key, i) => {
+          const pillar = copy.services.pillars[key];
+          return (
+            <li class="rounded-card border border-line bg-white p-7 shadow-card md:p-9">
+              <div class="flex items-baseline gap-4">
+                <span class="text-h2 font-extrabold text-brand-azure tabular-nums">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <h3 class="text-h3 font-extrabold text-ink">{pillar.title}</h3>
+                  <p class="mt-1 text-base text-muted">{pillar.text}</p>
+                </div>
+              </div>
+              <ul class="mt-6 divide-y divide-line border-t border-line">
+                {pillar.items.map((item) => (
+                  <li class="flex items-start gap-3 py-3 text-base leading-snug text-ink-soft">
+                    <svg
+                      class="mt-1 size-4 shrink-0 text-primary"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </div>
+</section>

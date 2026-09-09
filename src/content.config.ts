@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const localized = z.object({
   title: z.string(),
@@ -15,7 +16,7 @@ const directions = defineCollection({
     category: z.enum(['food-and-drinks', 'construction', 'industrial', 'consumer', 'other']),
     status: z.enum(['active', 'launching', 'planned']).default('active'),
     audiences: z.array(z.enum(['distributors', 'institutions', 'manufacturers', 'consumers'])),
-    site: z.string().url().nullable().default(null),
+    site: z.url().nullable().default(null),
     i18n: z.object({ en: localized, ru: localized, hi: localized }),
   }),
 });

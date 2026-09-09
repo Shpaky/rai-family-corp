@@ -1,0 +1,78 @@
+---
+import Logo from '@/components/Logo.astro';
+import { LOCALES, LOCALE_LABELS, type Locale } from '@/i18n/config';
+import { href, t } from '@/i18n/utils';
+
+interface Props {
+  locale: Locale;
+  path?: string;
+}
+const { locale, path = '' } = Astro.props;
+const copy = t(locale);
+const home = href(locale);
+const year = new Date().getFullYear();
+const links = [
+  { id: 'about', label: copy.nav.about },
+  { id: 'services', label: copy.nav.services },
+  { id: 'directions', label: copy.nav.directions },
+  { id: 'pavilion', label: copy.nav.pavilion },
+  { id: 'contacts', label: copy.nav.contacts },
+];
+---
+
+<footer class="border-t border-line bg-white">
+  <div class="container-page grid gap-10 py-12 md:grid-cols-12">
+    <div class="md:col-span-5">
+      <a href={home} class="inline-block text-primary" aria-label={copy.nav.home}>
+        <Logo size="md" />
+      </a>
+      <p class="mt-4 max-w-sm text-sm leading-relaxed text-ink-soft">{copy.footer.operator}</p>
+    </div>
+    <nav aria-label={copy.nav.footerMenu} class="md:col-span-4">
+      <ul class="grid grid-cols-2 gap-x-6 gap-y-2">
+        {
+          links.map((l) => (
+            <li>
+              <a
+                href={`${home}#${l.id}`}
+                class="text-sm font-semibold text-ink-soft hover:text-primary"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <nav aria-label={copy.nav.footerLanguage} class="md:col-span-3">
+      <ul class="flex flex-wrap gap-x-4 gap-y-2 md:flex-col">
+        {
+          LOCALES.map((l) => (
+            <li>
+              <a
+                href={href(l, path)}
+                hreflang={l}
+                lang={l}
+                aria-current={l === locale ? 'page' : undefined}
+                class:list={[
+                  'text-sm font-semibold hover:text-primary',
+                  l === locale ? 'text-primary' : 'text-ink-soft',
+                ]}
+              >
+                {LOCALE_LABELS[l]}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+  <div class="border-t border-line">
+    <div
+      class="container-page flex flex-col gap-2 py-5 text-xs text-muted md:flex-row md:justify-between"
+    >
+      <p>© {year} {copy.footer.legal}. {copy.footer.rights}</p>
+      <p>{copy.footer.madeInRussia}</p>
+    </div>
+  </div>
+</footer>
