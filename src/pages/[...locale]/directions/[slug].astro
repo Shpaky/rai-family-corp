@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Button from '@/components/Button.astro';
+import Contacts from '@/components/sections/Contacts.astro';
 import DirectionCard from '@/components/DirectionCard.astro';
 import Base from '@/layouts/Base.astro';
 import { LOCALES, DEFAULT_LOCALE, type Locale } from '@/i18n/config';
@@ -81,7 +82,7 @@ const title = `${text.title} — Rai Family Corp`;
             }
           </ul>
           <p class="mt-6 text-base text-ink-soft">{copy.directions.contactsIntro}</p>
-          <Button href={`${home}#contacts`} variant="secondary" class="mt-4 w-full">
+          <Button href="#contacts" variant="secondary" class="mt-4 w-full">
             {copy.directions.backToContacts}
           </Button>
         </div>
@@ -107,4 +108,5 @@ const title = `${text.title} — Rai Family Corp`;
       )
     }
   </article>
+  <Contacts locale={locale} compact />
 </Base>
