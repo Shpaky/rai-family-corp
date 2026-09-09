@@ -1,0 +1,110 @@
+---
+import { getCollection } from 'astro:content';
+import Button from '@/components/Button.astro';
+import DirectionCard from '@/components/DirectionCard.astro';
+import Base from '@/layouts/Base.astro';
+import { LOCALES, DEFAULT_LOCALE, type Locale } from '@/i18n/config';
+import { href, t } from '@/i18n/utils';
+
+export async function getStaticPaths() {
+  const entries = (await getCollection('directions')).sort((a, b) => a.data.order - b.data.order);
+  return LOCALES.flatMap((locale) =>
+    entries.map((entry) => ({
+      params: { locale: locale === DEFAULT_LOCALE ? undefined : locale, slug: entry.id },
+      props: { locale, entry, others: entries.filter((e) => e.id !== entry.id) },
+    })),
+  );
+}
+
+type Entry = Awaited<ReturnType<typeof getCollection<'directions'>>>[number];
+const { locale, entry, others } = Astro.props as { locale: Locale; entry: Entry; others: Entry[] };
+const copy = t(locale);
+const d = entry.data;
+const text = d.i18n[locale];
+const path = `directions/${entry.id}/`;
+const home = href(locale);
+const title = `${text.title} — Rai Family Corp`;
+---
+
+<Base locale={locale} title={title} description={text.summary} path={path} ogType="article">
+  <article>
+    <header class="bg-surface">
+      <div class="container-page py-12 md:py-16">
+        <nav aria-label="Breadcrumb" class="text-sm font-semibold text-muted">
+          <ol class="flex flex-wrap items-center gap-2">
+            <li><a href={home} class="hover:text-primary">Rai Family Corp</a></li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <a href={`${home}#directions`} class="hover:text-primary">{copy.directions.all}</a>
+            </li>
+          </ol>
+        </nav>
+        <div class="mt-6 flex flex-wrap items-center gap-2">
+          <span class="eyebrow text-primary">{copy.directions.category[d.category]}</span>
+          <span class="rounded-pill bg-white px-2.5 py-1 text-xs font-bold text-ink-soft">
+            {copy.directions.status[d.status]}
+          </span>
+        </div>
+        <p class="mt-4 text-sm font-semibold text-muted">{d.brand}</p>
+        <h1 class="mt-1 text-h1 font-extrabold text-balance text-ink md:text-display">
+          {text.title}
+        </h1>
+        <p class="mt-5 max-w-2xl text-lead text-pretty text-ink-soft">{text.summary}</p>
+      </div>
+    </header>
+
+    <div class="container-page grid gap-12 py-section-sm lg:grid-cols-12 lg:gap-16">
+      <div class="space-y-5 text-lg leading-relaxed text-ink-soft lg:col-span-7">
+        {text.body.map((p) => <p>{p}</p>)}
+      </div>
+      <aside class="lg:col-span-5">
+        <div class="rounded-card border border-line bg-white p-7 shadow-card">
+          {
+            d.site ? (
+              <Button href={d.site} size="lg" external class="w-full">
+                {copy.directions.visitSite}
+              </Button>
+            ) : (
+              <p class="rounded-pill bg-surface px-5 py-3.5 text-center text-base font-bold text-muted">
+                {copy.directions.siteSoon}
+              </p>
+            )
+          }
+          <p class="mt-6 eyebrow text-muted">{copy.directions.audiencesLabel}</p>
+          <ul class="mt-2 flex flex-wrap gap-2">
+            {
+              d.audiences.map((a) => (
+                <li class="rounded-pill bg-primary-soft px-3 py-1 text-sm font-semibold text-primary">
+                  {copy.audiences.items[a].title}
+                </li>
+              ))
+            }
+          </ul>
+          <p class="mt-6 text-base text-ink-soft">{copy.directions.contactsIntro}</p>
+          <Button href={`${home}#contacts`} variant="secondary" class="mt-4 w-full">
+            {copy.directions.backToContacts}
+          </Button>
+        </div>
+      </aside>
+    </div>
+
+    {
+      others.length > 0 && (
+        <section class="bg-surface py-section-sm" aria-labelledby="others-title">
+          <div class="container-page">
+            <h2 id="others-title" class="text-h2 font-extrabold text-ink">
+              {copy.directions.otherDirections}
+            </h2>
+            <ul class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {others.map((e) => (
+                <li class="relative">
+                  <DirectionCard entry={e} locale={locale} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+  </article>
+</Base>
