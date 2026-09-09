@@ -1,5 +1,6 @@
 ---
 import { Font } from 'astro:assets';
+import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 import Seo from '@/components/Seo.astro';
 import type { Locale } from '@/i18n/config';
@@ -44,6 +45,6 @@ const themeColor = '#0634da'; // token-lint-ignore (mirrors --color-brand-blue)
     <main id="main" class="flex-1" tabindex="-1">
       <slot />
     </main>
-    <slot name="footer" />
+    <Footer locale={locale} path={path} />
   </body>
 </html>
