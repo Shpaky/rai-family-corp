@@ -1,0 +1,95 @@
+---
+import Button from '@/components/Button.astro';
+import Logo from '@/components/Logo.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import { contacts } from '@/data/contacts';
+import type { Locale } from '@/i18n/config';
+import { t } from '@/i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const copy = t(locale);
+---
+
+<section
+  id="pavilion"
+  class="scroll-mt-20 bg-white py-section-sm md:py-section"
+  aria-labelledby="pavilion-title"
+>
+  <div class="container-page grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+    <div class="lg:col-span-6">
+      <SectionHeading
+        id="pavilion-title"
+        eyebrow={copy.pavilion.eyebrow}
+        title={copy.pavilion.title}
+      />
+      <p class="mt-6 text-lg leading-relaxed text-ink-soft">{copy.pavilion.text}</p>
+      <dl class="mt-8">
+        <dt class="eyebrow text-muted">{copy.pavilion.addressLabel}</dt>
+        <dd class="mt-2 text-base leading-relaxed text-ink">
+          <address class="not-italic">
+            {copy.pavilion.address.map((line) => <span class="block">{line}</span>)}
+          </address>
+        </dd>
+      </dl>
+      <Button href={contacts.mapUrl} variant="ghost" external class="mt-6">
+        <svg
+          class="size-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"></path>
+          <circle cx="12" cy="11" r="2.5"></circle>
+        </svg>
+        {copy.pavilion.map}
+      </Button>
+    </div>
+    <div class="lg:col-span-6">
+      <div class="relative overflow-hidden rounded-card bg-warm p-8 md:p-12">
+        <svg
+          class="pointer-events-none absolute -right-16 -bottom-16 size-80 text-warm-strong"
+          viewBox="0 0 64 64"
+          fill="none"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <circle cx="32" cy="32" r="30" stroke-width="1.5"></circle>
+          <circle cx="32" cy="32" r="21" stroke-width="1.5"></circle>
+          <circle cx="32" cy="32" r="12" stroke-width="1.5"></circle>
+        </svg>
+        <Logo variant="mark" size="lg" class="relative text-primary" />
+        <p class="relative mt-8 text-h3 font-extrabold text-balance text-ink">
+          {copy.trust.operator}
+        </p>
+        <ul class="relative mt-6 space-y-3 text-base font-semibold text-ink-soft">
+          {
+            [copy.trust.pavilion, copy.trust.since, copy.trust.mark].map((item) => (
+              <li class="flex items-start gap-2.5">
+                <svg
+                  class="mt-0.5 size-4 shrink-0 text-accent"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
