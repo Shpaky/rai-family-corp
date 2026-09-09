@@ -1,5 +1,6 @@
 ---
 import Base from '@/layouts/Base.astro';
+import Audiences from '@/components/sections/Audiences.astro';
 import Hero from '@/components/sections/Hero.astro';
 import type { Locale } from '@/i18n/config';
 import { localePaths, t } from '@/i18n/utils';
@@ -14,4 +15,5 @@ const copy = t(locale);
 
 <Base locale={locale} title={copy.meta.title} description={copy.meta.description}>
   <Hero locale={locale} />
+  <Audiences locale={locale} />
 </Base>
