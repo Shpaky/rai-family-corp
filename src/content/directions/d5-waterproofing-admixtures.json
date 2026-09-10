@@ -1,0 +1,64 @@
+{
+  "order": 20,
+  "brand": "D5",
+  "category": "construction",
+  "status": "active",
+  "audiences": ["distributors", "manufacturers", "institutions"],
+  "site": "https://shpaky.github.io/waterproofing-admixtures/",
+  "i18n": {
+    "en": {
+      "title": "D5 waterproofing admixtures",
+      "summary": "Russian concrete waterproofing: the D5 admixture for new concrete and D5 Aqua Stop for sealing active leaks.",
+      "body": [
+        "D5 is a line of Russian-made waterproofing products for concrete, brought to India for contractors, precast producers, waterproofing specialists and distributors of construction chemistry.",
+        "The line covers both stages of a structure’s life: D5 protects new concrete from the batching plant onward, and D5 Aqua Stop repairs leaks in existing structures."
+      ],
+      "products": [
+        {
+          "name": "D5",
+          "text": "A complex multifunctional admixture added to concrete during batching. It gives the concrete water resistance, higher strength, sulphate resistance and frost protection."
+        },
+        {
+          "name": "D5 Aqua Stop",
+          "text": "A rapid-setting repair compound that stops active leaks in minutes at joints, cracks and cold seams, and works on wet surfaces."
+        }
+      ]
+    },
+    "ru": {
+      "title": "Гидроизоляционные добавки Д5",
+      "summary": "Российская гидроизоляция бетона: добавка Д5 для нового бетона и Д5 Aqua Stop для остановки активных протечек.",
+      "body": [
+        "Д5 — линейка российских гидроизоляционных продуктов для бетона, которую павильон выводит на рынок Индии для подрядчиков, производителей ЖБИ, специалистов по гидроизоляции и дистрибьюторов строительной химии.",
+        "Линейка закрывает оба этапа жизни конструкции: Д5 защищает новый бетон начиная с бетонного завода, а Д5 Aqua Stop устраняет протечки в уже построенных сооружениях."
+      ],
+      "products": [
+        {
+          "name": "Д5",
+          "text": "Комплексная многофункциональная добавка, вводится в бетон при затворении. Придаёт бетону водонепроницаемость, повышенную прочность, сульфатостойкость и морозостойкость."
+        },
+        {
+          "name": "Д5 Aqua Stop",
+          "text": "Быстросхватывающийся ремонтный состав, который за минуты останавливает активные протечки в швах, трещинах и холодных стыках, в том числе на влажной поверхности."
+        }
+      ]
+    },
+    "hi": {
+      "title": "D5 वॉटरप्रूफ़िंग एडमिक्सचर",
+      "summary": "रूसी कंक्रीट वॉटरप्रूफ़िंग: नए कंक्रीट के लिए D5 एडमिक्सचर और सक्रिय रिसाव रोकने के लिए D5 Aqua Stop।",
+      "body": [
+        "D5 कंक्रीट के लिए रूस में बने वॉटरप्रूफ़िंग उत्पादों की शृंखला है, जिसे भारत में ठेकेदारों, प्रीकास्ट उत्पादकों, वॉटरप्रूफ़िंग विशेषज्ञों और निर्माण रसायन वितरकों के लिए लाया गया है।",
+        "यह शृंखला संरचना के दोनों चरणों को कवर करती है: D5 बैचिंग प्लांट से ही नए कंक्रीट की रक्षा करता है, और D5 Aqua Stop मौजूदा संरचनाओं में रिसाव की मरम्मत करता है।"
+      ],
+      "products": [
+        {
+          "name": "D5",
+          "text": "बैचिंग के समय कंक्रीट में मिलाया जाने वाला जटिल बहुउद्देशीय एडमिक्सचर। यह कंक्रीट को जल प्रतिरोध, अधिक मज़बूती, सल्फ़ेट प्रतिरोध और पाला-रोधी सुरक्षा देता है।"
+        },
+        {
+          "name": "D5 Aqua Stop",
+          "text": "तेज़ी से जमने वाला मरम्मत यौगिक जो जोड़ों, दरारों और कोल्ड सीम में सक्रिय रिसाव को मिनटों में रोक देता है और गीली सतह पर भी काम करता है।"
+        }
+      ]
+    }
+  }
+}
