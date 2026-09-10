@@ -5,7 +5,7 @@ import Contacts from '@/components/sections/Contacts.astro';
 import DirectionCard from '@/components/DirectionCard.astro';
 import Base from '@/layouts/Base.astro';
 import { LOCALES, DEFAULT_LOCALE, type Locale } from '@/i18n/config';
-import { href, t } from '@/i18n/utils';
+import { href, siteHref, t } from '@/i18n/utils';
 
 export async function getStaticPaths() {
   const entries = (await getCollection('directions')).sort((a, b) => a.data.order - b.data.order);
@@ -76,7 +76,7 @@ const title = `${text.title} — Rai Family Corp`;
         <div class="rounded-card border border-line bg-white p-7 shadow-card">
           {
             d.site ? (
-              <Button href={d.site} size="lg" external class="w-full">
+              <Button href={siteHref(d.site, locale)} size="lg" external class="w-full">
                 {copy.directions.visitSite}
               </Button>
             ) : (
