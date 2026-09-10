@@ -25,3 +25,12 @@ export function href(locale: Locale, path = ''): string {
 export function t(locale: Locale) {
   return ui[locale];
 }
+
+/**
+ * Locale-aware URL of a direction's product site. Product sites follow the hub's
+ * convention: default locale at the root, other locales under `/<locale>/`.
+ */
+export function siteHref(site: string, locale: Locale): string {
+  const base = site.endsWith('/') ? site : `${site}/`;
+  return locale === DEFAULT_LOCALE ? base : `${base}${locale}/`;
+}

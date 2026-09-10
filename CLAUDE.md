@@ -37,6 +37,9 @@ tailwind, eslint/prettier с astro-плагинами, playwright + axe, lhci).
   проверки носителем). В разметке строк нет.
 - Направления (продукты) — content collection `src/content/directions/*.json`
   (схема в `src/content.config.ts`). Новое направление = новый JSON-файл.
+  Ссылка на сайт направления (`site`) — через `siteHref(site, locale)`: сайты
+  направлений повторяют схему локалей хаба (EN в корне, `/ru/`, `/hi/`), переход
+  с языковой версии хаба ведёт на ту же языковую версию сайта направления.
 - Бренд: свой стиль на палитре «Сделано в России» (`руководство к брендированию.pdf`),
   знак «Made in Russia» можно использовать как партнёрскую марку. Шрифты Montserrat и
   Noto Sans Devanagari — через Fonts API Astro (`astro.config.mjs`), самохостинг на сборке.
