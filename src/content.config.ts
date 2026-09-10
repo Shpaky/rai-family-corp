@@ -2,10 +2,17 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
+const product = z.object({
+  name: z.string(),
+  text: z.string(),
+});
+
 const localized = z.object({
   title: z.string(),
   summary: z.string(),
   body: z.array(z.string()).default([]),
+  /** Individual products inside a direction that shares one product site. */
+  products: z.array(product).default([]),
 });
 
 const directions = defineCollection({
