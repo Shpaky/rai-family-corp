@@ -45,7 +45,7 @@ try {
   const browser = await chromium.launch();
   const list = pages(DIST)
     .map((p) => (p === '/.' || p === '/' ? '/' : p.replace(/^\/\.?/, '/') + '/'))
-    .filter((p) => !ONLY || p.includes(ONLY))
+    .filter((p) => !ONLY || p.includes(ONLY) || (p === '/' && ONLY === 'home'))
     .sort();
   mkdirSync(join(ROOT, 'shots'), { recursive: true });
   for (const path of list) {
