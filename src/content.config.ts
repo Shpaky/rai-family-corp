@@ -34,6 +34,8 @@ const directions = defineCollection({
     brand: z.string(),
     category: z.enum(['food-and-drinks', 'construction', 'industrial', 'consumer', 'other']),
     status: z.enum(['active', 'launching', 'planned']).default('active'),
+    /** false hides the direction everywhere (card, page, sitemap) without deleting its content. */
+    published: z.boolean().default(true),
     audiences: z.array(z.enum(['distributors', 'institutions', 'manufacturers', 'consumers'])),
     site: z.url().nullable().default(null),
     documents: z.array(document).default([]),
