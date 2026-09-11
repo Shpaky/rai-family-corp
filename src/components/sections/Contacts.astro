@@ -1,5 +1,5 @@
 ---
-import { contacts } from '@/data/contacts';
+import { contacts, telUri, telegramLabel, telegramUrl, whatsappUrl } from '@/data/contacts';
 import type { Locale } from '@/i18n/config';
 import { t } from '@/i18n/utils';
 
@@ -20,17 +20,17 @@ const rows = [
   {
     label: copy.contacts.phone,
     value: contacts.phone,
-    href: contacts.phone ? `tel:${contacts.phone.replace(/\s/g, '')}` : null,
+    href: contacts.phone ? telUri(contacts.phone) : null,
   },
   {
     label: copy.contacts.whatsapp,
-    value: contacts.whatsapp ? `+${contacts.whatsapp}` : null,
-    href: contacts.whatsapp ? `https://wa.me/${contacts.whatsapp}` : null,
+    value: contacts.whatsapp,
+    href: contacts.whatsapp ? whatsappUrl(contacts.whatsapp) : null,
   },
   {
     label: copy.contacts.telegram,
-    value: contacts.telegram ? `@${contacts.telegram}` : null,
-    href: contacts.telegram ? `https://t.me/${contacts.telegram}` : null,
+    value: contacts.telegram ? telegramLabel(contacts.telegram) : null,
+    href: contacts.telegram ? telegramUrl(contacts.telegram) : null,
   },
 ];
 ---
