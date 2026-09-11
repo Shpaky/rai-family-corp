@@ -10,7 +10,9 @@ interface Props {
 }
 const { locale } = Astro.props;
 const copy = t(locale);
-const entries = (await getCollection('directions')).sort((a, b) => a.data.order - b.data.order);
+const entries = (await getCollection('directions', (e) => e.data.published)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
 ---
 
 <section

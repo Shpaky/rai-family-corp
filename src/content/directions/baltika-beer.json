@@ -3,6 +3,7 @@
   "brand": "Baltika",
   "category": "food-and-drinks",
   "status": "active",
+  "published": false,
   "audiences": ["distributors", "consumers", "institutions"],
   "site": null,
   "i18n": {
