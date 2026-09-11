@@ -61,6 +61,8 @@ interface Copy {
     >;
     visitSite: string;
     siteSoon: string;
+    keyData: string;
+    documents: string;
     backToContacts: string;
     contactsIntro: string;
     audiencesLabel: string;
@@ -225,7 +227,9 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
         consumer: 'Consumer goods',
         other: 'Other',
       },
-      visitSite: 'Open the product site',
+      visitSite: 'See specs, documents and pricing',
+      keyData: 'Key data',
+      documents: 'Documents',
       siteSoon: 'Product site coming soon',
       backToContacts: 'Contact the operator',
       contactsIntro: 'Enquiries about this direction go through Rai Family Corp, the operator.',
@@ -405,7 +409,9 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
         consumer: 'Потребительские товары',
         other: 'Другое',
       },
-      visitSite: 'Открыть сайт продукта',
+      visitSite: 'Характеристики, документы и условия поставки',
+      keyData: 'Ключевые данные',
+      documents: 'Документы',
       siteSoon: 'Сайт продукта скоро появится',
       backToContacts: 'Связаться с оператором',
       contactsIntro: 'Запросы по этому направлению проходят через оператора — Rai Family Corp.',
@@ -584,7 +590,9 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
         consumer: 'उपभोक्ता वस्तुएँ',
         other: 'अन्य',
       },
-      visitSite: 'उत्पाद साइट खोलें',
+      visitSite: 'विशेषताएँ, दस्तावेज़ और आपूर्ति शर्तें',
+      keyData: 'मुख्य आँकड़े',
+      documents: 'दस्तावेज़',
       siteSoon: 'उत्पाद साइट जल्द ही',
       backToContacts: 'ऑपरेटर से संपर्क करें',
       contactsIntro: 'इस दिशा से जुड़ी पूछताछ ऑपरेटर Rai Family Corp के माध्यम से होती है।',
