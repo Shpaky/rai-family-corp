@@ -5,13 +5,23 @@
   "status": "active",
   "audiences": ["distributors", "manufacturers", "institutions"],
   "site": "https://shpaky.github.io/waterproofing-admixtures/",
+  "documents": [
+    {
+      "label": "TDS (EN)",
+      "url": "https://shpaky.github.io/waterproofing-admixtures/docs/D5-TDS-en.pdf"
+    },
+    {
+      "label": "SDS (EN)",
+      "url": "https://shpaky.github.io/waterproofing-admixtures/docs/D5-SDS-en.pdf"
+    }
+  ],
   "i18n": {
     "en": {
       "title": "D5 concrete additive and D5 Aqua Stop waterproofing",
-      "summary": "Russian concrete waterproofing: the D5 admixture for new concrete and D5 Aqua Stop for sealing active leaks.",
+      "summary": "Russian concrete waterproofing: the D5 admixture for new concrete and the D5 Aqua Stop coating for existing structures.",
       "body": [
         "D5 is a line of Russian-made waterproofing products for concrete, brought to India for contractors, precast producers, waterproofing specialists and distributors of construction chemistry.",
-        "The line covers both stages of a structure’s life: D5 protects new concrete from the batching plant onward, and D5 Aqua Stop repairs leaks in existing structures."
+        "The line covers both stages of a structure’s life: D5 protects new concrete from the batching plant onward, and D5 Aqua Stop protects and repairs existing concrete and masonry."
       ],
       "products": [
         {
@@ -20,45 +30,75 @@
         },
         {
           "name": "D5 Aqua Stop",
-          "text": "A rapid-setting repair compound that stops active leaks in minutes at joints, cracks and cold seams, and works on wet surfaces."
+          "text": "A one-component, brush-applied cementitious waterproofing mortar for protecting and repairing concrete. Applied in two or more coats on a dampened surface, it holds W12 under positive and W8 under negative water pressure. Basements from the inside, tanks, pools, wet rooms, repair of old waterproofing."
         }
-      ]
+      ],
+      "forWhom": ["Contractors and RMC plants", "Private builders", "Dealers and distributors"],
+      "facts": [
+        "Water resistance W20+ for the life of the structure",
+        "Frost resistance F400+",
+        "Sulphate resistance on ordinary Portland cement",
+        "Self-seals cracks up to 0.5 mm",
+        "Dosage 2–3% of cement weight",
+        "Cold joints do not leak under pressure up to 12 bar"
+      ],
+      "logistics": "Stock in India, typical dispatch 1–3 working days."
     },
     "ru": {
-      "title": "Добавка к бетону Д5 и гидроизоляция Д5 Aqua Stop",
-      "summary": "Российская гидроизоляция бетона: добавка Д5 для нового бетона и Д5 Aqua Stop для остановки активных протечек.",
+      "title": "Добавка к бетону D5 и гидроизоляция D5 Aqua Stop",
+      "summary": "Российская гидроизоляция бетона: добавка D5 для нового бетона и обмазочная смесь D5 Aqua Stop для существующих конструкций.",
       "body": [
-        "Д5 — линейка российских гидроизоляционных продуктов для бетона, которую павильон выводит на рынок Индии для подрядчиков, производителей ЖБИ, специалистов по гидроизоляции и дистрибьюторов строительной химии.",
-        "Линейка закрывает оба этапа жизни конструкции: Д5 защищает новый бетон начиная с бетонного завода, а Д5 Aqua Stop устраняет протечки в уже построенных сооружениях."
-      ],
-      "products": [
-        {
-          "name": "Д5",
-          "text": "Комплексная многофункциональная добавка, вводится в бетон при затворении. Придаёт бетону водонепроницаемость, повышенную прочность, сульфатостойкость и морозостойкость."
-        },
-        {
-          "name": "Д5 Aqua Stop",
-          "text": "Быстросхватывающийся ремонтный состав, который за минуты останавливает активные протечки в швах, трещинах и холодных стыках, в том числе на влажной поверхности."
-        }
-      ]
-    },
-    "hi": {
-      "title": "D5 कंक्रीट एडिटिव और D5 Aqua Stop वॉटरप्रूफ़िंग",
-      "summary": "रूसी कंक्रीट वॉटरप्रूफ़िंग: नए कंक्रीट के लिए D5 एडमिक्सचर और सक्रिय रिसाव रोकने के लिए D5 Aqua Stop।",
-      "body": [
-        "D5 कंक्रीट के लिए रूस में बने वॉटरप्रूफ़िंग उत्पादों की शृंखला है, जिसे भारत में ठेकेदारों, प्रीकास्ट उत्पादकों, वॉटरप्रूफ़िंग विशेषज्ञों और निर्माण रसायन वितरकों के लिए लाया गया है।",
-        "यह शृंखला संरचना के दोनों चरणों को कवर करती है: D5 बैचिंग प्लांट से ही नए कंक्रीट की रक्षा करता है, और D5 Aqua Stop मौजूदा संरचनाओं में रिसाव की मरम्मत करता है।"
+        "D5 — линейка российских гидроизоляционных продуктов для бетона, которую павильон выводит на рынок Индии для подрядчиков, производителей ЖБИ, специалистов по гидроизоляции и дистрибьюторов строительной химии.",
+        "Линейка закрывает оба этапа жизни конструкции: D5 защищает новый бетон начиная с бетонного завода, а D5 Aqua Stop защищает и ремонтирует существующий бетон и кладку."
       ],
       "products": [
         {
           "name": "D5",
-          "text": "बैचिंग के समय कंक्रीट में मिलाया जाने वाला जटिल बहुउद्देशीय एडमिक्सचर। यह कंक्रीट को जल प्रतिरोध, अधिक मज़बूती, सल्फ़ेट प्रतिरोध और पाला-रोधी सुरक्षा देता है।"
+          "text": "Комплексная многофункциональная добавка, вводится в бетон при затворении. Придаёт бетону водонепроницаемость, повышенную прочность, сульфатостойкость и морозостойкость."
         },
         {
           "name": "D5 Aqua Stop",
-          "text": "तेज़ी से जमने वाला मरम्मत यौगिक जो जोड़ों, दरारों और कोल्ड सीम में सक्रिय रिसाव को मिनटों में रोक देता है और गीली सतह पर भी काम करता है।"
+          "text": "Однокомпонентная обмазочная гидроизоляционная смесь для защиты и ремонта бетона. Наносится в два и более слоя по увлажнённому основанию, держит прямое давление воды W12 и обратное W8. Подвалы изнутри, резервуары, бассейны, влажные помещения, ремонт старой гидроизоляции."
         }
-      ]
+      ],
+      "forWhom": ["Подрядчики и бетонные заводы", "Частные застройщики", "Дилеры и дистрибьюторы"],
+      "facts": [
+        "Водонепроницаемость W20+ на весь срок службы конструкции",
+        "Морозостойкость F400+",
+        "Сульфатостойкость на обычном портландцементе",
+        "Самозалечивание трещин до 0,5 мм",
+        "Дозировка 2–3% от массы цемента",
+        "Холодные швы не текут под давлением до 12 бар"
+      ],
+      "logistics": "Склад в Индии, типовая отгрузка 1–3 рабочих дня."
+    },
+    "hi": {
+      "title": "D5 कंक्रीट एडिटिव और D5 Aqua Stop वॉटरप्रूफिंग",
+      "summary": "रूसी कंक्रीट वॉटरप्रूफिंग: नए कंक्रीट के लिए D5 एडमिक्सचर और मौजूदा संरचनाओं के लिए D5 Aqua Stop कोटिंग।",
+      "body": [
+        "D5 कंक्रीट के लिए रूस में बने वॉटरप्रूफिंग उत्पादों की शृंखला है, जिसे भारत में ठेकेदारों, प्रीकास्ट उत्पादकों, वॉटरप्रूफिंग विशेषज्ञों और निर्माण रसायन वितरकों के लिए लाया गया है।",
+        "यह शृंखला संरचना के दोनों चरणों को कवर करती है: D5 बैचिंग प्लांट से ही नए कंक्रीट की रक्षा करता है, और D5 Aqua Stop मौजूदा कंक्रीट और चिनाई की सुरक्षा और मरम्मत करता है।"
+      ],
+      "products": [
+        {
+          "name": "D5",
+          "text": "बैचिंग के समय कंक्रीट में मिलाया जाने वाला कॉम्प्लेक्स बहुउद्देश्यीय एडमिक्सचर। यह कंक्रीट को जल-प्रतिरोध, अधिक मज़बूती, सल्फेट प्रतिरोध और फ्रॉस्ट प्रतिरोध देता है।"
+        },
+        {
+          "name": "D5 Aqua Stop",
+          "text": "कंक्रीट की मरम्मत और सुरक्षा के लिए यूनिवर्सल वॉटरप्रूफिंग ड्राई मिक्स। एक-घटक सूखा मिश्रण, पहले से गीली सतह पर दो या अधिक कोट में लगाया जाता है; सकारात्मक दबाव W12, नकारात्मक दबाव W8। अंदर से बेसमेंट, टैंक, पूल, गीले कमरे, पुरानी वॉटरप्रूफिंग की मरम्मत।"
+        }
+      ],
+      "forWhom": ["ठेकेदार और RMC प्लांट", "निजी बिल्डर", "डीलर और वितरक"],
+      "facts": [
+        "जल-प्रतिरोध W20+, संरचना के पूरे जीवन के लिए",
+        "फ्रॉस्ट प्रतिरोध F400+",
+        "साधारण पोर्टलैंड सीमेंट पर सल्फेट प्रतिरोध",
+        "0.5 मिमी तक की दरारों को स्वयं सील करता है",
+        "खुराक: सीमेंट के वज़न का 2–3%",
+        "कोल्ड जॉइंट 12 बार तक के दबाव में नहीं रिसते"
+      ],
+      "logistics": "भारत में स्टॉक, सामान्य डिस्पैच 1–3 कार्यदिवस।"
     }
   }
 }

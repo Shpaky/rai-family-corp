@@ -71,6 +71,50 @@ const title = `${text.title} — Rai Family Corp`;
             </ul>
           )
         }
+        {
+          text.facts.length > 0 && (
+            <section
+              class="mt-10 rounded-card border border-line bg-white p-7 shadow-card"
+              aria-labelledby="facts-title"
+            >
+              <h2 id="facts-title" class="text-h3 font-extrabold text-ink">
+                {copy.directions.keyData}
+              </h2>
+              <ul class="mt-4 divide-y divide-line border-t border-line">
+                {text.facts.map((fact) => (
+                  <li class="flex items-start gap-3 py-3 text-base leading-snug text-ink-soft">
+                    <svg
+                      class="mt-1 size-4 shrink-0 text-primary"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                    {fact}
+                  </li>
+                ))}
+              </ul>
+              {text.logistics && (
+                <p class="mt-4 text-base font-semibold text-ink">{text.logistics}</p>
+              )}
+              {d.documents.length > 0 && (
+                <div class="mt-6 flex flex-wrap items-center gap-3">
+                  <span class="eyebrow text-muted">{copy.directions.documents}</span>
+                  {d.documents.map((doc) => (
+                    <Button href={doc.url} variant="ghost" external>
+                      {doc.label}
+                    </Button>
+                  ))}
+                </div>
+              )}
+            </section>
+          )
+        }
       </div>
       <aside class="lg:col-span-5">
         <div class="rounded-card border border-line bg-white p-7 shadow-card">
@@ -88,9 +132,12 @@ const title = `${text.title} — Rai Family Corp`;
           <p class="mt-6 eyebrow text-muted">{copy.directions.audiencesLabel}</p>
           <ul class="mt-2 flex flex-wrap gap-2">
             {
-              d.audiences.map((a) => (
+              (text.forWhom.length > 0
+                ? text.forWhom
+                : d.audiences.map((a) => copy.audiences.items[a].title)
+              ).map((label) => (
                 <li class="rounded-pill bg-primary-soft px-3 py-1 text-sm font-semibold text-primary">
-                  {copy.audiences.items[a].title}
+                  {label}
                 </li>
               ))
             }
