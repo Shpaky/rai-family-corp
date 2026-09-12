@@ -131,6 +131,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
     },
     status: {
       company: 'Rai Family Corp',
+      // Top line for direction sites (D5 and the next ones), where the operator's name is not on the page.
       direction: 'A Rai Family Corp direction',
       line: 'Made in Russia pavilion operator, India',
       lineShort: 'Made in Russia pavilion operator',
@@ -323,6 +324,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
     },
     status: {
       company: 'Rai Family Corp',
+      // Top line for direction sites (D5 and the next ones), where the operator's name is not on the page.
       direction: 'Направление Rai Family Corp',
       line: 'Оператор павильона «Сделано в России» в Индии',
       lineShort: 'Оператор павильона «Сделано в России»',
@@ -515,6 +517,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
     },
     status: {
       company: 'Rai Family Corp',
+      // Top line for direction sites (D5 and the next ones), where the operator's name is not on the page.
       direction: 'Rai Family Corp की दिशा',
       line: 'Made in Russia पवेलियन ऑपरेटर, भारत',
       lineShort: 'Made in Russia पवेलियन ऑपरेटर',
