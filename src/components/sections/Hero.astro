@@ -1,8 +1,9 @@
 ---
 import Button from '@/components/Button.astro';
-import Logo from '@/components/Logo.astro';
+import StatusLockup from '@/components/StatusLockup.astro';
 import type { Locale } from '@/i18n/config';
-import { href, t } from '@/i18n/utils';
+import { href, t, withCount } from '@/i18n/utils';
+import { company } from '@/data/company';
 
 interface Props {
   locale: Locale;
@@ -10,6 +11,7 @@ interface Props {
 const { locale } = Astro.props;
 const copy = t(locale);
 const home = href(locale);
+const cardTitle = withCount(copy.hero.cardTitle, company.pavilionResidents, locale);
 const trust = [copy.trust.operator, copy.trust.pavilion, copy.trust.since, copy.trust.mark];
 ---
 
@@ -46,20 +48,27 @@ const trust = [copy.trust.operator, copy.trust.pavilion, copy.trust.since, copy.
           <circle cx="32" cy="32" r="22" stroke-width="1"></circle>
           <circle cx="32" cy="32" r="14" stroke-width="1"></circle>
         </svg>
-        <Logo variant="mark" size="lg" class="relative text-white" />
-        <p
-          class="relative mt-8 text-eyebrow font-bold tracking-widest text-brand-sky-light uppercase"
+        <StatusLockup locale={locale} variant="card" tone="dark" eager class="relative" />
+        <p class="relative mt-8 text-h3 font-extrabold text-balance">{cardTitle}</p>
+        <p class="relative mt-2 text-sm text-white/80">{copy.pavilion.subtitle}</p>
+        <a
+          href={`${home}#pavilion`}
+          class="relative mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-brand-sky-light underline-offset-4 hover:underline"
         >
-          {copy.trust.operator}
-        </p>
-        <p class="relative mt-3 text-h3 font-extrabold text-balance">{copy.pavilion.title}</p>
-        <p class="relative mt-2 text-sm text-white/80">{copy.about.facts[3].value}</p>
-        <p
-          class="relative mt-8 inline-flex items-center gap-2 rounded-pill bg-white/10 px-4 py-2 text-sm font-semibold"
-        >
-          <span class="size-2 rounded-pill bg-accent" aria-hidden="true"></span>
-          {copy.hero.badge}
-        </p>
+          {copy.hero.pavilionLink}
+          <svg
+            class="size-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6"></path>
+          </svg>
+        </a>
       </div>
     </div>
   </div>

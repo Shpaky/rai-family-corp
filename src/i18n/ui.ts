@@ -27,9 +27,12 @@ interface Copy {
     lead: string;
     ctaPrimary: string;
     ctaSecondary: string;
-    badge: string;
+    pavilionLink: string;
+    /** Template; {count} = company.pavilionResidents, see withCount(). */
+    cardTitle: string;
   };
   trust: { operator: string; pavilion: string; since: string; mark: string };
+  status: { company: string; direction: string; line: string; lineShort: string; markAlt: string };
   audiences: {
     eyebrow: string;
     title: string;
@@ -71,6 +74,7 @@ interface Copy {
   pavilion: {
     eyebrow: string;
     title: string;
+    subtitle: string;
     text: string;
     addressLabel: string;
     address: string[];
@@ -95,9 +99,9 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
   en: {
     meta: {
       siteName: 'Rai Family Corp',
-      title: 'Rai Family Corp — Official operator of the Russian Export Center pavilion in India',
+      title: 'Rai Family Corp: operator of the Made in Russia national pavilion in India',
       description:
-        'Rai Family Corp LLP promotes Russian products in India as the official operator of the Russian Export Center pavilion: distribution, marketing, import, certification and logistics.',
+        'Rai Family Corp LLP is the operator of the Made in Russia national pavilion in Navi Mumbai, a Russian Export Center project and the first in India. Distribution, marketing, import, certification and logistics for Russian products.',
     },
     nav: {
       about: 'About',
@@ -114,18 +118,27 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       footerLanguage: 'Language, footer',
     },
     hero: {
-      eyebrow: 'Official operator of the Russian Export Center pavilion in India',
+      eyebrow: 'Rai Family Corp LLP · Navi Mumbai',
       title: 'Russian products in India. One operator, the whole route.',
       lead: 'Rai Family Corp LLP gives Russian manufacturers direct distribution channels and marketing in India, and handles the full cycle of import, certification and logistics.',
       ctaPrimary: 'Contact us',
       ctaSecondary: 'Explore directions',
-      badge: 'Made in Russia. Trusted by the world',
+      pavilionLink: 'About the pavilion',
+      cardTitle: '{count} Russian {count:company is|companies are} already in the pavilion',
     },
     trust: {
-      operator: 'Official REC pavilion operator',
-      pavilion: 'Pavilion in Navi Mumbai',
-      since: 'Operating since 2024',
+      operator: 'Made in Russia pavilion operator',
+      pavilion: 'First pavilion of the programme in India',
+      since: 'Company since 2024, pavilion since August 2026',
       mark: 'Made in Russia mark',
+    },
+    status: {
+      company: 'Rai Family Corp',
+      // Top line for direction sites (D5 and the next ones), where the operator's name is not on the page.
+      direction: 'A Rai Family Corp direction',
+      line: 'Made in Russia pavilion operator, India',
+      lineShort: 'Made in Russia pavilion operator',
+      markAlt: 'Made in Russia mark',
     },
     audiences: {
       eyebrow: 'Who we work with',
@@ -134,7 +147,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       items: {
         manufacturers: {
           title: 'Russian manufacturers',
-          text: 'Enter the Indian market through the official REC pavilion: market assessment, adaptation, certification, import and distribution under one contract.',
+          text: 'Enter the Indian market through the Made in Russia pavilion: market assessment, adaptation, certification, import and distribution under one contract.',
           cta: 'See services',
         },
         distributors: {
@@ -158,14 +171,14 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       eyebrow: 'About the company',
       title: 'The official gateway for Russian products into India',
       paragraphs: [
-        'Rai Family Corp LLP is an Indian company and the official operator of the Russian Export Center pavilion in India. The pavilion is the point where Russian manufacturers meet Indian distributors, retail chains and institutions.',
+        'Rai Family Corp LLP is an Indian company and the operator of the Made in Russia national pavilion in Navi Mumbai, a Russian Export Center project. The pavilion is where Russian manufacturers meet Indian distributors, retail chains and institutions.',
         'We provide direct distribution channels and marketing promotion, and cover the full range of related work: market research, product and packaging adaptation, certification, import procedures, legal support and logistics.',
       ],
       facts: [
-        { label: 'Status', value: 'Official REC pavilion operator' },
+        { label: 'Status', value: 'Made in Russia national pavilion operator' },
         { label: 'Founded', value: 'September 2024' },
         { label: 'Registered', value: 'India, Maharashtra' },
-        { label: 'Pavilion', value: 'CBD Belapur, Navi Mumbai' },
+        { label: 'Pavilion', value: 'Opened 21 August 2026, CBD Belapur, Navi Mumbai' },
       ],
     },
     services: {
@@ -232,14 +245,17 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       documents: 'Documents',
       siteSoon: 'Product site coming soon',
       backToContacts: 'Contact the operator',
-      contactsIntro: 'Enquiries about this direction go through Rai Family Corp, the operator.',
+      contactsIntro:
+        'Enquiries about this direction go through the pavilion operator, Rai Family Corp.',
       audiencesLabel: 'For',
       otherDirections: 'Other directions',
     },
     pavilion: {
       eyebrow: 'Pavilion',
-      title: 'Russian Export Center pavilion, Navi Mumbai',
-      text: 'The pavilion is the physical home of Russian products in India: a showroom for distributors and institutions, a venue for tastings and B2B meetings, and the operator’s office.',
+      title: 'Made in Russia national pavilion, Navi Mumbai',
+      subtitle:
+        'A Russian Export Center project · opened 21 August 2026 · CBD Belapur, Navi Mumbai',
+      text: 'The first Made in Russia pavilion in India, a Russian Export Center project opened on 21 August 2026. It is the physical home of Russian products in the country: a showroom for distributors and institutions, a venue for tastings and B2B meetings, and the office of the operator, Rai Family Corp.',
       addressLabel: 'Address',
       address: [
         'Office No. 1307 and 1308, NMS Titanium, 13th Floor',
@@ -261,7 +277,8 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
     },
     footer: {
       legal: 'Rai Family Corp LLP',
-      operator: 'Official operator of the Russian Export Center pavilion in India',
+      operator:
+        'Operator of the Made in Russia national pavilion in India, a Russian Export Center project',
       rights: 'All rights reserved.',
       madeInRussia:
         '“Made in Russia” is a trademark of the Russian Export Center, used with permission.',
@@ -276,10 +293,9 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
   ru: {
     meta: {
       siteName: 'Rai Family Corp',
-      title:
-        'Rai Family Corp — официальный оператор павильона Российского экспортного центра в Индии',
+      title: 'Rai Family Corp: оператор национального павильона «Сделано в России» в Индии',
       description:
-        'Rai Family Corp LLP продвигает российские товары в Индии как официальный оператор павильона Российского экспортного центра: дистрибуция, маркетинг, импорт, сертификация и логистика.',
+        'Rai Family Corp LLP: оператор национального павильона «Сделано в России» в Нави-Мумбаи, проекта Российского экспортного центра и первого в Индии. Дистрибуция, маркетинг, импорт, сертификация и логистика российских товаров.',
     },
     nav: {
       about: 'О компании',
@@ -296,18 +312,28 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       footerLanguage: 'Язык, подвал',
     },
     hero: {
-      eyebrow: 'Официальный оператор павильона Российского экспортного центра в Индии',
+      eyebrow: 'Rai Family Corp LLP · Нави-Мумбаи',
       title: 'Российские товары в Индии. Один оператор, весь путь.',
       lead: 'Rai Family Corp LLP даёт российским производителям прямые каналы дистрибуции и маркетинговое продвижение в Индии и берёт на себя полный цикл импорта, сертификации и логистики.',
       ctaPrimary: 'Связаться',
       ctaSecondary: 'Смотреть направления',
-      badge: 'Сделано в России. Качество, которому доверяют',
+      pavilionLink: 'О павильоне',
+      cardTitle:
+        '{count} {count:российская компания уже|российские компании уже|российских компаний уже} в павильоне',
     },
     trust: {
-      operator: 'Официальный оператор павильона РЭЦ',
-      pavilion: 'Павильон в Нави Мумбаи',
-      since: 'Работаем с 2024 года',
+      operator: 'Оператор павильона «Сделано в России»',
+      pavilion: 'Первый павильон программы в Индии',
+      since: 'Компания с 2024 года, павильон с августа 2026',
       mark: 'Знак «Сделано в России»',
+    },
+    status: {
+      company: 'Rai Family Corp',
+      // Top line for direction sites (D5 and the next ones), where the operator's name is not on the page.
+      direction: 'Направление Rai Family Corp',
+      line: 'Оператор павильона «Сделано в России» в Индии',
+      lineShort: 'Оператор павильона «Сделано в России»',
+      markAlt: 'Знак «Сделано в России»',
     },
     audiences: {
       eyebrow: 'С кем мы работаем',
@@ -316,12 +342,12 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       items: {
         manufacturers: {
           title: 'Российские производители',
-          text: 'Выход на рынок Индии через официальный павильон РЭЦ: оценка рынка, адаптация, сертификация, импорт и дистрибуция по одному договору.',
+          text: 'Выход на рынок Индии через павильон «Сделано в России»: оценка рынка, адаптация, сертификация, импорт и дистрибуция по одному договору.',
           cta: 'Смотреть услуги',
         },
         distributors: {
           title: 'Индийские дистрибьюторы и ритейл',
-          text: 'Сертифицированные российские товары от одного ответственного партнёра в Нави Мумбаи: документы, логистика и маркетинговая поддержка включены.',
+          text: 'Сертифицированные российские товары от одного ответственного партнёра в Нави-Мумбаи: документы, логистика и маркетинговая поддержка включены.',
           cta: 'Смотреть направления',
         },
         institutions: {
@@ -340,14 +366,14 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       eyebrow: 'О компании',
       title: 'Официальные ворота для российских товаров в Индию',
       paragraphs: [
-        'Rai Family Corp LLP — индийская компания, официальный оператор павильона Российского экспортного центра в Индии. Павильон — это точка, где российские производители встречаются с индийскими дистрибьюторами, торговыми сетями и институтами.',
+        'Rai Family Corp LLP: индийская компания, оператор национального павильона «Сделано в России» в Нави-Мумбаи, проекта Российского экспортного центра. Павильон: точка, где российские производители встречаются с индийскими дистрибьюторами, торговыми сетями и институтами.',
         'Мы предоставляем прямые каналы дистрибуции и маркетинговое продвижение и закрываем весь спектр связанных задач: исследование рынка, адаптацию продукта и упаковки, сертификацию, импортные процедуры, юридическое сопровождение и логистику.',
       ],
       facts: [
-        { label: 'Статус', value: 'Официальный оператор павильона РЭЦ' },
+        { label: 'Статус', value: 'Оператор национального павильона «Сделано в России»' },
         { label: 'Основана', value: 'Сентябрь 2024' },
         { label: 'Регистрация', value: 'Индия, Махараштра' },
-        { label: 'Павильон', value: 'CBD Belapur, Нави Мумбаи' },
+        { label: 'Павильон', value: 'Открыт 21 августа 2026, CBD Belapur, Нави-Мумбаи' },
       ],
     },
     services: {
@@ -414,14 +440,17 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       documents: 'Документы',
       siteSoon: 'Сайт продукта скоро появится',
       backToContacts: 'Связаться с оператором',
-      contactsIntro: 'Запросы по этому направлению проходят через оператора — Rai Family Corp.',
+      contactsIntro:
+        'Запросы по этому направлению проходят через оператора павильона, Rai Family Corp.',
       audiencesLabel: 'Для кого',
       otherDirections: 'Другие направления',
     },
     pavilion: {
       eyebrow: 'Павильон',
-      title: 'Павильон Российского экспортного центра, Нави Мумбаи',
-      text: 'Павильон — физический дом российских товаров в Индии: шоурум для дистрибьюторов и институтов, площадка для дегустаций и B2B-встреч, офис оператора.',
+      title: 'Национальный павильон «Сделано в России», Нави-Мумбаи',
+      subtitle:
+        'Проект Российского экспортного центра · открыт 21 августа 2026 · CBD Belapur, Нави-Мумбаи',
+      text: 'Первый павильон «Сделано в России» в Индии, проект Российского экспортного центра, открыт 21 августа 2026 года. Это физический дом российских товаров в стране: шоурум для дистрибьюторов и институтов, площадка для дегустаций и B2B-встреч, офис оператора Rai Family Corp.',
       addressLabel: 'Адрес',
       address: [
         'Office No. 1307 and 1308, NMS Titanium, 13th Floor',
@@ -443,7 +472,8 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
     },
     footer: {
       legal: 'Rai Family Corp LLP',
-      operator: 'Официальный оператор павильона Российского экспортного центра в Индии',
+      operator:
+        'Оператор национального павильона «Сделано в России» в Индии, проекта Российского экспортного центра',
       rights: 'Все права защищены.',
       madeInRussia:
         '«Сделано в России» — товарный знак Российского экспортного центра, используется с разрешения.',
@@ -458,9 +488,9 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
   hi: {
     meta: {
       siteName: 'Rai Family Corp',
-      title: 'Rai Family Corp — भारत में रूसी निर्यात केंद्र पवेलियन का आधिकारिक ऑपरेटर',
+      title: 'Rai Family Corp: भारत में Made in Russia राष्ट्रीय पवेलियन का ऑपरेटर',
       description:
-        'Rai Family Corp LLP रूसी निर्यात केंद्र पवेलियन के आधिकारिक ऑपरेटर के रूप में भारत में रूसी उत्पादों का प्रचार करता है: वितरण, मार्केटिंग, आयात, प्रमाणन और लॉजिस्टिक्स।',
+        'Rai Family Corp LLP नवी मुंबई में Made in Russia राष्ट्रीय पवेलियन का ऑपरेटर है, जो रूसी निर्यात केंद्र की परियोजना और भारत में पहला पवेलियन है। रूसी उत्पादों के लिए वितरण, मार्केटिंग, आयात, प्रमाणन और लॉजिस्टिक्स।',
     },
     nav: {
       about: 'कंपनी',
@@ -477,18 +507,28 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       footerLanguage: 'भाषा, फ़ुटर',
     },
     hero: {
-      eyebrow: 'भारत में रूसी निर्यात केंद्र पवेलियन का आधिकारिक ऑपरेटर',
+      eyebrow: 'Rai Family Corp LLP · नवी मुंबई',
       title: 'भारत में रूसी उत्पाद। एक ऑपरेटर, पूरा रास्ता।',
       lead: 'Rai Family Corp LLP रूसी निर्माताओं को भारत में सीधे वितरण चैनल और मार्केटिंग प्रदान करता है, और आयात, प्रमाणन व लॉजिस्टिक्स का पूरा चक्र संभालता है।',
       ctaPrimary: 'संपर्क करें',
       ctaSecondary: 'दिशाएँ देखें',
-      badge: 'Made in Russia. Trusted by the world',
+      pavilionLink: 'पवेलियन के बारे में',
+      cardTitle:
+        '{count} रूसी {count:कंपनी पहले से पवेलियन में है|कंपनियाँ पहले से पवेलियन में हैं}',
     },
     trust: {
-      operator: 'REC पवेलियन का आधिकारिक ऑपरेटर',
-      pavilion: 'नवी मुंबई में पवेलियन',
-      since: '2024 से कार्यरत',
+      operator: 'Made in Russia पवेलियन ऑपरेटर',
+      pavilion: 'भारत में कार्यक्रम का पहला पवेलियन',
+      since: 'कंपनी 2024 से, पवेलियन अगस्त 2026 से',
       mark: 'Made in Russia चिह्न',
+    },
+    status: {
+      company: 'Rai Family Corp',
+      // Top line for direction sites (D5 and the next ones), where the operator's name is not on the page.
+      direction: 'Rai Family Corp की दिशा',
+      line: 'Made in Russia पवेलियन ऑपरेटर, भारत',
+      lineShort: 'Made in Russia पवेलियन ऑपरेटर',
+      markAlt: 'Made in Russia चिह्न',
     },
     audiences: {
       eyebrow: 'हम किसके साथ काम करते हैं',
@@ -497,7 +537,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       items: {
         manufacturers: {
           title: 'रूसी निर्माता',
-          text: 'आधिकारिक REC पवेलियन के माध्यम से भारतीय बाज़ार में प्रवेश: बाज़ार आकलन, अनुकूलन, प्रमाणन, आयात और वितरण — एक ही अनुबंध में।',
+          text: 'Made in Russia पवेलियन के माध्यम से भारतीय बाज़ार में प्रवेश: बाज़ार आकलन, अनुकूलन, प्रमाणन, आयात और वितरण, एक ही अनुबंध में।',
           cta: 'सेवाएँ देखें',
         },
         distributors: {
@@ -521,14 +561,14 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       eyebrow: 'कंपनी के बारे में',
       title: 'रूसी उत्पादों के लिए भारत का आधिकारिक प्रवेश द्वार',
       paragraphs: [
-        'Rai Family Corp LLP एक भारतीय कंपनी है और भारत में रूसी निर्यात केंद्र पवेलियन का आधिकारिक ऑपरेटर है। पवेलियन वह स्थान है जहाँ रूसी निर्माता भारतीय वितरकों, रिटेल शृंखलाओं और संस्थानों से मिलते हैं।',
+        'Rai Family Corp LLP एक भारतीय कंपनी है और नवी मुंबई में Made in Russia («मेड इन रशिया») राष्ट्रीय पवेलियन की ऑपरेटर है, जो रूसी निर्यात केंद्र की परियोजना है। पवेलियन वह स्थान है जहाँ रूसी निर्माता भारतीय वितरकों, रिटेल शृंखलाओं और संस्थानों से मिलते हैं।',
         'हम सीधे वितरण चैनल और मार्केटिंग प्रचार प्रदान करते हैं और संबंधित सभी कार्य संभालते हैं: बाज़ार अनुसंधान, उत्पाद और पैकेजिंग अनुकूलन, प्रमाणन, आयात प्रक्रियाएँ, कानूनी सहायता और लॉजिस्टिक्स।',
       ],
       facts: [
-        { label: 'स्थिति', value: 'REC पवेलियन का आधिकारिक ऑपरेटर' },
+        { label: 'स्थिति', value: 'Made in Russia राष्ट्रीय पवेलियन का ऑपरेटर' },
         { label: 'स्थापना', value: 'सितंबर 2024' },
         { label: 'पंजीकरण', value: 'भारत, महाराष्ट्र' },
-        { label: 'पवेलियन', value: 'CBD बेलापुर, नवी मुंबई' },
+        { label: 'पवेलियन', value: '21 अगस्त 2026 को खुला, CBD बेलापुर, नवी मुंबई' },
       ],
     },
     services: {
@@ -595,14 +635,15 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       documents: 'दस्तावेज़',
       siteSoon: 'उत्पाद साइट जल्द ही',
       backToContacts: 'ऑपरेटर से संपर्क करें',
-      contactsIntro: 'इस दिशा से जुड़ी पूछताछ ऑपरेटर Rai Family Corp के माध्यम से होती है।',
+      contactsIntro: 'इस दिशा से जुड़ी पूछताछ पवेलियन ऑपरेटर Rai Family Corp के माध्यम से होती है।',
       audiencesLabel: 'किसके लिए',
       otherDirections: 'अन्य दिशाएँ',
     },
     pavilion: {
       eyebrow: 'पवेलियन',
-      title: 'रूसी निर्यात केंद्र पवेलियन, नवी मुंबई',
-      text: 'पवेलियन भारत में रूसी उत्पादों का भौतिक घर है: वितरकों और संस्थानों के लिए शोरूम, टेस्टिंग और B2B बैठकों का स्थल, और ऑपरेटर का कार्यालय।',
+      title: 'Made in Russia राष्ट्रीय पवेलियन, नवी मुंबई',
+      subtitle: 'रूसी निर्यात केंद्र की परियोजना · 21 अगस्त 2026 को खुला · CBD बेलापुर, नवी मुंबई',
+      text: 'भारत में पहला Made in Russia पवेलियन, रूसी निर्यात केंद्र की परियोजना, 21 अगस्त 2026 को खुला। यह देश में रूसी उत्पादों का भौतिक घर है: वितरकों और संस्थानों के लिए शोरूम, टेस्टिंग और B2B बैठकों का स्थल, और ऑपरेटर Rai Family Corp का कार्यालय।',
       addressLabel: 'पता',
       address: [
         'Office No. 1307 and 1308, NMS Titanium, 13th Floor',
@@ -624,7 +665,8 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
     },
     footer: {
       legal: 'Rai Family Corp LLP',
-      operator: 'भारत में रूसी निर्यात केंद्र पवेलियन का आधिकारिक ऑपरेटर',
+      operator:
+        'भारत में Made in Russia राष्ट्रीय पवेलियन का ऑपरेटर, रूसी निर्यात केंद्र की परियोजना',
       rights: 'सर्वाधिकार सुरक्षित।',
       madeInRussia: '“Made in Russia” रूसी निर्यात केंद्र का ट्रेडमार्क है, अनुमति से प्रयुक्त।',
     },
