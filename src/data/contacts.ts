@@ -13,6 +13,8 @@ export const contacts = {
     'Plot No. 74, Sector-15, CBD Belapur',
     'Navi Mumbai, Thane, Maharashtra 400614, India',
   ],
+  /** Official profiles for schema.org sameAs. Ссылка на страницу павильона на сайте РЭЦ / madeinrussia будет добавлена после подтверждения. */
+  sameAs: [] as string[],
   mapUrl:
     'https://www.google.com/maps/search/?api=1&query=NMS+Titanium%2C+Plot+No.+74%2C+Sector-15%2C+CBD+Belapur%2C+Navi+Mumbai%2C+Maharashtra+400614',
 };

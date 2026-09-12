@@ -27,7 +27,7 @@ const og = `<!doctype html><html><head><meta charset="utf-8">
   p{margin:0;font-size:26px;font-weight:600;color:#febda5}
 </style></head><body>
 ${mark}
-<div class="t"><div class="e">Official operator of the REC pavilion in India</div>
+<div class="t"><div class="e">Made in Russia pavilion operator, India</div>
 <h1>Rai Family Corp</h1>
 <p>Russian products in India. One operator, the whole route.</p></div>
 </body></html>`;

@@ -2,6 +2,7 @@
 import { getAbsoluteLocaleUrl } from 'astro:i18n';
 import { contacts } from '@/data/contacts';
 import { LOCALES, OG_LOCALES, type Locale } from '@/i18n/config';
+import { t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
@@ -21,7 +22,9 @@ const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Rai Family Corp LLP',
+  description: t(locale).meta.description,
   url: getAbsoluteLocaleUrl('en', ''),
+  ...(contacts.sameAs.length > 0 ? { sameAs: contacts.sameAs } : {}),
   foundingDate: '2024-09',
   ...(contacts.email ? { email: contacts.email } : {}),
   ...(contacts.phone ? { telephone: contacts.phone.replace(/[^\d+]/g, '') } : {}),
