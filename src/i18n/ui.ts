@@ -30,7 +30,7 @@ interface Copy {
     badge: string;
   };
   trust: { operator: string; pavilion: string; since: string; mark: string };
-  status: { company: string; direction: string; line: string; markAlt: string };
+  status: { company: string; direction: string; line: string; lineShort: string; markAlt: string };
   audiences: {
     eyebrow: string;
     title: string;
@@ -133,6 +133,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       company: 'Rai Family Corp',
       direction: 'A Rai Family Corp direction',
       line: 'Made in Russia pavilion operator, India',
+      lineShort: 'Made in Russia pavilion operator',
       markAlt: 'Made in Russia mark',
     },
     audiences: {
@@ -324,6 +325,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       company: 'Rai Family Corp',
       direction: 'Направление Rai Family Corp',
       line: 'Оператор павильона «Сделано в России» в Индии',
+      lineShort: 'Оператор павильона «Сделано в России»',
       markAlt: 'Знак «Сделано в России»',
     },
     audiences: {
@@ -515,6 +517,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       company: 'Rai Family Corp',
       direction: 'Rai Family Corp की दिशा',
       line: 'Made in Russia पवेलियन ऑपरेटर, भारत',
+      lineShort: 'Made in Russia पवेलियन ऑपरेटर',
       markAlt: 'Made in Russia चिह्न',
     },
     audiences: {

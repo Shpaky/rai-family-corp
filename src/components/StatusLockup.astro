@@ -2,7 +2,13 @@
 /*
   Status device: Rai Family Corp mark + status line + Made in Russia mark.
   The same order, proportions and spacing everywhere; variants differ only in
-  mark size and colour scheme. Never show the line without the marks.
+  mark size and colour scheme.
+
+  Rules: the status line is never shown without the company mark, and the Made
+  in Russia mark is never shown without the status line. The Made in Russia
+  mark is never rendered below 40 px (threshold until the Russian Export Center
+  guide gives a minimum size); `mark={false}` is the only way to fit the device
+  into a narrow spot, and it drops the divider and the mark together.
 */
 import { Image } from 'astro:assets';
 import Logo from '@/components/Logo.astro';
@@ -11,17 +17,27 @@ import { href, t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
-  variant?: 'strip' | 'card' | 'footer' | 'compact';
+  /** card: 56 px marks, two rows; footer / compact: 32 px company mark, 40 px mark, one row. */
+  variant?: 'card' | 'footer' | 'compact';
   /** light = on white or cream, dark = on primary */
   tone?: 'light' | 'dark';
+  /** Top line: the company name, or "a direction of" for direction sites. */
+  topLine?: 'company' | 'direction';
+  /** Show the Made in Russia mark (with its divider). */
+  mark?: boolean;
+  /** Load the mark eagerly (above the fold). */
+  eager?: boolean;
   /** Wrap the company mark in a link to the home page (footer). */
   homeLink?: boolean;
   class?: string;
 }
 const {
   locale,
-  variant = 'strip',
+  variant = 'footer',
   tone = 'light',
+  topLine = variant === 'compact' ? 'direction' : 'company',
+  mark: showMark = true,
+  eager = false,
   homeLink = false,
   class: className = '',
 } = Astro.props;
@@ -32,20 +48,17 @@ const copy = t(locale);
 const marks = import.meta.glob<{ default: ImageMetadata }>('/src/assets/brand/made-in-russia.svg', {
   eager: true,
 });
-const mark = Object.values(marks)[0]?.default;
+const markFile = Object.values(marks)[0]?.default;
 
 const dark = tone === 'dark';
-const size = variant === 'card' ? 'lg' : 'sm';
-const markHeight = size === 'lg' ? 'h-14' : 'h-8';
-const topLine = variant === 'compact' ? copy.status.direction : copy.status.company;
-const lineSize = variant === 'strip' ? 'text-xs' : 'text-sm';
-// The large card variant reflows on narrow screens: marks on the first row, text below.
 const card = variant === 'card';
+const size = card ? 'lg' : 'sm';
+const markHeight = card ? 'h-14' : 'h-10';
+const top = topLine === 'direction' ? copy.status.direction : copy.status.company;
+const line = card ? copy.status.line : copy.status.lineShort;
 ---
 
-<div
-  class:list={['flex items-center gap-3', card && 'flex-wrap gap-y-4 sm:flex-nowrap', className]}
->
+<div class:list={['flex items-center gap-3', card && 'flex-wrap gap-y-4', className]}>
   {
     homeLink ? (
       <a
@@ -59,28 +72,33 @@ const card = variant === 'card';
       <Logo variant="mark" size={size} class={dark ? 'text-white' : 'text-primary'} />
     )
   }
-  <div class:list={['min-w-0', card && 'order-last basis-full sm:order-none sm:basis-auto']}>
-    <p class:list={['eyebrow leading-none', dark ? 'text-brand-sky-light' : 'text-muted']}>
-      {topLine}
-    </p>
-    <p class:list={['mt-0.5 font-bold leading-tight', lineSize, dark ? 'text-white' : 'text-ink']}>
-      {copy.status.line}
+  <div class:list={['min-w-0', card && 'order-last basis-full']}>
+    <p class:list={['eyebrow leading-none', dark ? 'text-brand-sky-light' : 'text-muted']}>{top}</p>
+    <p class:list={['mt-0.5 text-sm font-bold leading-tight', dark ? 'text-white' : 'text-ink']}>
+      {line}
     </p>
   </div>
-  <span
-    class:list={['w-px shrink-0 self-stretch', dark ? 'bg-white/20' : 'bg-line']}
-    aria-hidden="true"></span>
   {
-    mark ? (
-      <Image
-        src={mark}
-        alt={copy.status.markAlt}
-        class:list={['w-auto shrink-0', markHeight, dark && 'rounded-md bg-white p-0.5']}
+    showMark && (
+      <span
+        class:list={['w-px shrink-0 self-stretch', dark ? 'bg-white/20' : 'bg-line']}
+        aria-hidden="true"
       />
-    ) : (
-      <span class:list={['font-extrabold tracking-tight', dark ? 'text-white' : 'text-ink']}>
-        Made in Russia
-      </span>
     )
+  }
+  {
+    showMark &&
+      (markFile ? (
+        <Image
+          src={markFile}
+          alt={copy.status.markAlt}
+          loading={eager ? 'eager' : 'lazy'}
+          class:list={['w-auto shrink-0', markHeight, dark && 'rounded-md bg-white p-0.5']}
+        />
+      ) : (
+        <span class:list={['font-extrabold tracking-tight', dark ? 'text-white' : 'text-ink']}>
+          Made in Russia
+        </span>
+      ))
   }
 </div>
