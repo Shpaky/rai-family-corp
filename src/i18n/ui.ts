@@ -29,6 +29,8 @@ interface Copy {
     ctaSecondary: string;
     badge: string;
     pavilionLink: string;
+    /** Template; {count} = company.pavilionResidents, see withCount(). */
+    cardTitle: string;
   };
   trust: { operator: string; pavilion: string; since: string; mark: string };
   status: { company: string; direction: string; line: string; lineShort: string; markAlt: string };
@@ -124,6 +126,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       ctaSecondary: 'Explore directions',
       badge: 'Made in Russia. Trusted by the world',
       pavilionLink: 'About the pavilion',
+      cardTitle: '{count} Russian {count:company is|companies are} already in the pavilion',
     },
     trust: {
       operator: 'Made in Russia pavilion operator',
@@ -318,6 +321,8 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       ctaSecondary: 'Смотреть направления',
       badge: 'Сделано в России. Качество, которому доверяют',
       pavilionLink: 'О павильоне',
+      cardTitle:
+        '{count} {count:российская компания уже|российские компании уже|российских компаний уже} в павильоне',
     },
     trust: {
       operator: 'Оператор павильона «Сделано в России»',
@@ -512,6 +517,8 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       ctaSecondary: 'दिशाएँ देखें',
       badge: 'Made in Russia. Trusted by the world',
       pavilionLink: 'पवेलियन के बारे में',
+      cardTitle:
+        '{count} रूसी {count:कंपनी पहले से पवेलियन में है|कंपनियाँ पहले से पवेलियन में हैं}',
     },
     trust: {
       operator: 'Made in Russia पवेलियन ऑपरेटर',
