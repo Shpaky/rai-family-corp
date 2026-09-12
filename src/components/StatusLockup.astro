@@ -17,7 +17,7 @@ import { href, t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
-  /** card: 56 px marks, two rows; footer / compact: 32 px company mark, 40 px mark, one row. */
+  /** card: 56 px marks, one row from `sm` (text wraps below the marks on phones); footer / compact: 32 px company mark, 40 px mark, one row. */
   variant?: 'card' | 'footer' | 'compact';
   /** light = on white or cream, dark = on primary */
   tone?: 'light' | 'dark';
@@ -58,7 +58,9 @@ const top = topLine === 'direction' ? copy.status.direction : copy.status.compan
 const line = card ? copy.status.line : copy.status.lineShort;
 ---
 
-<div class:list={['flex items-center gap-3', card && 'flex-wrap gap-y-4', className]}>
+<div
+  class:list={['flex items-center gap-3', card && 'flex-wrap gap-y-4 sm:flex-nowrap', className]}
+>
   {
     homeLink ? (
       <a
@@ -72,7 +74,7 @@ const line = card ? copy.status.line : copy.status.lineShort;
       <Logo variant="mark" size={size} class={dark ? 'text-white' : 'text-primary'} />
     )
   }
-  <div class:list={['min-w-0', card && 'order-last basis-full']}>
+  <div class:list={['min-w-0', card && 'order-last basis-full sm:order-none sm:basis-auto']}>
     <p class:list={['eyebrow leading-none', dark ? 'text-brand-sky-light' : 'text-muted']}>{top}</p>
     <p class:list={['mt-0.5 text-sm font-bold leading-tight', dark ? 'text-white' : 'text-ink']}>
       {line}

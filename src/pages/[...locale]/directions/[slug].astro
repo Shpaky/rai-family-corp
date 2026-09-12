@@ -145,7 +145,12 @@ const title = `${text.title} — Rai Family Corp`;
               ))
             }
           </ul>
-          <StatusLockup locale={locale} variant="compact" class="mt-6 border-t border-line pt-6" />
+          <StatusLockup
+            locale={locale}
+            variant="compact"
+            topLine="direction"
+            class="mt-6 border-t border-line pt-6"
+          />
           <p class="mt-4 text-base text-ink-soft">{copy.directions.contactsIntro}</p>
           <Button href="#contacts" variant="secondary" class="mt-4 w-full">
             {copy.directions.backToContacts}
