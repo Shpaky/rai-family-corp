@@ -71,10 +71,10 @@ const lockup = (locale) => `<!doctype html><html lang="${locale}"><head><meta ch
   .e{font-size:13px;line-height:1;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#5a6084}
   .s{margin-top:2px;font-size:14px;line-height:1.25;font-weight:700;white-space:nowrap}
   .d{width:1px;align-self:stretch;background:#dfe3f0}
-  img{height:32px;width:auto;display:block}
+  img{height:40px;width:auto;display:block}
   .f{font-weight:800;letter-spacing:-.02em}
 </style></head><body><div class="l" id="l">${markSmall}
-<div class="t"><p class="e">${ui[locale].status.company}</p><p class="s">${ui[locale].status.line}</p></div>
+<div class="t"><p class="e">${ui[locale].status.company}</p><p class="s">${ui[locale].status.lineShort}</p></div>
 <span class="d"></span>${mirData ? `<img src="${mirData}" alt="${ui[locale].status.markAlt}">` : '<span class="f">Made in Russia</span>'}
 </div></body></html>`;
 
