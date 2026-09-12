@@ -47,8 +47,25 @@ const trust = [copy.trust.operator, copy.trust.pavilion, copy.trust.since, copy.
           <circle cx="32" cy="32" r="14" stroke-width="1"></circle>
         </svg>
         <StatusLockup locale={locale} variant="card" tone="dark" eager class="relative" />
-        <p class="relative mt-8 text-h3 font-extrabold text-balance">{copy.pavilion.title}</p>
-        <p class="relative mt-2 text-sm text-white/80">{copy.pavilion.subtitle}</p>
+        <p class="relative mt-8 text-sm text-white/80">{copy.pavilion.subtitle}</p>
+        <a
+          href={`${home}#pavilion`}
+          class="relative mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-brand-sky-light underline-offset-4 hover:underline"
+        >
+          {copy.hero.pavilionLink}
+          <svg
+            class="size-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6"></path>
+          </svg>
+        </a>
         <p
           class="relative mt-8 inline-flex items-center gap-2 rounded-pill bg-white/10 px-4 py-2 text-sm font-semibold"
         >

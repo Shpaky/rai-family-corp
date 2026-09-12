@@ -28,6 +28,7 @@ interface Copy {
     ctaPrimary: string;
     ctaSecondary: string;
     badge: string;
+    pavilionLink: string;
   };
   trust: { operator: string; pavilion: string; since: string; mark: string };
   status: { company: string; direction: string; line: string; lineShort: string; markAlt: string };
@@ -122,6 +123,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       ctaPrimary: 'Contact us',
       ctaSecondary: 'Explore directions',
       badge: 'Made in Russia. Trusted by the world',
+      pavilionLink: 'About the pavilion',
     },
     trust: {
       operator: 'Made in Russia pavilion operator',
@@ -315,6 +317,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       ctaPrimary: 'Связаться',
       ctaSecondary: 'Смотреть направления',
       badge: 'Сделано в России. Качество, которому доверяют',
+      pavilionLink: 'О павильоне',
     },
     trust: {
       operator: 'Оператор павильона «Сделано в России»',
@@ -508,6 +511,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       ctaPrimary: 'संपर्क करें',
       ctaSecondary: 'दिशाएँ देखें',
       badge: 'Made in Russia. Trusted by the world',
+      pavilionLink: 'पवेलियन के बारे में',
     },
     trust: {
       operator: 'Made in Russia पवेलियन ऑपरेटर',
