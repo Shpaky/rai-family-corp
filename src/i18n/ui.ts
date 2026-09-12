@@ -116,7 +116,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       footerLanguage: 'Language, footer',
     },
     hero: {
-      eyebrow: 'Made in Russia pavilion operator, India',
+      eyebrow: 'Rai Family Corp LLP · Navi Mumbai',
       title: 'Russian products in India. One operator, the whole route.',
       lead: 'Rai Family Corp LLP gives Russian manufacturers direct distribution channels and marketing in India, and handles the full cycle of import, certification and logistics.',
       ctaPrimary: 'Contact us',
@@ -309,7 +309,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       footerLanguage: 'Язык, подвал',
     },
     hero: {
-      eyebrow: 'Оператор павильона «Сделано в России» в Индии',
+      eyebrow: 'Rai Family Corp LLP · Нави-Мумбаи',
       title: 'Российские товары в Индии. Один оператор, весь путь.',
       lead: 'Rai Family Corp LLP даёт российским производителям прямые каналы дистрибуции и маркетинговое продвижение в Индии и берёт на себя полный цикл импорта, сертификации и логистики.',
       ctaPrimary: 'Связаться',
@@ -502,7 +502,7 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       footerLanguage: 'भाषा, फ़ुटर',
     },
     hero: {
-      eyebrow: 'Made in Russia पवेलियन ऑपरेटर, भारत',
+      eyebrow: 'Rai Family Corp LLP · नवी मुंबई',
       title: 'भारत में रूसी उत्पाद। एक ऑपरेटर, पूरा रास्ता।',
       lead: 'Rai Family Corp LLP रूसी निर्माताओं को भारत में सीधे वितरण चैनल और मार्केटिंग प्रदान करता है, और आयात, प्रमाणन व लॉजिस्टिक्स का पूरा चक्र संभालता है।',
       ctaPrimary: 'संपर्क करें',
