@@ -1,5 +1,5 @@
 ---
-import Logo from '@/components/Logo.astro';
+import StatusLockup from '@/components/StatusLockup.astro';
 import { LOCALES, LOCALE_LABELS, type Locale } from '@/i18n/config';
 import { href, t } from '@/i18n/utils';
 
@@ -23,10 +23,8 @@ const links = [
 <footer class="border-t border-line bg-white">
   <div class="container-page grid gap-10 py-12 md:grid-cols-12">
     <div class="md:col-span-5">
-      <a href={home} class="inline-block text-primary" aria-label={copy.nav.home}>
-        <Logo size="md" />
-      </a>
-      <p class="mt-4 max-w-sm text-sm leading-relaxed text-ink-soft">{copy.footer.operator}</p>
+      <StatusLockup locale={locale} variant="footer" homeLink />
+      <p class="mt-4 max-w-sm text-xs leading-relaxed text-muted">{copy.footer.operator}</p>
     </div>
     <nav aria-label={copy.nav.footerMenu} class="md:col-span-4">
       <ul class="grid grid-cols-2 gap-x-6 gap-y-2">
