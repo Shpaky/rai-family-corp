@@ -39,9 +39,13 @@ const size = variant === 'card' ? 'lg' : 'sm';
 const markHeight = size === 'lg' ? 'h-14' : 'h-8';
 const topLine = variant === 'compact' ? copy.status.direction : copy.status.company;
 const lineSize = variant === 'strip' ? 'text-xs' : 'text-sm';
+// The large card variant reflows on narrow screens: marks on the first row, text below.
+const card = variant === 'card';
 ---
 
-<div class:list={['flex items-center gap-3', className]}>
+<div
+  class:list={['flex items-center gap-3', card && 'flex-wrap gap-y-4 sm:flex-nowrap', className]}
+>
   {
     homeLink ? (
       <a
@@ -55,7 +59,7 @@ const lineSize = variant === 'strip' ? 'text-xs' : 'text-sm';
       <Logo variant="mark" size={size} class={dark ? 'text-white' : 'text-primary'} />
     )
   }
-  <div class="min-w-0">
+  <div class:list={['min-w-0', card && 'order-last basis-full sm:order-none sm:basis-auto']}>
     <p class:list={['eyebrow leading-none', dark ? 'text-brand-sky-light' : 'text-muted']}>
       {topLine}
     </p>

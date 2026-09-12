@@ -1,6 +1,6 @@
 ---
 import Button from '@/components/Button.astro';
-import Logo from '@/components/Logo.astro';
+import StatusLockup from '@/components/StatusLockup.astro';
 import type { Locale } from '@/i18n/config';
 import { href, t } from '@/i18n/utils';
 
@@ -46,14 +46,9 @@ const trust = [copy.trust.operator, copy.trust.pavilion, copy.trust.since, copy.
           <circle cx="32" cy="32" r="22" stroke-width="1"></circle>
           <circle cx="32" cy="32" r="14" stroke-width="1"></circle>
         </svg>
-        <Logo variant="mark" size="lg" class="relative text-white" />
-        <p
-          class="relative mt-8 text-eyebrow font-bold tracking-widest text-brand-sky-light uppercase"
-        >
-          {copy.trust.operator}
-        </p>
-        <p class="relative mt-3 text-h3 font-extrabold text-balance">{copy.pavilion.title}</p>
-        <p class="relative mt-2 text-sm text-white/80">{copy.about.facts[3].value}</p>
+        <StatusLockup locale={locale} variant="card" tone="dark" class="relative" />
+        <p class="relative mt-8 text-h3 font-extrabold text-balance">{copy.pavilion.title}</p>
+        <p class="relative mt-2 text-sm text-white/80">{copy.pavilion.subtitle}</p>
         <p
           class="relative mt-8 inline-flex items-center gap-2 rounded-pill bg-white/10 px-4 py-2 text-sm font-semibold"
         >
