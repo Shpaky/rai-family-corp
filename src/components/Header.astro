@@ -1,6 +1,5 @@
 ---
 import Logo from '@/components/Logo.astro';
-import StatusLockup from '@/components/StatusLockup.astro';
 import { LOCALES, LOCALE_LABELS, type Locale } from '@/i18n/config';
 import { href, t } from '@/i18n/utils';
 
@@ -20,11 +19,6 @@ const links = [
 ];
 ---
 
-<aside class="hidden border-b border-line bg-surface md:block" aria-label={copy.status.line}>
-  <div class="container-page flex h-10 items-center">
-    <StatusLockup locale={locale} variant="strip" />
-  </div>
-</aside>
 <header class="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
   <div class="container-page flex h-18 items-center justify-between gap-6">
     <a href={home} class="text-primary" aria-label={copy.nav.home}>
