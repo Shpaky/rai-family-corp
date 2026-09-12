@@ -27,7 +27,6 @@ interface Copy {
     lead: string;
     ctaPrimary: string;
     ctaSecondary: string;
-    badge: string;
     pavilionLink: string;
     /** Template; {count} = company.pavilionResidents, see withCount(). */
     cardTitle: string;
@@ -124,7 +123,6 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       lead: 'Rai Family Corp LLP gives Russian manufacturers direct distribution channels and marketing in India, and handles the full cycle of import, certification and logistics.',
       ctaPrimary: 'Contact us',
       ctaSecondary: 'Explore directions',
-      badge: 'Made in Russia. Trusted by the world',
       pavilionLink: 'About the pavilion',
       cardTitle: '{count} Russian {count:company is|companies are} already in the pavilion',
     },
@@ -319,7 +317,6 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       lead: 'Rai Family Corp LLP даёт российским производителям прямые каналы дистрибуции и маркетинговое продвижение в Индии и берёт на себя полный цикл импорта, сертификации и логистики.',
       ctaPrimary: 'Связаться',
       ctaSecondary: 'Смотреть направления',
-      badge: 'Сделано в России. Качество, которому доверяют',
       pavilionLink: 'О павильоне',
       cardTitle:
         '{count} {count:российская компания уже|российские компании уже|российских компаний уже} в павильоне',
@@ -515,7 +512,6 @@ export const ui: Record<'en' | 'ru' | 'hi', Copy> = {
       lead: 'Rai Family Corp LLP रूसी निर्माताओं को भारत में सीधे वितरण चैनल और मार्केटिंग प्रदान करता है, और आयात, प्रमाणन व लॉजिस्टिक्स का पूरा चक्र संभालता है।',
       ctaPrimary: 'संपर्क करें',
       ctaSecondary: 'दिशाएँ देखें',
-      badge: 'Made in Russia. Trusted by the world',
       pavilionLink: 'पवेलियन के बारे में',
       cardTitle:
         '{count} रूसी {count:कंपनी पहले से पवेलियन में है|कंपनियाँ पहले से पवेलियन में हैं}',
