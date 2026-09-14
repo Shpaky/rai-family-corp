@@ -6,12 +6,12 @@
   about.facts, footer.operator).
 */
 export const company = {
-  /** Opening date of the Made in Russia national pavilion in Navi Mumbai. Подтвердить у РЭЦ. */
+  /** Opening date of the Made in Russia National Pavilion in Navi Mumbai. Подтвердить у РЭЦ. */
   pavilionOpened: '2026-08-21',
   /** Whether it is the first pavilion of the programme in India. Подтвердить у РЭЦ. */
   firstInIndia: true,
   /** Official English name of the pavilion. Подтвердить у РЭЦ. */
-  officialPavilionName: 'Made in Russia national pavilion',
+  officialPavilionName: 'Made in Russia National Pavilion',
   /** Russian companies present in the pavilion. Open sources, checked 2026-09-12; update the date when the number changes. */
   pavilionResidents: 37,
   pavilionResidentsCheckedOn: '2026-09-12',
