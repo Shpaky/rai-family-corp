@@ -27,7 +27,9 @@ tailwind, eslint/prettier с astro-плагинами, playwright + axe, lhci).
 - Семантический HTML. Каждая интерактивная сущность доступна с клавиатуры.
   Компилятор Astro 7 строгий: все не-void теги закрываются.
 - Все анимации отключаются при prefers-reduced-motion
-- Изображения только через `<Image />`/`<Picture />` из astro:assets, avif/webp
+- Изображения только через `<Image />`/`<Picture />` из astro:assets, avif/webp.
+  Фото павильона лежат в `src/assets/pavilion/`, подписи и alt — в `ui.ts` (`pavilion.photos`).
+  Сырые файлы от заказчика — в `photos/` (в .gitignore), в ассеты копируются с понятными именами.
 
 ## Контент и i18n
 

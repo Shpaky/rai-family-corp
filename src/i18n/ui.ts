@@ -2,6 +2,11 @@
   All site copy. EN is the source; RU is the translation.
 */
 export type AudienceKey = 'manufacturers' | 'distributors' | 'institutions' | 'consumers';
+interface Photo {
+  alt: string;
+  caption: string;
+}
+
 export type PillarKey = 'intelligence' | 'product' | 'development' | 'compliance';
 
 interface Copy {
@@ -78,6 +83,8 @@ interface Copy {
     addressLabel: string;
     address: string[];
     map: string;
+    /** Photo captions; `alt` describes the picture, `caption` names the role of the space. */
+    photos: { showroom: Photo; shelves: Photo; stage: Photo };
   };
   contacts: {
     eyebrow: string;
@@ -262,6 +269,20 @@ export const ui: Record<'en' | 'ru', Copy> = {
         'Navi Mumbai, Thane, Maharashtra 400614, India',
       ],
       map: 'Open in Google Maps',
+      photos: {
+        showroom: {
+          alt: 'Showroom of the «Made in Russia» pavilion: shelves with Russian products, a round table and a lectern with the mark',
+          caption: 'Showroom',
+        },
+        shelves: {
+          alt: 'A long wall of shelves with cosmetics, sweets and groceries from Russian manufacturers',
+          caption: 'Shelves of the residents',
+        },
+        stage: {
+          alt: 'Lectern with the «Made in Russia» mark in front of the pavilion backdrop, product shelves on the left',
+          caption: 'Venue for meetings and tastings',
+        },
+      },
     },
     contacts: {
       eyebrow: 'Contacts',
@@ -457,6 +478,20 @@ export const ui: Record<'en' | 'ru', Copy> = {
         'Navi Mumbai, Thane, Maharashtra 400614, India',
       ],
       map: 'Открыть в Google Maps',
+      photos: {
+        showroom: {
+          alt: 'Шоурум павильона «Сделано в России»: полки с российскими товарами, круглый стол и трибуна со знаком',
+          caption: 'Шоурум',
+        },
+        shelves: {
+          alt: 'Длинная стена полок с косметикой, сладостями и бакалеей российских производителей',
+          caption: 'Полки резидентов',
+        },
+        stage: {
+          alt: 'Трибуна со знаком «Сделано в России» на фоне пресс-волла павильона, слева полки с продуктами',
+          caption: 'Площадка для встреч и дегустаций',
+        },
+      },
     },
     contacts: {
       eyebrow: 'Контакты',
