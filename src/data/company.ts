@@ -12,7 +12,7 @@ export const company = {
   firstInIndia: true,
   /** Official English name of the pavilion. Подтвердить у РЭЦ. */
   officialPavilionName: 'Made in Russia National Pavilion',
-  /** Russian companies present in the pavilion. Open sources, checked 2026-09-12; update the date when the number changes. */
-  pavilionResidents: 37,
-  pavilionResidentsCheckedOn: '2026-09-12',
+  /** Russian companies present in the pavilion. Open sources, checked 2026-09-14; update the date when the number changes. */
+  pavilionResidents: 52,
+  pavilionResidentsCheckedOn: '2026-09-14',
 } as const;
