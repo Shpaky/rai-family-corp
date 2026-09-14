@@ -117,8 +117,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
       footerLanguage: 'Language, footer',
     },
     hero: {
-      eyebrow: 'Rai Family Corp LLP · Navi Mumbai',
-      title: 'Russian products in India. One operator, the whole route.',
+      eyebrow: 'Rai Family Corp LLP · India',
+      title: 'Russian products and technologies for India. One operator, the whole route.',
       lead: 'Rai Family Corp LLP gives Russian manufacturers direct distribution channels and marketing in India, and handles the full cycle of import, certification and logistics.',
       ctaPrimary: 'Contact us',
       ctaSecondary: 'Explore directions',
@@ -168,13 +168,13 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     about: {
       eyebrow: 'About the company',
-      title: 'The official gateway for Russian products into India',
+      title: 'The official gateway for Russian products and technologies into India',
       paragraphs: [
         'Rai Family Corp LLP is an Indian company and the operator of the Made in Russia national pavilion in Navi Mumbai, a Russian Export Center project. The pavilion is where Russian manufacturers meet Indian distributors, retail chains and institutions.',
         'We provide direct distribution channels and marketing promotion, and cover the full range of related work: market research, product and packaging adaptation, certification, import procedures, legal support and logistics.',
       ],
       facts: [
-        { label: 'Status', value: 'Made in Russia national pavilion operator' },
+        { label: 'Status', value: 'Made in Russia National Pavilion operator' },
         { label: 'Founded', value: 'September 2024' },
         { label: 'Registered', value: 'India, Maharashtra' },
         { label: 'Pavilion', value: 'Opened 21 August 2026, CBD Belapur, Navi Mumbai' },
@@ -227,7 +227,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     directions: {
       eyebrow: 'Directions',
-      title: 'Products we bring to India',
+      title: 'Products and technologies we bring to India',
       lead: 'Each direction is a Russian brand or product line with its own presentation. The portfolio grows in stages.',
       more: 'Learn more',
       all: 'All directions',
@@ -311,8 +311,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
       footerLanguage: 'Язык, подвал',
     },
     hero: {
-      eyebrow: 'Rai Family Corp LLP · Нави-Мумбаи',
-      title: 'Российские товары в Индии. Один оператор, весь путь.',
+      eyebrow: 'Rai Family Corp LLP · Индия',
+      title: 'Российские товары и технологии для Индии. Один оператор, весь путь.',
       lead: 'Rai Family Corp LLP даёт российским производителям прямые каналы дистрибуции и маркетинговое продвижение в Индии и берёт на себя полный цикл импорта, сертификации и логистики.',
       ctaPrimary: 'Связаться',
       ctaSecondary: 'Смотреть направления',
@@ -363,13 +363,13 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     about: {
       eyebrow: 'О компании',
-      title: 'Официальные ворота для российских товаров в Индию',
+      title: 'Официальные ворота для российских товаров и технологий в Индию',
       paragraphs: [
         'Rai Family Corp LLP: индийская компания, оператор национального павильона «Сделано в России» в Нави-Мумбаи, проекта Российского экспортного центра. Павильон: точка, где российские производители встречаются с индийскими дистрибьюторами, торговыми сетями и институтами.',
         'Мы предоставляем прямые каналы дистрибуции и маркетинговое продвижение и закрываем весь спектр связанных задач: исследование рынка, адаптацию продукта и упаковки, сертификацию, импортные процедуры, юридическое сопровождение и логистику.',
       ],
       facts: [
-        { label: 'Статус', value: 'Оператор национального павильона «Сделано в России»' },
+        { label: 'Статус', value: 'Оператор Национального Павильона «Сделано в России»' },
         { label: 'Основана', value: 'Сентябрь 2024' },
         { label: 'Регистрация', value: 'Индия, Махараштра' },
         { label: 'Павильон', value: 'Открыт 21 августа 2026, CBD Belapur, Нави-Мумбаи' },
@@ -422,7 +422,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     directions: {
       eyebrow: 'Направления',
-      title: 'Товары, которые мы привозим в Индию',
+      title: 'Товары и технологии, которые мы привозим в Индию',
       lead: 'Каждое направление — это российский бренд или линейка со своей презентацией. Портфель растёт поэтапно.',
       more: 'Подробнее',
       all: 'Все направления',
