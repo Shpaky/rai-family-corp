@@ -36,7 +36,7 @@
   --color-focus: var(--color-brand-azure);
 
   /* Typography — fonts come from Astro's Fonts API (see astro.config.mjs) */
-  --font-sans: var(--font-montserrat), var(--font-devanagari), Arial, sans-serif;
+  --font-sans: var(--font-montserrat), Arial, sans-serif;
 
   --text-display: 3.25rem;
   --text-display--line-height: 1.05;

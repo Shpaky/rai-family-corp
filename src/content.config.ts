@@ -39,7 +39,7 @@ const directions = defineCollection({
     audiences: z.array(z.enum(['distributors', 'institutions', 'manufacturers', 'consumers'])),
     site: z.url().nullable().default(null),
     documents: z.array(document).default([]),
-    i18n: z.object({ en: localized, ru: localized, hi: localized }),
+    i18n: z.object({ en: localized, ru: localized }),
   }),
 });
 

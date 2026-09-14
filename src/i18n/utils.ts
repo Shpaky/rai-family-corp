@@ -1,5 +1,5 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import { DEFAULT_LOCALE, isLocale, type Locale } from './config';
+import { DEFAULT_LOCALE, LOCALES, isLocale, type Locale } from './config';
 import { ui } from './ui';
 
 /** Locale from a `[...locale]` rest param (undefined → default). */
@@ -11,7 +11,7 @@ export function localeFromParam(param: string | undefined): Locale {
 
 /** Static path entries for `[...locale]` routes. */
 export function localePaths<T extends Record<string, unknown>>(extra: T = {} as T) {
-  return (['en', 'ru', 'hi'] as const).map((locale) => ({
+  return LOCALES.map((locale) => ({
     params: { locale: locale === DEFAULT_LOCALE ? undefined : locale, ...extra },
     props: { locale },
   }));
@@ -37,8 +37,7 @@ export function siteHref(site: string, locale: Locale): string {
 
 /**
  * Fills `{count}` and plural placeholders `{count:one|few|many}` in a template.
- * Forms follow Intl.PluralRules for the locale: EN needs `one|other`,
- * RU `one|few|many`, HI `one|other`.
+ * Forms follow Intl.PluralRules for the locale: EN needs `one|other`, RU `one|few|many`.
  */
 export function withCount(template: string, count: number, locale: Locale): string {
   const category = new Intl.PluralRules(locale).select(count);
