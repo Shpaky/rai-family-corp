@@ -98,9 +98,9 @@ export const ui: Record<'en' | 'ru', Copy> = {
   en: {
     meta: {
       siteName: 'Rai Family Corp',
-      title: 'Rai Family Corp: operator of the Made in Russia National Pavilion in India',
+      title: 'Rai Family Corp: operator of the «Made in Russia» National Pavilion in India',
       description:
-        'Rai Family Corp LLP is the operator of the Made in Russia National Pavilion in Navi Mumbai, a Russian Export Center project and the first in India. Distribution, marketing, import, certification and logistics for Russian products.',
+        'Rai Family Corp LLP is the operator of the «Made in Russia» National Pavilion in Navi Mumbai, a Russian Export Center project and the first in India. Distribution, marketing, import, certification and logistics for Russian products.',
     },
     nav: {
       about: 'About',
@@ -126,17 +126,17 @@ export const ui: Record<'en' | 'ru', Copy> = {
       cardTitle: '{count} Russian {count:company is|companies are} already in the pavilion',
     },
     trust: {
-      operator: 'Made in Russia pavilion operator',
+      operator: '«Made in Russia» pavilion operator',
       pavilion: 'First pavilion of the programme in India',
       since: 'Company since 2024, pavilion since August 2026',
-      mark: 'Made in Russia mark',
+      mark: '«Made in Russia» mark',
     },
     status: {
       company: 'Rai Family Corp',
       // Top line for direction sites (D5 and the next ones), where the operator's name is not on the page.
       direction: 'A Rai Family Corp direction',
-      line: 'Made in Russia pavilion operator, India',
-      lineShort: 'Made in Russia pavilion operator',
+      line: '«Made in Russia» pavilion operator, India',
+      lineShort: '«Made in Russia» pavilion operator',
       markAlt: 'Made in Russia mark',
     },
     audiences: {
@@ -146,7 +146,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
       items: {
         manufacturers: {
           title: 'Russian manufacturers',
-          text: 'Enter the Indian market through the Made in Russia pavilion: market assessment, adaptation, certification, import and distribution under one contract.',
+          text: 'Enter the Indian market through the «Made in Russia» pavilion: market assessment, adaptation, certification, import and distribution under one contract.',
           cta: 'See services',
         },
         distributors: {
@@ -161,7 +161,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
         },
         consumers: {
           title: 'Consumers in India',
-          text: 'Products carrying the Made in Russia mark are imported, certified and distributed in India through this pavilion.',
+          text: 'Products carrying the «Made in Russia» mark are imported, certified and distributed in India through this pavilion.',
           cta: 'Browse products',
         },
       },
@@ -170,11 +170,11 @@ export const ui: Record<'en' | 'ru', Copy> = {
       eyebrow: 'About the company',
       title: 'The official gateway for Russian products and technologies into India',
       paragraphs: [
-        'Rai Family Corp LLP is an Indian company and the operator of the Made in Russia National Pavilion in Navi Mumbai, a Russian Export Center project. The pavilion is where Russian manufacturers meet Indian distributors, retail chains and institutions.',
+        'Rai Family Corp LLP is an Indian company and the operator of the «Made in Russia» National Pavilion in Navi Mumbai, a Russian Export Center project. The pavilion is where Russian manufacturers meet Indian distributors, retail chains and institutions.',
         'We provide direct distribution channels and marketing promotion, and cover the full range of related work: market research, product and packaging adaptation, certification, import procedures, legal support and logistics.',
       ],
       facts: [
-        { label: 'Status', value: 'Made in Russia National Pavilion operator' },
+        { label: 'Status', value: '«Made in Russia» National Pavilion operator' },
         { label: 'Founded', value: 'September 2024' },
         { label: 'Registered', value: 'India, Maharashtra' },
         { label: 'Pavilion', value: 'Opened 21 August 2026, CBD Belapur, Navi Mumbai' },
@@ -251,10 +251,10 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     pavilion: {
       eyebrow: 'Pavilion',
-      title: 'Made in Russia National Pavilion, Navi Mumbai',
+      title: '«Made in Russia» National Pavilion, Navi Mumbai',
       subtitle:
         'A Russian Export Center project · opened 21 August 2026 · CBD Belapur, Navi Mumbai',
-      text: 'The first Made in Russia pavilion in India, a Russian Export Center project opened on 21 August 2026. It is the physical home of Russian products in the country: a showroom for distributors and institutions, a venue for tastings and B2B meetings, and the office of the operator, Rai Family Corp.',
+      text: 'The first «Made in Russia» pavilion in India, a Russian Export Center project opened on 21 August 2026. It is the physical home of Russian products in the country: a showroom for distributors and institutions, a venue for tastings and B2B meetings, and the office of the operator, Rai Family Corp.',
       addressLabel: 'Address',
       address: [
         'Office No. 1307 and 1308, NMS Titanium, 13th Floor',
@@ -277,10 +277,10 @@ export const ui: Record<'en' | 'ru', Copy> = {
     footer: {
       legal: 'Rai Family Corp LLP',
       operator:
-        'Operator of the Made in Russia National Pavilion in India, a Russian Export Center project',
+        'Operator of the «Made in Russia» National Pavilion in India, a Russian Export Center project',
       rights: 'All rights reserved.',
       madeInRussia:
-        '“Made in Russia” is a trademark of the Russian Export Center, used with permission.',
+        '«Made in Russia» is a trademark of the Russian Export Center, used with permission.',
     },
     notFound: {
       title: 'Page not found',

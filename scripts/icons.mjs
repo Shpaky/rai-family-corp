@@ -31,7 +31,7 @@ const og = `<!doctype html><html><head><meta charset="utf-8">
   p{margin:0;font-size:26px;font-weight:600;color:#febda5}
 </style></head><body>
 ${mark}
-<div class="t"><div class="e">Made in Russia pavilion operator, India</div>
+<div class="t"><div class="e">«Made in Russia» pavilion operator, India</div>
 <h1>Rai Family Corp</h1>
 <p>Russian products in India. One operator, the whole route.</p></div>
 </body></html>`;
@@ -75,7 +75,7 @@ const lockup = (locale) => `<!doctype html><html lang="${locale}"><head><meta ch
   .f{font-weight:800;letter-spacing:-.02em}
 </style></head><body><div class="l" id="l">${markSmall}
 <div class="t"><p class="e">${ui[locale].status.company}</p><p class="s">${ui[locale].status.lineShort}</p></div>
-<span class="d"></span>${mirData ? `<img src="${mirData}" alt="${ui[locale].status.markAlt}">` : '<span class="f">Made in Russia</span>'}
+<span class="d"></span>${mirData ? `<img src="${mirData}" alt="${ui[locale].status.markAlt}">` : '<span class="f">«Made in Russia»</span>'}
 </div></body></html>`;
 
 mkdirSync(join(ROOT, 'public/brand'), { recursive: true });

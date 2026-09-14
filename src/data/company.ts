@@ -11,7 +11,7 @@ export const company = {
   /** Whether it is the first pavilion of the programme in India. Подтвердить у РЭЦ. */
   firstInIndia: true,
   /** Official English name of the pavilion. Подтвердить у РЭЦ. */
-  officialPavilionName: 'Made in Russia National Pavilion',
+  officialPavilionName: '«Made in Russia» National Pavilion',
   /** Russian companies present in the pavilion. Open sources, checked 2026-09-14; update the date when the number changes. */
   pavilionResidents: 52,
   pavilionResidentsCheckedOn: '2026-09-14',
