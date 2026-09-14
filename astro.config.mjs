@@ -16,14 +16,14 @@ export default defineConfig({
   compressHTML: true,
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ru', 'hi'],
+    locales: ['en', 'ru'],
     routing: { prefixDefaultLocale: false },
   },
   integrations: [
     sitemap({
       i18n: {
         defaultLocale: 'en',
-        locales: { en: 'en', ru: 'ru', hi: 'hi' },
+        locales: { en: 'en', ru: 'ru' },
       },
     }),
   ],
@@ -36,15 +36,6 @@ export default defineConfig({
       styles: ['normal'],
       subsets: ['latin', 'cyrillic'],
       fallbacks: ['Arial', 'sans-serif'],
-    },
-    {
-      provider: fontProviders.google(),
-      name: 'Noto Sans Devanagari',
-      cssVariable: '--font-devanagari',
-      weights: ['400 800'],
-      styles: ['normal'],
-      subsets: ['devanagari'],
-      fallbacks: ['sans-serif'],
     },
   ],
   vite: {

@@ -1,5 +1,5 @@
 // One-off generator for raster brand files: apple-touch-icon.png (180×180),
-// og.png (1200×630) and public/brand/status-lockup-{en,ru,hi}.png (1200 px wide,
+// og.png (1200×630) and public/brand/status-lockup-{en,ru}.png (1200 px wide,
 // for e-mail signatures, WhatsApp Business and presentations). Renders HTML with
 // Playwright so the real Montserrat is used. Not part of CI; re-run after
 // changing the mark or the status strings: `node scripts/icons.mjs`.
@@ -31,7 +31,7 @@ const og = `<!doctype html><html><head><meta charset="utf-8">
   p{margin:0;font-size:26px;font-weight:600;color:#febda5}
 </style></head><body>
 ${mark}
-<div class="t"><div class="e">Made in Russia pavilion operator, India</div>
+<div class="t"><div class="e">«Made in Russia» pavilion operator, India</div>
 <h1>Rai Family Corp</h1>
 <p>Russian products in India. One operator, the whole route.</p></div>
 </body></html>`;
@@ -63,9 +63,9 @@ const markSmall = `
   <circle cx="50" cy="50" r="7" fill="#fb0731"/>
 </svg>`;
 const lockup = (locale) => `<!doctype html><html lang="${locale}"><head><meta charset="utf-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Sans+Devanagari:wght@700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap">
 <style>
-  body{margin:0;background:#ffffff;font-family:Montserrat,'Noto Sans Devanagari',Arial,sans-serif;color:#0b1240}
+  body{margin:0;background:#ffffff;font-family:Montserrat,Arial,sans-serif;color:#0b1240}
   .l{display:inline-flex;align-items:center;gap:12px;padding:16px 20px}
   .t p{margin:0}
   .e{font-size:13px;line-height:1;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#5a6084}
@@ -75,12 +75,12 @@ const lockup = (locale) => `<!doctype html><html lang="${locale}"><head><meta ch
   .f{font-weight:800;letter-spacing:-.02em}
 </style></head><body><div class="l" id="l">${markSmall}
 <div class="t"><p class="e">${ui[locale].status.company}</p><p class="s">${ui[locale].status.lineShort}</p></div>
-<span class="d"></span>${mirData ? `<img src="${mirData}" alt="${ui[locale].status.markAlt}">` : '<span class="f">Made in Russia</span>'}
+<span class="d"></span>${mirData ? `<img src="${mirData}" alt="${ui[locale].status.markAlt}">` : '<span class="f">«Made in Russia»</span>'}
 </div></body></html>`;
 
 mkdirSync(join(ROOT, 'public/brand'), { recursive: true });
 const out = [];
-for (const locale of ['en', 'ru', 'hi']) {
+for (const locale of ['en', 'ru']) {
   const p = await browser.newPage({ viewport: { width: 400, height: 100 }, deviceScaleFactor: 3 });
   await p.setContent(lockup(locale), { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
