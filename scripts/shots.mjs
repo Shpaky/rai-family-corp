@@ -57,6 +57,15 @@ try {
       });
       await page.emulateMedia({ reducedMotion: 'reduce' });
       await page.goto(`${ORIGIN}${BASE}${path}`, { waitUntil: 'networkidle' });
+      // Walk down the page so lazily loaded images are fetched before the capture.
+      await page.evaluate(async () => {
+        for (let y = 0; y < document.body.scrollHeight; y += 600) {
+          window.scrollTo(0, y);
+          await new Promise((r) => setTimeout(r, 50));
+        }
+        window.scrollTo(0, 0);
+      });
+      await page.waitForLoadState('networkidle');
       const file = join(ROOT, 'shots', `${name}-${width}.png`);
       await page.screenshot({ path: file, fullPage: true });
       console.log(relative(ROOT, file));
