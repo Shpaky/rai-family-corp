@@ -99,8 +99,9 @@ const trust = [
             >
               <path d="M20 6 9 17l-5-5" />
             </svg>
-            {item.abbr
-              ? [
+            {item.abbr ? (
+              <span>
+                {[
                   <abbr
                     class="no-underline"
                     title={copy.segmentsExpanded[item.abbr]}
@@ -108,8 +109,11 @@ const trust = [
                   />,
                   <span class="sr-only" set:text={` (${copy.segmentsExpanded[item.abbr]})`} />,
                   item.text.slice(item.abbr.length),
-                ]
-              : item.text}
+                ]}
+              </span>
+            ) : (
+              item.text
+            )}
           </li>
         ))
       }
