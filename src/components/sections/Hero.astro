@@ -99,19 +99,17 @@ const trust = [
             >
               <path d="M20 6 9 17l-5-5" />
             </svg>
-            {item.abbr ? (
-              <span>
-                <abbr
-                  class="no-underline"
-                  title={copy.segmentsExpanded[item.abbr]}
-                  set:text={item.abbr}
-                />
-                <span class="sr-only"> ({copy.segmentsExpanded[item.abbr]})</span>
-                {item.text.slice(item.abbr.length)}
-              </span>
-            ) : (
-              item.text
-            )}
+            {item.abbr
+              ? [
+                  <abbr
+                    class="no-underline"
+                    title={copy.segmentsExpanded[item.abbr]}
+                    set:text={item.abbr}
+                  />,
+                  <span class="sr-only" set:text={` (${copy.segmentsExpanded[item.abbr]})`} />,
+                  item.text.slice(item.abbr.length),
+                ]
+              : item.text}
           </li>
         ))
       }
