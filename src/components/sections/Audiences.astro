@@ -49,14 +49,14 @@ const icons: Record<AudienceKey, string> = {
             <li
               class:list={[
                 'group flex flex-col rounded-card border border-line p-7 shadow-card transition-shadow hover:shadow-card-hover',
-                b2c ? 'bg-warm' : 'bg-white',
+                'bg-white',
               ]}
             >
               <div class="flex items-start justify-between gap-3">
                 <span
                   class:list={[
                     'flex size-12 items-center justify-center rounded-2xl',
-                    b2c ? 'bg-warm-strong text-ink' : 'bg-primary-soft text-primary',
+                    b2c ? 'bg-warm text-ink' : 'bg-primary-soft text-primary',
                   ]}
                 >
                   <svg
@@ -76,7 +76,7 @@ const icons: Record<AudienceKey, string> = {
                   title={copy.segmentsExpanded[segment]}
                   class:list={[
                     'rounded-pill px-2.5 py-1 text-xs font-bold tracking-wide no-underline',
-                    b2c ? 'bg-white text-ink' : 'bg-primary-soft text-primary',
+                    b2c ? 'bg-warm text-ink' : 'bg-primary-soft text-primary',
                   ]}
                   set:text={segment}
                 />
