@@ -43,10 +43,22 @@ const icons: Record<AudienceKey, string> = {
       {
         order.map((key) => {
           const item = copy.audiences.items[key];
+          const segment = copy.audiences.segments[key];
+          const b2c = segment === 'B2C';
           return (
-            <li class="group flex flex-col rounded-card border border-line bg-white p-7 shadow-card transition-shadow hover:shadow-card-hover">
+            <li
+              class:list={[
+                'group flex flex-col rounded-card border border-line p-7 shadow-card transition-shadow hover:shadow-card-hover',
+                b2c ? 'bg-warm' : 'bg-white',
+              ]}
+            >
               <div class="flex items-start justify-between gap-3">
-                <span class="flex size-12 items-center justify-center rounded-2xl bg-primary-soft text-primary">
+                <span
+                  class:list={[
+                    'flex size-12 items-center justify-center rounded-2xl',
+                    b2c ? 'bg-warm-strong text-ink' : 'bg-primary-soft text-primary',
+                  ]}
+                >
                   <svg
                     class="size-6"
                     viewBox="0 0 24 24"
@@ -60,9 +72,14 @@ const icons: Record<AudienceKey, string> = {
                     <path d={icons[key]} />
                   </svg>
                 </span>
-                <span class="rounded-pill bg-surface px-2.5 py-1 text-xs font-bold tracking-wide text-ink-soft">
-                  {copy.audiences.segments[key]}
-                </span>
+                <abbr
+                  title={copy.segmentsExpanded[segment]}
+                  class:list={[
+                    'rounded-pill px-2.5 py-1 text-xs font-bold tracking-wide no-underline',
+                    b2c ? 'bg-white text-ink' : 'bg-primary-soft text-primary',
+                  ]}
+                  set:text={segment}
+                />
               </div>
               <h3 class="mt-6 text-h3 font-extrabold text-ink">{item.title}</h3>
               <p class="mt-3 flex-1 text-base leading-relaxed text-ink-soft">{item.text}</p>
