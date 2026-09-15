@@ -15,4 +15,6 @@ export const company = {
   /** Russian companies present in the pavilion. Open sources, checked 2026-09-14; update the date when the number changes. */
   pavilionResidents: 52,
   pavilionResidentsCheckedOn: '2026-09-14',
+  /** B2C online store run by the company; English only, so the link does not take a locale. */
+  store: { name: 'The Rus Store', url: 'https://therusstore.com/' },
 } as const;

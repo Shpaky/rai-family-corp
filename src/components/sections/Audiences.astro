@@ -3,6 +3,7 @@ import SectionHeading from '@/components/SectionHeading.astro';
 import type { Locale } from '@/i18n/config';
 import type { AudienceKey } from '@/i18n/ui';
 import { href, t } from '@/i18n/utils';
+import { company } from '@/data/company';
 
 interface Props {
   locale: Locale;
@@ -11,11 +12,11 @@ const { locale } = Astro.props;
 const copy = t(locale);
 const home = href(locale);
 
-const targets: Record<AudienceKey, string> = {
-  manufacturers: `${home}#services`,
-  distributors: `${home}#directions`,
-  institutions: `${home}#pavilion`,
-  consumers: `${home}#directions`,
+const targets: Record<AudienceKey, { href: string; external?: boolean }> = {
+  manufacturers: { href: `${home}#services` },
+  distributors: { href: `${home}#directions` },
+  institutions: { href: `${home}#pavilion` },
+  consumers: { href: company.store.url, external: true },
 };
 const order: AudienceKey[] = ['manufacturers', 'distributors', 'institutions', 'consumers'];
 
@@ -44,24 +45,31 @@ const icons: Record<AudienceKey, string> = {
           const item = copy.audiences.items[key];
           return (
             <li class="group flex flex-col rounded-card border border-line bg-white p-7 shadow-card transition-shadow hover:shadow-card-hover">
-              <span class="flex size-12 items-center justify-center rounded-2xl bg-primary-soft text-primary">
-                <svg
-                  class="size-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d={icons[key]} />
-                </svg>
-              </span>
+              <div class="flex items-start justify-between gap-3">
+                <span class="flex size-12 items-center justify-center rounded-2xl bg-primary-soft text-primary">
+                  <svg
+                    class="size-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d={icons[key]} />
+                  </svg>
+                </span>
+                <span class="rounded-pill bg-surface px-2.5 py-1 text-xs font-bold tracking-wide text-ink-soft">
+                  {copy.audiences.segments[key]}
+                </span>
+              </div>
               <h3 class="mt-6 text-h3 font-extrabold text-ink">{item.title}</h3>
               <p class="mt-3 flex-1 text-base leading-relaxed text-ink-soft">{item.text}</p>
               <a
-                href={targets[key]}
+                href={targets[key].href}
+                target={targets[key].external ? '_blank' : undefined}
+                rel={targets[key].external ? 'noopener' : undefined}
                 class="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-primary-hover"
               >
                 {item.cta}
