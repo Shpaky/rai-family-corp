@@ -41,6 +41,8 @@ interface Copy {
     eyebrow: string;
     title: string;
     lead: string;
+    /** Business model label shown on each card. */
+    segments: Record<AudienceKey, string>;
     items: Record<AudienceKey, { title: string; text: string; cta: string }>;
   };
   about: {
@@ -150,6 +152,12 @@ export const ui: Record<'en' | 'ru', Copy> = {
       eyebrow: 'Who we work with',
       title: 'One entry point for every side of Russia–India trade',
       lead: 'Manufacturers, distributors, institutions and consumers meet Russian products through the same pavilion and the same operator.',
+      segments: {
+        manufacturers: 'B2B',
+        distributors: 'B2B',
+        institutions: 'B2B',
+        consumers: 'B2C',
+      },
       items: {
         manufacturers: {
           title: 'Russian manufacturers',
@@ -168,8 +176,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
         },
         consumers: {
           title: 'Consumers in India',
-          text: 'Products carrying the «Made in Russia» mark are imported, certified and distributed in India through this pavilion.',
-          cta: 'Browse products',
+          text: 'Products carrying the «Made in Russia» mark are imported, certified and distributed in India through our online store, The Rus Store.',
+          cta: 'Open The Rus Store',
         },
       },
     },
@@ -359,6 +367,12 @@ export const ui: Record<'en' | 'ru', Copy> = {
       eyebrow: 'С кем мы работаем',
       title: 'Одна точка входа для всех сторон торговли Россия — Индия',
       lead: 'Производители, дистрибьюторы, институты и покупатели встречают российские товары через один павильон и одного оператора.',
+      segments: {
+        manufacturers: 'B2B',
+        distributors: 'B2B',
+        institutions: 'B2B',
+        consumers: 'B2C',
+      },
       items: {
         manufacturers: {
           title: 'Российские производители',
@@ -377,8 +391,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
         },
         consumers: {
           title: 'Покупатели в Индии',
-          text: 'Товары со знаком «Сделано в России» ввозятся, сертифицируются и распространяются в Индии через этот павильон.',
-          cta: 'Смотреть товары',
+          text: 'Товары со знаком «Сделано в России» ввозятся, сертифицируются и распространяются в Индии через наш интернет-магазин The Rus Store.',
+          cta: 'Открыть The Rus Store',
         },
       },
     },
