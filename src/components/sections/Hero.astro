@@ -12,7 +12,14 @@ const { locale } = Astro.props;
 const copy = t(locale);
 const home = href(locale);
 const cardTitle = withCount(copy.hero.cardTitle, company.pavilionResidents, locale);
-const trust = [copy.trust.pavilion, copy.trust.since, copy.trust.b2b, copy.trust.b2c];
+// The B2B / B2C items are the first mention on the page: a visually hidden
+// expansion follows the abbreviation for screen readers.
+const trust = [
+  { text: copy.trust.pavilion },
+  { text: copy.trust.since },
+  { text: copy.trust.b2b, abbr: 'B2B' as const },
+  { text: copy.trust.b2c, abbr: 'B2C' as const },
+];
 ---
 
 <section class="relative overflow-hidden bg-white">
@@ -92,7 +99,21 @@ const trust = [copy.trust.pavilion, copy.trust.since, copy.trust.b2b, copy.trust
             >
               <path d="M20 6 9 17l-5-5" />
             </svg>
-            {item}
+            {item.abbr ? (
+              <span>
+                {[
+                  <abbr
+                    class="no-underline"
+                    title={copy.segmentsExpanded[item.abbr]}
+                    set:text={item.abbr}
+                  />,
+                  <span class="sr-only" set:text={` (${copy.segmentsExpanded[item.abbr]})`} />,
+                  item.text.slice(item.abbr.length),
+                ]}
+              </span>
+            ) : (
+              item.text
+            )}
           </li>
         ))
       }

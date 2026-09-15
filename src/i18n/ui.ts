@@ -36,13 +36,15 @@ interface Copy {
     cardTitle: string;
   };
   trust: { pavilion: string; since: string; b2b: string; b2c: string; mark: string };
+  /** Expansions of B2B / B2C, read by screen readers at the first mention and shown as a tooltip on badges. */
+  segmentsExpanded: { B2B: string; B2C: string };
   status: { company: string; direction: string; line: string; lineShort: string; markAlt: string };
   audiences: {
     eyebrow: string;
     title: string;
     lead: string;
     /** Business model label shown on each card. */
-    segments: Record<AudienceKey, string>;
+    segments: Record<AudienceKey, 'B2B' | 'B2C'>;
     items: Record<AudienceKey, { title: string; text: string; cta: string }>;
   };
   about: {
@@ -142,6 +144,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
       /** Used on the pavilion card only. */
       mark: '«Made in Russia» mark',
     },
+    segmentsExpanded: { B2B: 'business to business', B2C: 'business to consumer' },
     status: {
       company: 'Rai Family Corp',
       // Top line for direction sites (D5 and the next ones), where the operator's name is not on the page.
@@ -359,6 +362,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
       /** Used on the pavilion card only. */
       mark: 'Знак «Сделано в России»',
     },
+    segmentsExpanded: { B2B: 'бизнес для бизнеса', B2C: 'бизнес для потребителя' },
     status: {
       company: 'Rai Family Corp',
       // Top line for direction sites (D5 and the next ones), where the operator's name is not on the page.
