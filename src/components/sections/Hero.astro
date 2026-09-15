@@ -12,7 +12,7 @@ const { locale } = Astro.props;
 const copy = t(locale);
 const home = href(locale);
 const cardTitle = withCount(copy.hero.cardTitle, company.pavilionResidents, locale);
-const trust = [copy.trust.operator, copy.trust.pavilion, copy.trust.since, copy.trust.mark];
+const trust = [copy.trust.pavilion, copy.trust.since, copy.trust.b2b, copy.trust.b2c];
 ---
 
 <section class="relative overflow-hidden bg-white">

@@ -35,7 +35,7 @@ interface Copy {
     /** Template; {count} = company.pavilionResidents, see withCount(). */
     cardTitle: string;
   };
-  trust: { operator: string; pavilion: string; since: string; mark: string };
+  trust: { pavilion: string; since: string; b2b: string; b2c: string; mark: string };
   status: { company: string; direction: string; line: string; lineShort: string; markAlt: string };
   audiences: {
     eyebrow: string;
@@ -135,9 +135,11 @@ export const ui: Record<'en' | 'ru', Copy> = {
       cardTitle: '{count} Russian {count:company is|companies are} already in the pavilion',
     },
     trust: {
-      operator: '«Made in Russia» pavilion operator',
       pavilion: 'First pavilion of the programme in India',
       since: 'Company since 2024, pavilion since August 2026',
+      b2b: 'B2B: manufacturers, distributors, retail and government institutions',
+      b2c: 'B2C: The Rus Store online shop',
+      /** Used on the pavilion card only. */
       mark: '«Made in Russia» mark',
     },
     status: {
@@ -350,9 +352,11 @@ export const ui: Record<'en' | 'ru', Copy> = {
         '{count} {count:российская компания уже|российские компании уже|российских компаний уже} в павильоне',
     },
     trust: {
-      operator: 'Оператор павильона «Сделано в России»',
       pavilion: 'Первый павильон программы в Индии',
       since: 'Компания с 2024 года, павильон с августа 2026',
+      b2b: 'B2B: производители, дистрибьюторы, ритейл и госструктуры',
+      b2c: 'B2C: интернет-магазин The Rus Store',
+      /** Used on the pavilion card only. */
       mark: 'Знак «Сделано в России»',
     },
     status: {
