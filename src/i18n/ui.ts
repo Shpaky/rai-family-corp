@@ -32,8 +32,9 @@ interface Copy {
     ctaPrimary: string;
     ctaSecondary: string;
     pavilionLink: string;
-    /** Template; {count} = company.pavilionResidents, see withCount(). */
+    /** Pavilion card: what the pavilion covers. */
     cardTitle: string;
+    cardSectors: string;
   };
   trust: { pavilion: string; since: string; b2b: string; b2c: string; mark: string };
   /** Expansions of B2B / B2C, read by screen readers at the first mention and shown as a tooltip on badges. */
@@ -134,7 +135,9 @@ export const ui: Record<'en' | 'ru', Copy> = {
       ctaPrimary: 'Contact us',
       ctaSecondary: 'Explore directions',
       pavilionLink: 'About the pavilion',
-      cardTitle: '{count} Russian {count:company is|companies are} already in the pavilion',
+      cardTitle: 'From machinery to consumer goods',
+      cardSectors:
+        'Agriculture, construction technologies and other Russian industries in one pavilion',
     },
     trust: {
       pavilion: 'First pavilion of the programme in India',
@@ -351,8 +354,9 @@ export const ui: Record<'en' | 'ru', Copy> = {
       ctaPrimary: 'Связаться',
       ctaSecondary: 'Смотреть направления',
       pavilionLink: 'О павильоне',
-      cardTitle:
-        '{count} {count:российская компания уже|российские компании уже|российских компаний уже} в павильоне',
+      cardTitle: 'От машиностроения до товаров народного потребления',
+      cardSectors:
+        'Сельское хозяйство, строительные технологии и другие отрасли российской промышленности в одном павильоне',
     },
     trust: {
       pavilion: 'Первый павильон программы в Индии',
