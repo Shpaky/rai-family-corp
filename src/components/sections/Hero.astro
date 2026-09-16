@@ -2,8 +2,7 @@
 import Button from '@/components/Button.astro';
 import StatusLockup from '@/components/StatusLockup.astro';
 import type { Locale } from '@/i18n/config';
-import { href, t, withCount } from '@/i18n/utils';
-import { company } from '@/data/company';
+import { href, t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
@@ -11,7 +10,6 @@ interface Props {
 const { locale } = Astro.props;
 const copy = t(locale);
 const home = href(locale);
-const cardTitle = withCount(copy.hero.cardTitle, company.pavilionResidents, locale);
 // The B2B / B2C items are the first mention on the page: a visually hidden
 // expansion follows the abbreviation for screen readers.
 const trust = [
@@ -56,8 +54,9 @@ const trust = [
           <circle cx="32" cy="32" r="14" stroke-width="1"></circle>
         </svg>
         <StatusLockup locale={locale} variant="card" tone="dark" eager class="relative" />
-        <p class="relative mt-8 text-h3 font-extrabold text-balance">{cardTitle}</p>
-        <p class="relative mt-2 text-sm text-white/80">{copy.pavilion.subtitle}</p>
+        <p class="relative mt-8 text-h3 font-extrabold text-balance">{copy.hero.cardTitle}</p>
+        <p class="relative mt-2 text-sm font-semibold text-white/90">{copy.hero.cardSectors}</p>
+        <p class="relative mt-3 text-sm text-white/70">{copy.pavilion.subtitle}</p>
         <a
           href={`${home}#pavilion`}
           class="relative mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-brand-sky-light underline-offset-4 hover:underline"
