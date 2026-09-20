@@ -44,13 +44,13 @@ const title = `${text.title} — Rai Family Corp`;
           </ol>
         </nav>
         <div class="mt-6 flex flex-wrap items-center gap-2">
-          <span class="eyebrow text-primary">{copy.directions.category[d.category]}</span>
+          <span class="eyebrow text-eyebrow">{copy.directions.category[d.category]}</span>
           <span class="rounded-pill bg-white px-2.5 py-1 text-xs font-bold text-ink-soft">
             {copy.directions.status[d.status]}
           </span>
         </div>
         <p class="mt-4 text-sm font-semibold text-muted">{d.brand}</p>
-        <h1 class="mt-1 text-h1 font-extrabold text-balance text-ink md:text-display">
+        <h1 class="mt-1 text-h1 font-bold text-balance text-ink md:text-display">
           {text.title}
         </h1>
         <p class="mt-5 max-w-2xl text-lead text-pretty text-ink-soft">{text.summary}</p>
@@ -67,7 +67,7 @@ const title = `${text.title} — Rai Family Corp`;
             <ul class="mt-10 grid gap-4 sm:grid-cols-2">
               {text.products.map((product) => (
                 <li class="rounded-card border border-line bg-surface p-6">
-                  <h2 class="text-h3 font-extrabold text-ink">{product.name}</h2>
+                  <h2 class="text-h3 font-bold text-ink">{product.name}</h2>
                   <p class="mt-2 text-base leading-relaxed text-ink-soft">{product.text}</p>
                 </li>
               ))}
@@ -80,7 +80,7 @@ const title = `${text.title} — Rai Family Corp`;
               class="mt-10 rounded-card border border-line bg-white p-7 shadow-card"
               aria-labelledby="facts-title"
             >
-              <h2 id="facts-title" class="text-h3 font-extrabold text-ink">
+              <h2 id="facts-title" class="text-h3 font-bold text-ink">
                 {copy.directions.keyData}
               </h2>
               <ul class="mt-4 divide-y divide-line border-t border-line">
@@ -163,7 +163,7 @@ const title = `${text.title} — Rai Family Corp`;
       others.length > 0 && (
         <section class="bg-surface py-section-sm" aria-labelledby="others-title">
           <div class="container-page">
-            <h2 id="others-title" class="text-h2 font-extrabold text-ink">
+            <h2 id="others-title" class="text-h2 font-bold text-ink">
               {copy.directions.otherDirections}
             </h2>
             <ul class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
