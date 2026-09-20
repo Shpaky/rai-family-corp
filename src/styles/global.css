@@ -2,45 +2,49 @@
 
 /*
   Design tokens. The only place where raw values live (npm run lint:tokens).
-  Palette follows the "Made in Russia" brand guide (руководство к брендированию.pdf, p. 5);
-  the site has its own style built on that palette.
+  Variant F: warm palette derived from The Rus Store and the gold of the RAI wordmark;
+  the Made in Russia mark keeps its own blue and red.
 */
 @theme {
-  /* Brand palette, raw */
-  --color-brand-cream: #fef1dd;
-  --color-brand-peach: #febda5;
-  --color-brand-sky-light: #8bf6fe;
-  --color-brand-sky: #01cbfe;
-  --color-brand-azure: #0782fe;
-  --color-brand-blue: #0634da;
-  --color-brand-red: #fb0731;
-  --color-brand-red-dark: #a70101;
+  --color-brand-gold: #d4b06a; /* light gold: logo on dark */
+  --color-brand-gold-deep: #8a6b35; /* deep gold: logo on light */
+  --color-brand-accent: #a8452a; /* terracotta */
+  --color-brand-dark: #4d5a2c;
+  --color-brand-cream: #fff2de; /* The Rus Store cream */
 
-  /* Neutrals */
   --color-white: #ffffff;
-  --color-ink: #0b1240;
-  --color-ink-soft: #3a4166;
-  --color-muted: #5a6084;
-  --color-line: #dfe3f0;
-  --color-surface: #f5f7fc;
-  --color-surface-strong: #eaeefb;
+  --color-ink: #232816;
+  --color-ink-soft: #4d5a2c;
+  --color-muted: #687054;
+  --color-line: #e0e0cf;
+  --color-surface: #f5f5ea;
+  --color-surface-strong: #e8ead5;
 
-  /* Semantic */
-  --color-primary: var(--color-brand-blue);
-  --color-primary-hover: #0529b3;
-  --color-primary-soft: var(--color-surface-strong);
-  --color-accent: var(--color-brand-red);
-  --color-accent-hover: var(--color-brand-red-dark);
+  --color-primary: var(--color-brand-accent);
+  --color-primary-hover: #87361f;
+  --color-primary-soft: #f9e8e1;
+  --color-accent: var(--color-brand-gold-deep);
+  --color-accent-hover: #6f5427;
+  --color-gold: var(--color-brand-gold);
+  --color-gold-deep: var(--color-brand-gold-deep);
+  --color-gold-text: #e6cc95; /* gold for small text on the dark surface, 4.8:1 on olive; the wordmark keeps --color-gold */
+  --color-numbers: var(--color-brand-gold-deep);
+  --color-eyebrow: #a8452a;
+  --color-dark: var(--color-brand-dark);
+  --color-dark-text: #f5f4e8;
   --color-warm: var(--color-brand-cream);
-  --color-warm-strong: var(--color-brand-peach);
-  --color-focus: var(--color-brand-azure);
+  --color-warm-strong: #f0d5b1;
+  --color-focus: var(--color-brand-gold-deep);
 
   /* Typography — fonts come from Astro's Fonts API (see astro.config.mjs) */
-  --font-sans: var(--font-montserrat), Arial, sans-serif;
+  --font-sans: var(--font-body), Arial, sans-serif;
+  --font-display: var(--font-display-face), Georgia, serif;
+  --text-descriptor: 0.6875rem;
+  --tracking-brand: 0.32em;
 
   --text-display: 3.25rem;
   --text-display--line-height: 1.05;
-  --text-display--letter-spacing: -0.02em;
+  --text-display--letter-spacing: -0.01em;
   --text-h1: 2.5rem;
   --text-h1--line-height: 1.1;
   --text-h1--letter-spacing: -0.02em;
@@ -59,11 +63,11 @@
   --container-page: 76rem;
   --spacing-section: 6rem;
   --spacing-section-sm: 4rem;
-  --radius-card: 1.25rem;
-  --radius-pill: 999px;
+  --radius-card: 0.5rem;
+  --radius-pill: 0.25rem;
 
-  --shadow-card: 0 1px 2px rgb(11 18 64 / 0.04), 0 12px 32px -12px rgb(11 18 64 / 0.12);
-  --shadow-card-hover: 0 2px 4px rgb(11 18 64 / 0.06), 0 24px 48px -16px rgb(6 52 218 / 0.25);
+  --shadow-card: 0 1px 2px rgb(35 40 22 / 0.04), 0 12px 32px -12px rgb(35 40 22 / 0.12);
+  --shadow-card-hover: 0 2px 4px rgb(35 40 22 / 0.06), 0 24px 48px -16px rgb(77 90 44 / 0.22);
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -76,13 +80,19 @@
   body {
     @apply bg-white font-sans text-ink antialiased;
   }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
   :focus-visible {
     outline: 3px solid var(--color-focus);
     outline-offset: 3px;
     border-radius: 0.25rem;
   }
   ::selection {
-    background: var(--color-brand-sky-light);
+    background: var(--color-warm-strong);
     color: var(--color-ink);
   }
   @media (prefers-reduced-motion: reduce) {

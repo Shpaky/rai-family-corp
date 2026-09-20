@@ -30,12 +30,21 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.google(),
-      name: 'Montserrat',
-      cssVariable: '--font-montserrat',
+      name: 'Overpass',
+      cssVariable: '--font-body',
       weights: ['400 800'],
       styles: ['normal'],
       subsets: ['latin', 'cyrillic'],
       fallbacks: ['Arial', 'sans-serif'],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Playfair Display',
+      cssVariable: '--font-display-face',
+      weights: ['600 800'],
+      styles: ['normal'],
+      subsets: ['latin', 'cyrillic'],
+      fallbacks: ['Georgia', 'serif'],
     },
   ],
   vite: {

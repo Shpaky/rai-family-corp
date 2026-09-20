@@ -11,7 +11,7 @@ const { eyebrow, title, lead, align = 'left', id, as: Tag = 'h2' } = Astro.props
 ---
 
 <div class:list={['max-w-3xl', align === 'center' && 'mx-auto text-center']}>
-  <p class="eyebrow text-primary">{eyebrow}</p>
-  <Tag id={id} class="mt-3 text-h2 font-extrabold text-ink md:text-h1">{title}</Tag>
+  <p class="eyebrow text-eyebrow">{eyebrow}</p>
+  <Tag id={id} class="mt-3 text-h2 font-bold text-ink md:text-h1">{title}</Tag>
   {lead && <p class="mt-4 text-lead text-ink-soft">{lead}</p>}
 </div>

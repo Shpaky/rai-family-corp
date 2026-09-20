@@ -65,18 +65,20 @@ const line = card ? copy.status.line : copy.status.lineShort;
     homeLink ? (
       <a
         href={href(locale)}
-        class={dark ? 'text-white' : 'text-primary'}
+        class={dark ? 'text-gold' : 'text-gold-deep'}
         aria-label={copy.nav.home}
       >
         <Logo variant="mark" size={size} />
       </a>
     ) : (
-      <Logo variant="mark" size={size} class={dark ? 'text-white' : 'text-primary'} />
+      <Logo variant="mark" size={size} class={dark ? 'text-gold' : 'text-gold-deep'} />
     )
   }
   <div class:list={['min-w-0', card && 'order-last basis-full sm:order-none sm:basis-auto']}>
-    <p class:list={['eyebrow leading-none', dark ? 'text-brand-sky-light' : 'text-muted']}>{top}</p>
-    <p class:list={['mt-0.5 text-sm font-bold leading-tight', dark ? 'text-white' : 'text-ink']}>
+    <p class:list={['eyebrow leading-none', dark ? 'text-gold-text' : 'text-muted']}>{top}</p>
+    <p
+      class:list={['mt-0.5 text-sm font-bold leading-tight', dark ? 'text-dark-text' : 'text-ink']}
+    >
       {line}
     </p>
   </div>
@@ -98,7 +100,7 @@ const line = card ? copy.status.line : copy.status.lineShort;
           class:list={['w-auto shrink-0', markHeight, dark && 'rounded-md bg-white p-0.5']}
         />
       ) : (
-        <span class:list={['font-extrabold tracking-tight', dark ? 'text-white' : 'text-ink']}>
+        <span class:list={['font-extrabold tracking-tight', dark ? 'text-dark-text' : 'text-ink']}>
           «Made in Russia»
         </span>
       ))
