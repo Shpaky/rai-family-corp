@@ -16,7 +16,8 @@
     "check:budget": "node scripts/check-budget.mjs",
     "test:a11y": "playwright test",
     "lighthouse": "lhci autorun",
-    "shots": "node scripts/shots.mjs"
+    "shots": "node scripts/shots.mjs",
+    "check:directions": "node scripts/check-directions.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
