@@ -11,9 +11,11 @@ interface Props {
   /** Site path without locale prefix, e.g. "" or "directions/vodka/". */
   path?: string;
   ogType?: 'website' | 'article';
+  /** Extra JSON-LD object for the page (ItemList, Product…). */
+  jsonLd?: object;
 }
 
-const { locale, title, description, path = '', ogType = 'website' } = Astro.props;
+const { locale, title, description, path = '', ogType = 'website', jsonLd } = Astro.props;
 const canonical = getAbsoluteLocaleUrl(locale, path);
 const alternates = LOCALES.map((l) => ({ hreflang: l, href: getAbsoluteLocaleUrl(l, path) }));
 const ogImage = new URL(`${import.meta.env.BASE_URL.replace(/\/$/, '')}/og.png`, Astro.site);
@@ -59,3 +61,4 @@ const organization = {
 }
 <meta name="twitter:card" content="summary_large_image" />
 <script is:inline type="application/ld+json" set:html={JSON.stringify(organization)} />
+{jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}

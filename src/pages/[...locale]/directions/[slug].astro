@@ -1,182 +1,106 @@
 ---
-import { getCollection } from 'astro:content';
-import Button from '@/components/Button.astro';
+/*
+  One route for two kinds of pages: /directions/<category>/ (catalog filtered by
+  category) and /directions/<slug>/ (direction page). Slugs must not collide.
+*/
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import DirectionPage from '@/components/DirectionPage.astro';
+import DirectionsCatalog from '@/components/DirectionsCatalog.astro';
 import Contacts from '@/components/sections/Contacts.astro';
-import StatusLockup from '@/components/StatusLockup.astro';
-import DirectionCard from '@/components/DirectionCard.astro';
 import Base from '@/layouts/Base.astro';
 import { LOCALES, DEFAULT_LOCALE, type Locale } from '@/i18n/config';
-import { href, siteHref, t } from '@/i18n/utils';
+import { t } from '@/i18n/utils';
+import {
+  getCategoriesWithDirections,
+  getDirections,
+  type Category,
+  type Direction,
+} from '@/lib/directions';
 
 export async function getStaticPaths() {
-  const entries = (await getCollection('directions', (e) => e.data.published)).sort(
-    (a, b) => a.data.order - b.data.order,
-  );
-  return LOCALES.flatMap((locale) =>
-    entries.map((entry) => ({
-      params: { locale: locale === DEFAULT_LOCALE ? undefined : locale, slug: entry.id },
-      props: { locale, entry, others: entries.filter((e) => e.id !== entry.id) },
-    })),
-  );
+  const all = await getDirections();
+  const groups = await getCategoriesWithDirections(all);
+  const categoryIds = new Set(groups.map((g) => g.category.id));
+  for (const d of all) {
+    if (d.id === 'index' || categoryIds.has(d.id)) {
+      throw new Error(`Direction slug "${d.id}" collides with a category slug or "index".`);
+    }
+  }
+  return LOCALES.flatMap((locale) => {
+    const param = locale === DEFAULT_LOCALE ? undefined : locale;
+    return [
+      ...groups.map(({ category }) => ({
+        params: { locale: param, slug: category.id },
+        props: { kind: 'category' as const, locale, category, groups },
+      })),
+      ...all.map((entry) => ({
+        params: { locale: param, slug: entry.id },
+        props: { kind: 'direction' as const, locale, entry, groups },
+      })),
+    ];
+  });
 }
 
-type Entry = Awaited<ReturnType<typeof getCollection<'directions'>>>[number];
-const { locale, entry, others } = Astro.props as { locale: Locale; entry: Entry; others: Entry[] };
+type Groups = { category: Category; directions: Direction[] }[];
+type Props =
+  | { kind: 'category'; locale: Locale; category: Category; groups: Groups }
+  | { kind: 'direction'; locale: Locale; entry: Direction; groups: Groups };
+const props = Astro.props as Props;
+const { locale, groups } = props;
 const copy = t(locale);
-const d = entry.data;
-const text = d.i18n[locale];
-const path = `directions/${entry.id}/`;
-const home = href(locale);
-const title = `${text.title} — Rai Family Corp`;
+const categories = groups.map((g) => g.category);
+const all = groups.flatMap((g) => g.directions);
 ---
 
-<Base locale={locale} title={title} description={text.summary} path={path} ogType="article">
-  <article>
-    <header class="bg-surface">
-      <div class="container-page py-12 md:py-16">
-        <nav aria-label="Breadcrumb" class="text-sm font-semibold text-muted">
-          <ol class="flex flex-wrap items-center gap-2">
-            <li><a href={home} class="hover:text-primary">Rai Family Corp</a></li>
-            <li aria-hidden="true">/</li>
-            <li>
-              <a href={`${home}#directions`} class="hover:text-primary">{copy.directions.all}</a>
-            </li>
-          </ol>
-        </nav>
-        <div class="mt-6 flex flex-wrap items-center gap-2">
-          <span class="eyebrow text-eyebrow">{copy.directions.category[d.category]}</span>
-          <span class="rounded-pill bg-white px-2.5 py-1 text-xs font-bold text-ink-soft">
-            {copy.directions.status[d.status]}
-          </span>
-        </div>
-        <p class="mt-4 text-sm font-semibold text-muted">{d.brand}</p>
-        <h1 class="mt-1 text-h1 font-bold text-balance text-ink md:text-display">
-          {text.title}
-        </h1>
-        <p class="mt-5 max-w-2xl text-lead text-pretty text-ink-soft">{text.summary}</p>
-      </div>
-    </header>
-
-    <div class="container-page grid gap-12 py-section-sm lg:grid-cols-12 lg:gap-16">
-      <div class="lg:col-span-7">
-        <div class="space-y-5 text-lg leading-relaxed text-ink-soft">
-          {text.body.map((p) => <p>{p}</p>)}
-        </div>
-        {
-          text.products.length > 0 && (
-            <ul class="mt-10 grid gap-4 sm:grid-cols-2">
-              {text.products.map((product) => (
-                <li class="rounded-card border border-line bg-surface p-6">
-                  <h2 class="text-h3 font-bold text-ink">{product.name}</h2>
-                  <p class="mt-2 text-base leading-relaxed text-ink-soft">{product.text}</p>
-                </li>
-              ))}
-            </ul>
-          )
-        }
-        {
-          text.facts.length > 0 && (
-            <section
-              class="mt-10 rounded-card border border-line bg-white p-7 shadow-card"
-              aria-labelledby="facts-title"
-            >
-              <h2 id="facts-title" class="text-h3 font-bold text-ink">
-                {copy.directions.keyData}
-              </h2>
-              <ul class="mt-4 divide-y divide-line border-t border-line">
-                {text.facts.map((fact) => (
-                  <li class="flex items-start gap-3 py-3 text-base leading-snug text-ink-soft">
-                    <svg
-                      class="mt-1 size-4 shrink-0 text-primary"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                    {fact}
-                  </li>
-                ))}
-              </ul>
-              {text.logistics && (
-                <p class="mt-4 text-base font-semibold text-ink">{text.logistics}</p>
-              )}
-              {d.documents.length > 0 && (
-                <div class="mt-6 flex flex-wrap items-center gap-3">
-                  <span class="eyebrow text-muted">{copy.directions.documents}</span>
-                  {d.documents.map((doc) => (
-                    <Button href={doc.url} variant="ghost" external>
-                      {doc.label}
-                    </Button>
-                  ))}
-                </div>
-              )}
-            </section>
-          )
-        }
-      </div>
-      <aside class="lg:col-span-5">
-        <div class="rounded-card border border-line bg-white p-7 shadow-card">
-          {
-            d.site ? (
-              <Button href={siteHref(d.site, locale)} size="lg" external class="w-full">
-                {copy.directions.visitSite}
-              </Button>
-            ) : (
-              <p class="rounded-pill bg-surface px-5 py-3.5 text-center text-base font-bold text-muted">
-                {copy.directions.siteSoon}
-              </p>
-            )
-          }
-          <p class="mt-6 eyebrow text-muted">{copy.directions.audiencesLabel}</p>
-          <ul class="mt-2 flex flex-wrap gap-2">
-            {
-              (text.forWhom.length > 0
-                ? text.forWhom
-                : d.audiences.map((a) => copy.audiences.items[a].title)
-              ).map((label) => (
-                <li class="rounded-pill bg-primary-soft px-3 py-1 text-sm font-semibold text-primary">
-                  {label}
-                </li>
-              ))
-            }
-          </ul>
-          <StatusLockup
-            locale={locale}
-            variant="compact"
-            topLine="direction"
-            class="mt-6 border-t border-line pt-6"
-          />
-          <p class="mt-4 text-base text-ink-soft">{copy.directions.contactsIntro}</p>
-          <Button href="#contacts" variant="secondary" class="mt-4 w-full">
-            {copy.directions.backToContacts}
-          </Button>
-        </div>
-      </aside>
-    </div>
-
-    {
-      others.length > 0 && (
-        <section class="bg-surface py-section-sm" aria-labelledby="others-title">
-          <div class="container-page">
-            <h2 id="others-title" class="text-h2 font-bold text-ink">
-              {copy.directions.otherDirections}
-            </h2>
-            <ul class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {others.map((e) => (
-                <li class="relative">
-                  <DirectionCard entry={e} locale={locale} />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )
-    }
-  </article>
-  <Contacts locale={locale} compact />
-</Base>
+{
+  props.kind === 'category' ? (
+    <Base
+      locale={locale}
+      title={`${props.category.data.i18n[locale].name} — ${copy.directions.catalog.title} — Rai Family Corp`}
+      description={props.category.data.i18n[locale].description}
+      path={`directions/${props.category.id}/`}
+      jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: props.category.data.i18n[locale].name,
+        itemListElement: groups
+          .find((g) => g.category.id === props.category.id)!
+          .directions.map((d, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: d.data.i18n[locale].title,
+            url: getAbsoluteLocaleUrl(locale, `directions/${d.id}/`),
+          })),
+      }}
+    >
+      <DirectionsCatalog locale={locale} groups={groups} current={props.category} />
+    </Base>
+  ) : (
+    <Base
+      locale={locale}
+      title={`${props.entry.data.i18n[locale].title} — Rai Family Corp`}
+      description={props.entry.data.i18n[locale].summary}
+      path={`directions/${props.entry.id}/`}
+      ogType="article"
+      jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: props.entry.data.i18n[locale].title,
+        description: props.entry.data.i18n[locale].summary,
+        brand: { '@type': 'Brand', name: props.entry.data.brand },
+        ...(props.entry.data.manufacturer
+          ? { manufacturer: { '@type': 'Organization', name: props.entry.data.manufacturer.name } }
+          : {}),
+        category: categories.find((c) => c.id === props.entry.data.category.id)?.data.i18n[locale]
+          .name,
+        url: getAbsoluteLocaleUrl(locale, `directions/${props.entry.id}/`),
+        ...(props.entry.data.image
+          ? { image: new URL(props.entry.data.image.src, Astro.site).toString() }
+          : {}),
+      }}
+    >
+      <DirectionPage locale={locale} entry={props.entry} categories={categories} all={all} />
+      <Contacts locale={locale} compact />
+    </Base>
+  )
+}

@@ -1,0 +1,41 @@
+---
+import DirectionsCatalog from '@/components/DirectionsCatalog.astro';
+import Base from '@/layouts/Base.astro';
+import type { Locale } from '@/i18n/config';
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import { localePaths, t } from '@/i18n/utils';
+import { getCategoriesWithDirections, sortCatalog } from '@/lib/directions';
+
+export function getStaticPaths() {
+  return localePaths();
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const copy = t(locale);
+const groups = await getCategoriesWithDirections();
+const list = sortCatalog(
+  groups.flatMap((g) => g.directions),
+  locale,
+);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: copy.directions.catalog.title,
+  itemListElement: list.map((d, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: d.data.i18n[locale].title,
+    url: getAbsoluteLocaleUrl(locale, `directions/${d.id}/`),
+  })),
+};
+---
+
+<Base
+  locale={locale}
+  title={`${copy.directions.catalog.title} — Rai Family Corp`}
+  description={copy.directions.catalog.description}
+  path="directions/"
+  jsonLd={jsonLd}
+>
+  <DirectionsCatalog locale={locale} groups={groups} current={null} />
+</Base>
