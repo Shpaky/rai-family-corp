@@ -21,8 +21,9 @@ export const contacts = {
 
 /** "+7 965 157 73 00" → "+79651577300" */
 export const telUri = (phone: string) => `tel:${phone.replace(/[^\d+]/g, '')}`;
-/** "+7 965 157 73 00" → "https://wa.me/79651577300" */
-export const whatsappUrl = (phone: string) => `https://wa.me/${phone.replace(/\D/g, '')}`;
+/** "+7 965 157 73 00" → "https://wa.me/79651577300", optionally with a prefilled message. */
+export const whatsappUrl = (phone: string, text?: string) =>
+  `https://wa.me/${phone.replace(/\D/g, '')}${text ? `?text=${encodeURIComponent(text)}` : ''}`;
 /** username → "https://t.me/username"; phone → "https://t.me/+79651577300" */
 export const telegramUrl = (value: string) =>
   value.startsWith('+') ? `https://t.me/${value.replace(/[^\d+]/g, '')}` : `https://t.me/${value}`;
