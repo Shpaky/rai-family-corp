@@ -1,0 +1,16 @@
+{
+  "order": 10,
+  "tone": "warm",
+  "i18n": {
+    "en": {
+      "name": "Construction materials",
+      "lead": "Russian waterproofing, fire protection and construction chemistry for Indian contractors, precast plants and distributors.",
+      "description": "Russian construction materials in India: waterproofing admixtures, coatings and fire protection, imported and certified by Rai Family Corp."
+    },
+    "ru": {
+      "name": "Стройматериалы",
+      "lead": "Российская гидроизоляция, огнезащита и строительная химия для индийских подрядчиков, заводов ЖБИ и дистрибьюторов.",
+      "description": "Российские стройматериалы в Индии: гидроизоляционные добавки, покрытия и огнезащита, ввоз и сертификация Rai Family Corp."
+    }
+  }
+}

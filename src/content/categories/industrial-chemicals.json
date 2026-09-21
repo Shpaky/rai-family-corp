@@ -1,0 +1,16 @@
+{
+  "order": 30,
+  "tone": "surface",
+  "i18n": {
+    "en": {
+      "name": "Industrial chemicals",
+      "lead": "Russian industrial detergents and surface-preparation chemistry for Indian manufacturing and maintenance.",
+      "description": "Russian industrial chemicals in India: detergent compositions that replace solvents, degreasing and surface preparation. Rai Family Corp."
+    },
+    "ru": {
+      "name": "Промышленная химия",
+      "lead": "Российские промышленные моющие средства и химия для подготовки поверхности для индийских производств и сервиса.",
+      "description": "Российская промышленная химия в Индии: моющие композиции вместо растворителей, обезжиривание и подготовка поверхности. Rai Family Corp."
+    }
+  }
+}

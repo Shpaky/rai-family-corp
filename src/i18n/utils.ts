@@ -27,15 +27,6 @@ export function t(locale: Locale) {
 }
 
 /**
- * Locale-aware URL of a direction's product site. Product sites follow the hub's
- * convention: default locale at the root, other locales under `/<locale>/`.
- */
-export function siteHref(site: string, locale: Locale): string {
-  const base = site.endsWith('/') ? site : `${site}/`;
-  return locale === DEFAULT_LOCALE ? base : `${base}${locale}/`;
-}
-
-/**
  * Fills `{count}` and plural placeholders `{count:one|few|many}` in a template.
  * Forms follow Intl.PluralRules for the locale: EN needs `one|other`, RU `one|few|many`.
  */

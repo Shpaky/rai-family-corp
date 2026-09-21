@@ -3,16 +3,28 @@
   "brand": "D5",
   "category": "construction",
   "status": "active",
-  "audiences": ["distributors", "manufacturers", "institutions"],
-  "site": "https://shpaky.github.io/waterproofing-admixtures/",
+  "audiences": ["b2b", "b2c"],
+  "source": "Д5",
+  "tags": ["waterproofing", "concrete"],
+  "featured": true,
+  "manufacturer": {
+    "name": "NPP Tokar",
+    "city": null,
+    "founded": null
+  },
+  "howToBuy": {
+    "stockInIndia": true
+  },
   "documents": [
     {
       "label": "TDS (EN)",
-      "url": "https://shpaky.github.io/waterproofing-admixtures/docs/D5-TDS-en.pdf"
+      "url": "/docs/d5-additive-and-aqua-stop/D5-TDS-en.pdf",
+      "type": "tds"
     },
     {
       "label": "SDS (EN)",
-      "url": "https://shpaky.github.io/waterproofing-admixtures/docs/D5-SDS-en.pdf"
+      "url": "/docs/d5-additive-and-aqua-stop/D5-SDS-en.pdf",
+      "type": "sds"
     }
   ],
   "i18n": {
@@ -42,7 +54,15 @@
         "Dosage 2–3% of cement weight",
         "Cold joints do not leak under pressure up to 12 bar"
       ],
-      "logistics": "Stock in India, typical dispatch 1–3 working days."
+      "logistics": "Stock in India, typical dispatch 1–3 working days.",
+      "keyFigures": ["W20+ water resistance", "2-3% of cement weight"],
+      "howToBuy": {
+        "dispatch": "1-3 working days",
+        "moq": null,
+        "packaging": null,
+        "priceNote": null,
+        "incoterms": null
+      }
     },
     "ru": {
       "title": "Добавка к бетону D5 и гидроизоляция D5 Aqua Stop",
@@ -70,7 +90,15 @@
         "Дозировка 2–3% от массы цемента",
         "Холодные швы не текут под давлением до 12 бар"
       ],
-      "logistics": "Склад в Индии, типовая отгрузка 1–3 рабочих дня."
+      "logistics": "Склад в Индии, типовая отгрузка 1–3 рабочих дня.",
+      "keyFigures": ["Водонепроницаемость W20+", "2-3% от массы цемента"],
+      "howToBuy": {
+        "dispatch": "1-3 рабочих дня",
+        "moq": null,
+        "packaging": null,
+        "priceNote": null,
+        "incoterms": null
+      }
     }
   }
 }

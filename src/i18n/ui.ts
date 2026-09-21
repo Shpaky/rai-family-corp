@@ -65,19 +65,51 @@ interface Copy {
     lead: string;
     more: string;
     all: string;
-    status: Record<'active' | 'launching' | 'planned', string>;
-    category: Record<
-      'food-and-drinks' | 'construction' | 'industrial' | 'consumer' | 'other',
-      string
-    >;
-    visitSite: string;
-    siteSoon: string;
+    /** "All directions ({count})" button, template for withCount(). */
+    allCount: string;
+    /** "{count} directions", template for withCount(). */
+    count: string;
+    status: Record<'active' | 'on-order' | 'coming', string>;
+    audience: Record<'b2b' | 'b2c', string>;
+    carousel: { label: string; prev: string; next: string };
+    catalog: {
+      title: string;
+      lead: string;
+      description: string;
+      all: string;
+      showing: string;
+      filters: string;
+      status: string;
+      audience: string;
+      reset: string;
+    };
+    aboutLine: string;
     keyData: string;
     documents: string;
+    docTypes: Record<
+      'tds' | 'sds' | 'certificate' | 'test' | 'authorization' | 'leaflet' | 'presentation',
+      string
+    >;
+    pdf: string;
+    manufacturer: string;
+    founded: string;
+    references: string;
+    faq: string;
+    howToBuy: {
+      title: string;
+      inStock: string;
+      madeToOrder: string;
+      dispatch: string;
+      moq: string;
+      packaging: string;
+      price: string;
+      incoterms: string;
+    };
+    cta: { price: string; whatsapp: string; subject: string };
+    similar: string;
     backToContacts: string;
     contactsIntro: string;
     audiencesLabel: string;
-    otherDirections: string;
   };
   pavilion: {
     eyebrow: string;
@@ -248,26 +280,59 @@ export const ui: Record<'en' | 'ru', Copy> = {
     directions: {
       eyebrow: 'Directions',
       title: 'Products and technologies we bring to India',
-      lead: 'Each direction is a Russian brand or product line with its own presentation. The portfolio grows in stages.',
+      lead: 'Russian brands and product lines we import, certify and distribute in India.',
       more: 'Learn more',
       all: 'All directions',
-      status: { active: 'Available', launching: 'Launching', planned: 'Planned' },
-      category: {
-        'food-and-drinks': 'Food and drinks',
-        construction: 'Construction materials',
-        industrial: 'Industrial',
-        consumer: 'Consumer goods',
-        other: 'Other',
+      allCount: 'All directions ({count})',
+      count: '{count} {count:direction|directions}',
+      status: { active: 'In stock', 'on-order': 'Made to order', coming: 'Coming soon' },
+      audience: { b2b: 'B2B', b2c: 'B2C' },
+      carousel: { label: 'Directions carousel', prev: 'Previous', next: 'Next' },
+      catalog: {
+        title: 'All directions',
+        lead: 'Every Russian brand and product line we bring to India, by category, availability and audience.',
+        description:
+          'Catalogue of Russian products and technologies imported to India by Rai Family Corp: construction materials, equipment, industrial chemicals, agro.',
+        all: 'All',
+        showing: 'Showing {count}',
+        filters: 'Filters',
+        status: 'Availability',
+        audience: 'Audience',
+        reset: 'Reset',
       },
-      visitSite: 'Open the product site',
+      aboutLine: 'About the line',
       keyData: 'Key data',
       documents: 'Documents',
-      siteSoon: 'Product site coming soon',
+      docTypes: {
+        tds: 'TDS',
+        sds: 'SDS',
+        certificate: 'Certificate',
+        test: 'Test report',
+        authorization: 'Authorization letter',
+        leaflet: 'Leaflet',
+        presentation: 'Presentation',
+      },
+      pdf: '(PDF)',
+      manufacturer: 'Manufacturer',
+      founded: 'since {count}',
+      references: 'Applications and references',
+      faq: 'FAQ',
+      howToBuy: {
+        title: 'How to buy in India',
+        inStock: 'In stock in India',
+        madeToOrder: 'Made to order',
+        dispatch: 'Dispatch',
+        moq: 'MOQ',
+        packaging: 'Packaging',
+        price: 'Price',
+        incoterms: 'Incoterms',
+      },
+      cta: { price: 'Get best price', whatsapp: 'WhatsApp', subject: 'Price request: {title}' },
+      similar: 'Similar directions',
       backToContacts: 'Contact the operator',
       contactsIntro:
         'Enquiries about this direction go through the pavilion operator, Rai Family Corp.',
       audiencesLabel: 'For',
-      otherDirections: 'Other directions',
     },
     pavilion: {
       eyebrow: 'Pavilion',
@@ -466,26 +531,59 @@ export const ui: Record<'en' | 'ru', Copy> = {
     directions: {
       eyebrow: 'Направления',
       title: 'Товары и технологии, которые мы привозим в Индию',
-      lead: 'Каждое направление — это российский бренд или линейка со своей презентацией. Портфель растёт поэтапно.',
+      lead: 'Российские бренды и продуктовые линейки, которые мы ввозим, сертифицируем и распространяем в Индии.',
       more: 'Подробнее',
       all: 'Все направления',
-      status: { active: 'Доступно', launching: 'Запускается', planned: 'В планах' },
-      category: {
-        'food-and-drinks': 'Продукты и напитки',
-        construction: 'Строительные материалы',
-        industrial: 'Промышленность',
-        consumer: 'Потребительские товары',
-        other: 'Другое',
+      allCount: 'Все направления ({count})',
+      count: '{count} {count:направление|направления|направлений}',
+      status: { active: 'В наличии', 'on-order': 'Под заказ', coming: 'Готовится' },
+      audience: { b2b: 'B2B', b2c: 'B2C' },
+      carousel: { label: 'Лента направлений', prev: 'Назад', next: 'Вперёд' },
+      catalog: {
+        title: 'Все направления',
+        lead: 'Все российские бренды и линейки, которые мы привозим в Индию: по категориям, наличию и аудитории.',
+        description:
+          'Каталог российских товаров и технологий, которые Rai Family Corp ввозит в Индию: стройматериалы, оборудование, промышленная химия, агро.',
+        all: 'Все',
+        showing: 'Показано {count}',
+        filters: 'Фильтры',
+        status: 'Наличие',
+        audience: 'Аудитория',
+        reset: 'Сбросить',
       },
-      visitSite: 'Открыть сайт продукта',
+      aboutLine: 'О линейке',
       keyData: 'Ключевые данные',
       documents: 'Документы',
-      siteSoon: 'Сайт продукта скоро появится',
+      docTypes: {
+        tds: 'TDS',
+        sds: 'SDS',
+        certificate: 'Сертификат',
+        test: 'Протокол испытаний',
+        authorization: 'Письмо-авторизация',
+        leaflet: 'Буклет',
+        presentation: 'Презентация',
+      },
+      pdf: '(PDF)',
+      manufacturer: 'Производитель',
+      founded: 'с {count} года',
+      references: 'Применение и референсы',
+      faq: 'Вопросы и ответы',
+      howToBuy: {
+        title: 'Как купить в Индии',
+        inStock: 'Склад в Индии',
+        madeToOrder: 'Под заказ',
+        dispatch: 'Отгрузка',
+        moq: 'MOQ',
+        packaging: 'Фасовка',
+        price: 'Цена',
+        incoterms: 'Incoterms',
+      },
+      cta: { price: 'Запросить цену', whatsapp: 'WhatsApp', subject: 'Запрос цены: {title}' },
+      similar: 'Похожие направления',
       backToContacts: 'Связаться с оператором',
       contactsIntro:
         'Запросы по этому направлению проходят через оператора павильона, Rai Family Corp.',
       audiencesLabel: 'Для кого',
-      otherDirections: 'Другие направления',
     },
     pavilion: {
       eyebrow: 'Павильон',

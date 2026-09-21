@@ -1,0 +1,16 @@
+{
+  "order": 20,
+  "tone": "surface-strong",
+  "i18n": {
+    "en": {
+      "name": "Equipment",
+      "lead": "Russian construction and industrial equipment for Indian contractors and plants: spray units, vacuum and electron-beam systems.",
+      "description": "Russian construction and industrial equipment in India: spray units for PU foam and polyurea, electron-beam vacuum systems. Rai Family Corp."
+    },
+    "ru": {
+      "name": "Оборудование",
+      "lead": "Российское строительное и промышленное оборудование для индийских подрядчиков и заводов: установки напыления, вакуумные и электронно-лучевые системы.",
+      "description": "Российское строительное и промышленное оборудование в Индии: установки напыления ППУ и полимочевины, электронно-лучевые вакуумные системы."
+    }
+  }
+}
