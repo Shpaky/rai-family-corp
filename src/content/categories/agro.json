@@ -1,0 +1,16 @@
+{
+  "order": 40,
+  "tone": "warm",
+  "i18n": {
+    "en": {
+      "name": "Agro",
+      "lead": "Russian fertilisers and biological preparations for Indian farms and agro distributors: humic gels, organo-mineral and microbial products.",
+      "description": "Russian fertilisers and biopreparations in India: humic gels, organo-mineral and microbial fertilisers, imported and certified by Rai Family Corp."
+    },
+    "ru": {
+      "name": "Агро",
+      "lead": "Российские удобрения и биопрепараты для индийских хозяйств и агродистрибьюторов: гуминовые гели, органоминеральные и микробиологические продукты.",
+      "description": "Российские удобрения и биопрепараты в Индии: гуминовые гели, органоминеральные и микробиологические удобрения. Ввоз и сертификация Rai Family Corp."
+    }
+  }
+}

@@ -1,0 +1,385 @@
+---
+/*
+  Direction page template. Sections render only when their data is present.
+  The only dark surface on the page is the Contacts block at the bottom.
+*/
+import { Image, Picture } from 'astro:assets';
+import Button from '@/components/Button.astro';
+import DirectionCard from '@/components/DirectionCard.astro';
+import StatusLockup from '@/components/StatusLockup.astro';
+import { contacts, whatsappUrl } from '@/data/contacts';
+import type { Locale } from '@/i18n/config';
+import { href, t, withCount } from '@/i18n/utils';
+import {
+  categoryOf,
+  documentHref,
+  pickSimilar,
+  type Category,
+  type Direction,
+} from '@/lib/directions';
+
+interface Props {
+  locale: Locale;
+  entry: Direction;
+  categories: Category[];
+  all: Direction[];
+}
+const { locale, entry, categories, all } = Astro.props;
+const copy = t(locale);
+const d = entry.data;
+const text = d.i18n[locale];
+const category = categoryOf(entry, categories);
+const categoryName = category.data.i18n[locale].name;
+const home = href(locale);
+const catalogUrl = href(locale, 'directions/');
+const categoryUrl = href(locale, `directions/${category.id}/`);
+const similar = pickSimilar(entry, all);
+const statusTone = d.status === 'active' ? 'bg-warm text-dark' : 'bg-white text-muted';
+
+const subject = copy.directions.cta.subject.replace('{title}', text.title);
+const mailto = contacts.email
+  ? `mailto:${contacts.email}?subject=${encodeURIComponent(subject)}`
+  : null;
+const whatsapp = contacts.whatsapp ? whatsappUrl(contacts.whatsapp, subject) : null;
+
+const buyRows = (
+  [
+    ['dispatch', text.howToBuy.dispatch],
+    ['moq', text.howToBuy.moq],
+    ['packaging', text.howToBuy.packaging],
+    ['price', text.howToBuy.priceNote],
+    ['incoterms', text.howToBuy.incoterms],
+  ] as const
+).filter((r): r is [(typeof r)[0], string] => Boolean(r[1]));
+const check = 'M20 6 9 17l-5-5';
+---
+
+<article>
+  <header class="bg-surface">
+    <div class="container-page grid gap-10 py-12 md:py-16 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-7">
+        <nav aria-label="Breadcrumb" class="text-sm font-semibold text-muted">
+          <ol class="flex flex-wrap items-center gap-2">
+            <li><a href={home} class="hover:text-primary">Rai Family Corp</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href={catalogUrl} class="hover:text-primary">{copy.directions.all}</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href={categoryUrl} class="hover:text-primary">{categoryName}</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" class="text-ink-soft">{d.brand}</li>
+          </ol>
+        </nav>
+        <div class="mt-6 flex flex-wrap items-center gap-2">
+          <span class="eyebrow text-eyebrow">{categoryName}</span>
+          <span class:list={['rounded-pill px-2.5 py-1 text-xs font-bold', statusTone]}>
+            {copy.directions.status[d.status]}
+          </span>
+        </div>
+        <p class="mt-4 text-sm font-semibold text-muted">{d.brand}</p>
+        <h1 class="mt-1 text-h1 font-bold text-balance text-ink md:text-display">{text.title}</h1>
+        <p class="mt-5 max-w-2xl text-lead text-pretty text-ink-soft">{text.summary}</p>
+      </div>
+      {
+        d.image && (
+          <div class="lg:col-span-5">
+            <Picture
+              src={d.image}
+              alt={text.title}
+              widths={[480, 768, 1024]}
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              formats={['avif', 'webp']}
+              loading="eager"
+              class="aspect-4/3 w-full rounded-card object-cover shadow-card"
+            />
+          </div>
+        )
+      }
+    </div>
+  </header>
+
+  <div class="container-page grid gap-12 py-section-sm lg:grid-cols-12 lg:gap-16">
+    <div class="space-y-10 lg:col-span-7">
+      {
+        text.body.length > 0 && (
+          <section aria-labelledby="about-line">
+            <p id="about-line" class="eyebrow text-muted">
+              {copy.directions.aboutLine}
+            </p>
+            <div class="mt-3 space-y-5 text-lg leading-relaxed text-ink-soft">
+              {text.body.map((p) => (
+                <p>{p}</p>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {
+        text.products.length > 0 && (
+          <ul class="grid gap-4 sm:grid-cols-2">
+            {text.products.map((product) => (
+              <li class="rounded-card border border-line bg-surface p-6">
+                <h2 class="text-h3 font-bold text-ink">{product.name}</h2>
+                <p class="mt-2 text-base leading-relaxed text-ink-soft">{product.text}</p>
+                {product.specs.length > 0 && (
+                  <ul class="mt-3 space-y-1 text-sm text-ink-soft">
+                    {product.specs.map((s) => (
+                      <li class="flex items-start gap-2">
+                        <span
+                          aria-hidden="true"
+                          class="mt-2 size-1.5 shrink-0 rounded-pill bg-primary"
+                        />
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        )
+      }
+
+      {
+        text.facts.length > 0 && (
+          <section
+            class="rounded-card border border-line bg-white p-7 shadow-card"
+            aria-labelledby="facts-title"
+          >
+            <h2 id="facts-title" class="text-h3 font-bold text-ink">
+              {copy.directions.keyData}
+            </h2>
+            <ul class="mt-4 divide-y divide-line border-t border-line">
+              {text.facts.map((fact) => (
+                <li class="flex items-start gap-3 py-3 text-base leading-snug text-ink-soft">
+                  <svg
+                    class="mt-1 size-4 shrink-0 text-primary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d={check} />
+                  </svg>
+                  {fact}
+                </li>
+              ))}
+            </ul>
+            {text.logistics && (
+              <p class="mt-4 text-base font-semibold text-ink">{text.logistics}</p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        d.documents.length > 0 && (
+          <section aria-labelledby="documents-title">
+            <h2 id="documents-title" class="text-h3 font-bold text-ink">
+              {copy.directions.documents}
+            </h2>
+            <ul class="mt-4 flex flex-wrap gap-3">
+              {d.documents.map((doc) => (
+                <li class="flex flex-col gap-1.5">
+                  <span class="eyebrow text-muted">{copy.directions.docTypes[doc.type]}</span>
+                  <Button href={documentHref(doc.url)} variant="ghost" external>
+                    {`${doc.label}${doc.url.toLowerCase().endsWith('.pdf') ? ` ${copy.directions.pdf}` : ''}`}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        d.manufacturer && (
+          <section
+            aria-labelledby="manufacturer-title"
+            class="rounded-card border border-line bg-surface p-6"
+          >
+            <h2 id="manufacturer-title" class="eyebrow text-muted">
+              {copy.directions.manufacturer}
+            </h2>
+            <div class="mt-3 flex items-center gap-4">
+              {d.manufacturer.logo && (
+                <Image src={d.manufacturer.logo} alt={d.manufacturer.name} class="h-10 w-auto" />
+              )}
+              <p class="text-lg font-bold text-ink">
+                {d.manufacturer.name}
+                {(d.manufacturer.city || d.manufacturer.founded) && (
+                  <span class="block text-sm font-semibold text-muted">
+                    {[
+                      d.manufacturer.city,
+                      d.manufacturer.founded &&
+                        withCount(copy.directions.founded, d.manufacturer.founded, locale),
+                    ]
+                      .filter(Boolean)
+                      .join(' · ')}
+                  </span>
+                )}
+              </p>
+            </div>
+            {text.manufacturerNote && (
+              <p class="mt-3 text-base leading-relaxed text-ink-soft">{text.manufacturerNote}</p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        text.references.length > 0 && (
+          <section aria-labelledby="references-title">
+            <h2 id="references-title" class="text-h3 font-bold text-ink">
+              {copy.directions.references}
+            </h2>
+            <ul class="mt-4 grid gap-4 sm:grid-cols-2">
+              {text.references.map((ref) => (
+                <li class="overflow-hidden rounded-card border border-line bg-white shadow-card">
+                  {ref.image && (
+                    <Picture
+                      src={ref.image}
+                      alt={ref.title}
+                      widths={[360, 720]}
+                      formats={['avif', 'webp']}
+                      loading="lazy"
+                      class="aspect-4/3 w-full object-cover"
+                    />
+                  )}
+                  <div class="p-5">
+                    <h3 class="text-base font-bold text-ink">{ref.title}</h3>
+                    <p class="mt-1 text-sm leading-relaxed text-ink-soft">{ref.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        text.faq.length > 0 && (
+          <section aria-labelledby="faq-title">
+            <h2 id="faq-title" class="text-h3 font-bold text-ink">
+              {copy.directions.faq}
+            </h2>
+            <div class="mt-4 divide-y divide-line border-y border-line">
+              {text.faq.map((item) => (
+                <details class="group py-3">
+                  <summary class="cursor-pointer list-none text-base font-bold text-ink marker:hidden [&::-webkit-details-marker]:hidden">
+                    {item.q}
+                  </summary>
+                  <p class="mt-2 text-base leading-relaxed text-ink-soft">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )
+      }
+    </div>
+
+    <aside class="lg:col-span-5">
+      <div class="rounded-card border border-line bg-white p-7 shadow-card lg:sticky lg:top-24">
+        <div class="flex flex-col gap-3">
+          {
+            mailto && (
+              <Button href={mailto} size="lg" class="w-full">
+                {copy.directions.cta.price}
+              </Button>
+            )
+          }
+          {
+            whatsapp && (
+              <Button href={whatsapp} variant="secondary" external class="w-full">
+                {copy.directions.cta.whatsapp}
+              </Button>
+            )
+          }
+        </div>
+
+        {
+          d.howToBuy && (
+            <section class="mt-6 border-t border-line pt-6" aria-labelledby="buy-title">
+              <h2 id="buy-title" class="eyebrow text-muted">
+                {copy.directions.howToBuy.title}
+              </h2>
+              <p class="mt-2 flex items-center gap-2 text-base font-bold text-ink">
+                <svg
+                  class="size-4 shrink-0 text-primary"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d={check} />
+                </svg>
+                {d.howToBuy.stockInIndia
+                  ? copy.directions.howToBuy.inStock
+                  : copy.directions.howToBuy.madeToOrder}
+              </p>
+              {buyRows.length > 0 && (
+                <dl class="mt-3 space-y-1.5 text-sm">
+                  {buyRows.map(([key, value]) => (
+                    <div class="flex gap-4">
+                      <dt class="w-24 shrink-0 font-semibold text-muted">
+                        {copy.directions.howToBuy[key]}
+                      </dt>
+                      <dd class="text-ink">{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+            </section>
+          )
+        }
+
+        <p class="mt-6 eyebrow text-muted">{copy.directions.audiencesLabel}</p>
+        <ul class="mt-2 flex flex-wrap gap-2">
+          {
+            text.forWhom.map((label) => (
+              <li class="rounded-pill bg-primary-soft px-3 py-1 text-sm font-semibold text-primary">
+                {label}
+              </li>
+            ))
+          }
+        </ul>
+
+        <StatusLockup
+          locale={locale}
+          variant="compact"
+          topLine="direction"
+          class="mt-6 border-t border-line pt-6"
+        />
+        <p class="mt-4 text-base text-ink-soft">{copy.directions.contactsIntro}</p>
+        <Button href="#contacts" variant="secondary" class="mt-4 w-full"
+          >{copy.directions.backToContacts}</Button
+        >
+      </div>
+    </aside>
+  </div>
+
+  {
+    similar.length > 0 && (
+      <section class="bg-surface py-section-sm" aria-labelledby="similar-title">
+        <div class="container-page">
+          <h2 id="similar-title" class="text-h2 font-bold text-ink">
+            {copy.directions.similar}
+          </h2>
+          <ul class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {similar.map((e) => (
+              <li>
+                <DirectionCard entry={e} category={categoryOf(e, categories)} locale={locale} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+</article>

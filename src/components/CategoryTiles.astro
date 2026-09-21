@@ -1,0 +1,30 @@
+---
+import type { Locale } from '@/i18n/config';
+import { href, t, withCount } from '@/i18n/utils';
+import type { Category, Direction } from '@/lib/directions';
+
+interface Props {
+  locale: Locale;
+  groups: { category: Category; directions: Direction[] }[];
+}
+const { locale, groups } = Astro.props;
+const copy = t(locale);
+---
+
+<ul class="mt-10 flex flex-wrap gap-3">
+  {
+    groups.map(({ category, directions }) => (
+      <li>
+        <a
+          href={href(locale, `directions/${category.id}/`)}
+          class="inline-flex items-baseline gap-2 rounded-pill border border-line bg-white px-4 py-2.5 text-sm font-bold text-ink hover:border-primary hover:text-primary"
+        >
+          {category.data.i18n[locale].name}
+          <span class="text-xs font-semibold text-muted">
+            {withCount(copy.directions.count, directions.length, locale)}
+          </span>
+        </a>
+      </li>
+    ))
+  }
+</ul>

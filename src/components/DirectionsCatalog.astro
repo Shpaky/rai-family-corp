@@ -1,0 +1,210 @@
+---
+/*
+  Catalog grid with static category chips (links, work without JS) and client
+  side status / audience filters (progressive enhancement, state in the URL).
+*/
+import Button from '@/components/Button.astro';
+import DirectionCard from '@/components/DirectionCard.astro';
+import type { Locale } from '@/i18n/config';
+import { href, t, withCount } from '@/i18n/utils';
+import { categoryOf, sortCatalog, type Category, type Direction } from '@/lib/directions';
+
+interface Props {
+  locale: Locale;
+  /** Non-empty categories with their published directions. */
+  groups: { category: Category; directions: Direction[] }[];
+  /** Current category, or null for the full catalog. */
+  current: Category | null;
+}
+const { locale, groups, current } = Astro.props;
+const copy = t(locale);
+const categories = groups.map((g) => g.category);
+const all = groups.flatMap((g) => g.directions);
+const list = sortCatalog(
+  current ? all.filter((d) => d.data.category.id === current.id) : all,
+  locale,
+);
+const home = href(locale);
+const catalogUrl = href(locale, 'directions/');
+const title = current ? current.data.i18n[locale].name : copy.directions.catalog.title;
+const lead = current ? current.data.i18n[locale].lead : copy.directions.catalog.lead;
+const chip = (active: boolean) =>
+  active
+    ? 'bg-primary text-white'
+    : 'border border-line bg-white text-ink hover:border-primary hover:text-primary';
+const chipBase = 'inline-flex items-baseline gap-2 rounded-pill px-4 py-2 text-sm font-bold';
+const statuses = ['active', 'on-order', 'coming'] as const;
+const audiences = ['b2b', 'b2c'] as const;
+---
+
+<div data-catalog>
+  <header class="bg-surface">
+    <div class="container-page py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="text-sm font-semibold text-muted">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href={home} class="hover:text-primary">Rai Family Corp</a></li>
+          <li aria-hidden="true">/</li>
+          {
+            current ? (
+              <>
+                <li>
+                  <a href={catalogUrl} class="hover:text-primary">
+                    {copy.directions.all}
+                  </a>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page">{title}</li>
+              </>
+            ) : (
+              <li aria-current="page">{copy.directions.all}</li>
+            )
+          }
+        </ol>
+      </nav>
+      <h1 class="mt-6 text-h1 font-bold text-balance text-ink md:text-display">{title}</h1>
+      <p class="mt-5 max-w-2xl text-lead text-pretty text-ink-soft">{lead}</p>
+    </div>
+  </header>
+
+  <div class="container-page py-section-sm">
+    <nav aria-label={copy.directions.catalog.filters}>
+      <ul class="flex flex-wrap gap-2">
+        <li>
+          <a
+            href={catalogUrl}
+            class:list={[chipBase, chip(current === null)]}
+            aria-current={current === null ? 'page' : undefined}
+          >
+            {copy.directions.catalog.all}
+            <span class="text-xs font-semibold">{all.length}</span>
+          </a>
+        </li>
+        {
+          groups.map(({ category, directions }) => (
+            <li>
+              <a
+                href={href(locale, `directions/${category.id}/`)}
+                class:list={[chipBase, chip(current?.id === category.id)]}
+                aria-current={current?.id === category.id ? 'page' : undefined}
+              >
+                {category.data.i18n[locale].name}
+                <span class="text-xs font-semibold">{directions.length}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <form class="mt-6 hidden flex-wrap items-end gap-6" data-catalog-filters>
+      <fieldset class="flex flex-wrap items-center gap-3">
+        <legend class="eyebrow mb-2 text-muted">{copy.directions.catalog.status}</legend>
+        {
+          statuses.map((s) => (
+            <label class="inline-flex items-center gap-2 text-sm font-semibold text-ink">
+              <input type="checkbox" name="status" value={s} class="size-4 accent-primary" />
+              {copy.directions.status[s]}
+            </label>
+          ))
+        }
+      </fieldset>
+      <fieldset class="flex flex-wrap items-center gap-3">
+        <legend class="eyebrow mb-2 text-muted">{copy.directions.catalog.audience}</legend>
+        {
+          audiences.map((a) => (
+            <label class="inline-flex items-center gap-2 text-sm font-semibold text-ink">
+              <input type="checkbox" name="audience" value={a} class="size-4 accent-primary" />
+              {copy.directions.audience[a]}
+            </label>
+          ))
+        }
+      </fieldset>
+      <button
+        type="reset"
+        class="text-sm font-bold text-primary underline-offset-4 hover:underline"
+      >
+        {copy.directions.catalog.reset}
+      </button>
+    </form>
+
+    <p
+      class="mt-8 text-sm font-semibold text-muted"
+      data-catalog-count
+      data-template={copy.directions.catalog.showing}
+    >
+      {withCount(copy.directions.catalog.showing, list.length, locale)}
+    </p>
+
+    <ul class="mt-4 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      {
+        list.map((entry) => (
+          <li data-status={entry.data.status} data-audiences={entry.data.audiences.join(' ')}>
+            <DirectionCard
+              entry={entry}
+              category={categoryOf(entry, categories)}
+              locale={locale}
+              headingLevel="h2"
+            />
+          </li>
+        ))
+      }
+    </ul>
+
+    {
+      current && (
+        <div class="mt-10">
+          <Button href={catalogUrl} variant="secondary">
+            {withCount(copy.directions.allCount, all.length, locale)}
+          </Button>
+        </div>
+      )
+    }
+  </div>
+</div>
+
+<script>
+  // Status / audience filters: hide cards, keep the selection in the URL.
+  const root = document.querySelector<HTMLElement>('[data-catalog]');
+  const form = root?.querySelector<HTMLFormElement>('[data-catalog-filters]');
+  const count = root?.querySelector<HTMLElement>('[data-catalog-count]');
+  if (root && form && count) {
+    const items = [...root.querySelectorAll<HTMLElement>('li[data-status]')];
+    const template = count.dataset.template ?? '{count}';
+    const boxes = (name: string) => [
+      ...form.querySelectorAll<HTMLInputElement>(`input[name="${name}"]`),
+    ];
+    const checked = (name: string) =>
+      boxes(name)
+        .filter((b) => b.checked)
+        .map((b) => b.value);
+    const apply = () => {
+      const status = checked('status');
+      const audience = checked('audience');
+      let shown = 0;
+      for (const item of items) {
+        const ok =
+          (!status.length || status.includes(item.dataset.status ?? '')) &&
+          (!audience.length ||
+            (item.dataset.audiences ?? '').split(' ').some((a) => audience.includes(a)));
+        item.hidden = !ok;
+        if (ok) shown++;
+      }
+      count.textContent = template.replace('{count}', String(shown));
+      const params = new URLSearchParams();
+      if (status.length) params.set('status', status.join(','));
+      if (audience.length) params.set('audience', audience.join(','));
+      const query = params.toString();
+      history.replaceState(null, '', `${location.pathname}${query ? `?${query}` : ''}`);
+    };
+    const initial = new URLSearchParams(location.search);
+    for (const name of ['status', 'audience']) {
+      const values = (initial.get(name) ?? '').split(',');
+      for (const box of boxes(name)) box.checked = values.includes(box.value);
+    }
+    form.classList.remove('hidden');
+    form.classList.add('flex');
+    form.addEventListener('change', apply);
+    form.addEventListener('reset', () => queueMicrotask(apply));
+    apply();
+  }
+</script>
