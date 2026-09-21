@@ -1,33 +1,57 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+/*
+  Direction card: one component for the home carousel, the catalog grid and
+  "Similar directions". A projection of the direction entry; the category entry
+  is passed in so the card never queries the collection itself.
+*/
+import { Picture } from 'astro:assets';
 import type { Locale } from '@/i18n/config';
 import { href, t } from '@/i18n/utils';
+import type { Category, Direction } from '@/lib/directions';
 
 interface Props {
-  entry: CollectionEntry<'directions'>;
+  entry: Direction;
+  category: Category;
   locale: Locale;
   headingLevel?: 'h3' | 'h2';
+  /** Load the cover eagerly (first cards of the carousel). */
+  eager?: boolean;
 }
-const { entry, locale, headingLevel: Heading = 'h3' } = Astro.props;
+const { entry, category, locale, headingLevel: Heading = 'h3', eager = false } = Astro.props;
 const copy = t(locale);
 const d = entry.data;
 const text = d.i18n[locale];
+const categoryName = category.data.i18n[locale].name;
 const url = href(locale, `directions/${entry.id}/`);
-const tone = {
-  'food-and-drinks': 'bg-warm text-ink',
-  construction: 'bg-surface-strong text-ink',
-  industrial: 'bg-surface text-ink',
-  consumer: 'bg-warm text-ink',
-  other: 'bg-surface text-ink',
-}[d.category];
+const tone = { warm: 'bg-warm', surface: 'bg-surface', 'surface-strong': 'bg-surface-strong' }[
+  category.data.tone
+];
+const statusTone = d.status === 'active' ? 'bg-warm text-dark' : 'bg-surface text-muted';
 ---
 
 <article
-  class="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-white shadow-card transition-shadow hover:shadow-card-hover"
+  class="group relative flex h-full flex-col overflow-hidden rounded-card border border-line bg-white shadow-card transition-shadow hover:shadow-card-hover"
 >
-  <div class:list={['flex items-center justify-between gap-3 px-6 py-4', tone]}>
-    <span class="eyebrow">{copy.directions.category[d.category]}</span>
-    <span class="rounded-pill bg-white/70 px-2.5 py-1 text-xs font-bold text-ink-soft">
+  {
+    d.image ? (
+      <Picture
+        src={d.image}
+        alt={text.title}
+        widths={[360, 540, 720]}
+        sizes="(min-width: 768px) 360px, 90vw"
+        formats={['avif', 'webp']}
+        loading={eager ? 'eager' : 'lazy'}
+        class="aspect-4/3 w-full object-cover"
+      />
+    ) : (
+      <div class="flex aspect-4/3 w-full items-center justify-center bg-surface-strong">
+        <span class="eyebrow text-ink-soft">{categoryName}</span>
+      </div>
+    )
+  }
+  <div class:list={['flex items-center justify-between gap-3 px-6 py-3', tone]}>
+    <span class="eyebrow text-ink">{categoryName}</span>
+    <span class:list={['rounded-pill px-2.5 py-1 text-xs font-bold', statusTone]}>
       {copy.directions.status[d.status]}
     </span>
   </div>
@@ -37,6 +61,18 @@ const tone = {
       <a href={url} class="after:absolute after:inset-0 focus-visible:outline-none">{text.title}</a>
     </Heading>
     <p class="mt-3 flex-1 text-base leading-relaxed text-ink-soft">{text.summary}</p>
+    {
+      text.keyFigures.length > 0 && (
+        <p class="mt-4 flex flex-wrap items-center gap-x-2 text-sm font-bold text-ink">
+          {text.keyFigures.map((figure, i) => (
+            <>
+              {i > 0 && <span aria-hidden="true">·</span>}
+              <span>{figure}</span>
+            </>
+          ))}
+        </p>
+      )
+    }
     {
       text.products.length > 0 && (
         <ul class="mt-4 flex flex-wrap gap-2">
@@ -48,6 +84,7 @@ const tone = {
         </ul>
       )
     }
+    {text.logistics && <p class="mt-3 text-sm text-muted">{text.logistics}</p>}
     <span
       class="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-primary"
       aria-hidden="true"
