@@ -95,13 +95,13 @@ const arrow =
     >
       <ul class="flex gap-5">
         {
-          carousel.map((entry, i) => (
+          carousel.map((entry) => (
             <li class="shrink-0 basis-80 snap-start md:basis-88">
               <DirectionCard
                 entry={entry}
                 category={categoryOf(entry, categories)}
                 locale={locale}
-                eager={i < 3}
+                variant="compact"
               />
             </li>
           ))

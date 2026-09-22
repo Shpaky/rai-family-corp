@@ -65,6 +65,8 @@ interface Copy {
     title: string;
     lead: string;
     more: string;
+    /** "+N" tag when a compact card hides extra product tags. */
+    moreProducts: string;
     all: string;
     /** "All directions ({count})" button, template for withCount(). */
     allCount: string;
@@ -278,6 +280,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
       title: 'Products and technologies we bring to India',
       lead: 'Russian brands and product lines we import, certify and distribute in India.',
       more: 'Learn more',
+      moreProducts: '+{count}',
       all: 'All directions',
       allCount: 'All directions ({count})',
       count: '{count} {count:direction|directions}',
@@ -524,6 +527,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
       title: 'Товары и технологии, которые мы привозим в Индию',
       lead: 'Российские бренды и продуктовые линейки, которые мы ввозим, сертифицируем и распространяем в Индии.',
       more: 'Подробнее',
+      moreProducts: '+{count}',
       all: 'Все направления',
       allCount: 'Все направления ({count})',
       count: '{count} {count:направление|направления|направлений}',
