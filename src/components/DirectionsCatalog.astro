@@ -1,7 +1,7 @@
 ---
 /*
   Catalog grid with static category chips (links, work without JS) and client
-  side status / audience filters (progressive enhancement, state in the URL).
+  side status filter (progressive enhancement, state in the URL).
 */
 import Button from '@/components/Button.astro';
 import DirectionCard from '@/components/DirectionCard.astro';
@@ -34,7 +34,6 @@ const chip = (active: boolean) =>
     : 'border border-line bg-white text-ink hover:border-primary hover:text-primary';
 const chipBase = 'inline-flex items-baseline gap-2 rounded-pill px-4 py-2 text-sm font-bold';
 const statuses = ['active', 'on-order', 'coming'] as const;
-const audiences = ['b2b', 'b2c'] as const;
 ---
 
 <div data-catalog>
@@ -108,17 +107,6 @@ const audiences = ['b2b', 'b2c'] as const;
           ))
         }
       </fieldset>
-      <fieldset class="flex flex-wrap items-center gap-3">
-        <legend class="eyebrow mb-2 text-muted">{copy.directions.catalog.audience}</legend>
-        {
-          audiences.map((a) => (
-            <label class="inline-flex items-center gap-2 text-sm font-semibold text-ink">
-              <input type="checkbox" name="audience" value={a} class="size-4 accent-primary" />
-              {copy.directions.audience[a]}
-            </label>
-          ))
-        }
-      </fieldset>
       <button
         type="reset"
         class="text-sm font-bold text-primary underline-offset-4 hover:underline"
@@ -138,7 +126,7 @@ const audiences = ['b2b', 'b2c'] as const;
     <ul class="mt-4 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       {
         list.map((entry) => (
-          <li data-status={entry.data.status} data-audiences={entry.data.audiences.join(' ')}>
+          <li data-status={entry.data.status}>
             <DirectionCard
               entry={entry}
               category={categoryOf(entry, categories)}
@@ -163,7 +151,7 @@ const audiences = ['b2b', 'b2c'] as const;
 </div>
 
 <script>
-  // Status / audience filters: hide cards, keep the selection in the URL.
+  // Status filter: hide cards, keep the selection in the URL.
   const root = document.querySelector<HTMLElement>('[data-catalog]');
   const form = root?.querySelector<HTMLFormElement>('[data-catalog-filters]');
   const count = root?.querySelector<HTMLElement>('[data-catalog-count]');
@@ -179,25 +167,20 @@ const audiences = ['b2b', 'b2c'] as const;
         .map((b) => b.value);
     const apply = () => {
       const status = checked('status');
-      const audience = checked('audience');
       let shown = 0;
       for (const item of items) {
-        const ok =
-          (!status.length || status.includes(item.dataset.status ?? '')) &&
-          (!audience.length ||
-            (item.dataset.audiences ?? '').split(' ').some((a) => audience.includes(a)));
+        const ok = !status.length || status.includes(item.dataset.status ?? '');
         item.hidden = !ok;
         if (ok) shown++;
       }
       count.textContent = template.replace('{count}', String(shown));
       const params = new URLSearchParams();
       if (status.length) params.set('status', status.join(','));
-      if (audience.length) params.set('audience', audience.join(','));
       const query = params.toString();
       history.replaceState(null, '', `${location.pathname}${query ? `?${query}` : ''}`);
     };
     const initial = new URLSearchParams(location.search);
-    for (const name of ['status', 'audience']) {
+    for (const name of ['status']) {
       const values = (initial.get(name) ?? '').split(',');
       for (const box of boxes(name)) box.checked = values.includes(box.value);
     }
