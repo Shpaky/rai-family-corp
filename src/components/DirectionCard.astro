@@ -1,8 +1,11 @@
 ---
 /*
-  Direction card: one component for the home carousel, the catalog grid and
-  "Similar directions". A projection of the direction entry; the category entry
-  is passed in so the card never queries the collection itself.
+  Direction card: one component, two variants.
+  - full (default): catalog, category pages, "Similar directions". Cover only
+    when the direction has an image; no placeholder block.
+  - compact: home carousel. No cover, brand line, summary or logistics; the
+    full title, key figures one per line, product tags, "Learn more".
+  Nothing is clipped visually: the title length is limited in the schema.
 */
 import { Picture } from 'astro:assets';
 import type { Locale } from '@/i18n/config';
@@ -14,10 +17,19 @@ interface Props {
   category: Category;
   locale: Locale;
   headingLevel?: 'h3' | 'h2';
-  /** Load the cover eagerly (first cards of the carousel). */
+  variant?: 'compact' | 'full';
+  /** Load the cover eagerly (full variant only). */
   eager?: boolean;
 }
-const { entry, category, locale, headingLevel: Heading = 'h3', eager = false } = Astro.props;
+const {
+  entry,
+  category,
+  locale,
+  headingLevel: Heading = 'h3',
+  variant = 'full',
+  eager = false,
+} = Astro.props;
+const compact = variant === 'compact';
 const copy = t(locale);
 const d = entry.data;
 const text = d.i18n[locale];
@@ -27,13 +39,16 @@ const tone = { warm: 'bg-warm', surface: 'bg-surface', 'surface-strong': 'bg-sur
   category.data.tone
 ];
 const statusTone = d.status === 'active' ? 'bg-warm text-dark' : 'bg-surface text-muted';
+const MAX_TAGS = 3;
+const tags = compact ? text.products.slice(0, MAX_TAGS) : text.products;
+const moreTags = compact ? text.products.length - tags.length : 0;
 ---
 
 <article
   class="group relative flex h-full flex-col overflow-hidden rounded-card border border-line bg-white shadow-card transition-shadow hover:shadow-card-hover"
 >
   {
-    d.image ? (
+    !compact && d.image && (
       <Picture
         src={d.image}
         alt={text.title}
@@ -43,50 +58,67 @@ const statusTone = d.status === 'active' ? 'bg-warm text-dark' : 'bg-surface tex
         loading={eager ? 'eager' : 'lazy'}
         class="aspect-4/3 w-full object-cover"
       />
-    ) : (
-      <div class="flex aspect-4/3 w-full items-center justify-center bg-surface-strong">
-        <span class="eyebrow text-ink-soft">{categoryName}</span>
-      </div>
     )
   }
-  <div class:list={['flex items-center justify-between gap-3 px-6 py-3', tone]}>
+  <div
+    class:list={[
+      'flex items-center justify-between gap-3',
+      compact ? 'px-5 py-2' : 'px-6 py-3',
+      tone,
+    ]}
+  >
     <span class="eyebrow text-ink">{categoryName}</span>
-    <span class:list={['rounded-pill px-2.5 py-1 text-xs font-bold', statusTone]}>
+    <span class:list={['shrink-0 rounded-pill px-2.5 py-1 text-xs font-bold', statusTone]}>
       {copy.directions.status[d.status]}
     </span>
   </div>
-  <div class="flex flex-1 flex-col p-6">
-    <p class="text-sm font-semibold text-muted">{d.brand}</p>
-    <Heading class="mt-1 text-h3 font-bold text-ink">
+  <div class:list={['flex flex-1 flex-col', compact ? 'p-5' : 'p-6']}>
+    {!compact && <p class="text-sm font-semibold text-muted">{d.brand}</p>}
+    <Heading class:list={['text-h3 font-bold text-ink', !compact && 'mt-1']}>
       <a href={url} class="after:absolute after:inset-0 focus-visible:outline-none">{text.title}</a>
     </Heading>
-    <p class="mt-3 flex-1 text-base leading-relaxed text-ink-soft">{text.summary}</p>
+    {!compact && <p class="mt-3 flex-1 text-base leading-relaxed text-ink-soft">{text.summary}</p>}
     {
-      text.keyFigures.length > 0 && (
-        <p class="mt-4 flex flex-wrap items-center gap-x-2 text-sm font-bold text-ink">
-          {text.keyFigures.map((figure, i) => (
-            <>
-              {i > 0 && <span aria-hidden="true">·</span>}
-              <span>{figure}</span>
-            </>
-          ))}
-        </p>
-      )
+      text.keyFigures.length > 0 &&
+        (compact ? (
+          <ul class="mt-3 text-sm font-bold text-ink">
+            {text.keyFigures.map((figure) => (
+              <li class="truncate">{figure}</li>
+            ))}
+          </ul>
+        ) : (
+          <p class="mt-4 flex flex-wrap items-center gap-x-2 text-sm font-bold text-ink">
+            {text.keyFigures.map((figure, i) => (
+              <>
+                {i > 0 && <span aria-hidden="true">·</span>}
+                <span>{figure}</span>
+              </>
+            ))}
+          </p>
+        ))
     }
     {
-      text.products.length > 0 && (
-        <ul class="mt-4 flex flex-wrap gap-2">
-          {text.products.map((product) => (
+      tags.length > 0 && (
+        <ul class:list={['flex flex-wrap gap-2', compact ? 'mt-3' : 'mt-4']}>
+          {tags.map((product) => (
             <li class="rounded-pill bg-surface px-3 py-1 text-xs font-bold text-ink-soft">
               {product.name}
             </li>
           ))}
+          {moreTags > 0 && (
+            <li class="rounded-pill bg-surface px-3 py-1 text-xs font-bold text-ink-soft">
+              {copy.directions.moreProducts.replace('{count}', String(moreTags))}
+            </li>
+          )}
         </ul>
       )
     }
-    {text.logistics && <p class="mt-3 text-sm text-muted">{text.logistics}</p>}
+    {!compact && text.logistics && <p class="mt-3 text-sm text-muted">{text.logistics}</p>}
     <span
-      class="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-primary"
+      class:list={[
+        'inline-flex items-center gap-1.5 text-sm font-bold text-primary',
+        compact ? 'mt-4' : 'mt-6',
+      ]}
       aria-hidden="true"
     >
       {copy.directions.more}

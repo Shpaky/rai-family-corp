@@ -36,7 +36,8 @@ const nullableText = z.string().nullable().default(null);
 
 const localized = ({ image }: SchemaContext) =>
   z.object({
-    title: z.string(),
+    /** Card shows the full title; keep it to three lines at 320 px (brand + product type). */
+    title: z.string().max(70),
     summary: z.string(),
     body: z.array(z.string()).default([]),
     /** Individual products inside the line. */
@@ -45,8 +46,8 @@ const localized = ({ image }: SchemaContext) =>
     forWhom: z.array(z.string()).min(1),
     /** Key figures, verbatim from the manufacturer's documents. */
     facts: z.array(z.string()).default([]),
-    /** 1–2 short figures for the card. */
-    keyFigures: z.array(z.string()).max(2).default([]),
+    /** One short line each, e.g. "W20+ water resistance"; longer wording lives in facts. */
+    keyFigures: z.array(z.string().max(32)).max(2).default([]),
     /** Stock and dispatch line for the card. */
     logistics: nullableText,
     manufacturerNote: nullableText,

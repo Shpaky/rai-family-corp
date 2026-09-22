@@ -16,6 +16,7 @@
 | `npm run lighthouse`       | Lighthouse CI: Perf/A11y/BP ≥ 95, SEO = 100                                                                       |
 | `npm run shots`            | скриншоты всех страниц на 360/768/1280 в `shots/`                                                                 |
 | `npm run check:directions` | сверка папок `../directions` (или `DIRECTIONS_DIR`) с `src/content/directions/*.json`                             |
+| `npm run check:cards`      | высота compact-карточек в ленте главной ≤ 360 px на 360 и ≤ 320 px на 1280 (после `build`; входит в `test:a11y`)  |
 | `npm run check:home`       | порядок секций главной, меню и карточек аудиторий сверяются с `src/data/site.ts` (после `build`; входит в `lint`) |
 
 Перед `test:a11y`, `lighthouse` и `shots` нужен свежий `npm run build`.
@@ -23,7 +24,7 @@
 ## Где что менять
 
 - Тексты всех языков — `src/i18n/ui.ts`.
-- Направления (продукты) — `src/content/directions/*.json`, категории — `src/content/categories/*.json`; новый JSON = карточка в ленте и каталоге + страница `/directions/<slug>/`. Документы направления — `public/docs/<slug>/`. Источник направлений — папка `./directions` вне репозитория, сверка `npm run check:directions`.
+- Направления (продукты) — `src/content/directions/*.json`, категории — `src/content/categories/*.json`; новый JSON = карточка в ленте и каталоге + страница `/directions/<slug>/`. Документы направления — `public/docs/<slug>/`. Лента на главной — `variant="compact"` карточки (без обложки, бренда, описания и логистики; заголовок целиком, цифры столбиком), каталог и похожие — `full`; обложка только при `image`. `title` до 70 символов и сам называет бренд и тип продукта, `keyFigures` до двух строк по 32 символа. Источник направлений — папка `./directions` вне репозитория, сверка `npm run check:directions`.
 - Токены дизайна (цвета, шрифты, размеры) — `src/styles/global.css`, блок `@theme`.
 - Адрес сайта и base — env `SITE_URL`, `BASE_PATH` (`.env.example`). CI для GitHub Pages — `.github/workflows/deploy.yml`.
 
