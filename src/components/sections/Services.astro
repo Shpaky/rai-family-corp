@@ -1,20 +1,24 @@
 ---
 import SectionHeading from '@/components/SectionHeading.astro';
+import type { SectionTone } from '@/data/site';
 import type { Locale } from '@/i18n/config';
 import type { PillarKey } from '@/i18n/ui';
 import { t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
+  /** Background, decided by src/data/site.ts. */
+  tone?: SectionTone;
 }
-const { locale } = Astro.props;
+const { locale, tone = 'white' } = Astro.props;
+const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
 const copy = t(locale);
 const order: PillarKey[] = ['intelligence', 'product', 'development', 'compliance'];
 ---
 
 <section
   id="services"
-  class="scroll-mt-20 bg-white py-section-sm md:py-section"
+  class:list={['scroll-mt-20 py-section-sm md:py-section', bg]}
   aria-labelledby="services-title"
 >
   <div class="container-page">

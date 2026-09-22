@@ -4,6 +4,7 @@ import CategoryTiles from '@/components/CategoryTiles.astro';
 import DirectionCard from '@/components/DirectionCard.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import { SHOW_CATEGORY_TILES } from '@/data/site';
+import type { SectionTone } from '@/data/site';
 import type { Locale } from '@/i18n/config';
 import { href, t, withCount } from '@/i18n/utils';
 import {
@@ -15,8 +16,11 @@ import {
 
 interface Props {
   locale: Locale;
+  /** Background, decided by src/data/site.ts. */
+  tone?: SectionTone;
 }
-const { locale } = Astro.props;
+const { locale, tone = 'surface' } = Astro.props;
+const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
 const copy = t(locale);
 const all = await getDirections();
 const groups = await getCategoriesWithDirections(all);
@@ -28,7 +32,7 @@ const arrow =
 
 <section
   id="directions"
-  class="scroll-mt-20 bg-surface py-section-sm md:py-section"
+  class:list={['scroll-mt-20 py-section-sm md:py-section', bg]}
   aria-labelledby="directions-title"
   data-carousel
 >
