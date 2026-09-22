@@ -35,7 +35,8 @@ interface Copy {
     /** Pavilion card: what the pavilion covers. */
     cardTitle: string;
   };
-  trust: { pavilion: string; since: string; b2b: string; b2c: string; mark: string };
+  /** Pavilion card facts (Pavilion.astro). */
+  trust: { pavilion: string; since: string; mark: string };
   /** Expansions of B2B / B2C, read by screen readers at the first mention and shown as a tooltip on badges. */
   segmentsExpanded: { B2B: string; B2C: string };
   status: { company: string; direction: string; line: string; lineShort: string; markAlt: string };
@@ -169,9 +170,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
     trust: {
       pavilion: 'First pavilion of the programme in India',
       since: 'Company since 2024, pavilion since August 2026',
-      b2b: 'B2B: manufacturers, distributors, retail and government institutions',
-      b2c: 'B2C: The Rus Store online shop',
-      /** Used on the pavilion card only. */
       mark: '«Made in Russia» mark',
     },
     segmentsExpanded: { B2B: 'business to business', B2C: 'business to consumer' },
@@ -418,9 +416,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
     trust: {
       pavilion: 'Первый павильон программы в Индии',
       since: 'Компания с 2024 года, павильон с августа 2026',
-      b2b: 'B2B: производители, дистрибьюторы, ритейл и госструктуры',
-      b2c: 'B2C: интернет-магазин The Rus Store',
-      /** Used on the pavilion card only. */
       mark: 'Знак «Сделано в России»',
     },
     segmentsExpanded: { B2B: 'бизнес для бизнеса', B2C: 'бизнес для потребителя' },
