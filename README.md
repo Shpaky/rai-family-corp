@@ -6,16 +6,17 @@
 
 ## Команды
 
-| Команда                    | Что делает                                                                            |
-| -------------------------- | ------------------------------------------------------------------------------------- |
-| `npm run dev`              | dev-сервер                                                                            |
-| `npm run build`            | `astro check` + сборка в `dist/`                                                      |
-| `npm run lint`             | eslint, prettier, проверка токенов                                                    |
-| `npm run test:a11y`        | axe + клавиатурная проверка всех страниц из `dist/`                                   |
-| `npm run check:budget`     | JS ≤ 50 КБ на страницу                                                                |
-| `npm run lighthouse`       | Lighthouse CI: Perf/A11y/BP ≥ 95, SEO = 100                                           |
-| `npm run shots`            | скриншоты всех страниц на 360/768/1280 в `shots/`                                     |
-| `npm run check:directions` | сверка папок `../directions` (или `DIRECTIONS_DIR`) с `src/content/directions/*.json` |
+| Команда                    | Что делает                                                                                                        |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `npm run dev`              | dev-сервер                                                                                                        |
+| `npm run build`            | `astro check` + сборка в `dist/`                                                                                  |
+| `npm run lint`             | eslint, prettier, проверка токенов                                                                                |
+| `npm run test:a11y`        | axe + клавиатурная проверка всех страниц из `dist/`                                                               |
+| `npm run check:budget`     | JS ≤ 50 КБ на страницу                                                                                            |
+| `npm run lighthouse`       | Lighthouse CI: Perf/A11y/BP ≥ 95, SEO = 100                                                                       |
+| `npm run shots`            | скриншоты всех страниц на 360/768/1280 в `shots/`                                                                 |
+| `npm run check:directions` | сверка папок `../directions` (или `DIRECTIONS_DIR`) с `src/content/directions/*.json`                             |
+| `npm run check:home`       | порядок секций главной, меню и карточек аудиторий сверяются с `src/data/site.ts` (после `build`; входит в `lint`) |
 
 Перед `test:a11y`, `lighthouse` и `shots` нужен свежий `npm run build`.
 
@@ -25,5 +26,13 @@
 - Направления (продукты) — `src/content/directions/*.json`, категории — `src/content/categories/*.json`; новый JSON = карточка в ленте и каталоге + страница `/directions/<slug>/`. Документы направления — `public/docs/<slug>/`. Источник направлений — папка `./directions` вне репозитория, сверка `npm run check:directions`.
 - Токены дизайна (цвета, шрифты, размеры) — `src/styles/global.css`, блок `@theme`.
 - Адрес сайта и base — env `SITE_URL`, `BASE_PATH` (`.env.example`). CI для GitHub Pages — `.github/workflows/deploy.yml`.
+
+## Главная
+
+Порядок секций главной и карточек «С кем мы работаем» задаётся только в `src/data/site.ts`
+(`HOME_SECTIONS`, `AUDIENCE_ORDER`) и различается по локалям; меню шапки и подвала строится из
+того же конфига. Новая секция главной — компонент с пропами `locale` и `tone`, ключ в
+`HomeSectionKey`, запись в обе локали и, если нужен пункт меню, подпись в `nav.*`.
+`npm run check:home` сверяет сборку с конфигом.
 
 Правила разработки — в `CLAUDE.md`.
