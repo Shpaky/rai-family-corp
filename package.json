@@ -14,11 +14,12 @@
     "lint:tokens": "node scripts/lint-tokens.mjs",
     "format": "prettier --write .",
     "check:budget": "node scripts/check-budget.mjs",
-    "test:a11y": "playwright test",
+    "test:a11y": "playwright test && npm run check:cards",
     "lighthouse": "lhci autorun",
     "shots": "node scripts/shots.mjs",
     "check:directions": "node scripts/check-directions.mjs",
-    "check:home": "node scripts/check-home-order.mjs"
+    "check:home": "node scripts/check-home-order.mjs",
+    "check:cards": "node scripts/check-card-height.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
