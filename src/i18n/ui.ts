@@ -70,7 +70,6 @@ interface Copy {
     /** "{count} directions", template for withCount(). */
     count: string;
     status: Record<'active' | 'on-order' | 'coming', string>;
-    audience: Record<'b2b' | 'b2c', string>;
     carousel: { label: string; prev: string; next: string };
     catalog: {
       title: string;
@@ -80,7 +79,6 @@ interface Copy {
       showing: string;
       filters: string;
       status: string;
-      audience: string;
       reset: string;
     };
     aboutLine: string;
@@ -286,18 +284,16 @@ export const ui: Record<'en' | 'ru', Copy> = {
       allCount: 'All directions ({count})',
       count: '{count} {count:direction|directions}',
       status: { active: 'In stock', 'on-order': 'Made to order', coming: 'Coming soon' },
-      audience: { b2b: 'B2B', b2c: 'B2C' },
       carousel: { label: 'Directions carousel', prev: 'Previous', next: 'Next' },
       catalog: {
         title: 'All directions',
-        lead: 'Every Russian brand and product line we bring to India, by category, availability and audience.',
+        lead: 'Every Russian brand and product line we bring to India, by category and availability.',
         description:
           'Catalogue of Russian products and technologies imported to India by Rai Family Corp: construction materials, equipment, industrial chemicals, agro.',
         all: 'All',
         showing: 'Showing {count}',
         filters: 'Filters',
         status: 'Availability',
-        audience: 'Audience',
         reset: 'Reset',
       },
       aboutLine: 'About the line',
@@ -537,18 +533,16 @@ export const ui: Record<'en' | 'ru', Copy> = {
       allCount: 'Все направления ({count})',
       count: '{count} {count:направление|направления|направлений}',
       status: { active: 'В наличии', 'on-order': 'Под заказ', coming: 'Готовится' },
-      audience: { b2b: 'B2B', b2c: 'B2C' },
       carousel: { label: 'Лента направлений', prev: 'Назад', next: 'Вперёд' },
       catalog: {
         title: 'Все направления',
-        lead: 'Все российские бренды и линейки, которые мы привозим в Индию: по категориям, наличию и аудитории.',
+        lead: 'Все российские бренды и линейки, которые мы привозим в Индию: по категориям и наличию.',
         description:
           'Каталог российских товаров и технологий, которые Rai Family Corp ввозит в Индию: стройматериалы, оборудование, промышленная химия, агро.',
         all: 'Все',
         showing: 'Показано {count}',
         filters: 'Фильтры',
         status: 'Наличие',
-        audience: 'Аудитория',
         reset: 'Сбросить',
       },
       aboutLine: 'О линейке',
