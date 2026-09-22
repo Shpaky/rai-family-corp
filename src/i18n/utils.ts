@@ -1,6 +1,7 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { DEFAULT_LOCALE, LOCALES, isLocale, type Locale } from './config';
 import { ui } from './ui';
+import { HOME_SECTIONS } from '../data/site';
 
 /** Locale from a `[...locale]` rest param (undefined → default). */
 export function localeFromParam(param: string | undefined): Locale {
@@ -41,4 +42,30 @@ export function withCount(template: string, count: number, locale: Locale): stri
       return list[Math.min(index ?? list.length - 1, list.length - 1)] ?? '';
     })
     .replace(/\{count\}/g, String(count));
+}
+
+export interface NavItem {
+  key: 'directions' | 'services' | 'pavilion' | 'about' | 'contacts';
+  label: string;
+  href: string;
+}
+
+/**
+ * Menu items in the order of the home sections of the locale (src/data/site.ts).
+ * Sections without a `nav.*` label (audiences) are skipped; `directions` links
+ * to the catalog, the rest to home anchors.
+ */
+export function navItems(locale: Locale): NavItem[] {
+  const nav = ui[locale].nav;
+  const home = href(locale);
+  return HOME_SECTIONS[locale].flatMap(({ key }) => {
+    if (key === 'audiences') return [];
+    return [
+      {
+        key,
+        label: nav[key],
+        href: key === 'directions' ? href(locale, 'directions/') : `${home}#${key}`,
+      },
+    ];
+  });
 }

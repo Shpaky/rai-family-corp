@@ -1,5 +1,6 @@
 ---
 import { contacts, telUri, telegramLabel, telegramUrl, whatsappUrl } from '@/data/contacts';
+import type { SectionTone } from '@/data/site';
 import type { Locale } from '@/i18n/config';
 import { t } from '@/i18n/utils';
 
@@ -7,6 +8,8 @@ interface Props {
   locale: Locale;
   /** Compact variant for direction pages. */
   compact?: boolean;
+  /** Accepted for uniformity with other home sections; Contacts is always dark. */
+  tone?: SectionTone;
 }
 const { locale, compact = false } = Astro.props;
 const copy = t(locale);

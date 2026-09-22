@@ -1,7 +1,7 @@
 ---
 import StatusLockup from '@/components/StatusLockup.astro';
 import { LOCALES, LOCALE_LABELS, type Locale } from '@/i18n/config';
-import { href, t } from '@/i18n/utils';
+import { href, navItems, t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
@@ -9,15 +9,8 @@ interface Props {
 }
 const { locale, path = '' } = Astro.props;
 const copy = t(locale);
-const home = href(locale);
 const year = new Date().getFullYear();
-const links = [
-  { id: 'about', label: copy.nav.about },
-  { id: 'services', label: copy.nav.services },
-  { id: 'directions', label: copy.nav.directions },
-  { id: 'pavilion', label: copy.nav.pavilion },
-  { id: 'contacts', label: copy.nav.contacts },
-];
+const links = navItems(locale);
 ---
 
 <footer class="border-t border-line bg-white">
@@ -31,10 +24,7 @@ const links = [
         {
           links.map((l) => (
             <li>
-              <a
-                href={`${home}#${l.id}`}
-                class="text-sm font-semibold text-ink-soft hover:text-primary"
-              >
+              <a href={l.href} class="text-sm font-semibold text-ink-soft hover:text-primary">
                 {l.label}
               </a>
             </li>

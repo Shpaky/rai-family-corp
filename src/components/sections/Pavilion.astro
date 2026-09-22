@@ -4,6 +4,7 @@ import Button from '@/components/Button.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import StatusLockup from '@/components/StatusLockup.astro';
 import { contacts } from '@/data/contacts';
+import type { SectionTone } from '@/data/site';
 import type { Locale } from '@/i18n/config';
 import showroom from '@/assets/pavilion/showroom.jpg';
 import shelves from '@/assets/pavilion/shelves.jpg';
@@ -12,8 +13,11 @@ import { t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
+  /** Background, decided by src/data/site.ts. */
+  tone?: SectionTone;
 }
-const { locale } = Astro.props;
+const { locale, tone = 'white' } = Astro.props;
+const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
 const copy = t(locale);
 const photos = [
   { src: showroom, ...copy.pavilion.photos.showroom },
@@ -24,7 +28,7 @@ const photos = [
 
 <section
   id="pavilion"
-  class="scroll-mt-20 bg-white py-section-sm md:py-section"
+  class:list={['scroll-mt-20 py-section-sm md:py-section', bg]}
   aria-labelledby="pavilion-title"
 >
   <div class="container-page grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">

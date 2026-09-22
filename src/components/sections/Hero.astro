@@ -10,14 +10,6 @@ interface Props {
 const { locale } = Astro.props;
 const copy = t(locale);
 const home = href(locale);
-// The B2B / B2C items are the first mention on the page: a visually hidden
-// expansion follows the abbreviation for screen readers.
-const trust = [
-  { text: copy.trust.pavilion },
-  { text: copy.trust.since },
-  { text: copy.trust.b2b, abbr: 'B2B' as const },
-  { text: copy.trust.b2c, abbr: 'B2C' as const },
-];
 ---
 
 <section class="relative overflow-hidden bg-white">
@@ -76,45 +68,5 @@ const trust = [
         </a>
       </div>
     </div>
-  </div>
-
-  <div class="border-y border-line bg-surface">
-    <ul
-      class="container-page grid grid-cols-2 gap-x-6 gap-y-3 py-5 text-sm font-semibold text-ink-soft md:grid-cols-4"
-    >
-      {
-        trust.map((item) => (
-          <li class="flex items-start gap-2.5">
-            <svg
-              class="mt-0.5 size-4 shrink-0 text-primary"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M20 6 9 17l-5-5" />
-            </svg>
-            {item.abbr ? (
-              <span>
-                {[
-                  <abbr
-                    class="no-underline"
-                    title={copy.segmentsExpanded[item.abbr]}
-                    set:text={item.abbr}
-                  />,
-                  <span class="sr-only" set:text={` (${copy.segmentsExpanded[item.abbr]})`} />,
-                  item.text.slice(item.abbr.length),
-                ]}
-              </span>
-            ) : (
-              item.text
-            )}
-          </li>
-        ))
-      }
-    </ul>
   </div>
 </section>

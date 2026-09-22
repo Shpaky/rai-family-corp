@@ -10,14 +10,15 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "lint": "eslint . && prettier --check . && npm run lint:tokens",
+    "lint": "eslint . && prettier --check . && npm run lint:tokens && npm run check:home",
     "lint:tokens": "node scripts/lint-tokens.mjs",
     "format": "prettier --write .",
     "check:budget": "node scripts/check-budget.mjs",
     "test:a11y": "playwright test",
     "lighthouse": "lhci autorun",
     "shots": "node scripts/shots.mjs",
-    "check:directions": "node scripts/check-directions.mjs"
+    "check:directions": "node scripts/check-directions.mjs",
+    "check:home": "node scripts/check-home-order.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",

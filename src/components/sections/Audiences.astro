@@ -1,5 +1,6 @@
 ---
 import SectionHeading from '@/components/SectionHeading.astro';
+import { AUDIENCE_ORDER, type SectionTone } from '@/data/site';
 import type { Locale } from '@/i18n/config';
 import type { AudienceKey } from '@/i18n/ui';
 import { href, t } from '@/i18n/utils';
@@ -7,8 +8,11 @@ import { company } from '@/data/company';
 
 interface Props {
   locale: Locale;
+  /** Background, decided by src/data/site.ts. */
+  tone?: SectionTone;
 }
-const { locale } = Astro.props;
+const { locale, tone = 'white' } = Astro.props;
+const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
 const copy = t(locale);
 const home = href(locale);
 
@@ -18,7 +22,7 @@ const targets: Record<AudienceKey, { href: string; external?: boolean }> = {
   institutions: { href: `${home}#pavilion` },
   consumers: { href: company.store.url, external: true },
 };
-const order: AudienceKey[] = ['manufacturers', 'distributors', 'institutions', 'consumers'];
+const order = AUDIENCE_ORDER[locale];
 
 // One stroke icon per audience, 24px grid.
 const icons: Record<AudienceKey, string> = {
@@ -31,7 +35,11 @@ const icons: Record<AudienceKey, string> = {
 };
 ---
 
-<section class="bg-white py-section-sm md:py-section" aria-labelledby="audiences-title">
+<section
+  id="audiences"
+  class:list={['scroll-mt-20 py-section-sm md:py-section', bg]}
+  aria-labelledby="audiences-title"
+>
   <div class="container-page">
     <SectionHeading
       id="audiences-title"

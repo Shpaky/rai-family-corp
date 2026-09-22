@@ -7,6 +7,7 @@ import Directions from '@/components/sections/Directions.astro';
 import Hero from '@/components/sections/Hero.astro';
 import Pavilion from '@/components/sections/Pavilion.astro';
 import Services from '@/components/sections/Services.astro';
+import { HOME_SECTIONS } from '@/data/site';
 import type { Locale } from '@/i18n/config';
 import { localePaths, t } from '@/i18n/utils';
 
@@ -16,14 +17,23 @@ export function getStaticPaths() {
 
 const { locale } = Astro.props as { locale: Locale };
 const copy = t(locale);
+// Order and background of the sections come from src/data/site.ts only.
+const sections = {
+  audiences: Audiences,
+  directions: Directions,
+  services: Services,
+  pavilion: Pavilion,
+  about: About,
+  contacts: Contacts,
+};
 ---
 
 <Base locale={locale} title={copy.meta.title} description={copy.meta.description}>
   <Hero locale={locale} />
-  <Audiences locale={locale} />
-  <About locale={locale} />
-  <Services locale={locale} />
-  <Directions locale={locale} />
-  <Pavilion locale={locale} />
-  <Contacts locale={locale} />
+  {
+    HOME_SECTIONS[locale].map(({ key, tone }) => {
+      const Section = sections[key];
+      return <Section locale={locale} tone={tone} />;
+    })
+  }
 </Base>
