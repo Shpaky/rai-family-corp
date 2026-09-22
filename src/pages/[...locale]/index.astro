@@ -7,6 +7,7 @@ import Directions from '@/components/sections/Directions.astro';
 import Hero from '@/components/sections/Hero.astro';
 import Pavilion from '@/components/sections/Pavilion.astro';
 import Services from '@/components/sections/Services.astro';
+import type { SectionTone } from '@/components/sections/types';
 import { HOME_SECTIONS } from '@/data/site';
 import type { Locale } from '@/i18n/config';
 import { localePaths, t } from '@/i18n/utils';
@@ -31,8 +32,11 @@ const sections = {
 <Base locale={locale} title={copy.meta.title} description={copy.meta.description}>
   <Hero locale={locale} />
   {
-    HOME_SECTIONS[locale].map(({ key, tone }) => {
+    HOME_SECTIONS[locale].map((key, i) => {
       const Section = sections[key];
+      // Hero is always white, so index 0 is paper and the row alternates from there.
+      // Do not change the parity: inserting a section anywhere flips the ones below it.
+      const tone: SectionTone = i % 2 === 0 ? 'surface' : 'white';
       return <Section locale={locale} tone={tone} />;
     })
   }

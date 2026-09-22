@@ -1,6 +1,6 @@
 ---
 import SectionHeading from '@/components/SectionHeading.astro';
-import type { SectionTone } from '@/data/site';
+import type { SectionTone } from '@/components/sections/types';
 import type { Locale } from '@/i18n/config';
 import { t } from '@/i18n/utils';
 
@@ -28,7 +28,7 @@ const copy = t(locale);
     </div>
     <div class="lg:col-span-5">
       <dl
-        class="grid gap-px overflow-hidden rounded-card bg-line shadow-card sm:grid-cols-2 lg:grid-cols-1"
+        class="grid gap-px overflow-hidden rounded-card border border-line bg-line shadow-card sm:grid-cols-2 lg:grid-cols-1"
       >
         {
           copy.about.facts.map((f, i) => (

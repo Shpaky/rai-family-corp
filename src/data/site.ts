@@ -7,6 +7,7 @@ export const SHOW_CATEGORY_TILES = false;
 /*
   Home page composition. The only place where the order of sections and of
   audience cards is defined; index.astro, the menus and Audiences.astro read it.
+  Backgrounds are not configured here: index.astro derives them from position.
   Hero is always first and is not listed. The order differs per locale: the
   Audiences section works as a table of contents for the three sections below
   it, so its cards follow the same order, and the locale's primary reader comes
@@ -15,31 +16,9 @@ export const SHOW_CATEGORY_TILES = false;
 export type HomeSectionKey =
   'audiences' | 'directions' | 'services' | 'pavilion' | 'about' | 'contacts';
 
-/** Section background; alternation is decided here, not inside the sections. */
-export type SectionTone = 'white' | 'surface';
-
-export interface HomeSection {
-  key: HomeSectionKey;
-  tone: SectionTone;
-}
-
-export const HOME_SECTIONS: Record<Locale, HomeSection[]> = {
-  en: [
-    { key: 'audiences', tone: 'white' },
-    { key: 'directions', tone: 'surface' },
-    { key: 'services', tone: 'white' },
-    { key: 'pavilion', tone: 'surface' },
-    { key: 'about', tone: 'white' },
-    { key: 'contacts', tone: 'white' }, // Contacts is dark and ignores tone
-  ],
-  ru: [
-    { key: 'audiences', tone: 'white' },
-    { key: 'services', tone: 'surface' },
-    { key: 'directions', tone: 'white' },
-    { key: 'pavilion', tone: 'surface' },
-    { key: 'about', tone: 'white' },
-    { key: 'contacts', tone: 'white' },
-  ],
+export const HOME_SECTIONS: Record<Locale, HomeSectionKey[]> = {
+  en: ['audiences', 'directions', 'services', 'pavilion', 'about', 'contacts'],
+  ru: ['audiences', 'services', 'directions', 'pavilion', 'about', 'contacts'],
 };
 
 export const AUDIENCE_ORDER: Record<Locale, AudienceKey[]> = {
@@ -60,8 +39,7 @@ const AUDIENCE_KEYS: AudienceKey[] = ['manufacturers', 'distributors', 'institut
 const sameSet = (a: string[], b: string[]) =>
   a.length === b.length && [...a].sort().join() === [...b].sort().join();
 
-for (const [locale, sections] of Object.entries(HOME_SECTIONS)) {
-  const keys = sections.map((s) => s.key);
+for (const [locale, keys] of Object.entries(HOME_SECTIONS)) {
   if (!sameSet(keys, SECTION_KEYS)) {
     throw new Error(
       `HOME_SECTIONS.${locale}: expected each of ${SECTION_KEYS.join(', ')} exactly once, got ${keys.join(', ')}`,
