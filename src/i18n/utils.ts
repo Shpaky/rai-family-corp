@@ -58,7 +58,7 @@ export interface NavItem {
 export function navItems(locale: Locale): NavItem[] {
   const nav = ui[locale].nav;
   const home = href(locale);
-  return HOME_SECTIONS[locale].flatMap(({ key }) => {
+  return HOME_SECTIONS[locale].flatMap((key) => {
     if (key === 'audiences') return [];
     return [
       {
