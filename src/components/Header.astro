@@ -1,7 +1,7 @@
 ---
 import Logo from '@/components/Logo.astro';
 import { LOCALES, LOCALE_LABELS, type Locale } from '@/i18n/config';
-import { href, t } from '@/i18n/utils';
+import { href, navItems, t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
@@ -11,12 +11,7 @@ interface Props {
 const { locale, path = '' } = Astro.props;
 const copy = t(locale);
 const home = href(locale);
-const links = [
-  { id: 'about', label: copy.nav.about },
-  { id: 'services', label: copy.nav.services },
-  { id: 'directions', label: copy.nav.directions },
-  { id: 'pavilion', label: copy.nav.pavilion },
-];
+const links = navItems(locale).filter((l) => l.key !== 'contacts');
 ---
 
 <header class="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
@@ -31,7 +26,7 @@ const links = [
           links.map((l) => (
             <li>
               <a
-                href={`${home}#${l.id}`}
+                href={l.href}
                 class="text-sm font-semibold text-ink-soft transition-colors hover:text-primary"
               >
                 {l.label}
@@ -112,7 +107,7 @@ const links = [
               links.map((l) => (
                 <li>
                   <a
-                    href={`${home}#${l.id}`}
+                    href={l.href}
                     class="block rounded-lg px-3 py-2.5 text-base font-semibold text-ink hover:bg-surface"
                   >
                     {l.label}
