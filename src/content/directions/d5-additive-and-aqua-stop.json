@@ -4,11 +4,11 @@
   "category": "construction",
   "status": "active",
   "audiences": ["b2b", "b2c"],
-  "source": "Д5",
+  "source": "D5",
   "tags": ["waterproofing", "concrete"],
   "featured": true,
   "manufacturer": {
-    "name": "NPP Tokar",
+    "name": "SPE TOKAR Co. Ltd",
     "city": null,
     "founded": null
   },
@@ -16,26 +16,10 @@
     "stockInIndia": true
   },
   "documents": [
-    {
-      "label": "D5 (EN)",
-      "url": "/docs/d5-additive-and-aqua-stop/D5-TDS-en.pdf",
-      "type": "tds"
-    },
-    {
-      "label": "D5 (RU)",
-      "url": "/docs/d5-additive-and-aqua-stop/D5-TDS-ru.pdf",
-      "type": "tds"
-    },
-    {
-      "label": "D5 (EN)",
-      "url": "/docs/d5-additive-and-aqua-stop/D5-SDS-en.pdf",
-      "type": "sds"
-    },
-    {
-      "label": "D5 (RU)",
-      "url": "/docs/d5-additive-and-aqua-stop/D5-SDS-ru.pdf",
-      "type": "sds"
-    },
+    { "label": "D5 (EN)", "url": "/docs/d5-additive-and-aqua-stop/D5-TDS-en.pdf", "type": "tds" },
+    { "label": "D5 (RU)", "url": "/docs/d5-additive-and-aqua-stop/D5-TDS-ru.pdf", "type": "tds" },
+    { "label": "D5 (EN)", "url": "/docs/d5-additive-and-aqua-stop/D5-SDS-en.pdf", "type": "sds" },
+    { "label": "D5 (RU)", "url": "/docs/d5-additive-and-aqua-stop/D5-SDS-ru.pdf", "type": "sds" },
     {
       "label": "D5 Aqua Stop (EN)",
       "url": "/docs/d5-additive-and-aqua-stop/D5-AquaStop-SDS-en.pdf",
@@ -80,75 +64,245 @@
   "i18n": {
     "en": {
       "title": "D5 concrete additive and D5 Aqua Stop waterproofing",
-      "summary": "Russian concrete waterproofing: the D5 admixture for new concrete and the D5 Aqua Stop coating for existing structures.",
+      "summary": "D5 is a dry admixture that makes new concrete waterproof from the batching plant onward. D5 Aqua Stop is a dry cementitious mix for waterproofing and repair of existing concrete, reinforced concrete and stone structures.",
       "body": [
-        "D5 is a line of Russian-made waterproofing products for concrete, brought to India for contractors, precast producers, waterproofing specialists and distributors of construction chemistry.",
-        "The line covers both stages of a structure’s life: D5 protects new concrete from the batching plant onward, and D5 Aqua Stop protects and repairs existing concrete and masonry."
+        "D5 is a finely milled beige powder made from natural mineral raw materials: active pozzolans, specially selected finely ground rocks and a superplasticizer. It goes into the mixer in dry form together with sand or cement at 2-3% of cement weight and needs no pre-mixing with water. Because the superplasticizer is already inside, no other plasticizer is required.",
+        "Concrete with D5 acquires water resistance of W20 and above that is maintained for the whole service life of the structure, so no additional waterproofing is needed in water-saturated soils or directly in water. On ordinary Portland cement it gains high sulphate resistance for sea water, oil and oil products, frost resistance of F400 and above, an average 30% increase of 28-day strength (or 15-20% less cement) and a rate of early strength gain at least twice as fast. Through cracks up to 0.5 mm wide self-seal when water filters through them, and properly prepared cold joints stay watertight under water pressure of up to 12 bar.",
+        "D5 Aqua Stop extends the same approach to structures that already exist. It is a dry mix of high-strength cement, quartz sand, the D5 admixture, polypropylene fibre and modifying admixtures; mixed with water it forms a thixotropic plaster with high adhesion to concrete and metal that works under both positive and negative water pressure. Together the two products cover both stages of a structure’s life: D5 for new concrete from the batching plant, D5 Aqua Stop for repair and waterproofing of existing concrete, reinforced concrete and stone."
       ],
       "products": [
         {
           "name": "D5",
-          "text": "A complex multifunctional admixture added to concrete during batching. It gives the concrete water resistance, higher strength, sulphate resistance and frost protection."
+          "text": "Complex multifunctional admixture for concretes, mortars, dry building mixes and cements. Added to the mixer in dry form during batching, it gives waterproof, high-strength, sulphate- and frost-resistant concrete with accelerated strength gain and self-sealing of cracks.",
+          "specs": [
+            "Dosage 2-3% by total weight of cement; preliminary lab tests with the plant’s cement and aggregates",
+            "Beige powder, bulk density 750-800 kg/m³",
+            "Chloride ion 0.065%; Na₂O 1.04%, K₂O 1.09%",
+            "Water reduction 15-25% at equal slump, or flowability from P1 to P5",
+            "TS 5745-002-37415339-2015; BS EN 934-2, BS EN 480-1 (T.3.1), BS EN 12390-8",
+            "Packing: 15 kg paper valve bags or 1000 kg big-bags"
+          ]
         },
         {
           "name": "D5 Aqua Stop",
-          "text": "A one-component, brush-applied cementitious waterproofing mortar for protecting and repairing concrete. Applied in two or more coats on a dampened surface, it holds W12 under positive and W8 under negative water pressure. Basements from the inside, tanks, pools, wet rooms, repair of old waterproofing."
+          "text": "Universal dry waterproofing mix for repair and protection of concrete, reinforced concrete and stone structures (GOST R 56378-2015, GOST 33083-2014). Mixed with water and applied by trowel, spatula or spray to a cleaned and well-watered base; thick layers are built up in several passes. Works under positive and negative water pressure; the fibre acts as three-dimensional reinforcement, so a mesh is needed only under high negative pressure.",
+          "specs": [
+            "Water resistance of the plaster layer ≥ 1.4 MPa (W14), positive and negative pressure",
+            "Layer 5-20 mm by spray, thick layers in several passes; consumption 10 kg/m² per 10 mm",
+            "Mixing: 4.5-5.0 l of water per 25 kg; use within 45-60 minutes",
+            "Compressive strength ≥ 30 MPa, adhesion ≥ 1.5 MPa, frost resistance ≥ F400",
+            "Application at +5…+40 °C; service temperature −50…+70 °C",
+            "Packing: 25 kg bags"
+          ]
         }
       ],
-      "forWhom": ["Contractors and RMC plants", "Private builders", "Dealers and distributors"],
-      "facts": [
-        "Water resistance W20+ for the life of the structure",
-        "Frost resistance F400+",
-        "Sulphate resistance on ordinary Portland cement",
-        "Self-seals cracks up to 0.5 mm",
-        "Dosage 2–3% of cement weight",
-        "Cold joints do not leak under pressure up to 12 bar"
+      "forWhom": [
+        "Contractors and ready-mix plants",
+        "Precast concrete producers",
+        "Waterproofing specialists",
+        "Dealers and distributors"
       ],
-      "logistics": "Stock in India, typical dispatch 1–3 working days.",
-      "keyFigures": ["W20+ water resistance", "2-3% of cement weight"],
+      "facts": [
+        "Water resistance W20 and above for the entire service life of the structure",
+        "Frost resistance F400 and above, at least 2 grades higher than without the admixture",
+        "28-day strength +30% on average, or 15-20% less cement at equal slump",
+        "Strength gain in the first days at least 2 times faster",
+        "Self-sealing of through cracks up to 0.5 mm wide",
+        "Cold joints watertight under water pressure of up to 12 bar (BNTU test report No. 302)",
+        "Water penetration 4-5 mm at 28 days by BS EN 12390-8 (Boral, Australia)",
+        "D5 Aqua Stop plaster layer: W14 (1.4 MPa), frost resistance F400"
+      ],
+      "logistics": "Stock in India, typical dispatch 1-3 working days.",
+      "keyFigures": ["W20+ water resistance", "Cold joints tight to 12 bar"],
+      "manufacturerNote": "Scientific and Production Enterprise TOKAR Co. Ltd, Vladikavkaz, Republic of North Ossetia-Alania, Russia. D5 is produced to Technical Specifications TS 5745-002-37415339-2015 and complies with BS EN 934-2, BS EN 480-1 (T.3.1) and BS EN 12390-8. Certificates of conformity of the Russian Federation and New Zealand, ISO certificate of conformity, certificate of state registration, certificate of radiation quality and ecological certificate are available on request.",
       "howToBuy": {
         "dispatch": "1-3 working days",
         "moq": null,
-        "packaging": null,
-        "priceNote": null,
+        "packaging": "D5: 15 kg paper valve bags or 1000 kg big-bags. D5 Aqua Stop: 25 kg bags. Other packaging on request.",
+        "priceNote": "On request: concrete volume or number of bags, and the delivery city",
         "incoterms": null
-      }
+      },
+      "references": [
+        {
+          "title": "Drinking water tanks and treatment facilities",
+          "text": "D5 is approved for concrete and reinforced concrete in contact with drinking water and contains no components harmful to cement stone or reinforcement."
+        },
+        {
+          "title": "Swimming pools and fish-breeding pools",
+          "text": "Waterproof concrete without membranes; D5 Aqua Stop for repair and waterproofing of existing pools and fountains."
+        },
+        {
+          "title": "Oil storage tanks and aggressive environments",
+          "text": "High sulphate resistance on ordinary Portland cement for structures exposed to sea water, oil and oil products."
+        },
+        {
+          "title": "Underground parking, tunnels and basements",
+          "text": "Concrete in water-saturated soils and underwater tunnels without additional waterproofing; cold joints watertight up to 12 bar."
+        },
+        {
+          "title": "Floating platforms and hydraulic structures",
+          "text": "Sea water and dynamic loads: frost resistance F400 and above, self-sealing of cracks up to 0.5 mm."
+        },
+        {
+          "title": "Repair of concrete, facades and wet rooms",
+          "text": "D5 Aqua Stop for chips, cavities and restoring the protective layer of concrete, plastering of plinths, bathrooms and saunas against dampness and mould."
+        }
+      ],
+      "faq": [
+        {
+          "q": "What dosage of D5 should we use?",
+          "a": "The recommended dosage is 2-3% by total weight of cement. Before use at a precast plant or a mixing station, run preliminary laboratory tests with your own cement and aggregates: a control mix without admixtures and a basic mix with 3% D5 at equal slump."
+        },
+        {
+          "q": "How does D5 affect strength and workability?",
+          "a": "At equal slump, 28-day strength rises by 30% on average and early strength gain is at least twice as fast; alternatively cement content can be reduced by 15-20%. D5 contains a superplasticizer, so it either raises flowability from P1 to P5 or reduces water by 15-25%. No other plasticizer is needed, and the water content of the mix must be adjusted accordingly."
+        },
+        {
+          "q": "How is D5 added to the mix?",
+          "a": "In dry form, into the mixer together with sand or cement. Do not pre-mix it with water. Mixing time is 30-90 seconds depending on the mixer and the required flowability; within this time D5 is evenly distributed throughout the mix."
+        },
+        {
+          "q": "What about cold joints?",
+          "a": "Clean the surface of the earlier concrete from cement crust 6-8 hours after pouring, expose the aggregate, wash off dust and dirt and water the joint abundantly. Before placing fresh concrete with D5, wash the joint again. Prepared this way, cold joints in concrete with D5 stay watertight under water pressure of up to 12 bar (1.2 MPa), as confirmed by the BNTU test report."
+        },
+        {
+          "q": "Is D5 safe for reinforcement and drinking water?",
+          "a": "D5 is not aggressive towards reinforcing steel and enhances the passivating properties of concrete; chloride ion content is 0.065%, and adhesion between concrete and reinforcement increases by 36%. It forms no toxic compounds in air or water and is approved for concrete and reinforced concrete structures in contact with drinking water."
+        },
+        {
+          "q": "Can the line be used on existing concrete?",
+          "a": "Yes, with D5 Aqua Stop. Clean the base from dust and loose material, water it abundantly and start plastering after the water is absorbed. Mix 25 kg with 4.5-5.0 l of water at about 500 rpm, use within 45-60 minutes and apply by trowel, spatula or spray, thick layers in several passes. Keep the surface moist for the first 5-7 days; a 10 mm layer takes hydrostatic load on day 5-7, and tiling is possible after 5-7 days."
+        },
+        {
+          "q": "Which documents and certificates are available?",
+          "a": "The technical and safety data sheets, the leaflet and the test reports on water permeability, self-healing of cracks and cold joints are on this page. Certificates of conformity of the Russian Federation and New Zealand, ISO, state registration, radiation quality and the ecological certificate are available from the operator on request."
+        },
+        {
+          "q": "How do I get a price and a delivery date?",
+          "a": "Use the Get best price or WhatsApp buttons on this page and tell us the concrete volume or the number of bags and your delivery city. D5 is stocked in India; typical dispatch is 1-3 working days."
+        }
+      ]
     },
     "ru": {
       "title": "Добавка к бетону D5 и гидроизоляция D5 Aqua Stop",
-      "summary": "Российская гидроизоляция бетона: добавка D5 для нового бетона и обмазочная смесь D5 Aqua Stop для существующих конструкций.",
+      "summary": "D5 — сухая добавка, которая делает новый бетон водонепроницаемым ещё на бетонном заводе. D5 Aqua Stop — сухая смесь на цементной основе для гидроизоляции и ремонта существующих бетонных, железобетонных и каменных конструкций.",
       "body": [
-        "D5 — линейка российских гидроизоляционных продуктов для бетона, которую павильон выводит на рынок Индии для подрядчиков, производителей ЖБИ, специалистов по гидроизоляции и дистрибьюторов строительной химии.",
-        "Линейка закрывает оба этапа жизни конструкции: D5 защищает новый бетон начиная с бетонного завода, а D5 Aqua Stop защищает и ремонтирует существующий бетон и кладку."
+        "D5 — тонкомолотый порошок бежевого цвета на основе природного минерального сырья: активные пуццоланы, специально подобранные тонкомолотые горные породы и эффективный суперпластификатор. Добавка вводится в бетоносмеситель в сухом виде вместе с песком или цементом в дозировке 2-3% от общего веса цемента; предварительно перемешивать её с водой не нужно. Суперпластификатор уже входит в состав, поэтому дополнительные пластификаторы не требуются.",
+        "Бетон с D5 приобретает водонепроницаемость W20 и выше, которая сохраняется на весь срок эксплуатации конструкции: дополнительная гидроизоляция в водонасыщенных грунтах и непосредственно в воде не нужна. На обычном портландцементе он получает высокую сульфатостойкость для морской воды, нефти и нефтепродуктов, морозостойкость F400 и выше, прирост прочности в возрасте 28 суток в среднем на 30% (либо снижение расхода цемента на 15-20%) и ускорение набора прочности в первые сутки не менее чем в 2 раза. Сквозные трещины шириной до 0,5 мм самозалечиваются при фильтрации воды, а подготовленные по регламенту «холодные» швы не пропускают воду при давлении до 12 атмосфер.",
+        "D5 Aqua Stop переносит тот же принцип на уже построенные конструкции. Это сухая смесь из высокопрочного цемента, кварцевого песка, добавки D5, полипропиленовой фибры и модифицирующих добавок; при затворении водой она образует тиксотропный раствор с высокой адгезией к бетону и металлу, который работает при прямом и обратном давлении воды. Вместе два продукта закрывают оба этапа жизни конструкции: D5 — для нового бетона с бетонного завода, D5 Aqua Stop — для ремонта и гидроизоляции существующего бетона, железобетона и камня."
       ],
       "products": [
         {
           "name": "D5",
-          "text": "Комплексная многофункциональная добавка, вводится в бетон при затворении. Придаёт бетону водонепроницаемость, повышенную прочность, сульфатостойкость и морозостойкость."
+          "text": "Комплексная полифункциональная добавка к бетонам, растворам, сухим строительным смесям и цементам. Вводится в смеситель в сухом виде при приготовлении смеси; даёт водонепроницаемый высокопрочный бетон с повышенной сульфатостойкостью и морозостойкостью, ускоренным набором прочности и самозалечиванием трещин.",
+          "specs": [
+            "Дозировка 2-3% от общего веса цемента; предварительные испытания с цементом и заполнителями предприятия",
+            "Порошок бежевого цвета, насыпная плотность 750-800 кг/м³",
+            "Хлор-ион 0,065%; Na₂O 1,04%, K₂O 1,09%",
+            "Снижение расхода воды на 15-25% в равноподвижных смесях либо подвижность с П1 до П5",
+            "ТУ 5745-002-37415339-2015; BS EN 934-2, BS EN 480-1 (Т.3.1), BS EN 12390-8",
+            "Упаковка: бумажные клапанные мешки 15 кг или биг-бэги 1000 кг"
+          ]
         },
         {
           "name": "D5 Aqua Stop",
-          "text": "Однокомпонентная обмазочная гидроизоляционная смесь для защиты и ремонта бетона. Наносится в два и более слоя по увлажнённому основанию, держит прямое давление воды W12 и обратное W8. Подвалы изнутри, резервуары, бассейны, влажные помещения, ремонт старой гидроизоляции."
+          "text": "Универсальная сухая гидроизоляционная смесь для ремонта и защиты бетонных, железобетонных и каменных конструкций (ГОСТ Р 56378-2015, ГОСТ 33083-2014). Затворяется водой и наносится кельмой, шпателем или механизированно на очищенное и обильно увлажнённое основание; толстый слой набирается в несколько проходов. Работает при прямом и обратном давлении воды; фибра выполняет роль объёмного армирования, сетка нужна только при высоком обратном давлении.",
+          "specs": [
+            "Водонепроницаемость слоя не менее 1,4 МПа (W14), прямое и обратное давление",
+            "Слой 5-20 мм при механизированном нанесении, толстый слой в несколько проходов; расход 10 кг/м² на 10 мм",
+            "Затворение: 4,5-5,0 л воды на 25 кг; использовать в течение 45-60 минут",
+            "Прочность на сжатие не менее 30 МПа, адгезия не менее 1,5 МПа, морозостойкость не менее F400",
+            "Нанесение при +5…+40 °C; эксплуатация от −50 до +70 °C",
+            "Упаковка: мешки 25 кг"
+          ]
         }
       ],
-      "forWhom": ["Подрядчики и бетонные заводы", "Частные застройщики", "Дилеры и дистрибьюторы"],
-      "facts": [
-        "Водонепроницаемость W20+ на весь срок службы конструкции",
-        "Морозостойкость F400+",
-        "Сульфатостойкость на обычном портландцементе",
-        "Самозалечивание трещин до 0,5 мм",
-        "Дозировка 2–3% от массы цемента",
-        "Холодные швы не текут под давлением до 12 бар"
+      "forWhom": [
+        "Подрядчики и бетонные заводы",
+        "Производители ЖБИ",
+        "Специалисты по гидроизоляции",
+        "Дилеры и дистрибьюторы"
       ],
-      "logistics": "Склад в Индии, типовая отгрузка 1–3 рабочих дня.",
-      "keyFigures": ["Водонепроницаемость W20+", "2-3% от массы цемента"],
+      "facts": [
+        "Водонепроницаемость W20 и выше на весь срок эксплуатации конструкции",
+        "Морозостойкость F400 и выше, прирост не менее чем на 2 марки",
+        "Прочность в 28 суток в среднем +30% либо расход цемента ниже на 15-20% в равноподвижных смесях",
+        "Набор прочности в первые сутки быстрее не менее чем в 2 раза",
+        "Самозалечивание сквозных трещин шириной до 0,5 мм",
+        "«Холодные» швы не пропускают воду при давлении до 12 атм (протокол БНТУ № 302)",
+        "Глубина проникновения воды 4-5 мм в 28 суток по BS EN 12390-8 (Boral, Австралия)",
+        "Слой D5 Aqua Stop: водонепроницаемость W14 (1,4 МПа), морозостойкость F400"
+      ],
+      "logistics": "Склад в Индии, типовая отгрузка 1-3 рабочих дня.",
+      "keyFigures": ["Водонепроницаемость W20+", "Холодные швы держат 12 атм"],
+      "manufacturerNote": "ООО «Научно-производственное предприятие «ТОКАР», г. Владикавказ, Республика Северная Осетия-Алания. Добавка выпускается по ТУ 5745-002-37415339-2015 и соответствует BS EN 934-2, BS EN 480-1 (Т.3.1) и BS EN 12390-8. Сертификаты соответствия РФ и Новой Зеландии, сертификат соответствия ISO, свидетельство о государственной регистрации, свидетельство радиационного качества и экологический сертификат соответствия предоставляются по запросу.",
       "howToBuy": {
         "dispatch": "1-3 рабочих дня",
         "moq": null,
-        "packaging": null,
-        "priceNote": null,
+        "packaging": "D5: бумажные клапанные мешки 15 кг или биг-бэги 1000 кг. D5 Aqua Stop: мешки 25 кг. Другая упаковка по запросу.",
+        "priceNote": "По запросу: объём бетона или количество мешков и город доставки",
         "incoterms": null
-      }
+      },
+      "references": [
+        {
+          "title": "Резервуары питьевой воды и очистные сооружения",
+          "text": "D5 допущена к производству бетонных и железобетонных конструкций, контактирующих с питьевой водой, и не содержит компонентов, опасных для цементного камня и арматуры."
+        },
+        {
+          "title": "Плавательные и рыбоводные бассейны",
+          "text": "Водонепроницаемый бетон без мембран; D5 Aqua Stop — для ремонта и гидроизоляции существующих бассейнов и фонтанов."
+        },
+        {
+          "title": "Резервуары для нефти и агрессивные среды",
+          "text": "Высокая сульфатостойкость на обычном портландцементе для конструкций в морской воде, нефти и нефтепродуктах."
+        },
+        {
+          "title": "Подземные паркинги, тоннели и подвалы",
+          "text": "Бетон в водонасыщенных грунтах и подводные тоннели без дополнительной гидроизоляции; «холодные» швы держат давление до 12 атм."
+        },
+        {
+          "title": "Плавучие платформы и гидротехнические сооружения",
+          "text": "Морская вода и динамические нагрузки: морозостойкость F400 и выше, самозалечивание трещин до 0,5 мм."
+        },
+        {
+          "title": "Ремонт бетона, фасады и влажные помещения",
+          "text": "D5 Aqua Stop для заделки сколов и каверн, восстановления защитного слоя бетона, штукатурки цоколей, санузлов и саун против сырости и плесени."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Какую дозировку D5 использовать?",
+          "a": "Рекомендуемая доза — 2-3% от общего веса цемента. Перед применением на заводе ЖБИ или бетонном узле проведите предварительные лабораторные испытания с вашими цементом и заполнителями: контрольный состав без добавок и основной состав с 3% D5 при равной подвижности."
+        },
+        {
+          "q": "Как D5 влияет на прочность и подвижность?",
+          "a": "В равноподвижных смесях прочность в возрасте 28 суток растёт в среднем на 30%, а набор прочности в первые сутки ускоряется не менее чем в 2 раза; либо расход цемента снижается на 15-20%. В состав D5 входит суперпластификатор, поэтому добавка повышает подвижность с П1 до П5 или снижает расход воды на 15-25%. Дополнительные пластификаторы не нужны, а количество воды в смеси нужно учитывать с поправкой на это."
+        },
+        {
+          "q": "Как вводить D5 в смесь?",
+          "a": "В сухом виде, в бетоносмеситель вместе с песком или цементом. Предварительно перемешивать с водой не нужно. Время перемешивания — 30-90 секунд в зависимости от смесителя и требуемой подвижности; за это время D5 равномерно распределяется по всему объёму смеси."
+        },
+        {
+          "q": "Что делать с «холодными» швами?",
+          "a": "Через 6-8 часов после заливки очистить поверхность ранее уложенного бетона от цементной корки, открыть структуру бетона, смыть пыль и грязь и обильно смочить место шва. Перед укладкой свежей смеси с D5 промыть шов ещё раз. При таких условиях «холодные» швы в бетоне с D5 не пропускают воду при давлении до 12 атмосфер (1,2 МПа), что подтверждено протоколом БНТУ."
+        },
+        {
+          "q": "Безопасна ли D5 для арматуры и питьевой воды?",
+          "a": "D5 не агрессивна к арматурной стали и усиливает пассивирующие свойства бетона; содержание хлор-иона — 0,065%, сцепление арматуры с бетоном увеличивается на 36%. Добавка не образует токсичных соединений в воздухе и воде и допущена к производству бетонных и железобетонных конструкций, контактирующих с питьевой водой."
+        },
+        {
+          "q": "Можно ли применить линейку на существующем бетоне?",
+          "a": "Да, для этого есть D5 Aqua Stop. Очистить основание от пыли и непрочных участков, обильно увлажнить и начинать работу после впитывания воды. Замешать 25 кг с 4,5-5,0 л воды миксером примерно на 500 об/мин, использовать в течение 45-60 минут, наносить кельмой, шпателем или механизированно, толстый слой — в несколько проходов. Первые 5-7 суток поверхность увлажнять; слой 10 мм принимает гидростатическую нагрузку на 5-7 сутки, облицовка плиткой возможна через 5-7 суток."
+        },
+        {
+          "q": "Какие документы и сертификаты есть?",
+          "a": "Технические паспорта, паспорта безопасности, буклет и протоколы испытаний на водонепроницаемость, самозалечивание трещин и «холодные» швы размещены на этой странице. Сертификаты соответствия РФ и Новой Зеландии, ISO, свидетельство о государственной регистрации, свидетельство радиационного качества и экологический сертификат оператор предоставляет по запросу."
+        },
+        {
+          "q": "Как узнать цену и срок поставки?",
+          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и укажите объём бетона или количество мешков и город доставки. D5 есть на складе в Индии, типовая отгрузка — 1-3 рабочих дня."
+        }
+      ]
     }
   }
 }
