@@ -19,7 +19,8 @@
     "shots": "node scripts/shots.mjs",
     "check:directions": "node scripts/check-directions.mjs",
     "check:home": "node scripts/check-home-order.mjs",
-    "check:cards": "node scripts/check-card-height.mjs"
+    "check:cards": "node scripts/check-card-height.mjs",
+    "new:direction": "node scripts/new-direction.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
