@@ -92,6 +92,18 @@ const check = 'M20 6 9 17l-5-5';
         <p class="mt-4 text-sm font-semibold text-muted">{d.brand}</p>
         <h1 class="mt-1 text-h1 font-bold text-balance text-ink md:text-display">{text.title}</h1>
         <p class="mt-5 max-w-2xl text-lead text-pretty text-ink-soft">{text.summary}</p>
+        {
+          (mailto || whatsapp) && (
+            <div class="mt-6 flex flex-wrap gap-3 lg:hidden">
+              {mailto && <Button href={mailto}>{copy.directions.cta.price}</Button>}
+              {whatsapp && (
+                <Button href={whatsapp} variant="secondary" external>
+                  {copy.directions.cta.whatsapp}
+                </Button>
+              )}
+            </div>
+          )
+        }
       </div>
       {
         d.image && (
