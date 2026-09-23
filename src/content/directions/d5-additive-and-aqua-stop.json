@@ -17,14 +17,64 @@
   },
   "documents": [
     {
-      "label": "TDS (EN)",
+      "label": "D5 (EN)",
       "url": "/docs/d5-additive-and-aqua-stop/D5-TDS-en.pdf",
       "type": "tds"
     },
     {
-      "label": "SDS (EN)",
+      "label": "D5 (RU)",
+      "url": "/docs/d5-additive-and-aqua-stop/D5-TDS-ru.pdf",
+      "type": "tds"
+    },
+    {
+      "label": "D5 (EN)",
       "url": "/docs/d5-additive-and-aqua-stop/D5-SDS-en.pdf",
       "type": "sds"
+    },
+    {
+      "label": "D5 (RU)",
+      "url": "/docs/d5-additive-and-aqua-stop/D5-SDS-ru.pdf",
+      "type": "sds"
+    },
+    {
+      "label": "D5 Aqua Stop (EN)",
+      "url": "/docs/d5-additive-and-aqua-stop/D5-AquaStop-SDS-en.pdf",
+      "type": "sds"
+    },
+    {
+      "label": "D5 Aqua Stop (RU)",
+      "url": "/docs/d5-additive-and-aqua-stop/D5-AquaStop-SDS-ru.pdf",
+      "type": "sds"
+    },
+    {
+      "label": "D5 leaflet 2026 (EN)",
+      "url": "/docs/d5-additive-and-aqua-stop/D5-Leaflet-2026.pdf",
+      "type": "leaflet"
+    },
+    {
+      "label": "D5 Aqua Stop description (EN)",
+      "url": "/docs/d5-additive-and-aqua-stop/D5-AquaStop-Description.pdf",
+      "type": "leaflet"
+    },
+    {
+      "label": "D5 presentation 2026 (EN)",
+      "url": "/docs/d5-additive-and-aqua-stop/D5-Presentation-2026.pdf",
+      "type": "presentation"
+    },
+    {
+      "label": "Water permeability, Boral (EN)",
+      "url": "/docs/d5-additive-and-aqua-stop/D5-Test-Water-Permeability.pdf",
+      "type": "test"
+    },
+    {
+      "label": "Self-healing of cracks, BNTU (EN)",
+      "url": "/docs/d5-additive-and-aqua-stop/D5-Test-Self-Healing-Belarus.pdf",
+      "type": "test"
+    },
+    {
+      "label": "Cold joints, BNTU (EN)",
+      "url": "/docs/d5-additive-and-aqua-stop/D5-Cold-Joints.pdf",
+      "type": "test"
     }
   ],
   "i18n": {
