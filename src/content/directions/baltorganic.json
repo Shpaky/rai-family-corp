@@ -1,0 +1,320 @@
+{
+  "order": 40,
+  "brand": "BaltOrganic",
+  "category": "agro",
+  "status": "on-order",
+  "published": true,
+  "audiences": [],
+  "source": "BaltOrganic",
+  "tags": ["fertilizers", "humic", "organic", "soil-reclamation"],
+  "featured": true,
+  "manufacturer": {
+    "name": "BaltOrganic",
+    "city": null,
+    "founded": null
+  },
+  "howToBuy": {
+    "stockInIndia": false
+  },
+  "documents": [
+    {
+      "label": "Liquid humic concentrate 2026 (EN)",
+      "url": "/docs/baltorganic/BaltOrganic-Humic-Concentrate-2026-en.pdf",
+      "type": "presentation"
+    },
+    {
+      "label": "Organic and organo-mineral fertilizers 2026 (EN)",
+      "url": "/docs/baltorganic/BaltOrganic-Organic-and-OMF-Fertilizers-2026-en.pdf",
+      "type": "presentation"
+    },
+    {
+      "label": "Production localisation in India (EN)",
+      "url": "/docs/baltorganic/BaltOrganic-India-Localisation-2026-en.pdf",
+      "type": "presentation"
+    }
+  ],
+  "i18n": {
+    "en": {
+      "title": "BaltOrganic organic fertilizers and humic concentrates",
+      "summary": "Liquid humic concentrates from lowland peat, granulated organic and organo-mineral fertilizers from the BaltOrganic group. Supplied from Russia by sea, with a production localisation project for India.",
+      "body": [
+        "BaltOrganic is a group of companies producing complex organic and organo-mineral fertilizers from animal and plant raw materials at sites in the Leningrad Region (Pervomaiskoye, Kingisepp) and the Republic of Mari El (Ishimovo). There are two lines: liquid humic concentrates based on ecologically clean lowland peat and poultry manure, and granulated fertilizers, both 100% organic on processed chicken manure and organo-mineral «smart capsule» granules with a mineral core inside an organic shell.",
+        "Humic and fulvic acid molecules penetrate the plant cell from seed germination. According to the manufacturer they accelerate root development and early growth, support the plant from emergence to harvest, restore soil structure and microflora, act as a soil ameliorant and retain moisture in the root zone. The manufacturer’s own economics quote yield increases of up to 10-30% for grain and 40-50% for industrial crops, pesticide cost reductions of 30-70% and mineral fertilizer savings of 15-20%; these are the manufacturer’s figures, while the field trial results by FGBU Gossortkomissiya are listed in Key data below.",
+        "For India the manufacturer proposes crop protocols for rice, wheat, sugarcane, vegetables and orchards (mango, citrus, banana), blends of liquid humates with urea, UAN, DAP and water-soluble NPK for drip fertigation, and programmes for the restoration of degraded and saline soils. The localisation format is peat humic gel shipped in 1,000 l IBCs and processed on site into concentrate and blends: it carries more humic acids per tonne than dry peat and needs no full processing in India."
+      ],
+      "products": [
+        {
+          "name": "Concentrate",
+          "text": "Liquid concentrates of humic and fulvic acids from ecologically clean lowland peat, 100% organic and free from coal humate impurities and synthetics. Four products: Ultra-base for maximum stimulation and soil restoration, Base for regular support and stress relief, +NPK for intensive nutrition during the season, +poultry manure for weakened crops. Applied in three stages: seed and tuber treatment, soil treatment before planting, foliar and root-zone treatment during the season.",
+          "specs": [
+            "Ultra-base: humic and fulvic acids 30%+",
+            "Base: humic and fulvic acids 16-18%",
+            "+NPK: 16-18%, enriched with N, P, K, Mg and S",
+            "+Poultry manure: 16-18%, with Ca, Fe and microelements",
+            "Compatible with UAN, mineral fertilizers and crop protection products; usable in tank mixes",
+            "Rates: seed treatment 200-500 ml per 10 l of water per 100 kg of seeds; foliar 2-3 l/ha; root-zone 18-35 l/ha; pre-sowing soil treatment 10-35 l/ha; depleted land 30-40 l/ha"
+          ]
+        },
+        {
+          "name": "Granules",
+          "text": "100% organic granulated fertilizer made from deeply processed chicken manure with the NPK 3.5-2.3-2.3 formula. Heat treatment guarantees the absence of pathogenic microflora, helminth eggs and weed seeds; stable organic matter enriched with humic and fulvic acids feeds the plant gradually, does not leach out of the soil and restores its fertility.",
+          "specs": [
+            "NPK 3.5-2.3-2.3: nitrogen 3.5%, phosphorus 2.3%, potassium 2.3%",
+            "Application rate 0.5-1.5 t/ha depending on the crop",
+            "Granules and pellets applied with standard mineral fertilizer spreaders and seed drills",
+            "Field trials 2024-2025, FGBU Gossortkomissiya, Leningrad Region: spring barley 39.1 → 42.1 dt/ha, potatoes 259 → 390 dt/ha",
+            "Packaging: bulk, 25 and 50 kg bags, big bags 500-1,000 kg, private label"
+          ]
+        },
+        {
+          "name": "OMF",
+          "text": "«Smart capsule» granules: an organic shell of processed chicken manure isolates a mineral core of nitrogen, phosphorus and potassium enhanced with magnesium, sulphur, trace elements and beneficial bacteria in spore form. Nutrients are held inside the granule, protected from leaching and released gradually; the granule does not burn the root system even if the dosage is exceeded. Formulas are developed to the customer’s soil audit.",
+          "specs": [
+            "Example formulas: NPK 10-10-10 + 3% humic acids (universal), 9-3-3 (cereals, rice, corn), 4-3-10 (vegetables), 8-6-7 (legumes)",
+            "Custom recipe and granule properties for pre-sowing enrichment, primary tillage or in-season feeding",
+            "Organic shell of processed chicken manure; mineral NPK core with Mg, S, trace elements and spore bacteria",
+            "Packaging: bulk, 25 and 50 kg bags, big bags 500-1,000 kg, private label"
+          ]
+        },
+        {
+          "name": "Peat gel",
+          "text": "Format for localising production in India. Peat humic gel with a high content of humic and fulvic acids is produced in Kingisepp by mechanochemical activation and alkaline extraction of lowland peat, packed in 1,000 l IBCs with a batch quality passport and shipped by sea in containers. At the partner plant the gel is homogenised, processed by mechano-cavitation into humic concentrate, adapted to local crops and soils, blended with mineral and biological additives and packed into consumer and farm containers.",
+          "specs": [
+            "Packaging: 1,000 l IBCs; each consignment with a quality passport and export documents",
+            "Versus dry peat in bales: lower volume and weight per tonne of humic acids, ready to use, no full processing on site, no dust and handling losses",
+            "On-site processing: homogenisation, mechano-cavitation, filtration, formulation and blending, filling",
+            "Blends with urea and UAN, DAP and water-soluble NPK such as 19:19:19 or 12:61:00 for drip fertigation",
+            "Typical drip fertigation ratio: 20-25% liquid humic extract to 75-80% water-soluble NPK"
+          ]
+        }
+      ],
+      "forWhom": [
+        "Agroholdings and farms",
+        "Fertilizer distributors and agro suppliers",
+        "Greenhouses, nurseries and hydroponic farms",
+        "Production localisation partners and soil restoration programmes"
+      ],
+      "facts": [
+        "Humic and fulvic acids: 30%+ in Ultra-base, 16-18% in Base, +NPK and +poultry manure concentrates",
+        "Organic granular fertilizer NPK 3.5-2.3-2.3, application rate 0.5-1.5 t/ha",
+        "Liquid concentrate: seed treatment 200-500 ml per 10 l of water per 100 kg of seeds, foliar spraying 2-3 l/ha",
+        "Root-zone treatment 18-35 l/ha, pre-sowing soil treatment 10-35 l/ha, restoration of depleted land 30-40 l/ha",
+        "Field trials 2024-2025, FGBU Gossortkomissiya: spring barley 39.1 → 42.1 dt/ha, potatoes 259 → 390 dt/ha",
+        "OMF example formulas: NPK 10-10-10 + 3% humic acids, 9-3-3, 4-3-10, 8-6-7",
+        "Granules: bulk, 25 and 50 kg bags, big bags 500-1,000 kg; liquid products in 1,000 l IBCs and consumer containers",
+        "Sea container shipments; export through the ports of St. Petersburg and Ust-Luga"
+      ],
+      "logistics": "Shipped by sea from Russia, lead time per order.",
+      "keyFigures": ["Humic acids up to 30%+", "Organic NPK 3.5-2.3-2.3"],
+      "manufacturerNote": "BaltOrganic group of companies, Russia. Production sites in Pervomaiskoye and Kingisepp (Leningrad Region) and Ishimovo (Republic of Mari El), sales department in St. Petersburg. The group produces organic fertilizers in granules and pellets, organo-mineral fertilizers and liquid humic fertilizers, supports export contracts and foreign-trade documentation, and ships by sea through the terminals of the Port of St. Petersburg and the Ust-Luga sea port.",
+      "howToBuy": {
+        "dispatch": "Sea container shipments from Russia through the ports of St. Petersburg and Ust-Luga; lead time per order",
+        "moq": null,
+        "packaging": "Liquid products: 1,000 l IBCs and consumer containers. Granules: bulk, 25 and 50 kg bags, big bags 500-1,000 kg, private label.",
+        "priceNote": "On request: crop, area or volume, and the port of destination",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Cereals and rice",
+          "text": "Seed soaking together with a seed dresser, 2-3 sprayings during the season and 2 root-zone treatments: protocols for wheat, rye, barley, oats and rice in the concentrate presentation."
+        },
+        {
+          "title": "Sugarcane and vegetables in India",
+          "text": "Sett soaking in a 0.5% humate solution before planting and drip fertigation of 1.5-2 l per acre; for tomato, chilli, onion and potato a foliar spray every 15 days and drip irrigation every 20 days."
+        },
+        {
+          "title": "Mango, citrus and banana orchards",
+          "text": "Soil basin drenching at 3 ml per litre of water, 2-5 l of solution per mature tree before flowering and again after fruit set."
+        },
+        {
+          "title": "Potatoes and onions",
+          "text": "Tuber and bulb soaking before planting, sprayings and root-zone treatments during irrigation; potato trials with the organic granules recorded 259 → 390 dt/ha."
+        },
+        {
+          "title": "Restoration of degraded and saline land",
+          "text": "Humic concentrate at 30-40 l/ha for depleted and degraded land; soil desalination and restoration programmes with agronomic monitoring in the India project."
+        },
+        {
+          "title": "Greenhouses, hydroponics and aeroponics",
+          "text": "Liquid humic concentrate in protected cultivation, nurseries and soilless systems to improve root development and the efficiency of nutrient solutions."
+        }
+      ],
+      "faq": [
+        {
+          "q": "How do the four humic concentrates differ?",
+          "a": "All four are liquid concentrates from lowland peat, 100% organic without coal humates or synthetics. Ultra-base holds 30%+ humic and fulvic acids for maximum stimulation and soil restoration. Base holds 16-18% for regular support and stress relief. +NPK adds nitrogen, phosphorus, potassium, magnesium and sulphur for intensive nutrition during the season. +Poultry manure adds calcium, iron and microelements for weakened crops."
+        },
+        {
+          "q": "How is the concentrate applied and at what rates?",
+          "a": "In three stages. Stage 1: pre-sowing seed or tuber treatment, 200-500 ml of concentrate per 10 l of water per 100 kg of seeds, soaked together with a seed dresser. Stage 2: soil treatment before planting at 10-35 l/ha depending on soil type, or 30-40 l/ha to restore depleted land. Stage 3: foliar spraying at 2-3 l/ha two or three times during the season and root-zone treatment at 18-35 l/ha, with crop-specific timing in the presentation for cereals, rice, soybean, rapeseed, peas, sunflower, cotton, sugar beet, corn, tomatoes, cucumbers, potatoes, onions and orchards."
+        },
+        {
+          "q": "Is it compatible with mineral fertilizers, UAN and crop protection products?",
+          "a": "Yes. The concentrate can be applied together with UAN, mineral fertilizers and crop protection products and used in tank mixes; according to the manufacturer it reduces chemical stress on plants when agrochemicals are applied. For India the manufacturer describes blends with urea and UAN, with DAP and with water-soluble NPK for drip fertigation."
+        },
+        {
+          "q": "What is OMF, and how do the granules differ from the liquid line?",
+          "a": "The liquid line is humic concentrate for seed, soil and foliar treatment. The granules are base fertilizers applied with spreaders: the 100% organic granule is processed chicken manure with NPK 3.5-2.3-2.3, and OMF is a «smart capsule» in which an organic shell of the same manure isolates a mineral NPK core, so nutrients are released gradually and the granule does not burn roots. OMF formulas are made to order, for example 10-10-10 + 3% humic acids, 9-3-3, 4-3-10 or 8-6-7."
+        },
+        {
+          "q": "What trial results are available?",
+          "a": "The manufacturer reports field trials by FGBU Gossortkomissiya (Russian State Commission for Variety Testing) on sod-carbonate soils of the Leningrad Region in the 2024-2025 season, comparing the organic fertilizer with standard mineral technology on winter and spring crops and potatoes of the Nevsky variety. Recorded yields: spring barley 39.1 → 42.1 dt/ha, potatoes 259 → 390 dt/ha, with higher 1,000-seed weight, grain test weight, more tillers and more marketable tubers."
+        },
+        {
+          "q": "How is the product delivered to India and in what packaging?",
+          "a": "There is no stock in India. Shipments go by sea in containers; the brochure names the terminals of the Port of St. Petersburg and the Ust-Luga sea port, and delivery time is confirmed per order. Liquid products travel in 1,000 l IBCs and consumer containers; granules in bulk, 25 and 50 kg bags or 500-1,000 kg big bags, also under a private label."
+        },
+        {
+          "q": "What does production localisation mean?",
+          "a": "Instead of finished fertilizer, the Russian site ships peat humic gel in 1,000 l IBCs with a batch quality passport. A partner plant in India receives and inspects the gel, homogenises it, processes it by mechano-cavitation into humic concentrate, adapts recipes to local crops, soils and climate, blends it with mineral and biological additives and packs the products for retail and farms."
+        },
+        {
+          "q": "How do I get a price and a delivery date?",
+          "a": "Use the Get best price or WhatsApp buttons on this page and tell us the crop, the area or volume and the port of destination. We will confirm the product, packaging, delivery time and price with the manufacturer."
+        }
+      ]
+    },
+    "ru": {
+      "title": "Удобрения и гуминовые концентраты BaltOrganic",
+      "summary": "Жидкие гуминовые концентраты на низинном торфе, гранулированные органические и органоминеральные удобрения группы BaltOrganic. Поставка из России морем и проект локализации производства в Индии.",
+      "body": [
+        "BaltOrganic — группа компаний, которая производит комплексные органические и органоминеральные удобрения из сырья животного и растительного происхождения на площадках в Ленинградской области (Первомайское, Кингисепп) и Республике Марий Эл (Ишимово). Две линейки: жидкие гуминовые концентраты на основе экологически чистого низинного торфа и птичьего помёта и гранулированные удобрения — 100% органические на переработанном курином помёте и органоминеральные гранулы «умная капсула» с минеральным ядром в органической оболочке.",
+        "Молекулы гуминовых и фульвокислот проникают в клетку растения уже на стадии прорастания семян. По данным производителя они ускоряют развитие корневой системы и ранний рост, поддерживают растение от всходов до уборки, восстанавливают структуру и микрофлору почвы, работают как мелиорант и удерживают влагу в корневой зоне. Экономика производителя называет прибавку урожайности до 10-30% для зерновых и 40-50% для технических культур, снижение затрат на пестициды на 30-70% и расхода минеральных удобрений на 15-20%; это цифры производителя, а результаты полевых испытаний ФГБУ «Госсорткомиссия» приведены в ключевых данных ниже.",
+        "Для Индии производитель предлагает протоколы применения по рису, пшенице, сахарному тростнику, овощам и садам (манго, цитрусовые, банан), смеси жидких гуматов с мочевиной, КАС, DAP и водорастворимыми NPK для капельной фертигации и программы восстановления деградированных и засолённых почв. Формат локализации — торфяной гуминовый гель в IBC 1000 л, который перерабатывается на месте в концентрат и смеси: на тонну он несёт больше гуминовых кислот, чем сухой торф, и не требует полной переработки в Индии."
+      ],
+      "products": [
+        {
+          "name": "Концентрат",
+          "text": "Жидкие концентраты гуминовых и фульвокислот из экологически чистого низинного торфа, 100% органика без примесей угольных гуматов и синтетики. Четыре продукта: Ultra-base для максимальной стимуляции и восстановления почвы, Base для регулярной поддержки и снятия стресса, +NPK для интенсивного питания в сезон, +птичий помёт для ослабленных культур. Применяется в три этапа: обработка семян и посадочного материала, обработка почвы перед посевом, листовые и прикорневые обработки в течение вегетации.",
+          "specs": [
+            "Ultra-base: гуминовые и фульвокислоты 30%+",
+            "Base: гуминовые и фульвокислоты 16-18%",
+            "+NPK: 16-18%, обогащён N, P, K, Mg и S",
+            "+Птичий помёт: 16-18%, с Ca, Fe и микроэлементами",
+            "Совместим с КАС, минеральными удобрениями и СЗР; применяется в баковых смесях",
+            "Нормы: обработка семян 200-500 мл на 10 л воды на 100 кг семян; листовая 2-3 л/га; прикорневая 18-35 л/га; предпосевная обработка почвы 10-35 л/га; истощённые земли 30-40 л/га"
+          ]
+        },
+        {
+          "name": "Гранулы",
+          "text": "100% органическое гранулированное удобрение из глубоко переработанного куриного помёта с формулой NPK 3,5-2,3-2,3. Термообработка гарантирует отсутствие патогенной микрофлоры, яиц гельминтов и семян сорняков; стабильное органическое вещество, обогащённое гуминовыми и фульвокислотами, питает растение постепенно, не вымывается из почвы и восстанавливает её плодородие.",
+          "specs": [
+            "NPK 3,5-2,3-2,3: азот 3,5%, фосфор 2,3%, калий 2,3%",
+            "Норма внесения 0,5-1,5 т/га в зависимости от культуры",
+            "Гранулы и пеллеты вносятся стандартными разбрасывателями минеральных удобрений и сеялками",
+            "Полевые испытания 2024-2025, ФГБУ «Госсорткомиссия», Ленинградская область: ячмень яровой 39,1 → 42,1 ц/га, картофель 259 → 390 ц/га",
+            "Фасовка: навал, мешки 25 и 50 кг, биг-бэги 500-1000 кг, private label"
+          ]
+        },
+        {
+          "name": "ОМУ",
+          "text": "Гранулы «умная капсула»: органическая оболочка из переработанного куриного помёта изолирует минеральное ядро из азота, фосфора и калия, усиленное магнием, серой, микроэлементами и полезными бактериями в споровой форме. Питательные вещества удерживаются внутри гранулы, защищены от вымывания и высвобождаются постепенно; гранула не обжигает корневую систему даже при превышении дозы. Рецептуры разрабатываются по почвенному аудиту заказчика.",
+          "specs": [
+            "Примеры формул: NPK 10-10-10 + 3% гуминовых кислот (универсальная), 9-3-3 (зерновые, рис, кукуруза), 4-3-10 (овощные), 8-6-7 (бобовые)",
+            "Индивидуальная рецептура и свойства гранулы под предпосевное обогащение, основную обработку почвы или подкормку в сезон",
+            "Органическая оболочка из переработанного куриного помёта; минеральное ядро NPK с Mg, S, микроэлементами и споровыми бактериями",
+            "Фасовка: навал, мешки 25 и 50 кг, биг-бэги 500-1000 кг, private label"
+          ]
+        },
+        {
+          "name": "Торфяной гель",
+          "text": "Формат локализации производства в Индии. Торфяной гуминовый гель с высоким содержанием гуминовых и фульвокислот производится в Кингисеппе механохимической активацией и щелочной экстракцией низинного торфа, разливается в IBC 1000 л с паспортом качества партии и отправляется морем в контейнерах. На заводе партнёра гель гомогенизируется, перерабатывается механокавитацией в гуминовый концентрат, адаптируется под местные культуры и почвы, купажируется с минеральными и биологическими добавками и фасуется в потребительскую и хозяйственную тару.",
+          "specs": [
+            "Тара: IBC 1000 л; каждая партия с паспортом качества и экспортными документами",
+            "Против сухого торфа в кипах: меньше объём и масса на тонну гуминовых кислот, готов к использованию, без полной переработки на месте, без пыли и потерь при перегрузке",
+            "Переработка на месте: гомогенизация, механокавитация, фильтрация, рецептура и купажирование, розлив",
+            "Смеси с мочевиной и КАС, с DAP и водорастворимыми NPK, например 19:19:19 или 12:61:00, для капельной фертигации",
+            "Типовое соотношение в капельной фертигации: 20-25% жидкого гуминового экстракта к 75-80% водорастворимого NPK"
+          ]
+        }
+      ],
+      "forWhom": [
+        "Агрохолдинги и фермерские хозяйства",
+        "Дистрибьюторы удобрений и агропоставщики",
+        "Тепличные комплексы, питомники и гидропонные хозяйства",
+        "Партнёры по локализации производства и программы восстановления почв"
+      ],
+      "facts": [
+        "Гуминовые и фульвокислоты: 30%+ в Ultra-base, 16-18% в концентратах Base, +NPK и +птичий помёт",
+        "Органическое гранулированное удобрение NPK 3,5-2,3-2,3, норма внесения 0,5-1,5 т/га",
+        "Жидкий концентрат: обработка семян 200-500 мл на 10 л воды на 100 кг семян, листовая обработка 2-3 л/га",
+        "Прикорневая обработка 18-35 л/га, предпосевная обработка почвы 10-35 л/га, восстановление истощённых земель 30-40 л/га",
+        "Полевые испытания 2024-2025, ФГБУ «Госсорткомиссия»: ячмень яровой 39,1 → 42,1 ц/га, картофель 259 → 390 ц/га",
+        "Примеры формул ОМУ: NPK 10-10-10 + 3% гуминовых кислот, 9-3-3, 4-3-10, 8-6-7",
+        "Гранулы: навал, мешки 25 и 50 кг, биг-бэги 500-1000 кг; жидкие продукты в IBC 1000 л и потребительской таре",
+        "Морские контейнерные поставки; экспорт через порты Санкт-Петербурга и Усть-Луги"
+      ],
+      "logistics": "Поставка морем из России, срок по заказу.",
+      "keyFigures": ["Гуминовые кислоты до 30 %+", "Органика NPK 3,5-2,3-2,3"],
+      "manufacturerNote": "Группа компаний BaltOrganic, Россия. Производственные площадки в Первомайском и Кингисеппе (Ленинградская область) и Ишимово (Республика Марий Эл), отдел продаж в Санкт-Петербурге. Группа выпускает органические удобрения в гранулах и пеллетах, органоминеральные удобрения и жидкие гуминовые удобрения, сопровождает экспортные контракты и внешнеторговую документацию и отгружает морем через терминалы порта Санкт-Петербург и морского порта Усть-Луга.",
+      "howToBuy": {
+        "dispatch": "Морские контейнерные поставки из России через порты Санкт-Петербурга и Усть-Луги; срок по заказу",
+        "moq": null,
+        "packaging": "Жидкие продукты: IBC 1000 л и потребительская тара. Гранулы: навал, мешки 25 и 50 кг, биг-бэги 500-1000 кг, private label.",
+        "priceNote": "По запросу: культура, площадь или объём и порт назначения",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Зерновые и рис",
+          "text": "Замачивание семян вместе с протравителем, 2-3 опрыскивания в течение вегетации и 2 прикорневые обработки: протоколы по пшенице, ржи, ячменю, овсу и рису в презентации концентрата."
+        },
+        {
+          "title": "Сахарный тростник и овощи в Индии",
+          "text": "Замачивание черенков тростника в 0,5% растворе гумата перед посадкой и капельная фертигация 1,5-2 л на акр; для томата, чили, лука и картофеля листовая обработка каждые 15 дней и капельный полив каждые 20 дней."
+        },
+        {
+          "title": "Сады манго, цитрусовых и банана",
+          "text": "Пролив приствольной чаши раствором 3 мл на литр воды, 2-5 л раствора на взрослое дерево до цветения и повторно после завязывания плодов."
+        },
+        {
+          "title": "Картофель и лук",
+          "text": "Замачивание клубней и луковиц перед посадкой, опрыскивания и прикорневые обработки с поливами; в испытаниях органических гранул на картофеле получено 259 → 390 ц/га."
+        },
+        {
+          "title": "Восстановление деградированных и засолённых земель",
+          "text": "Гуминовый концентрат 30-40 л/га для истощённых и деградированных земель; программы рассоления и восстановления почв с агрономическим мониторингом в индийском проекте."
+        },
+        {
+          "title": "Защищённый грунт, гидропоника и аэропоника",
+          "text": "Жидкий гуминовый концентрат в теплицах, питомниках и беспочвенных системах для развития корневой системы и повышения эффективности питательных растворов."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Чем отличаются четыре гуминовых концентрата?",
+          "a": "Все четыре — жидкие концентраты из низинного торфа, 100% органика без угольных гуматов и синтетики. Ultra-base содержит 30%+ гуминовых и фульвокислот для максимальной стимуляции и восстановления почвы. Base — 16-18% для регулярной поддержки и снятия стресса. +NPK дополнен азотом, фосфором, калием, магнием и серой для интенсивного питания в сезон. +Птичий помёт дополнен кальцием, железом и микроэлементами для ослабленных культур."
+        },
+        {
+          "q": "Как применять концентрат и в каких нормах?",
+          "a": "В три этапа. Этап 1: предпосевная обработка семян или клубней, 200-500 мл концентрата на 10 л воды на 100 кг семян, замачивание вместе с протравителем. Этап 2: обработка почвы перед посевом 10-35 л/га в зависимости от типа почвы или 30-40 л/га для восстановления истощённых земель. Этап 3: листовые опрыскивания 2-3 л/га два-три раза за сезон и прикорневая обработка 18-35 л/га; сроки по культурам приведены в презентации для зерновых, риса, сои, рапса, гороха, подсолнечника, хлопчатника, сахарной свёклы, кукурузы, томатов, огурцов, картофеля, лука и садов."
+        },
+        {
+          "q": "Совместим ли он с минеральными удобрениями, КАС и СЗР?",
+          "a": "Да. Концентрат применяется совместно с КАС, минеральными удобрениями и средствами защиты растений и используется в баковых смесях; по данным производителя он снижает химический стресс растений при применении агрохимикатов. Для Индии производитель описывает смеси с мочевиной и КАС, с DAP и с водорастворимыми NPK для капельной фертигации."
+        },
+        {
+          "q": "Что такое ОМУ и чем гранулы отличаются от жидкой линейки?",
+          "a": "Жидкая линейка — гуминовый концентрат для обработки семян, почвы и листовых подкормок. Гранулы — базовые удобрения, которые вносятся разбрасывателями: 100% органическая гранула из переработанного куриного помёта с NPK 3,5-2,3-2,3 и ОМУ — «умная капсула», в которой органическая оболочка из того же помёта изолирует минеральное ядро NPK, поэтому питание высвобождается постепенно и гранула не обжигает корни. Формулы ОМУ делаются под заказ, например 10-10-10 + 3% гуминовых кислот, 9-3-3, 4-3-10 или 8-6-7."
+        },
+        {
+          "q": "Какие есть результаты испытаний?",
+          "a": "Производитель приводит полевые испытания ФГБУ «Госсорткомиссия» на дерново-карбонатных почвах Ленинградской области в сезоне 2024-2025: сравнение органического удобрения со стандартной технологией минерального питания на озимых и яровых культурах и картофеле сорта Невский. Зафиксированная урожайность: ячмень яровой 39,1 → 42,1 ц/га, картофель 259 → 390 ц/га, а также выше масса 1000 семян и натура зерна, больше продуктивных стеблей и товарных клубней."
+        },
+        {
+          "q": "Как продукция поставляется в Индию и в какой таре?",
+          "a": "Склада в Индии нет. Поставки идут морем в контейнерах; брошюра называет терминалы порта Санкт-Петербург и морского порта Усть-Луга, срок подтверждается по каждому заказу. Жидкие продукты едут в IBC 1000 л и потребительской таре, гранулы — навалом, в мешках 25 и 50 кг или биг-бэгах 500-1000 кг, в том числе под собственной маркой покупателя."
+        },
+        {
+          "q": "Что означает локализация производства?",
+          "a": "Вместо готового удобрения российская площадка отгружает торфяной гуминовый гель в IBC 1000 л с паспортом качества партии. Завод партнёра в Индии принимает и проверяет гель, гомогенизирует его, перерабатывает механокавитацией в гуминовый концентрат, адаптирует рецептуры под местные культуры, почвы и климат, купажирует с минеральными и биологическими добавками и фасует продукты для розницы и хозяйств."
+        },
+        {
+          "q": "Как узнать цену и срок поставки?",
+          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и укажите культуру, площадь или объём и порт назначения. Мы подтвердим у производителя продукт, фасовку, срок и цену."
+        }
+      ]
+    }
+  }
+}
