@@ -13,6 +13,8 @@ playwright-report/
 
 # Brand guide PDF stays local only (12 MB, not for the public repo)
 *.pdf
+# Direction documents are published; the brand guide still is not
+!public/docs/**/*.pdf
 
 # Raw photo drops from the client (originals live in src/assets once picked)
 photos/
