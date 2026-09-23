@@ -1,0 +1,297 @@
+{
+  "order": 30,
+  "brand": "PROTON",
+  "category": "equipment",
+  "status": "on-order",
+  "published": true,
+  "audiences": [],
+  "source": "Proton",
+  "tags": ["spray-foam", "polyurea", "construction-equipment", "insulation"],
+  "featured": true,
+  "manufacturer": {
+    "name": "JSC BEF Proton",
+    "city": null,
+    "founded": null
+  },
+  "howToBuy": {
+    "stockInIndia": false
+  },
+  "documents": [
+    {
+      "label": "Catalogue 2026 (EN)",
+      "url": "/docs/proton-spray-equipment/PROTON-Catalogue-2026-en.pdf",
+      "type": "catalogue"
+    },
+    {
+      "label": "CE conformity certificate, E-5 / E-6 / E-8 (EN/RU)",
+      "url": "/docs/proton-spray-equipment/PROTON-CE-Certificate.pdf",
+      "type": "certificate"
+    }
+  ],
+  "i18n": {
+    "en": {
+      "title": "PROTON spray foam and polyurea equipment",
+      "summary": "High-pressure units for spraying polyurethane foam and polyurea: three models from the PROTON factory in Barnaul, with spray gun, heated hoses and heaters. Supplied from Russia to order.",
+      "body": [
+        "PROTON units spray two-component materials under high pressure: polyurethane foam for thermal insulation of roofs, walls and industrial facilities, and polyurea for waterproofing and protective coatings. Components are heated up to 80 °C in the unit and in hoses with a heating braid, mixed at a 1:1 ratio and sprayed with the CS1 gun; the E-8 also has a «casting» mode for filling moulds.",
+        "The line has three models. E-5 is for polyurethane foam only: 5.5 kg/min, 140 bar, hoses up to 60 m, 220 V supply. E-6 handles both foam and polyurea: 6.5 kg/min, 200 bar, hoses up to 90 m, 220 V, with component temperature and consumption control and raw material savings of up to 10% thanks to better mixing. E-8 is built for industrial volumes: 10 kg/min, 200 bar, 380 V, an electronic consumption meter, archived pressure and temperature history and remote control via the Internet.",
+        "Each unit ships with a spray gun, feed hoses (30 m for E-6 and E-8, 15 m for E-5), a hose heater and flow heaters; the E-8 adds a barrel agitator. Equipment is dispatched from the manufacturer’s Moscow warehouse, with delivery time and cost quoted for each order and CIP to India on request. Operator and service training takes place at the plant in Barnaul, and the warranty is 12 months from sale to the end user."
+      ],
+      "products": [
+        {
+          "name": "E-8",
+          "text": "The most powerful unit in the line, for spraying polyurethane foam and polyurea from any manufacturer in industrial volumes. 380 V supply for industrial sites, 30 m hose in a heating braid, electronic component consumption meter and electronic control with a simple interface: remote control via the Internet, pressure and temperature monitoring with archived history, consumption tracking per day, total and per project, pressure imbalance control, automatic settings for common materials, «casting» mode for mould filling and «parking» mode against pump drying.",
+          "specs": [
+            "Materials: any two-component formulations, PU foam and polyurea",
+            "Output up to 10 kg/min; pressure up to 200 bar; component ratio 1:1",
+            "Hoses up to 90 m; material heating up to 80 °C; heater power 16 kW",
+            "Supply 380 V; compressed air 250 l/min",
+            "Dimensions 1.2 × 0.5 × 0.8 m; weight 95 kg",
+            "Set: unit, spray gun, 30 m feed hoses d10, 3 kW hose heater, 6 × 1.5 kW flow heaters, 4 kW motor, barrel agitator"
+          ]
+        },
+        {
+          "name": "E-6",
+          "text": "Mobile unit for spraying polyurethane foam and polyurea at large and small sites, working from small portable containers and 200-litre drums. Better mixing of the components gives high material quality and raw material savings of up to 10%; component temperature and consumption control are included.",
+          "specs": [
+            "Materials: polyurea and polyurethane foam",
+            "Output up to 6.5 kg/min; pressure up to 200 bar; component ratio 1:1",
+            "Hoses up to 90 m; material heating up to 80 °C; heater power 6.5 kW",
+            "Supply 220 V; compressed air 250 l/min",
+            "Dimensions 1.05 × 0.5 × 0.7 m; weight 75 kg",
+            "Set: unit, spray gun, 30 m feed hoses d10, hose heater, 2 × 1.5 kW flow heaters, 2.5 kW motor"
+          ]
+        },
+        {
+          "name": "E-5",
+          "text": "Entry model for polyurethane foam only: mobile and easy to install, works from portable containers and 200-litre drums. Heating regulation and hose heating with a braid; without component temperature and consumption control.",
+          "specs": [
+            "Materials: PU foam",
+            "Output up to 5.5 kg/min; pressure up to 140 bar; component ratio 1:1",
+            "Hoses up to 60 m; material heating up to 80 °C; heater power 6.5 kW",
+            "Supply 220 V; compressed air 250 l/min",
+            "Dimensions 1.05 × 0.5 × 0.7 m; weight 75 kg",
+            "Set: unit, spray gun, 15 m feed hoses d10, hose heater, 2 × 1.5 kW flow heaters, 2.2 kW motor"
+          ]
+        },
+        {
+          "name": "Accessories",
+          "text": "Spray gun, heated hoses, hose heaters and a barrel agitator developed and produced at the PROTON factory. Barrel pumps and barrel heaters are available on request.",
+          "specs": [
+            "Spray gun CS1: 2-9 kg/min, liquid pressure up to 240 bar, material up to 80 °C, 1.2 kg, quick connection to hoses",
+            "Heated high-pressure hoses 30 m and 15 m: 220 bar, inner diameter 10 mm, heating up to 80 °C, used with NPI-01 or NPI-02",
+            "Hose heater NPI-01: 3 kW, adjustable heating up to 90 °C",
+            "Hose heater NPI-02: 0.8 kW, adjustable heating up to 70 °C",
+            "Lobe barrel agitator for PU foam and polyurea raw materials: 50 mm barrel opening, 190 mm blades, height-adjustable tiers"
+          ]
+        }
+      ],
+      "forWhom": [
+        "Spray foam and polyurea contractors",
+        "Thermal and waterproofing insulation companies",
+        "Sandwich panel and PU product manufacturers",
+        "Construction equipment dealers"
+      ],
+      "facts": [
+        "Output up to 10 kg/min (E-8), 6.5 kg/min (E-6) and 5.5 kg/min (E-5)",
+        "Working pressure up to 200 bar (E-6, E-8) and 140 bar (E-5)",
+        "Hoses up to 90 m (E-6, E-8) and 60 m (E-5); component heating up to 80 °C",
+        "Component ratio 1:1; compressed air 250 l/min",
+        "Supply 220 V (E-5, E-6) or 380 V (E-8); heater power 6.5 kW or 16 kW",
+        "Raw material savings of up to 10% thanks to better mixing (E-6)",
+        "CE conformity certificate for E-5, E-6 and E-8 valid to 17.12.2028; Customs Union EAC certificates",
+        "Warranty 12 months from sale to the end user; technical support response within one day"
+      ],
+      "logistics": "Shipped from the Moscow warehouse, lead time per order.",
+      "keyFigures": ["Up to 10 kg/min", "200 bar, hoses to 90 m"],
+      "manufacturerNote": "JSC BEF Proton, Building Equipment Factory PROTON, Barnaul, Russia. The units, spray gun, hoses and heaters are developed and produced at the PROTON factory. The products hold Customs Union EAC certificates and a CE conformity certificate for E-5, E-6 and E-8 under the Machinery, Low Voltage and EMC directives (No. 25TSU0264, valid to 17.12.2028). Operator and service training is provided at the plant in Barnaul.",
+      "howToBuy": {
+        "dispatch": "From the Moscow warehouse; delivery time and cost quoted per order",
+        "moq": null,
+        "packaging": null,
+        "priceNote": "Catalogue 2026, FCA Moscow: E-5 USD 6,000, E-6 USD 9,000, E-8 USD 17,000 (unit, heated hose, spray gun). CIP to India quoted per order.",
+        "incoterms": "FCA Moscow, CIP India (Incoterms 2020)"
+      },
+      "references": [
+        {
+          "title": "Thermal insulation by spraying PU foam",
+          "text": "Roofs, walls and industrial facilities: high-pressure units with heated hoses up to 90 m and output from 5.5 to 10 kg/min."
+        },
+        {
+          "title": "Polyurea waterproofing and protective coatings",
+          "text": "E-6 and E-8 process polyurea and any two-component formulations at 200 bar with component heating up to 80 °C."
+        },
+        {
+          "title": "Mould filling and PU products",
+          "text": "The E-8 «casting» mode and consumption tracking per project for filling moulds with polyurethane foam."
+        },
+        {
+          "title": "Mobile work on small sites",
+          "text": "E-5 and E-6 run on 220 V from portable containers and 200-litre drums; 75 kg units are easy to move and install."
+        }
+      ],
+      "faq": [
+        {
+          "q": "How do E-5, E-6 and E-8 differ?",
+          "a": "E-5 sprays polyurethane foam only: 5.5 kg/min, 140 bar, hoses up to 60 m, 220 V, no component temperature or consumption control. E-6 handles foam and polyurea: 6.5 kg/min, 200 bar, hoses up to 90 m, 220 V, with temperature and consumption control. E-8 is for industrial volumes: 10 kg/min, 200 bar, 380 V, 16 kW heating, electronic consumption meter, archived history, remote control via the Internet and a «casting» mode."
+        },
+        {
+          "q": "What is included and what is bought separately?",
+          "a": "Each set includes the unit, the CS1 spray gun, d10 feed hoses (30 m for E-6 and E-8, 15 m for E-5), a hose heater, flow heaters and a set of transparent inlet hoses; the E-8 also comes with a lobe barrel agitator. Barrel pumps and barrel heaters are available on request. Extra heated hoses of 30 m and 15 m and the NPI-01 and NPI-02 hose heaters are ordered separately; the maximum hose length is not the included length."
+        },
+        {
+          "q": "What power supply and compressed air are needed on site?",
+          "a": "E-5 and E-6 run on 220 V, E-8 on 380 V. Heater power is 6.5 kW for E-5 and E-6 and 16 kW for E-8; the electric motor is 2.2, 2.5 and 4 kW respectively. All three units need compressed air at 250 l/min."
+        },
+        {
+          "q": "Is there stock in India, and how does delivery work?",
+          "a": "There is no stock in India. Equipment is dispatched from the manufacturer’s Moscow warehouse; availability, dispatch date, delivery time and shipping cost are confirmed for each order. Delivery terms follow Incoterms 2020: FCA Moscow, or CIP to an agreed destination in India quoted per order. Import clearance is the buyer’s responsibility."
+        },
+        {
+          "q": "How are training and warranty arranged?",
+          "a": "Training in equipment operation, spray application and maintenance is provided at the PROTON plant in Barnaul; training at your facility in India can be arranged separately. The warranty is 12 months from sale to the end user, with warranty replacement parts supplied by the manufacturer. Technical support works via WhatsApp, Telegram and phone with a response within one day."
+        },
+        {
+          "q": "Does the manufacturer supply polyurethane foam and polyurea?",
+          "a": "No. PROTON supplies the equipment only; the buyer selects its own suppliers of polyurethane foam and polyurea. The units work with materials from any manufacturer, and the material, ratio basis and configuration are agreed before the order."
+        },
+        {
+          "q": "How do I get a price and a delivery date?",
+          "a": "Use the Get best price or WhatsApp buttons on this page and tell us the model, the material you plan to spray and your delivery city in India. The 2026 catalogue prices FCA Moscow serve as a guide; the final quotation specifies configuration, freight, insurance and payment terms."
+        }
+      ]
+    },
+    "ru": {
+      "title": "Оборудование PROTON для напыления ППУ и полимочевины",
+      "summary": "Установки высокого давления для напыления пенополиуретана и полимочевины: три модели завода PROTON в Барнауле, пистолет, обогреваемые шланги и нагреватели. Поставка из России под заказ.",
+      "body": [
+        "Установки PROTON напыляют двухкомпонентные материалы под высоким давлением: пенополиуретан для теплоизоляции кровель, стен и промышленных объектов и полимочевину для гидроизоляционных и защитных покрытий. Компоненты нагреваются до 80 °C в установке и в шлангах с греющей оплёткой, смешиваются в соотношении 1:1 и напыляются пистолетом CS1; у E-8 есть также режим «casting» для заливки форм.",
+        "В линейке три модели. E-5 работает только с пенополиуретаном: 5,5 кг/мин, 140 бар, шланги до 60 м, питание 220 В. E-6 напыляет и ППУ, и полимочевину: 6,5 кг/мин, 200 бар, шланги до 90 м, 220 В, с контролем температуры и расхода компонентов и экономией сырья до 10% за счёт лучшего смешивания. E-8 рассчитана на промышленные объёмы: 10 кг/мин, 200 бар, 380 В, электронный счётчик расхода, архив давления и температуры и удалённое управление через интернет.",
+        "В комплект каждой установки входят пистолет, шланги подачи (30 м у E-6 и E-8, 15 м у E-5), нагреватель шлангов и проточные нагреватели; у E-8 добавляется мешалка для бочек. Оборудование отгружается со склада производителя в Москве, срок и стоимость доставки рассчитываются по каждому заказу, CIP до Индии по запросу. Обучение операторов и сервисных специалистов проходит на заводе в Барнауле, гарантия 12 месяцев с момента продажи конечному покупателю."
+      ],
+      "products": [
+        {
+          "name": "E-8",
+          "text": "Самая мощная установка линейки для напыления пенополиуретана и полимочевины любого производителя в промышленных объёмах. Питание 380 В для промышленных объектов, шланг 30 м в греющей оплётке, электронный счётчик расхода компонентов и электронное управление с простым интерфейсом: удалённое управление через интернет, контроль давления и температуры с архивом, учёт расхода за день, суммарно и по объектам, контроль дисбаланса давления, автоматические настройки для распространённых материалов, режим «casting» для заливки форм и режим «parking» против высыхания насосов.",
+          "specs": [
+            "Материалы: любые двухкомпонентные составы, ППУ и полимочевина",
+            "Производительность до 10 кг/мин; давление до 200 бар; соотношение компонентов 1:1",
+            "Шланги до 90 м; нагрев сырья до 80 °C; мощность нагрева 16 кВт",
+            "Питание 380 В; расход сжатого воздуха 250 л/мин",
+            "Габариты 1,2 × 0,5 × 0,8 м; масса 95 кг",
+            "Комплект: установка, пистолет, шланги подачи 30 м d10, нагреватель шлангов 3 кВт, проточные нагреватели 6 × 1,5 кВт, двигатель 4 кВт, мешалка для бочек"
+          ]
+        },
+        {
+          "name": "E-6",
+          "text": "Мобильная установка для напыления ППУ и полимочевины на крупных и малых объектах, работает с небольших переносных ёмкостей и 200-литровых бочек. Лучшее смешивание компонентов даёт высокое качество материала и экономию сырья до 10%; контроль температуры и расхода компонентов входит в комплект.",
+          "specs": [
+            "Материалы: полимочевина и пенополиуретан",
+            "Производительность до 6,5 кг/мин; давление до 200 бар; соотношение компонентов 1:1",
+            "Шланги до 90 м; нагрев сырья до 80 °C; мощность нагрева 6,5 кВт",
+            "Питание 220 В; расход сжатого воздуха 250 л/мин",
+            "Габариты 1,05 × 0,5 × 0,7 м; масса 75 кг",
+            "Комплект: установка, пистолет, шланги подачи 30 м d10, нагреватель шлангов, проточные нагреватели 2 × 1,5 кВт, двигатель 2,5 кВт"
+          ]
+        },
+        {
+          "name": "E-5",
+          "text": "Базовая модель только для пенополиуретана: мобильная, простая в установке, работает с переносных ёмкостей и 200-литровых бочек. Регулировка нагрева и обогрев шлангов оплёткой; без контроля температуры и расхода компонентов.",
+          "specs": [
+            "Материалы: ППУ",
+            "Производительность до 5,5 кг/мин; давление до 140 бар; соотношение компонентов 1:1",
+            "Шланги до 60 м; нагрев сырья до 80 °C; мощность нагрева 6,5 кВт",
+            "Питание 220 В; расход сжатого воздуха 250 л/мин",
+            "Габариты 1,05 × 0,5 × 0,7 м; масса 75 кг",
+            "Комплект: установка, пистолет, шланги подачи 15 м d10, нагреватель шлангов, проточные нагреватели 2 × 1,5 кВт, двигатель 2,2 кВт"
+          ]
+        },
+        {
+          "name": "Комплектующие",
+          "text": "Пистолет, обогреваемые шланги, нагреватели шлангов и мешалка для бочек, разработанные и произведённые на заводе PROTON. Бочковые насосы и нагреватели бочек поставляются по запросу.",
+          "specs": [
+            "Пистолет CS1: 2-9 кг/мин, давление жидкости до 240 бар, материал до 80 °C, 1,2 кг, быстрое подключение к шлангам",
+            "Обогреваемые шланги высокого давления 30 м и 15 м: 220 бар, внутренний диаметр 10 мм, нагрев до 80 °C, работают с NPI-01 или NPI-02",
+            "Нагреватель шлангов NPI-01: 3 кВт, регулируемый нагрев до 90 °C",
+            "Нагреватель шлангов NPI-02: 0,8 кВт, регулируемый нагрев до 70 °C",
+            "Лопастная мешалка для бочек с сырьём для ППУ и полимочевины: горловина бочки 50 мм, лопасти 190 мм, ярусы регулируются по высоте"
+          ]
+        }
+      ],
+      "forWhom": [
+        "Подрядчики по напылению ППУ и полимочевины",
+        "Компании по теплоизоляции и гидроизоляции",
+        "Производители сэндвич-панелей и изделий из ППУ",
+        "Дилеры строительного оборудования"
+      ],
+      "facts": [
+        "Производительность до 10 кг/мин (E-8), 6,5 кг/мин (E-6) и 5,5 кг/мин (E-5)",
+        "Рабочее давление до 200 бар (E-6, E-8) и 140 бар (E-5)",
+        "Шланги до 90 м (E-6, E-8) и 60 м (E-5); нагрев компонентов до 80 °C",
+        "Соотношение компонентов 1:1; сжатый воздух 250 л/мин",
+        "Питание 220 В (E-5, E-6) или 380 В (E-8); мощность нагрева 6,5 или 16 кВт",
+        "Экономия сырья до 10% за счёт лучшего смешивания (E-6)",
+        "Сертификат соответствия CE на E-5, E-6 и E-8 действует до 17.12.2028; сертификаты Таможенного союза EAC",
+        "Гарантия 12 месяцев с продажи конечному покупателю; ответ техподдержки в течение дня"
+      ],
+      "logistics": "Отгрузка со склада в Москве, срок по заказу.",
+      "keyFigures": ["До 10 кг/мин", "200 бар, шланги до 90 м"],
+      "manufacturerNote": "АО «ЗСО ПРОТОН», завод строительного оборудования «Протон», Барнаул, Россия. Установки, пистолет, шланги и нагреватели разработаны и произведены на заводе. Продукция имеет сертификаты Таможенного союза EAC и сертификат соответствия CE на E-5, E-6 и E-8 по директивам о машинах, низковольтном оборудовании и электромагнитной совместимости (№ 25TSU0264, действует до 17.12.2028). Обучение операторов и сервисных специалистов проводится на заводе в Барнауле.",
+      "howToBuy": {
+        "dispatch": "Со склада в Москве, срок и стоимость доставки по каждому заказу",
+        "moq": null,
+        "packaging": null,
+        "priceNote": "Каталог 2026, FCA Москва: E-5 6 000 USD, E-6 9 000 USD, E-8 17 000 USD (установка, обогреваемый шланг, пистолет). CIP до Индии рассчитывается по заказу.",
+        "incoterms": "FCA Москва, CIP Индия (Incoterms 2020)"
+      },
+      "references": [
+        {
+          "title": "Теплоизоляция напылением ППУ",
+          "text": "Кровли, стены и промышленные объекты: установки высокого давления с обогреваемыми шлангами до 90 м и производительностью от 5,5 до 10 кг/мин."
+        },
+        {
+          "title": "Гидроизоляционные и защитные покрытия из полимочевины",
+          "text": "E-6 и E-8 работают с полимочевиной и любыми двухкомпонентными составами при 200 бар с нагревом компонентов до 80 °C."
+        },
+        {
+          "title": "Заливка форм и изделия из ППУ",
+          "text": "Режим «casting» у E-8 и учёт расхода по объектам для заливки пенополиуретана в формы."
+        },
+        {
+          "title": "Мобильные работы на малых объектах",
+          "text": "E-5 и E-6 питаются от 220 В и работают с переносных ёмкостей и 200-литровых бочек; установки массой 75 кг легко перевозить и подключать."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Чем отличаются E-5, E-6 и E-8?",
+          "a": "E-5 напыляет только пенополиуретан: 5,5 кг/мин, 140 бар, шланги до 60 м, 220 В, без контроля температуры и расхода компонентов. E-6 работает с ППУ и полимочевиной: 6,5 кг/мин, 200 бар, шланги до 90 м, 220 В, с контролем температуры и расхода. E-8 рассчитана на промышленные объёмы: 10 кг/мин, 200 бар, 380 В, нагрев 16 кВт, электронный счётчик расхода, архив данных, удалённое управление через интернет и режим «casting»."
+        },
+        {
+          "q": "Что входит в комплект, а что докупается?",
+          "a": "В комплект входят установка, пистолет CS1, шланги подачи d10 (30 м у E-6 и E-8, 15 м у E-5), нагреватель шлангов, проточные нагреватели и набор прозрачных всасывающих шлангов; у E-8 ещё лопастная мешалка для бочек. Бочковые насосы и нагреватели бочек поставляются по запросу. Дополнительные обогреваемые шланги 30 м и 15 м и нагреватели NPI-01 и NPI-02 заказываются отдельно; максимальная длина шлангов не равна длине в комплекте."
+        },
+        {
+          "q": "Какое питание и сжатый воздух нужны на объекте?",
+          "a": "E-5 и E-6 работают от 220 В, E-8 от 380 В. Мощность нагрева 6,5 кВт у E-5 и E-6 и 16 кВт у E-8; электродвигатель 2,2, 2,5 и 4 кВт соответственно. Всем трём установкам нужен сжатый воздух 250 л/мин."
+        },
+        {
+          "q": "Есть ли склад в Индии и как идёт поставка?",
+          "a": "Склада в Индии нет. Оборудование отгружается со склада производителя в Москве; наличие, дата отгрузки, срок и стоимость доставки подтверждаются по каждому заказу. Условия поставки по Incoterms 2020: FCA Москва или CIP до согласованного пункта в Индии по запросу. Таможенное оформление на стороне покупателя."
+        },
+        {
+          "q": "Как устроены обучение и гарантия?",
+          "a": "Обучение работе с оборудованием, напылению и обслуживанию проводится на заводе PROTON в Барнауле; обучение на вашей площадке в Индии организуется отдельно. Гарантия 12 месяцев с момента продажи конечному покупателю, запасные части по гарантии поставляет производитель. Техподдержка работает через WhatsApp, Telegram и по телефону с ответом в течение дня."
+        },
+        {
+          "q": "Поставляет ли производитель ППУ и полимочевину?",
+          "a": "Нет. PROTON поставляет только оборудование; поставщиков пенополиуретана и полимочевины покупатель выбирает сам. Установки работают с материалами любого производителя, а материал, база соотношения и конфигурация согласуются до заказа."
+        },
+        {
+          "q": "Как узнать цену и срок поставки?",
+          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и укажите модель, материал, который планируете напылять, и город доставки в Индии. Цены каталога 2026 на условиях FCA Москва служат ориентиром; итоговое предложение уточняет комплектацию, фрахт, страхование и условия оплаты."
+        }
+      ]
+    }
+  }
+}

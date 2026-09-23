@@ -73,7 +73,16 @@ const document = z.object({
   /** Short label shared by all locales, e.g. "TDS (EN)". */
   label: z.string(),
   url: documentUrl,
-  type: z.enum(['tds', 'sds', 'certificate', 'test', 'authorization', 'leaflet', 'presentation']),
+  type: z.enum([
+    'tds',
+    'sds',
+    'certificate',
+    'test',
+    'authorization',
+    'leaflet',
+    'catalogue',
+    'presentation',
+  ]),
 });
 
 const directions = defineCollection({

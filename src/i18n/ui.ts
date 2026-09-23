@@ -88,7 +88,14 @@ interface Copy {
     keyData: string;
     documents: string;
     docTypes: Record<
-      'tds' | 'sds' | 'certificate' | 'test' | 'authorization' | 'leaflet' | 'presentation',
+      | 'tds'
+      | 'sds'
+      | 'certificate'
+      | 'test'
+      | 'authorization'
+      | 'leaflet'
+      | 'catalogue'
+      | 'presentation',
       string
     >;
     pdf: string;
@@ -307,6 +314,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
         test: 'Test report',
         authorization: 'Authorization letter',
         leaflet: 'Leaflet',
+        catalogue: 'Catalogue',
         presentation: 'Presentation',
       },
       pdf: '(PDF)',
@@ -554,6 +562,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
         test: 'Протокол испытаний',
         authorization: 'Письмо-авторизация',
         leaflet: 'Буклет',
+        catalogue: 'Каталог',
         presentation: 'Презентация',
       },
       pdf: '(PDF)',

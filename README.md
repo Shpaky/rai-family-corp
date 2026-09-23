@@ -6,18 +6,19 @@
 
 ## Команды
 
-| Команда                    | Что делает                                                                                                        |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `npm run dev`              | dev-сервер                                                                                                        |
-| `npm run build`            | `astro check` + сборка в `dist/`                                                                                  |
-| `npm run lint`             | eslint, prettier, проверка токенов                                                                                |
-| `npm run test:a11y`        | axe + клавиатурная проверка всех страниц из `dist/`                                                               |
-| `npm run check:budget`     | JS ≤ 50 КБ на страницу                                                                                            |
-| `npm run lighthouse`       | Lighthouse CI: Perf/A11y/BP ≥ 95, SEO = 100                                                                       |
-| `npm run shots`            | скриншоты всех страниц на 360/768/1280 в `shots/`                                                                 |
-| `npm run check:directions` | сверка папок `../directions` (или `DIRECTIONS_DIR`) с `src/content/directions/*.json`                             |
-| `npm run check:cards`      | высота compact-карточек в ленте главной ≤ 360 px на 360 и ≤ 320 px на 1280 (после `build`; входит в `test:a11y`)  |
-| `npm run check:home`       | порядок секций главной, меню и карточек аудиторий сверяются с `src/data/site.ts` (после `build`; входит в `lint`) |
+| Команда                                     | Что делает                                                                                                              |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `npm run dev`                               | dev-сервер                                                                                                              |
+| `npm run build`                             | `astro check` + сборка в `dist/`                                                                                        |
+| `npm run lint`                              | eslint, prettier, проверка токенов                                                                                      |
+| `npm run test:a11y`                         | axe + клавиатурная проверка всех страниц из `dist/`                                                                     |
+| `npm run check:budget`                      | JS ≤ 50 КБ на страницу                                                                                                  |
+| `npm run lighthouse`                        | Lighthouse CI: Perf/A11y/BP ≥ 95, SEO = 100                                                                             |
+| `npm run shots`                             | скриншоты всех страниц на 360/768/1280 в `shots/`                                                                       |
+| `npm run check:directions`                  | сверка папок `../directions` (или `DIRECTIONS_DIR`) с `src/content/directions/*.json`                                   |
+| `npm run check:cards`                       | высота compact-карточек в ленте главной ≤ 360 px на 360 и ≤ 320 px на 1280 (после `build`; входит в `test:a11y`)        |
+| `npm run check:home`                        | порядок секций главной, меню и карточек аудиторий сверяются с `src/data/site.ts` (после `build`; входит в `lint`)       |
+| `npm run new:direction -- "<папка>" <slug>` | заготовка `src/content/directions/<slug>.json` со всеми полями схемы (`published: false`) и папка `public/docs/<slug>/` |
 
 Перед `test:a11y`, `lighthouse` и `shots` нужен свежий `npm run build`.
 
