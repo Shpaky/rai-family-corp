@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import PersonRow from '@/components/PersonRow.astro';
+import PersonCard from '@/components/PersonCard.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import type { SectionTone } from '@/components/sections/types';
 import type { Locale } from '@/i18n/config';
@@ -35,10 +35,10 @@ const leadership = (await getCollection('people', (e) => e.data.group === 'leade
       leadership.length > 0 && (
         <div class="self-start lg:col-span-5">
           <p class="eyebrow text-muted">{copy.about.leadership}</p>
-          <ul class="mt-4 grid gap-5">
+          <ul class="mt-4 grid grid-cols-2 gap-5">
             {leadership.map((entry) => (
               <li>
-                <PersonRow entry={entry} locale={locale} />
+                <PersonCard entry={entry} locale={locale} />
               </li>
             ))}
           </ul>
