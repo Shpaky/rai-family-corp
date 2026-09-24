@@ -87,7 +87,7 @@ const arrow =
     {SHOW_CATEGORY_TILES && <CategoryTiles locale={locale} groups={groups} />}
 
     <div
-      class="-mx-5 mt-12 snap-x snap-mandatory overflow-x-auto scroll-smooth px-5 pb-2 scroll-px-5 md:-mx-8 md:px-8 md:scroll-px-8"
+      class="-mx-5 mt-12 snap-x snap-mandatory overflow-x-auto scroll-smooth px-5 scroll-px-5 scrollbar-none grab-fine md:-mx-8 md:px-8 md:scroll-px-8"
       tabindex="0"
       role="region"
       aria-label={copy.directions.carousel.label}
@@ -118,7 +118,8 @@ const arrow =
 </section>
 
 <script>
-  // Carousel arrows: progressive enhancement over a scroll-snap strip.
+  // Carousel: arrows and mouse drag as progressive enhancement over a native
+  // scroll-snap strip. Touch and pen keep native scrolling.
   for (const root of document.querySelectorAll<HTMLElement>('[data-carousel]')) {
     const track = root.querySelector<HTMLElement>('[data-carousel-track]');
     const prev = root.querySelector<HTMLButtonElement>('[data-carousel-prev]');
@@ -144,5 +145,64 @@ const arrow =
     track.addEventListener('scroll', update, { passive: true });
     new ResizeObserver(update).observe(track);
     update();
+
+    // Mouse drag: after 6 px of movement the gesture scrolls the track and the
+    // click that follows is swallowed, so a still click keeps opening the card.
+    const DRAG = 6;
+    let pressed = false;
+    let dragging = false;
+    let startX = 0;
+    let startLeft = 0;
+    const settle = () => {
+      track.style.scrollSnapType = '';
+      track.style.scrollBehavior = '';
+      track.style.cursor = '';
+      track.classList.remove('select-none');
+      const s = step();
+      track.scrollTo({
+        left: Math.round(track.scrollLeft / s) * s,
+        behavior: reduce ? 'instant' : 'smooth',
+      });
+    };
+    track.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      pressed = true;
+      dragging = false;
+      startX = e.clientX;
+      startLeft = track.scrollLeft;
+      track.setPointerCapture(e.pointerId);
+    });
+    track.addEventListener('pointermove', (e) => {
+      if (!pressed) return;
+      const dx = e.clientX - startX;
+      if (!dragging) {
+        if (Math.abs(dx) <= DRAG) return;
+        dragging = true;
+        track.style.scrollSnapType = 'none';
+        track.style.scrollBehavior = 'auto';
+        track.style.cursor = 'grabbing';
+        track.classList.add('select-none');
+      }
+      track.scrollLeft = startLeft - dx;
+      e.preventDefault();
+    });
+    const release = (e: PointerEvent) => {
+      if (!pressed) return;
+      pressed = false;
+      if (track.hasPointerCapture(e.pointerId)) track.releasePointerCapture(e.pointerId);
+      if (dragging) settle();
+    };
+    track.addEventListener('pointerup', release);
+    track.addEventListener('pointercancel', release);
+    track.addEventListener(
+      'click',
+      (e) => {
+        if (!dragging) return;
+        e.preventDefault();
+        e.stopPropagation();
+        dragging = false;
+      },
+      true,
+    );
   }
 </script>
