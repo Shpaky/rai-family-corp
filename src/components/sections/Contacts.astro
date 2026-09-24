@@ -99,7 +99,7 @@ const rows = [
             </div>
           ))
         }
-        <div class="bg-dark p-6">
+        <div class="bg-dark p-6 sm:col-span-2">
           <dt class="eyebrow text-gold-text">{copy.contacts.address}</dt>
           <dd class="mt-2 text-base leading-relaxed">
             <address class="not-italic">
@@ -113,14 +113,6 @@ const rows = [
             >
               {copy.pavilion.map}
             </a>
-          </dd>
-        </div>
-        <div class="bg-dark p-6">
-          <dt class="eyebrow text-gold-text">{copy.contacts.officeAddress}</dt>
-          <dd class="mt-2 text-base leading-relaxed">
-            <address class="not-italic">
-              {contacts.officeAddress.map((line) => <span class="block">{line}</span>)}
-            </address>
           </dd>
         </div>
       </dl>

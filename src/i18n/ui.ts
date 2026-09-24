@@ -140,7 +140,6 @@ interface Copy {
     whatsapp: string;
     telegram: string;
     address: string;
-    officeAddress: string;
     placeholder: string;
   };
   footer: { legal: string; operator: string; rights: string; madeInRussia: string };
@@ -378,8 +377,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
       phone: 'Phone',
       whatsapp: 'WhatsApp',
       telegram: 'Telegram',
-      address: 'Pavilion address',
-      officeAddress: 'Office',
+      address: 'Office address',
       placeholder: 'to be provided',
     },
     footer: {
@@ -628,8 +626,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
       phone: 'Телефон',
       whatsapp: 'WhatsApp',
       telegram: 'Telegram',
-      address: 'Адрес павильона',
-      officeAddress: 'Офис',
+      address: 'Адрес офиса',
       placeholder: 'будет добавлено',
     },
     footer: {
