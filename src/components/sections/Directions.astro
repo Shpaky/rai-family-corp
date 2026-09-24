@@ -170,7 +170,6 @@ const arrow =
       dragging = false;
       startX = e.clientX;
       startLeft = track.scrollLeft;
-      track.setPointerCapture(e.pointerId);
     });
     track.addEventListener('pointermove', (e) => {
       if (!pressed) return;
@@ -178,6 +177,8 @@ const arrow =
       if (!dragging) {
         if (Math.abs(dx) <= DRAG) return;
         dragging = true;
+        // Capture only now: a still click must keep reaching the card link.
+        track.setPointerCapture(e.pointerId);
         track.style.scrollSnapType = 'none';
         track.style.scrollBehavior = 'auto';
         track.style.cursor = 'grabbing';
