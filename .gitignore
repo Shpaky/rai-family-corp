@@ -18,3 +18,5 @@ playwright-report/
 
 # Raw photo drops from the client (originals live in src/assets once picked)
 photos/
+# Portraits of the people collection are content and stay tracked
+!src/content/people/photos/
