@@ -2,21 +2,42 @@
   Operator contacts. Phone-like values are stored in display form; links are
   derived from them. `null` renders a visible "to be provided" placeholder.
 */
+import type { Locale } from '../i18n/config';
+
 export const contacts = {
   email: 'raigroupholding@gmail.com' as string | null,
+  /** Russian number; also used for WhatsApp and Telegram. */
   phone: '+7 965 157 73 00' as string | null,
+  /** Indian office number. */
+  phoneIndia: '+91 90820 99228' as string | null,
   whatsapp: '+7 965 157 73 00' as string | null,
   /** Telegram username (without "@") or a phone number in international format. */
   telegram: '+7 965 157 73 00' as string | null,
+  /** Pavilion address. */
   address: [
     'Office No. 1307 and 1308, NMS Titanium, 13th Floor',
     'Plot No. 74, Sector-15, CBD Belapur',
     'Navi Mumbai, Thane, Maharashtra 400614, India',
   ],
+  /** Registered office of the operator, first line is the legal name. */
+  officeAddress: [
+    'RAI FAMILY CORP LLP',
+    'Office No 1307/1308, 13th Floor, NMS Titanium',
+    'Plot No 74, Sector-15, CBD Belapur',
+    'Navi Mumbai, Thane, Maharashtra, 400614',
+  ],
   /** Official profiles for schema.org sameAs. Ссылка на страницу павильона на сайте РЭЦ / madeinrussia будет добавлена после подтверждения. */
   sameAs: [] as string[],
   mapUrl:
     'https://www.google.com/maps/search/?api=1&query=NMS+Titanium%2C+Plot+No.+74%2C+Sector-15%2C+CBD+Belapur%2C+Navi+Mumbai%2C+Maharashtra+400614',
+};
+
+/** Phone numbers in display order: the locale's home country first. */
+export const phonesFor = (locale: Locale): string[] => {
+  const ru = contacts.phone;
+  const india = contacts.phoneIndia;
+  const ordered = locale === 'ru' ? [ru, india] : [india, ru];
+  return ordered.filter((p): p is string => Boolean(p));
 };
 
 /** "+7 965 157 73 00" → "+79651577300" */
