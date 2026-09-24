@@ -1,0 +1,14 @@
+{
+  "order": 1,
+  "group": "leadership",
+  "photo": "./photos/oleg-kalaev.jpg",
+  "i18n": {
+    "en": { "name": "Oleg Kalaev", "role": "Chairman", "bio": [], "focus": null },
+    "ru": {
+      "name": "Олег Калаев",
+      "role": "Председатель совета директоров",
+      "bio": [],
+      "focus": null
+    }
+  }
+}

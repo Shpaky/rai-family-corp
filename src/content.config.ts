@@ -120,4 +120,23 @@ const directions = defineCollection({
     }),
 });
 
-export const collections = { categories, directions };
+/** Leadership and team. `bio` and `focus` are reserved for a future page and are not rendered. */
+const person = z.object({
+  name: z.string(),
+  role: z.string(),
+  bio: z.array(z.string()).default([]),
+  focus: z.string().nullable().default(null),
+});
+const people = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/people' }),
+  schema: ({ image }: SchemaContext) =>
+    z.object({
+      order: z.number(),
+      group: z.enum(['leadership', 'team']).default('leadership'),
+      /** ./photos/<slug>.jpg, cropped by CSS (object-cover), never by hand. */
+      photo: image(),
+      i18n: z.object({ en: person, ru: person }),
+    }),
+});
+
+export const collections = { categories, directions, people };
