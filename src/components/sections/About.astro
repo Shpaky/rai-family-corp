@@ -1,4 +1,6 @@
 ---
+import { getCollection } from 'astro:content';
+import PersonRow from '@/components/PersonRow.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import type { SectionTone } from '@/components/sections/types';
 import type { Locale } from '@/i18n/config';
@@ -12,6 +14,9 @@ interface Props {
 const { locale, tone = 'surface' } = Astro.props;
 const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
 const copy = t(locale);
+const leadership = (await getCollection('people', (e) => e.data.group === 'leadership')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
 ---
 
 <section
@@ -26,19 +31,19 @@ const copy = t(locale);
         {copy.about.paragraphs.map((p) => <p>{p}</p>)}
       </div>
     </div>
-    <div class="lg:col-span-5">
-      <dl
-        class="grid gap-px overflow-hidden rounded-card border border-line bg-line shadow-card sm:grid-cols-2 lg:grid-cols-1"
-      >
-        {
-          copy.about.facts.map((f, i) => (
-            <div class:list={['p-6', i === 0 ? 'bg-warm' : 'bg-white']}>
-              <dt class="eyebrow text-muted">{f.label}</dt>
-              <dd class="mt-2 text-lg font-extrabold text-ink">{f.value}</dd>
-            </div>
-          ))
-        }
-      </dl>
-    </div>
+    {
+      leadership.length > 0 && (
+        <div class="self-start lg:col-span-5">
+          <p class="eyebrow text-muted">{copy.about.leadership}</p>
+          <ul class="mt-4 grid gap-5">
+            {leadership.map((entry) => (
+              <li>
+                <PersonRow entry={entry} locale={locale} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
   </div>
 </section>

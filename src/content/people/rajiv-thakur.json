@@ -1,0 +1,9 @@
+{
+  "order": 2,
+  "group": "leadership",
+  "photo": "./photos/rajiv-thakur.jpg",
+  "i18n": {
+    "en": { "name": "Rajiv Thakur", "role": "Managing Director", "bio": [], "focus": null },
+    "ru": { "name": "Раджив Такур", "role": "Генеральный директор", "bio": [], "focus": null }
+  }
+}

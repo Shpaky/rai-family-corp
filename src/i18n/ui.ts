@@ -52,7 +52,8 @@ interface Copy {
     eyebrow: string;
     title: string;
     paragraphs: string[];
-    facts: { label: string; value: string }[];
+    /** Column label above the leadership rows. */
+    leadership: string;
   };
   services: {
     eyebrow: string;
@@ -228,15 +229,10 @@ export const ui: Record<'en' | 'ru', Copy> = {
       eyebrow: 'About the company',
       title: 'The official gateway for Russian products and technologies into India',
       paragraphs: [
-        'Rai Family Corp LLP is an Indian company and the operator of the «Made in Russia» National Pavilion in Navi Mumbai, a Russian Export Center project. The pavilion is where Russian manufacturers meet Indian distributors, retail chains and institutions.',
-        'We provide direct distribution channels and marketing promotion, and cover the full range of related work: market research, product and packaging adaptation, certification, import procedures, legal support and logistics.',
+        'Rai Family Corp LLP is an Indian company founded by a group of international entrepreneurs with many years of experience across countries and industries, including India. Since 21 August 2026 it has been the operator of the «Made in Russia» National Pavilion in Navi Mumbai, a Russian Export Center project. The pavilion is where Russian manufacturers meet Indian distributors, retail chains and institutions.',
+        'The company provides direct distribution channels and marketing promotion and covers the full range of related work: market research, product and packaging adaptation, certification, import procedures, legal support and logistics.',
       ],
-      facts: [
-        { label: 'Status', value: '«Made in Russia» National Pavilion operator' },
-        { label: 'Founded', value: 'September 2024' },
-        { label: 'Registered', value: 'India, Maharashtra' },
-        { label: 'Pavilion', value: 'Opened 21 August 2026, CBD Belapur, Navi Mumbai' },
-      ],
+      leadership: 'Leadership',
     },
     services: {
       eyebrow: 'Services',
@@ -477,15 +473,10 @@ export const ui: Record<'en' | 'ru', Copy> = {
       eyebrow: 'О компании',
       title: 'Официальные ворота для российских товаров и технологий в Индию',
       paragraphs: [
-        'Rai Family Corp LLP: индийская компания, оператор Национального Павильона «Сделано в России» в Нави-Мумбаи, проекта Российского экспортного центра. Павильон: точка, где российские производители встречаются с индийскими дистрибьюторами, торговыми сетями и институтами.',
-        'Мы предоставляем прямые каналы дистрибуции и маркетинговое продвижение и закрываем весь спектр связанных задач: исследование рынка, адаптацию продукта и упаковки, сертификацию, импортные процедуры, юридическое сопровождение и логистику.',
+        'Rai Family Corp LLP - индийская компания, учреждённая группой международных предпринимателей с многолетним опытом работы в разных странах и отраслях, включая Индию. С 21 августа 2026 года является оператором Национального Павильона «Сделано в России» в Нави-Мумбаи - проекта Российского экспортного центра. Павильон - площадка, где российские производители встречаются с индийскими дистрибьюторами, торговыми сетями и институтами.',
+        'Компания предоставляет прямые каналы дистрибуции и маркетинговое продвижение и закрывает весь спектр связанных задач - исследование рынка, адаптацию продукта и упаковки, сертификацию, импортные процедуры, юридическое сопровождение и логистику.',
       ],
-      facts: [
-        { label: 'Статус', value: 'Оператор Национального Павильона «Сделано в России»' },
-        { label: 'Основана', value: 'Сентябрь 2024' },
-        { label: 'Регистрация', value: 'Индия, Махараштра' },
-        { label: 'Павильон', value: 'Открыт 21 августа 2026, CBD Belapur, Нави-Мумбаи' },
-      ],
+      leadership: 'Руководство',
     },
     services: {
       eyebrow: 'Услуги',
