@@ -1,5 +1,12 @@
 ---
-import { contacts, telUri, telegramLabel, telegramUrl, whatsappUrl } from '@/data/contacts';
+import {
+  contacts,
+  phonesFor,
+  telUri,
+  telegramLabel,
+  telegramUrl,
+  whatsappUrl,
+} from '@/data/contacts';
 import type { SectionTone } from '@/components/sections/types';
 import type { Locale } from '@/i18n/config';
 import { t } from '@/i18n/utils';
@@ -13,17 +20,13 @@ interface Props {
 }
 const { locale, compact = false } = Astro.props;
 const copy = t(locale);
+const phones = phonesFor(locale);
 
 const rows = [
   {
     label: copy.contacts.email,
     value: contacts.email,
     href: contacts.email ? `mailto:${contacts.email}` : null,
-  },
-  {
-    label: copy.contacts.phone,
-    value: contacts.phone,
-    href: contacts.phone ? telUri(contacts.phone) : null,
   },
   {
     label: copy.contacts.whatsapp,
@@ -56,6 +59,26 @@ const rows = [
     </div>
     <div class="lg:col-span-7">
       <dl class="grid gap-px overflow-hidden rounded-card bg-white/15 sm:grid-cols-2">
+        <div class="bg-dark p-6">
+          <dt class="eyebrow text-gold-text">{copy.contacts.phone}</dt>
+          <dd class="mt-2 text-lg font-bold">
+            {
+              phones.length > 0 ? (
+                <ul class="space-y-1">
+                  {phones.map((phone) => (
+                    <li>
+                      <a href={telUri(phone)} class="underline-offset-4 hover:underline">
+                        {phone}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <span class="font-semibold text-gold-text">{copy.contacts.placeholder}</span>
+              )
+            }
+          </dd>
+        </div>
         {
           rows.map((r) => (
             <div class="bg-dark p-6">
