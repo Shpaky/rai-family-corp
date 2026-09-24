@@ -3,7 +3,7 @@
   Center ("подтвердить у РЭЦ"). The visible strings in src/i18n/ui.ts are
   literals for now; if any value here changes, update the strings listed in the
   pull request that introduced them (meta.description, trust.*, pavilion.*,
-  about.facts, footer.operator).
+  about.paragraphs, footer.operator).
 */
 export const company = {
   /** Opening date of the Made in Russia National Pavilion in Navi Mumbai. Подтвердить у РЭЦ. */
