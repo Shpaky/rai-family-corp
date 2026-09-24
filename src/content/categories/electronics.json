@@ -1,0 +1,16 @@
+{
+  "order": 25,
+  "tone": "surface",
+  "i18n": {
+    "en": {
+      "name": "Electronic components",
+      "lead": "Russian semiconductor and optoelectronic components for equipment manufacturers in India: diodes, optocouplers, precision zener diodes, indicators and avalanche photodiodes.",
+      "description": "Russian semiconductor and optoelectronic components in India: diodes, optocouplers, zener diodes, indicators, avalanche photodiodes. Rai Family Corp."
+    },
+    "ru": {
+      "name": "Электроника и компоненты",
+      "lead": "Российские полупроводниковые и оптоэлектронные компоненты для производителей аппаратуры в Индии: диоды, оптопары, прецизионные стабилитроны, индикаторы и лавинные фотодиоды.",
+      "description": "Российские полупроводниковые и оптоэлектронные компоненты в Индии: диоды, оптопары, стабилитроны, индикаторы, лавинные фотодиоды. Rai Family Corp."
+    }
+  }
+}
