@@ -19,6 +19,7 @@
 | `npm run check:cards`                       | высота compact-карточек в ленте главной ≤ 360 px на 360 и ≤ 320 px на 1280 (после `build`; входит в `test:a11y`)        |
 | `npm run check:home`                        | порядок секций главной, меню и карточек аудиторий сверяются с `src/data/site.ts` (после `build`; входит в `lint`)       |
 | `npm run new:direction -- "<папка>" <slug>` | заготовка `src/content/directions/<slug>.json` со всеми полями схемы (`published: false`) и папка `public/docs/<slug>/` |
+| `npm run check:content`                     | ни одной цены и валюты в `src/content/directions/*.json` и `src/i18n/ui.ts` (входит в `lint`)                           |
 
 Перед `test:a11y`, `lighthouse` и `shots` нужен свежий `npm run build`.
 

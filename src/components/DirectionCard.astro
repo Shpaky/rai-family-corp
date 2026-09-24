@@ -75,7 +75,11 @@ const moreTags = compact ? text.products.length - tags.length : 0;
   <div class:list={['flex flex-1 flex-col', compact ? 'p-5' : 'p-6']}>
     {!compact && <p class="text-sm font-semibold text-muted">{d.brand}</p>}
     <Heading class:list={['text-h3 font-bold text-ink', !compact && 'mt-1']}>
-      <a href={url} class="after:absolute after:inset-0 focus-visible:outline-none">{text.title}</a>
+      <a
+        href={url}
+        draggable={compact ? 'false' : undefined}
+        class="after:absolute after:inset-0 focus-visible:outline-none">{text.title}</a
+      >
     </Heading>
     {!compact && <p class="mt-3 flex-1 text-base leading-relaxed text-ink-soft">{text.summary}</p>}
     {

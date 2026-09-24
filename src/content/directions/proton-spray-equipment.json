@@ -109,7 +109,7 @@
         "dispatch": "From the Moscow warehouse; delivery time and cost quoted per order",
         "moq": null,
         "packaging": null,
-        "priceNote": "Catalogue 2026, FCA Moscow: E-5 USD 6,000, E-6 USD 9,000, E-8 USD 17,000 (unit, heated hose, spray gun). CIP to India quoted per order.",
+        "priceNote": "On request: model, material to spray and delivery city",
         "incoterms": "FCA Moscow, CIP India (Incoterms 2020)"
       },
       "references": [
@@ -157,7 +157,7 @@
         },
         {
           "q": "How do I get a price and a delivery date?",
-          "a": "Use the Get best price or WhatsApp buttons on this page and tell us the model, the material you plan to spray and your delivery city in India. The 2026 catalogue prices FCA Moscow serve as a guide; the final quotation specifies configuration, freight, insurance and payment terms."
+          "a": "Use the Get best price or WhatsApp buttons on this page and tell us the model, the material you plan to spray and your delivery city in India. Prices are quoted on request; the final quotation specifies configuration, freight, insurance and payment terms."
         }
       ]
     },
@@ -241,7 +241,7 @@
         "dispatch": "Со склада в Москве, срок и стоимость доставки по каждому заказу",
         "moq": null,
         "packaging": null,
-        "priceNote": "Каталог 2026, FCA Москва: E-5 6 000 USD, E-6 9 000 USD, E-8 17 000 USD (установка, обогреваемый шланг, пистолет). CIP до Индии рассчитывается по заказу.",
+        "priceNote": "По запросу: модель, материал для напыления и город доставки",
         "incoterms": "FCA Москва, CIP Индия (Incoterms 2020)"
       },
       "references": [
@@ -289,7 +289,7 @@
         },
         {
           "q": "Как узнать цену и срок поставки?",
-          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и укажите модель, материал, который планируете напылять, и город доставки в Индии. Цены каталога 2026 на условиях FCA Москва служат ориентиром; итоговое предложение уточняет комплектацию, фрахт, страхование и условия оплаты."
+          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и укажите модель, материал, который планируете напылять, и город доставки в Индии. Цены сообщаются по запросу; итоговое предложение уточняет комплектацию, фрахт, страхование и условия оплаты."
         }
       ]
     }
