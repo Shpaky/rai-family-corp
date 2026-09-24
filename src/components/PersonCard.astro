@@ -1,0 +1,31 @@
+---
+/*
+  One leadership card: 4:5 portrait across the card width, name, role. No
+  links, no heading: the section heading is enough. The photo is cropped by
+  CSS only, its size follows the column width.
+*/
+import { Picture } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '@/i18n/config';
+
+interface Props {
+  entry: CollectionEntry<'people'>;
+  locale: Locale;
+}
+const { entry, locale } = Astro.props;
+const text = entry.data.i18n[locale];
+---
+
+<div>
+  <Picture
+    src={entry.data.photo}
+    alt={text.name}
+    widths={[320, 480, 640]}
+    sizes="(min-width: 1024px) 220px, 45vw"
+    formats={['avif', 'webp']}
+    loading="lazy"
+    class="aspect-4/5 w-full rounded-card object-cover object-top"
+  />
+  <p class="mt-3 text-base leading-snug font-bold text-ink">{text.name}</p>
+  <p class="mt-1 text-sm text-muted">{text.role}</p>
+</div>
