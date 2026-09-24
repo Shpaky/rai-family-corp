@@ -13,9 +13,8 @@ export const contacts = {
   whatsapp: '+7 965 157 73 00' as string | null,
   /** Telegram username (without "@") or a phone number in international format. */
   telegram: '+7 965 157 73 00' as string | null,
-  /** Office of the operator (the pavilion is at the same address), first line is the legal name. */
+  /** Office of the operator; the pavilion is at the same address. */
   address: [
-    'RAI FAMILY CORP LLP',
     'Office No 1307/1308, 13th Floor, NMS Titanium',
     'Plot No 74, Sector-15, CBD Belapur',
     'Navi Mumbai, Thane, Maharashtra, 400614',
