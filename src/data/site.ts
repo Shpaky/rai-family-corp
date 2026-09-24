@@ -1,8 +1,8 @@
 import type { Locale } from '../i18n/config';
 import type { AudienceKey } from '../i18n/ui';
 
-/** Row of category tiles in the home Directions block. Включён с пятой категорией (electronics, 2026-09-24). */
-export const SHOW_CATEGORY_TILES = true;
+/** Row of category tiles in the home Directions block. Включать, когда опубликованных направлений больше 12 и лента показывает не весь портфель. */
+export const SHOW_CATEGORY_TILES = false;
 
 /*
   Home page composition. The only place where the order of sections and of
