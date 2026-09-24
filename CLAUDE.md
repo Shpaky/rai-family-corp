@@ -45,6 +45,8 @@ tailwind, eslint/prettier с astro-плагинами, playwright + axe, lhci).
   Новое направление = папка в `./directions` (вне репозитория, `npm run check:directions`),
   JSON с обязательной `category` из коллекции и документы в `public/docs/<slug>/`.
   Документы: имена латиницей без пробелов, язык документа в `label` (`(EN)`, `(RU)`, `(EN/RU)`),
+  тип из схемы (`tds`, `sds`, `certificate`, `test`, `reference` — референс-лист объектов, `authorization`,
+  `leaflet`, `catalogue`, `presentation`),
   черновики, видео и смежные материалы не публикуются, файл не больше 3 МБ и папка направления
   не больше 15 МБ (тяжёлые PDF сжимать Ghostscript); PDF там не игнорируются благодаря
   `!public/docs/**/*.pdf` в `.gitignore`. Цифры на странице только из документов производителя,
