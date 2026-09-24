@@ -10,7 +10,7 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "lint": "eslint . && prettier --check . && npm run lint:tokens && npm run check:home",
+    "lint": "eslint . && prettier --check . && npm run lint:tokens && npm run check:content && npm run check:home",
     "lint:tokens": "node scripts/lint-tokens.mjs",
     "format": "prettier --write .",
     "check:budget": "node scripts/check-budget.mjs",
@@ -20,7 +20,8 @@
     "check:directions": "node scripts/check-directions.mjs",
     "check:home": "node scripts/check-home-order.mjs",
     "check:cards": "node scripts/check-card-height.mjs",
-    "new:direction": "node scripts/new-direction.mjs"
+    "new:direction": "node scripts/new-direction.mjs",
+    "check:content": "node scripts/check-content.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
