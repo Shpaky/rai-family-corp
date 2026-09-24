@@ -7,7 +7,7 @@ import { Image, Picture } from 'astro:assets';
 import Button from '@/components/Button.astro';
 import DirectionCard from '@/components/DirectionCard.astro';
 import StatusLockup from '@/components/StatusLockup.astro';
-import { contacts, whatsappUrl } from '@/data/contacts';
+import { contacts, whatsappUrl, whatsappsFor } from '@/data/contacts';
 import type { Locale } from '@/i18n/config';
 import { href, t, withCount } from '@/i18n/utils';
 import {
@@ -40,7 +40,8 @@ const subject = copy.directions.cta.subject.replace('{title}', text.title);
 const mailto = contacts.email
   ? `mailto:${contacts.email}?subject=${encodeURIComponent(subject)}`
   : null;
-const whatsapp = contacts.whatsapp ? whatsappUrl(contacts.whatsapp, subject) : null;
+const whatsappNumber = whatsappsFor(locale)[0];
+const whatsapp = whatsappNumber ? whatsappUrl(whatsappNumber, subject) : null;
 
 const buyRows = (
   [

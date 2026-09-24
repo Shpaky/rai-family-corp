@@ -6,6 +6,7 @@ import {
   telegramLabel,
   telegramUrl,
   whatsappUrl,
+  whatsappsFor,
 } from '@/data/contacts';
 import type { SectionTone } from '@/components/sections/types';
 import type { Locale } from '@/i18n/config';
@@ -21,17 +22,13 @@ interface Props {
 const { locale, compact = false } = Astro.props;
 const copy = t(locale);
 const phones = phonesFor(locale);
+const whatsapps = whatsappsFor(locale);
 
 const rows = [
   {
     label: copy.contacts.email,
     value: contacts.email,
     href: contacts.email ? `mailto:${contacts.email}` : null,
-  },
-  {
-    label: copy.contacts.whatsapp,
-    value: contacts.whatsapp,
-    href: contacts.whatsapp ? whatsappUrl(contacts.whatsapp) : null,
   },
   {
     label: copy.contacts.telegram,
@@ -68,6 +65,30 @@ const rows = [
                   {phones.map((phone) => (
                     <li>
                       <a href={telUri(phone)} class="underline-offset-4 hover:underline">
+                        {phone}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <span class="font-semibold text-gold-text">{copy.contacts.placeholder}</span>
+              )
+            }
+          </dd>
+        </div>
+        <div class="bg-dark p-6">
+          <dt class="eyebrow text-gold-text">{copy.contacts.whatsapp}</dt>
+          <dd class="mt-2 text-lg font-bold">
+            {
+              whatsapps.length > 0 ? (
+                <ul class="space-y-1">
+                  {whatsapps.map((phone) => (
+                    <li>
+                      <a
+                        href={whatsappUrl(phone)}
+                        rel="noopener"
+                        class="underline-offset-4 hover:underline"
+                      >
                         {phone}
                       </a>
                     </li>

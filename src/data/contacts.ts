@@ -11,6 +11,8 @@ export const contacts = {
   /** Indian office number. */
   phoneIndia: '+91 90820 99228' as string | null,
   whatsapp: '+7 965 157 73 00' as string | null,
+  /** Indian WhatsApp number. */
+  whatsappIndia: '+91 90820 99228' as string | null,
   /** Telegram username (without "@") or a phone number in international format. */
   telegram: '+7 965 157 73 00' as string | null,
   /** Office of the operator; the pavilion is at the same address. */
@@ -29,6 +31,14 @@ export const contacts = {
 export const phonesFor = (locale: Locale): string[] => {
   const ru = contacts.phone;
   const india = contacts.phoneIndia;
+  const ordered = locale === 'ru' ? [ru, india] : [india, ru];
+  return ordered.filter((p): p is string => Boolean(p));
+};
+
+/** WhatsApp numbers in display order: the locale's home country first. */
+export const whatsappsFor = (locale: Locale): string[] => {
+  const ru = contacts.whatsapp;
+  const india = contacts.whatsappIndia;
   const ordered = locale === 'ru' ? [ru, india] : [india, ru];
   return ordered.filter((p): p is string => Boolean(p));
 };
