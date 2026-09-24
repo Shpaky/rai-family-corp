@@ -79,6 +79,7 @@ const document = z.object({
     'certificate',
     'test',
     'authorization',
+    'reference',
     'leaflet',
     'catalogue',
     'presentation',
