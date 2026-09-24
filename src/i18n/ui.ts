@@ -93,6 +93,7 @@ interface Copy {
       | 'certificate'
       | 'test'
       | 'authorization'
+      | 'reference'
       | 'leaflet'
       | 'catalogue'
       | 'presentation',
@@ -313,6 +314,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
         certificate: 'Certificate',
         test: 'Test report',
         authorization: 'Authorization letter',
+        reference: 'Reference list',
         leaflet: 'Leaflet',
         catalogue: 'Catalogue',
         presentation: 'Presentation',
@@ -561,6 +563,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
         certificate: 'Сертификат',
         test: 'Протокол испытаний',
         authorization: 'Письмо-авторизация',
+        reference: 'Референс-лист',
         leaflet: 'Буклет',
         catalogue: 'Каталог',
         presentation: 'Презентация',

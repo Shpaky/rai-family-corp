@@ -1,0 +1,327 @@
+{
+  "order": 50,
+  "brand": "Zeptaflex",
+  "category": "construction",
+  "status": "on-order",
+  "published": true,
+  "audiences": [],
+  "source": "Zeptaflex",
+  "tags": ["waterproofing", "injection", "bitumen-latex", "tunnels"],
+  "featured": true,
+  "manufacturer": {
+    "name": "Tekhnosintez LLC",
+    "city": null,
+    "founded": null
+  },
+  "howToBuy": {
+    "stockInIndia": false
+  },
+  "documents": [
+    {
+      "label": "Zeptaflex emulsion (RU)",
+      "url": "/docs/zeptaflex/Zeptaflex-Emulsion-TDS-ru.pdf",
+      "type": "tds"
+    },
+    {
+      "label": "Zeptaflex Injection H04 (RU)",
+      "url": "/docs/zeptaflex/Zeptaflex-Injection-H04-TDS-ru.pdf",
+      "type": "tds"
+    },
+    {
+      "label": "Tekhnosintez product brochure (RU)",
+      "url": "/docs/zeptaflex/Tekhnosintez-Products-Brochure-ru.pdf",
+      "type": "leaflet"
+    },
+    {
+      "label": "EAEU state registration, emulsion (RU)",
+      "url": "/docs/zeptaflex/Zeptaflex-EAEU-State-Registration-ru.pdf",
+      "type": "certificate"
+    },
+    {
+      "label": "Certificate of conformity, emulsion (RU)",
+      "url": "/docs/zeptaflex/Zeptaflex-Certificate-of-Conformity-ru.pdf",
+      "type": "certificate"
+    },
+    {
+      "label": "Expert opinion No. 7673, emulsion (RU)",
+      "url": "/docs/zeptaflex/Zeptaflex-Expert-Opinion-7673-ru.pdf",
+      "type": "certificate"
+    },
+    {
+      "label": "Test report PROM/E-26/03-0106, emulsion (RU)",
+      "url": "/docs/zeptaflex/Zeptaflex-Test-Report-PROM-E-26-03-0106-ru.pdf",
+      "type": "test"
+    },
+    {
+      "label": "Metro projects (RU)",
+      "url": "/docs/zeptaflex/Tekhnosintez-Metro-Reference-Letter-ru.pdf",
+      "type": "reference"
+    }
+  ],
+  "i18n": {
+    "en": {
+      "title": "Zeptaflex spray-applied waterproofing and injection systems",
+      "summary": "Seamless spray-applied bitumen-latex waterproofing for transport, industrial and civil construction, plus polyurethane and acrylate injection systems for stopping water ingress. Applied on metro projects in St. Petersburg, Moscow and Nizhny Novgorod.",
+      "body": [
+        "Zeptaflex is a two-component bitumen-latex emulsion for seamless waterproofing of horizontal and vertical surfaces. The emulsion and a coagulant (calcium chloride in water, 1:10) are fed through two hoses to a twin-channel airless spray unit, UND-01 or equivalent; the cone-shaped jets mix in the air, the emulsion re-emulsifies instantly and the particles form a membrane on the substrate. The whole layer polymerises in about 1-2 days depending on weather, substrate moisture and air temperature.",
+        "After polymerisation the coating keeps its physical and mechanical properties from −30 to +150 °C, follows any geometry of the structure, and is neither toxic nor flammable, so it can be applied indoors without special protective equipment. It is resistant to aggressive media and, according to the manufacturer, a crew of three applies about 1,200 m² per shift. The manufacturer’s reference letter states that the system provides secondary adhesion in accordance with SP 120.13330.2022 «Metro systems».",
+        "The line covers the whole life of a structure: the emulsion with Zeptaflex Primer for new concrete and steel, the two-component Zeptaflex Pasta mastic for manual application and repairs without heating, and injection products for existing structures: the fast-reacting polyurethane foam Injection H04, non-foaming resins Injection WX and NV for follow-up injection, and an acrylate gel for anti-filtration curtains and wet joints."
+      ],
+      "products": [
+        {
+          "name": "Emulsion",
+          "text": "Two-component bitumen-latex waterproofing emulsion applied with an airless spray unit (UND-01 or equivalent). For bridges, tunnels and other transport structures, underground and above-ground structures of civil and industrial buildings, roofs, balconies and terraces, collector tunnels including protection against biogenic sulphuric acid attack, reinforced concrete and steel tanks and pools, and utility entries.",
+          "specs": [
+            "Adhesion to concrete over 0.6 MPa, to steel over 0.5 MPa (GOST 26589-94, method A)",
+            "Conditional strength 0.7 MPa; elongation at break 1200% (GOST 2678-94)",
+            "Water impermeability of a 3 mm membrane 2.0 kgf/cm² over 24 h; water absorption 0.6%",
+            "Flexibility on a 5 mm radius bar at −35 °C without cracks; heat resistance 210 °C",
+            "Consumption about 5.3 kg/m² at a 3 mm dry layer; application at +5…+40 °C and humidity up to 85%",
+            "Supply in 200 kg steel drums; storage at +10…+25 °C, shelf life 12 months"
+          ]
+        },
+        {
+          "name": "Pasta",
+          "text": "Two-component bitumen-polymer mastic for seamless waterproofing of vertical and horizontal surfaces, applied without heating. Foundations, basements, piles and other buried structures; steel structures, pipes and tanks; pool floors and sanitary rooms; construction and repair of all roof types; internal waterproofing of showers, toilets, kitchens and hallways. Works in climatic zones I-IV, resistant to UV radiation, high chemical resistance and elasticity without embrittlement. Numeric characteristics are not given in the available documents.",
+          "specs": []
+        },
+        {
+          "name": "H04",
+          "text": "Two-component fast-reacting polyurethane without solvents. On contact with water it foams and stops medium water ingress by injection: fills water-bearing cavities and voids, stops active filtration through joints and cracks. Low viscosity for deep penetration, no shrinkage after polymerisation, applied with single-component injection equipment; reaction speed is adjusted with the Zeptaflex Accelerator.",
+          "specs": [
+            "Mixing ratio A:B 1:1 by volume, 1:1.25 by mass; component A resin, component B isocyanate",
+            "Foaming starts after 19-30 s and ends after 2 min 10 s to 4 min 30 s at +25…+5 °C (5% water added)",
+            "Expansion 30-50 times; mixture viscosity 400-3000 mPa·s at +25…+5 °C; flash point 180 °C",
+            "Single-component pump only; hold the mix 30 min at +20 °C or 60 min at +10 °C, use within 4 days",
+            "Kit A+B 45 kg (20 kg + 25 kg); shelf life 12 months",
+            "Storage and transport at +5…+30 °C; do not freeze"
+          ]
+        },
+        {
+          "name": "Resins and gel",
+          "text": "Follow-up products for the injection system. Non-foaming Zeptaflex Injection WX and NV for post-injection after the water ingress is stopped, the Accelerator for structures below +10 °C, Cleaner for tools and Preservative for pump conservation. The Zeptaflex acrylate gel penetrates fine defects and cures into a hydrogel that keeps its continuity under deformation and swells again when wetted: for anti-filtration curtains behind the structure, sealing of wet and water-saturated cracks, expansion and cold joints, and waterproofing of wells and tanks; resistant to acid and alkaline solutions. No numeric data in the available documents.",
+          "specs": []
+        }
+      ],
+      "forWhom": [
+        "Waterproofing contractors",
+        "Metro, tunnel and bridge builders",
+        "General contractors in industrial and civil construction",
+        "Water utilities and operators of collector tunnels",
+        "Construction chemicals dealers"
+      ],
+      "facts": [
+        "Elongation at break of the membrane 1200% (GOST 2678-94)",
+        "Service range of the cured coating from −30 to +150 °C",
+        "Water impermeability of a 3 mm membrane 2.0 kgf/cm² over 24 h",
+        "Consumption about 5.3 kg/m² at a 3 mm dry layer",
+        "About 1,200 m² per shift by a crew of three (manufacturer’s figure)",
+        "Adhesion to concrete over 0.6 MPa, to steel over 0.5 MPa",
+        "Injection H04: expansion 30-50 times, foaming starts after 19-30 s",
+        "Nine metro sites in the reference list: St. Petersburg, Moscow, Nizhny Novgorod"
+      ],
+      "logistics": "Shipped from Russia to order, drums and kits.",
+      "keyFigures": ["Elongation 1200%", "≈1200 m² per shift"],
+      "manufacturerNote": "Tekhnosintez LLC, Moscow, Russia: developer and manufacturer of construction chemicals for industrial, civil, special and transport construction and for the repair of structures, with its own chemical synthesis of components and a quality control laboratory. According to the manufacturer’s letter the company has worked in this field for the last ten years. The emulsion is produced to TU 23.99.12-001-26922568-2026 and holds EAEU state registration No. RU.42.21.02.008.E.000081.05.26, certificate of conformity No. PFL4.RU.0501.N.01145 (valid to 04.03.2029), expert opinion No. 7673 of 13.05.2026 and test report PROM/E-26/03-0106.",
+      "howToBuy": {
+        "dispatch": "To order from Russia; lead time per order",
+        "moq": null,
+        "packaging": "Emulsion: 200 kg steel drums. Injection H04: kit A+B 45 kg (20 kg + 25 kg).",
+        "priceNote": "On request: project, area or volume, and the city",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "St. Petersburg Metro",
+          "text": "Vestibules, escalator tunnels, pedestrian passages and shafts: «Sportivnaya-2» on Line 4, «Dunaysky Prospekt», «Prospekt Slavy», shafts 626 and 627 on the Frunzensky radius, «Gorny Institut», shaft 457 of the Nevsko-Vasileostrovskaya line."
+        },
+        {
+          "title": "Moscow Metro",
+          "text": "«Borovskoye Shosse»: foundation slab, walls and floor and roof slabs. Injection systems: cold joints at «Borovskoye Shosse» and «Avtozavodskaya», tunnel junction at «Nekrasovka», ring joints at «Shelepikha»."
+        },
+        {
+          "title": "Nizhny Novgorod Metro",
+          "text": "«Strelka» station: waterproofing of the pedestrian tunnel."
+        },
+        {
+          "title": "Bridges, tunnels and transport structures",
+          "text": "Waterproofing of bridge structures, tunnels and other engineering structures in transport construction; utility entries through underground structures."
+        },
+        {
+          "title": "Collector tunnels and aggressive media",
+          "text": "Waterproofing of collector tunnels and protection of their vaults against biogenic sulphuric acid attack; anti-corrosion protection of underground and above-ground structures."
+        },
+        {
+          "title": "Tanks, pools, roofs and terraces",
+          "text": "Reinforced concrete and steel tanks and pools for industrial and civil use; roofs, balconies and terraces; Pasta for repairs and internal wet rooms."
+        }
+      ],
+      "faq": [
+        {
+          "q": "How does the spray-applied emulsion differ from roll materials?",
+          "a": "It forms a seamless membrane over any geometry of the structure: embedded parts, horizontal-to-vertical transitions and junctions are coated without joints. Application is mechanised, about 1,200 m² per shift by a crew of three according to the manufacturer, and the reference letter states secondary adhesion in accordance with SP 120.13330.2022 «Metro systems». The coating is neither toxic nor flammable, so it can be applied indoors."
+        },
+        {
+          "q": "What equipment is needed?",
+          "a": "An airless spray unit UND-01 or equivalent with two high-pressure hose circuits and a twin-channel spray gun. The coagulant is prepared on site: 1 kg of calcium chloride (GOST 450-77, top grade) per 10 l of water. After work the emulsion circuit is flushed with 30 l of diesel fuel. Application is possible at +5…+40 °C and relative humidity up to 85%, in dry and calm weather, spraying from the lowest point of the structure."
+        },
+        {
+          "q": "How is the substrate prepared?",
+          "a": "Concrete is cleaned of dust, efflorescence, loose mortar, oil and paint; its compressive strength must be at least 80% of the design grade and surface moisture no more than 4%. Steel is abrasive-blasted to bare metal. Concrete and steel are primed with Zeptaflex Primer. Fillets of fine concrete are made where horizontal surfaces meet vertical ones, and the membrane is reinforced with glass mesh, glass fabric or polymer inserts over bends and expansion joints. Before backfilling, the membrane is protected with a dimpled polymer sheet or geotextile of at least 180 g/m²."
+        },
+        {
+          "q": "When is Pasta used instead of the emulsion?",
+          "a": "The emulsion is for mechanised spraying of large areas of new structures. Pasta is a two-component mastic applied manually without heating: foundations, piles and basements, steel structures and tanks, roof construction and repairs on all roof types, and internal waterproofing of wet rooms. It works in climatic zones I-IV and is resistant to UV."
+        },
+        {
+          "q": "How does Injection H04 work, and what follows it?",
+          "a": "Components A and B are mixed 1:1 by volume with a low-speed mixer for at least 3 minutes, held 30 minutes at +20 °C or at least 60 minutes at +10 °C, mixed again and used within 4 days. The mix is pumped with a single-component injection pump until the water ingress stops; a two-component pump is not allowed. On contact with water the material foams 30-50 times. Then the joint is post-injected with the non-foaming Zeptaflex Injection WX or NV, tools are cleaned with Zeptaflex Cleaner and the pump is conserved with Zeptaflex Preservative."
+        },
+        {
+          "q": "What are the storage and transport conditions?",
+          "a": "The emulsion is stored in the manufacturer’s packaging indoors or under a canopy at +10…+25 °C and humidity up to 95%, shelf life 12 months. Injection H04 is stored and transported at +5…+30 °C in closed transport, in heated vehicles when it is below zero outside, away from sunlight, heat sources, acids and alkalis; shelf life 12 months; freezing is not allowed."
+        },
+        {
+          "q": "Which documents are available?",
+          "a": "For the emulsion: EAEU state registration certificate No. RU.42.21.02.008.E.000081.05.26 of 22.05.2026, certificate of conformity No. PFL4.RU.0501.N.01145 valid to 04.03.2029, expert opinion No. 7673 of 13.05.2026 and test report PROM/E-26/03-0106 of 04.03.2026, together with the technical data sheets for the emulsion and Injection H04, the product brochure and the metro reference letter. All documents are in Russian; English versions are requested from the manufacturer."
+        },
+        {
+          "q": "How do I get a price and a delivery date?",
+          "a": "Use the Get best price or WhatsApp buttons on this page and tell us the project, the area or volume and your city. We will confirm the products, packaging, lead time and price with the manufacturer."
+        }
+      ]
+    },
+    "ru": {
+      "title": "Напыляемая гидроизоляция и инъекционные системы Zeptaflex",
+      "summary": "Бесшовная напыляемая битумно-латексная гидроизоляция для транспортного, промышленного и гражданского строительства и полиуретановые и акрилатные инъекционные системы для остановки водопритоков. Применялась на объектах метрополитена в Санкт-Петербурге, Москве и Нижнем Новгороде.",
+      "body": [
+        "Zeptaflex — двухкомпонентная битумно-латексная эмульсия для бесшовной гидроизоляции горизонтальных и вертикальных поверхностей. Эмульсия и коагулянт (хлористый кальций в воде 1:10) подаются по двум контурам шлангов на двухканальный распылитель установки безвоздушного напыления УНД-01 или её аналога; конусовидные струи смешиваются в воздухе, происходит моментальная реэмульгация, и частицы материала образуют мембрану на основании. Окончательная полимеризация всего слоя занимает около 1-2 суток в зависимости от погоды, влажности основания и температуры воздуха.",
+        "После полимеризации покрытие сохраняет физико-механические свойства в диапазоне от −30 до +150 °C, повторяет любую геометрию конструкции, не токсично и не горюче, поэтому работы можно вести в закрытых помещениях без специальных средств защиты. Покрытие стойко к агрессивным средам; по данным производителя бригада из трёх человек наносит около 1200 м² за смену. В письме производителя указано, что система обеспечивает вторичную адгезию в соответствии с СП 120.13330.2022 «Метрополитены».",
+        "Линейка закрывает весь срок жизни конструкции: эмульсия с праймером Zeptaflex для нового бетона и металла, двухкомпонентная мастика Zeptaflex Pasta для ручного нанесения и ремонта без нагрева и инъекционные материалы для существующих сооружений: быстрореагирующая полиуретановая пена Инъекция H04, непенящиеся составы Инъекция WX и NV для допрессовки и акрилатный гель для противофильтрационных завес и влажных швов."
+      ],
+      "products": [
+        {
+          "name": "Эмульсия",
+          "text": "Двухкомпонентная битумно-латексная гидроизоляционная эмульсия, наносится установкой безвоздушного напыления (УНД-01 или аналог). Мостовые конструкции, тоннели и другие искусственные сооружения транспортного строительства, подземные и наземные конструкции гражданских и промышленных зданий, кровли, балконы и террасы, коллекторные тоннели с защитой от биогенной сернокислотной агрессии, железобетонные и металлические резервуары и бассейны, места ввода подземных коммуникаций.",
+          "specs": [
+            "Адгезия к бетону более 0,6 МПа, к стали более 0,5 МПа (ГОСТ 26589-94, метод А)",
+            "Условная прочность 0,7 МПа; относительное удлинение 1200 % (ГОСТ 2678-94)",
+            "Водонепроницаемость мембраны 3 мм 2,0 кгс/см² в течение 24 ч; водопоглощение 0,6 %",
+            "Гибкость на брусе R 5 мм при −35 °C без трещин; теплостойкость 210 °C",
+            "Расход около 5,3 кг/м² при сухом слое 3 мм; применение при +5…+40 °C и влажности до 85 %",
+            "Поставка в металлических бочках 200 кг; хранение при +10…+25 °C, срок хранения 12 месяцев"
+          ]
+        },
+        {
+          "name": "Pasta",
+          "text": "Двухкомпонентная битумно-полимерная мастика для бесшовной гидроизоляции вертикальных и горизонтальных поверхностей, при нанесении не требует нагревания. Фундаменты, подвалы, сваи и другие заглубляемые конструкции; металлические конструкции, трубы и резервуары; полы бассейнов и санузлы; устройство и ремонт всех видов кровель; внутренняя гидроизоляция душевых, туалетов, кухонь и прихожих. Работает в климатических зонах I-IV, устойчива к УФ-облучению, высокая химстойкость и эластичность без охрупчивания. Числовых характеристик в доступных документах нет.",
+          "specs": []
+        },
+        {
+          "name": "H04",
+          "text": "Двухкомпонентный быстрореагирующий полиуретан без растворителей. При контакте с водой образует пену и останавливает средние водопроявления методом инъектирования: заполняет обводнённые каверны и пустоты, устраняет активную фильтрацию через швы и трещины. Низкая вязкость для глубокого проникновения, безусадочная пена после полимеризации, работа однокомпонентным оборудованием; скорость реакции регулируется Zeptaflex Ускорителем.",
+          "specs": [
+            "Соотношение А:Б 1:1 по объёму, 1:1,25 по массе; компонент А — смола, компонент Б — изоцианат",
+            "Начало вспенивания через 19-30 с, конец через 2 мин 10 с — 4 мин 30 с при +25…+5 °C (5 % воды)",
+            "Кратность вспенивания 30-50; вязкость смеси 400-3000 мПа·с при +25…+5 °C; температура вспышки 180 °C",
+            "Только однокомпонентный насос; выдержка смеси 30 мин при +20 °C или 60 мин при +10 °C, выработать за 4 суток",
+            "Комплект А+Б 45 кг (20 кг + 25 кг); срок годности 12 месяцев",
+            "Хранение и транспортировка при +5…+30 °C; не замораживать"
+          ]
+        },
+        {
+          "name": "Смолы и гель",
+          "text": "Сопутствующие материалы инъекционной системы. Непенящиеся Zeptaflex Инъекция WX и NV для допрессовки после остановки водопритока, Ускоритель для конструкций при температуре ниже +10 °C, Клинер для промывки инструмента и Консервант для консервации оборудования. Акрилатный гель Zeptaflex проникает в мелкие дефекты и после отверждения образует гидрогель, который сохраняет сплошность при деформациях и восстанавливается при увлажнении: противофильтрационные завесы за конструкцией, герметизация влажных и водонасыщенных трещин, деформационных и холодных швов, гидроизоляция дна и стен колодцев и резервуаров; стоек к кислым и щелочным растворам. Числовых данных в доступных документах нет.",
+          "specs": []
+        }
+      ],
+      "forWhom": [
+        "Подрядчики по гидроизоляции",
+        "Строители метро, тоннелей и мостов",
+        "Генподрядчики промышленного и гражданского строительства",
+        "Водоканалы и эксплуатанты коллекторных тоннелей",
+        "Дилеры строительной химии"
+      ],
+      "facts": [
+        "Относительное удлинение мембраны 1200 % (ГОСТ 2678-94)",
+        "Диапазон эксплуатации покрытия от −30 до +150 °C",
+        "Водонепроницаемость мембраны 3 мм 2,0 кгс/см² в течение 24 ч",
+        "Расход около 5,3 кг/м² при сухом слое 3 мм",
+        "Около 1200 м² за смену бригадой из трёх человек (данные производителя)",
+        "Адгезия к бетону более 0,6 МПа, к стали более 0,5 МПа",
+        "Инъекция H04: кратность вспенивания 30-50, начало вспенивания через 19-30 с",
+        "Девять объектов метрополитена в референс-листе: Санкт-Петербург, Москва, Нижний Новгород"
+      ],
+      "logistics": "Поставка из России под заказ, бочки и комплекты.",
+      "keyFigures": ["Удлинение 1200 %", "≈1200 м² за смену"],
+      "manufacturerNote": "ООО «Техносинтез», Москва: разработчик и производитель строительной химии для промышленного, гражданского, специального и транспортного строительства, ремонта и восстановления конструкций, с собственным химическим синтезом компонентов и лабораторией контроля качества. По письму производителя компания работает в этой области последние десять лет. Эмульсия выпускается по ТУ 23.99.12-001-26922568-2026 и имеет свидетельство о государственной регистрации ЕАЭС № RU.42.21.02.008.E.000081.05.26, сертификат соответствия № ПФЛ4.RU.0501.Н.01145 (действует до 04.03.2029), экспертное заключение № 7673 от 13.05.2026 и протокол испытаний ПРОМ/Э-26/03-0106.",
+      "howToBuy": {
+        "dispatch": "Под заказ из России; срок по заказу",
+        "moq": null,
+        "packaging": "Эмульсия: металлические бочки 200 кг. Инъекция H04: комплект А+Б 45 кг (20 кг + 25 кг).",
+        "priceNote": "По запросу: объект, площадь или объём и город",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Петербургский метрополитен",
+          "text": "Вестибюли, наклонные ходы, пешеходные переходы и шахты: «Спортивная-2» на линии 4, «Дунайский проспект», «проспект Славы», шахты 626 и 627 Фрунзенского радиуса, «Горный институт», шахта 457 Невско-Василеостровской линии."
+        },
+        {
+          "title": "Московский метрополитен",
+          "text": "«Боровское шоссе»: фундаментная плита, стены, плиты перекрытия и покрытия. Инъекционные системы: холодные швы на «Боровском шоссе» и «Автозаводской», сопряжение тоннелей на «Некрасовке», швы колец на «Шелепихе»."
+        },
+        {
+          "title": "Нижегородский метрополитен",
+          "text": "Станция «Стрелка»: гидроизоляция пешеходного тоннеля."
+        },
+        {
+          "title": "Мосты, тоннели и транспортные сооружения",
+          "text": "Гидроизоляция мостовых конструкций, тоннелей и других искусственных сооружений транспортного строительства; места ввода подземных коммуникаций."
+        },
+        {
+          "title": "Коллекторные тоннели и агрессивные среды",
+          "text": "Гидроизоляция коллекторных тоннелей и защита их сводов от биогенной сернокислотной агрессии; антикоррозионная защита подземных и наземных конструкций."
+        },
+        {
+          "title": "Резервуары, бассейны, кровли и террасы",
+          "text": "Железобетонные и металлические резервуары и бассейны промышленного и гражданского назначения; кровли, балконы и террасы; Pasta для ремонта и внутренних влажных помещений."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Чем напыляемая эмульсия отличается от рулонных материалов?",
+          "a": "Она образует бесшовную мембрану на поверхности любой геометрии: закладные детали, переходы горизонт-вертикаль и сопряжения покрываются без стыков. Нанесение механизированное, по данным производителя около 1200 м² за смену бригадой из трёх человек, а в письме производителя указана вторичная адгезия в соответствии с СП 120.13330.2022 «Метрополитены». Покрытие не токсично и не горюче, поэтому работы возможны в закрытых помещениях."
+        },
+        {
+          "q": "Какое оборудование нужно?",
+          "a": "Установка безвоздушного напыления УНД-01 или аналог с двумя контурами шлангов высокого давления и двухканальным распылителем. Коагулянт готовится на объекте: 1 кг хлористого кальция (ГОСТ 450-77, высший сорт) на 10 л воды. После работ эмульсионный контур промывается 30 л дизельного топлива. Нанесение возможно при +5…+40 °C и относительной влажности до 85 %, в сухую безветренную погоду, с нижней точки конструкции."
+        },
+        {
+          "q": "Как готовится основание?",
+          "a": "Бетон очищается от пыли, высолов, остатков раствора, масла и краски; прочность на сжатие не менее 80 % марочной, поверхностная влажность не более 4 %. Металл обрабатывается абразивом до чистого металла. Бетон и металл грунтуются праймером Zeptaflex. В переходах с горизонтали на вертикаль выполняется галтель из мелкозернистого бетона, над перегибами и деформационными швами мембрана армируется стеклосеткой, стеклотканью или полимерными прокладками. Перед обратной засыпкой мембрану защищают профилированной мембраной или геотекстилем плотностью не менее 180 г/м²."
+        },
+        {
+          "q": "Когда применяется Pasta, а когда эмульсия?",
+          "a": "Эмульсия — для механизированного напыления больших площадей новых конструкций. Pasta — двухкомпонентная мастика для ручного нанесения без нагрева: фундаменты, сваи и подвалы, металлические конструкции и резервуары, устройство и ремонт всех видов кровель, внутренняя гидроизоляция влажных помещений. Работает в климатических зонах I-IV и устойчива к УФ."
+        },
+        {
+          "q": "Как работает Инъекция H04 и что после неё?",
+          "a": "Компоненты А и Б смешиваются 1:1 по объёму низкоскоростной мешалкой не менее 3 минут, выдерживаются 30 минут при +20 °C или не менее 60 минут при +10 °C, перемешиваются повторно и вырабатываются за 4 суток. Раствор нагнетается однокомпонентным инъекционным насосом до полной остановки водопроявления; двухкомпонентный насос запрещён. При контакте с водой материал вспенивается в 30-50 раз. Затем узел допрессовывается непенящимися Zeptaflex Инъекция WX или NV, инструмент промывается Zeptaflex Клинером, оборудование консервируется Zeptaflex Консервантом."
+        },
+        {
+          "q": "Как хранить и перевозить материалы?",
+          "a": "Эмульсия хранится в упаковке производителя в помещении или под навесом при +10…+25 °C и влажности до 95 %, срок хранения 12 месяцев. Инъекция H04 хранится и перевозится при +5…+30 °C крытым транспортом, при отрицательной температуре — в обогреваемых рефрижераторах, вдали от солнца, отопительных приборов, кислот и щелочей; срок годности 12 месяцев; замораживать нельзя."
+        },
+        {
+          "q": "Какие документы есть?",
+          "a": "На эмульсию: свидетельство о государственной регистрации ЕАЭС № RU.42.21.02.008.E.000081.05.26 от 22.05.2026, сертификат соответствия № ПФЛ4.RU.0501.Н.01145 до 04.03.2029, экспертное заключение № 7673 от 13.05.2026 и протокол испытаний ПРОМ/Э-26/03-0106 от 04.03.2026, а также технические листы эмульсии и Инъекции H04, брошюра о продукции и референс-письмо по объектам метро. Все документы на русском языке, английские версии запрошены у производителя."
+        },
+        {
+          "q": "Как узнать цену и срок поставки?",
+          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и укажите объект, площадь или объём и город. Мы подтвердим у производителя материалы, фасовку, срок и цену."
+        }
+      ]
+    }
+  }
+}
