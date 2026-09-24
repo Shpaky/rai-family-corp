@@ -1,0 +1,308 @@
+{
+  "order": 60,
+  "brand": "Optron",
+  "category": "electronics",
+  "status": "on-order",
+  "published": true,
+  "audiences": [],
+  "source": "Optron",
+  "tags": ["semiconductors", "optoelectronics", "photodiodes", "components"],
+  "featured": true,
+  "manufacturer": {
+    "name": "Optron JSC",
+    "city": null,
+    "founded": 1956
+  },
+  "howToBuy": {
+    "stockInIndia": false
+  },
+  "documents": [
+    {
+      "label": "Si APD KFDL-500 (EN)",
+      "url": "/docs/optron/Optron-Si-APD-KFDL-500-Datasheet-en.pdf",
+      "type": "tds"
+    },
+    {
+      "label": "InGaAs APD IFDL-200 (EN)",
+      "url": "/docs/optron/Optron-InGaAs-APD-IFDL-200-Datasheet-en.pdf",
+      "type": "tds"
+    },
+    {
+      "label": "Product catalogue 2026 (EN)",
+      "url": "/docs/optron/Optron-Catalogue-2026-en.pdf",
+      "type": "catalogue"
+    }
+  ],
+  "i18n": {
+    "en": {
+      "title": "Optron semiconductor and optoelectronic components",
+      "summary": "Diodes, optocouplers, precision zener diodes, digital indicators, hybrid integrated circuits and Si and InGaAs avalanche photodiodes from a Moscow manufacturer with its own epitaxy. Made to order.",
+      "body": [
+        "Optron JSC has developed and produced semiconductor devices in Moscow since 1956. The company grows its own epitaxial structures on InP, GaAs, GaP, GaN and silicon in the spectral range from ultraviolet to near infrared and builds electronic components on these materials: the 2026 catalogue lists more than 100 product types. The quality system is certified to GOST R ISO 9001-2015.",
+        "The catalogue is organised in five sections. Diodes: RF and microwave variable-resistance and switching p-i-n diodes, limiter, pulse, mixer and general-purpose diodes in metal-glass and metal-ceramic packages and as bare chips for hybrid circuits. Microcircuits: hybrid integrated thyristor switches of the 520 series. Optocouplers: transistor optocouplers with galvanic isolation on GaAlAs emitters. Zener diodes: precision thermally compensated reference diodes of the 2S108, 2S117 and KS108 families with a nominal 6.4 V. Digital indicators: seven-segment, matrix, bar-scale and CMOS-controlled indicators in red and green.",
+        "New developments extend the line into optoelectronics: silicon KFDL and InGaAs IFDL avalanche photodiodes, heterostructures for LEDs and laser diodes, a diode optocoupler, microwave diodes in DFN packages, a white-light laser emitter for SMD mounting and 10 Gbit/s receiving optical microassemblies with PIN and avalanche photodiodes. Civil applications: LIDAR and range finding, spectroscopy, optical communication and data transmission, industrial and measuring electronics, galvanic isolation in control systems, voltage references in instrumentation, and indication in devices and panels."
+      ],
+      "products": [
+        {
+          "name": "APD",
+          "text": "Avalanche photodiodes for detecting weak optical signals, LIDAR and range finding, spectroscopy and optical communication. The silicon KFDL-500 covers the visible and near-infrared range with a 500 µm active area; the InGaAs IFDL-200 covers the telecom window around 1550 nm with a 200 µm active area. Both are high-speed devices with a wide operating temperature range.",
+          "specs": [
+            "KFDL-500 (Si): 400-1100 nm, peak 850 nm; active area 500 µm; gain typ. 100, min. 80 (Id = 1 µA)",
+            "KFDL-500: breakdown voltage 120-220 V (typ. 160 V); dark current typ. 1 nA, max. 10 nA at M = 10; responsivity 50 A/W at 905 nm",
+            "IFDL-200 (InGaAs): 900-1700 nm, peak 1550 nm; active area 200 µm; gain typ. 30, min. 20 (Id = 1 µA)",
+            "IFDL-200: breakdown voltage 35-55 V (typ. 42 V); responsivity 0.9 A/W at 1550 nm; dark current typ. 5 nA, max. 50 nA at M = 10",
+            "Both series: capacitance 2-3 pF; bandwidth 0.6-0.7 GHz at M = 10",
+            "Packages: KFDL in TO-5; IFDL in TO-5, TO-46 and as a chip on a ceramic submount"
+          ]
+        },
+        {
+          "name": "Diodes",
+          "text": "RF and microwave diodes for controlled attenuators, switches and limiters in the 30 MHz to centimetre-wave range, pulse and mixer diodes and general-purpose diodes. Silicon epitaxial p-i-n and planar-epitaxial structures; the catalogue gives full electrical parameters for each type.",
+          "specs": [
+            "Variable-resistance RF p-i-n diodes (2D413 family) and switching diodes for hybrid circuits in the 30-400 MHz range",
+            "Microwave switching and limiter diodes in metal-ceramic packages and as bare chips",
+            "Packages: metal-glass, metal-ceramic, bare chips for hybrid integrated circuits; new DFN packages with an exposed thermal pad",
+            "Parameters per type in the 2026 catalogue: capacitance, forward and reverse loss resistance, breakdown voltage, recovery charge"
+          ]
+        },
+        {
+          "name": "Optocouplers",
+          "text": "Transistor optocouplers for switching DC circuits with galvanic isolation between input and output, a new diode optocoupler with 1500 V isolation, precision thermally compensated zener diodes for reference voltage sources, and digital indicators for visual indication in instruments and panels.",
+          "specs": [
+            "Transistor optocouplers 3OT122, 3OT126 / AOT126, 3OT131, 3OT144: GaAlAs emitter, silicon transistor receiver, insulation resistance 10¹¹ Ω at 500 V",
+            "Diode optocoupler AOD187A-6: rise and fall time max. 100 ns, insulation voltage min. 1500 V, feedthrough capacitance max. 0.5 pF",
+            "Precision zener diodes 2S108, 2S117, KS108: nominal 6.4 V, deviation ±5%, temperature coefficient down to ±0.0005 %/°C, specified low-frequency noise",
+            "Indicators: seven-segment digital (2.5 to 20 mm digit height), 5×7 and 8×8 matrix, bar-scale and CMOS-controlled KM490IP2, red (GaAlAs) and green (GaP)"
+          ]
+        },
+        {
+          "name": "Lasers and ICs",
+          "text": "Heterostructures for LEDs and laser diodes grown on the company’s own epitaxial lines, a white-light laser emitter in an SMD package for industrial, architectural and transport lighting, receiving optical microassemblies for 10 Gbit/s telecom links, and hybrid integrated circuits.",
+          "specs": [
+            "SMD laser emitter: 430-470 nm pump, white light, luminous flux 400-450 lm, brightness min. 1000 cd/mm², CCT 5000-7000 K, CRI min. 70, operating current up to 1 A",
+            "10G PIN ROSA: 1100-1600 nm, bandwidth 7 ± 2 GHz, sensitivity −15 dBm, TO-46 with fibre pigtail, −40…+80 °C",
+            "10G APD ROSA: sensitivity −19 dBm, APD supply max. 55 V, SFF-8431 monitoring, TO-46 with fibre pigtail",
+            "Hybrid integrated thyristor switches of the 520 series; epitaxial structures for LEDs and laser diodes on request"
+          ]
+        }
+      ],
+      "forWhom": [
+        "Electronics manufacturers and contract assemblers",
+        "Developers of LIDAR, rangefinders and spectral instruments",
+        "Telecom and measuring equipment manufacturers",
+        "Research centres and universities",
+        "Electronic component distributors"
+      ],
+      "facts": [
+        "Si APD KFDL-500: 400-1100 nm, peak 850 nm, gain typ. 100, active area 500 µm",
+        "InGaAs APD IFDL-200: 900-1700 nm, peak 1550 nm, gain typ. 30, responsivity 0.9 A/W",
+        "Both APD series: bandwidth 0.6-0.7 GHz, capacitance 2-3 pF at M = 10",
+        "More than 100 product types in the 2026 catalogue",
+        "Own epitaxy on InP, GaAs, GaP, GaN and silicon",
+        "Quality system certified to GOST R ISO 9001-2015; certificate of conformity No. ES 06.093.0474-2025",
+        "Semiconductor production since 1956"
+      ],
+      "logistics": "Made to order in Russia, lead time per order.",
+      "keyFigures": ["Si APD 400-1100 nm", "InGaAs APD 900-1700 nm"],
+      "manufacturerNote": "Optron JSC, Moscow, Russia. Development and production of semiconductor and optoelectronic components since 1956, with its own growth of epitaxial structures on InP, GaAs, GaP, GaN and silicon and more than 100 product types in the 2026 catalogue. Quality system certified to GOST R ISO 9001-2015; certificate of conformity No. ES 06.093.0474-2025; three patents, including a light-emitting element and a method of depositing cubic boron nitride films on silicon.",
+      "howToBuy": {
+        "dispatch": "Made to order in Russia; lead time per order",
+        "moq": null,
+        "packaging": null,
+        "priceNote": "On request: component type, quantity and package requirements",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "LIDAR and laser range finding",
+          "text": "Silicon KFDL photodiodes at 905 nm and InGaAs IFDL photodiodes at 1550 nm with gain up to 100 and 30 and a 0.6-0.7 GHz bandwidth."
+        },
+        {
+          "title": "Spectroscopy and weak-signal detection",
+          "text": "Avalanche photodiodes covering 400-1700 nm across the two series, with dark current from 1 nA at M = 10."
+        },
+        {
+          "title": "Optical communication and data transmission",
+          "text": "IFDL photodiodes for the 1550 nm window and 10 Gbit/s receiving microassemblies with PIN and avalanche photodiodes to SFF-8431."
+        },
+        {
+          "title": "Galvanic isolation in industrial control systems",
+          "text": "Transistor and diode optocouplers for switching DC circuits with isolation between input and output, insulation voltage up to 1500 V."
+        },
+        {
+          "title": "Voltage references in instrumentation",
+          "text": "Precision thermally compensated zener diodes with a nominal 6.4 V, specified drift and low-frequency noise."
+        },
+        {
+          "title": "Indication in instruments and panels",
+          "text": "Seven-segment, matrix and bar-scale indicators in red and green, including CMOS-controlled digital indicators."
+        }
+      ],
+      "faq": [
+        {
+          "q": "How do KFDL and IFDL differ, and how do I choose by wavelength?",
+          "a": "KFDL is silicon: 400-1100 nm with peak sensitivity at 850 nm, a 500 µm active area and gain typ. 100 (min. 80), suited to visible and near-infrared sources such as 905 nm lasers. IFDL is InGaAs: 900-1700 nm with peak at 1550 nm, a 200 µm active area, gain typ. 30 (min. 20) and 0.9 A/W responsivity, suited to telecom wavelengths and eye-safe 1550 nm rangefinders. Both give 0.6-0.7 GHz bandwidth and 2-3 pF capacitance at M = 10."
+        },
+        {
+          "q": "Which packages are available, and are there bare chips?",
+          "a": "KFDL comes in a TO-5 package with three pins. IFDL comes in TO-5, TO-46 and as a chip on a ceramic submount. Diodes are supplied in metal-glass and metal-ceramic packages and as bare chips for hybrid integrated circuits; new microwave diodes use DFN packages with an exposed thermal pad."
+        },
+        {
+          "q": "Can parameters be tailored to a task?",
+          "a": "The manufacturer grows its own epitaxial structures on InP, GaAs, GaP, GaN and silicon, develops optoelectronic devices with design and process documentation, produces chips by mesa and planar technology and packages devices in metal-ceramic enclosures, including flip-chip. Requests for structures or devices with specific parameters go through the operator."
+        },
+        {
+          "q": "What is in the 2026 catalogue, and how do I get a specific datasheet?",
+          "a": "The catalogue covers diodes, hybrid microcircuits, optocouplers, zener diodes, digital indicators and new developments: avalanche photodiodes, heterostructures, a diode optocoupler, DFN microwave diodes, an SMD laser emitter and receiving optical microassemblies. Full datasheets for the two avalanche photodiode series are on this page; for other types, name the type in your request and we will obtain the datasheet from the manufacturer."
+        },
+        {
+          "q": "Which certificates does the manufacturer hold?",
+          "a": "A quality management system certified to GOST R ISO 9001-2015 and certificate of conformity No. ES 06.093.0474-2025, plus three patents listed in the catalogue. Copies of the certificates are available on request."
+        },
+        {
+          "q": "How does delivery work?",
+          "a": "There is no stock in India. Components are made to order in Russia, and the lead time is confirmed for each order together with quantity, package and delivery city. Packaging and delivery terms are agreed in the quotation."
+        },
+        {
+          "q": "How do I get a price and a lead time?",
+          "a": "Use the Get best price or WhatsApp buttons on this page and tell us the component type, quantity and package requirements. We will confirm availability, lead time and price with the manufacturer."
+        }
+      ]
+    },
+    "ru": {
+      "title": "Полупроводниковые и оптоэлектронные компоненты Optron",
+      "summary": "Диоды, оптопары, прецизионные стабилитроны, цифровые индикаторы, гибридные микросхемы и лавинные фотодиоды Si и InGaAs московского производителя с собственной эпитаксией. Поставка под заказ.",
+      "body": [
+        "АО «Оптрон» разрабатывает и выпускает полупроводниковые приборы в Москве с 1956 года. Предприятие само выращивает эпитаксиальные структуры на InP, GaAs, GaP, GaN и кремнии в спектральном диапазоне от ультрафиолета до ближнего инфракрасного и производит на этих материалах электронные компоненты: в каталоге 2026 года более 100 типов продукции. Система качества сертифицирована по ГОСТ Р ИСО 9001-2015.",
+        "Каталог состоит из пяти разделов. Диоды: ВЧ и СВЧ переменно-резистивные и переключательные p-i-n диоды, ограничительные, импульсные, смесительные и диоды общего назначения в металлостеклянных и металлокерамических корпусах и бескорпусные кристаллы для гибридных схем. Микросхемы: гибридные интегральные тиристорные ключи серии 520. Оптопары: транзисторные оптопары с гальванической развязкой на излучателях GaAlAs. Стабилитроны: прецизионные термокомпенсированные источники опорного напряжения семейств 2С108, 2С117 и КС108 на номинал 6,4 В. Цифровые индикаторы: семисегментные, матричные, шкальные и индикаторы с КМОП-управлением красного и зелёного свечения.",
+        "Новые разработки расширяют линейку в оптоэлектронику: кремниевые лавинные фотодиоды KFDL и InGaAs-фотодиоды IFDL, гетероструктуры для светодиодов и лазерных диодов, диодная оптопара, СВЧ-диоды в корпусах DFN, излучатель белого света на лазерном диоде для SMD-монтажа и приёмные оптические микросборки на 10 Гбит/с с PIN- и лавинными фотодиодами. Гражданские применения: LIDAR и дальнометрия, спектроскопия, оптическая связь и передача данных, промышленная и измерительная электроника, гальваническая развязка в системах управления, источники опорного напряжения в измерительной технике, индикация в приборах и панелях."
+      ],
+      "products": [
+        {
+          "name": "ЛФД",
+          "text": "Лавинные фотодиоды для детектирования слабых оптических сигналов, LIDAR и дальнометрии, спектроскопии и оптической связи. Кремниевый KFDL-500 закрывает видимый и ближний ИК-диапазон с площадкой 500 мкм; InGaAs-фотодиод IFDL-200 работает в телекоммуникационном окне около 1550 нм с площадкой 200 мкм. Обе серии быстродействующие, с широким диапазоном рабочих температур.",
+          "specs": [
+            "KFDL-500 (Si): 400-1100 нм, пик 850 нм; площадка 500 мкм; коэффициент умножения тип. 100, не менее 80 (Id = 1 мкА)",
+            "KFDL-500: напряжение пробоя 120-220 В (тип. 160 В); темновой ток тип. 1 нА, макс. 10 нА при M = 10; чувствительность 50 А/Вт на 905 нм",
+            "IFDL-200 (InGaAs): 900-1700 нм, пик 1550 нм; площадка 200 мкм; коэффициент умножения тип. 30, не менее 20 (Id = 1 мкА)",
+            "IFDL-200: напряжение пробоя 35-55 В (тип. 42 В); чувствительность 0,9 А/Вт на 1550 нм; темновой ток тип. 5 нА, макс. 50 нА при M = 10",
+            "Обе серии: ёмкость 2-3 пФ; полоса 0,6-0,7 ГГц при M = 10",
+            "Корпуса: KFDL в TO-5; IFDL в TO-5, TO-46 и кристалл на керамическом основании"
+          ]
+        },
+        {
+          "name": "Диоды",
+          "text": "ВЧ и СВЧ диоды для управляемых аттенюаторов, переключателей и ограничителей в диапазоне от 30 МГц до сантиметровых волн, импульсные и смесительные диоды, диоды общего назначения. Кремниевые эпитаксиальные p-i-n и планарно-эпитаксиальные структуры; полные электрические параметры по каждому типу приведены в каталоге.",
+          "specs": [
+            "Переменно-резистивные ВЧ p-i-n диоды (семейство 2Д413) и переключательные диоды для гибридных схем в диапазоне 30-400 МГц",
+            "СВЧ переключательные и ограничительные диоды в металлокерамических корпусах и бескорпусные кристаллы",
+            "Корпуса: металлостеклянные, металлокерамические, бескорпусные кристаллы для гибридных интегральных схем; новые корпуса DFN с открытой теплоотводящей площадкой",
+            "Параметры по типам в каталоге 2026: ёмкость, сопротивление потерь в прямом и обратном направлении, напряжение пробоя, заряд восстановления"
+          ]
+        },
+        {
+          "name": "Оптопары",
+          "text": "Транзисторные оптопары для коммутации цепей постоянного тока с гальванической развязкой входа и выхода, новая диодная оптопара с изоляцией 1500 В, прецизионные термокомпенсированные стабилитроны для источников опорного напряжения и цифровые индикаторы для визуальной индикации в приборах и панелях.",
+          "specs": [
+            "Транзисторные оптопары 3ОТ122, 3ОТ126 / АОТ126, 3ОТ131, 3ОТ144: излучатель GaAlAs, кремниевый транзисторный приёмник, сопротивление изоляции 10¹¹ Ом при 500 В",
+            "Диодная оптопара АОД187А-6: время нарастания и спада не более 100 нс, напряжение изоляции не менее 1500 В, проходная ёмкость не более 0,5 пФ",
+            "Прецизионные стабилитроны 2С108, 2С117, КС108: номинал 6,4 В, отклонение ±5 %, температурный коэффициент до ±0,0005 %/°C, нормированный низкочастотный шум",
+            "Индикаторы: семисегментные цифровые (высота цифры от 2,5 до 20 мм), матричные 5×7 и 8×8, шкальные и с КМОП-управлением КМ490ИП2, красного (GaAlAs) и зелёного (GaP) свечения"
+          ]
+        },
+        {
+          "name": "Лазеры и ИС",
+          "text": "Гетероструктуры для светодиодов и лазерных диодов, выращенные на собственных эпитаксиальных линиях, излучатель белого света на лазерном диоде в SMD-корпусе для промышленного, архитектурного и транспортного освещения, приёмные оптические микросборки для телекоммуникационных линий 10 Гбит/с и гибридные интегральные схемы.",
+          "specs": [
+            "SMD-излучатель на лазерном диоде: накачка 430-470 нм, белый свет, световой поток 400-450 лм, яркость не менее 1000 кд/мм², цветовая температура 5000-7000 K, CRI не менее 70, рабочий ток до 1 А",
+            "10G PIN ROSA: 1100-1600 нм, полоса 7 ± 2 ГГц, чувствительность −15 дБм, корпус TO-46 с волоконным выводом, −40…+80 °C",
+            "10G APD ROSA: чувствительность −19 дБм, питание ЛФД не более 55 В, мониторинг по SFF-8431, корпус TO-46 с волоконным выводом",
+            "Гибридные интегральные тиристорные ключи серии 520; эпитаксиальные структуры для светодиодов и лазерных диодов по запросу"
+          ]
+        }
+      ],
+      "forWhom": [
+        "Производители электронной аппаратуры и контрактные сборщики",
+        "Разработчики LIDAR, дальномеров и спектральных приборов",
+        "Производители телекоммуникационного и измерительного оборудования",
+        "Научные центры и университеты",
+        "Дистрибьюторы электронных компонентов"
+      ],
+      "facts": [
+        "Si ЛФД KFDL-500: 400-1100 нм, пик 850 нм, умножение тип. 100, площадка 500 мкм",
+        "InGaAs ЛФД IFDL-200: 900-1700 нм, пик 1550 нм, умножение тип. 30, чувствительность 0,9 А/Вт",
+        "Обе серии ЛФД: полоса 0,6-0,7 ГГц, ёмкость 2-3 пФ при M = 10",
+        "Более 100 типов продукции в каталоге 2026",
+        "Собственная эпитаксия на InP, GaAs, GaP, GaN и кремнии",
+        "Система качества по ГОСТ Р ИСО 9001-2015; сертификат соответствия № ЕС 06.093.0474-2025",
+        "Полупроводниковое производство с 1956 года"
+      ],
+      "logistics": "Под заказ из России, срок по заказу.",
+      "keyFigures": ["Si APD 400-1100 нм", "InGaAs APD 900-1700 нм"],
+      "manufacturerNote": "АО «Оптрон», Москва. Разработка и производство полупроводниковых и оптоэлектронных компонентов с 1956 года, собственное выращивание эпитаксиальных структур на InP, GaAs, GaP, GaN и кремнии, более 100 типов продукции в каталоге 2026. Система качества сертифицирована по ГОСТ Р ИСО 9001-2015; сертификат соответствия № ЕС 06.093.0474-2025; три патента, в том числе на светоизлучающий элемент и способ осаждения плёнок кубического нитрида бора на кремний.",
+      "howToBuy": {
+        "dispatch": "Под заказ из России; срок по заказу",
+        "moq": null,
+        "packaging": null,
+        "priceNote": "По запросу: тип компонента, количество и требования к корпусу",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "LIDAR и лазерная дальнометрия",
+          "text": "Кремниевые фотодиоды KFDL на 905 нм и InGaAs-фотодиоды IFDL на 1550 нм с умножением до 100 и 30 и полосой 0,6-0,7 ГГц."
+        },
+        {
+          "title": "Спектроскопия и детектирование слабых сигналов",
+          "text": "Лавинные фотодиоды двух серий закрывают 400-1700 нм, темновой ток от 1 нА при M = 10."
+        },
+        {
+          "title": "Оптическая связь и передача данных",
+          "text": "Фотодиоды IFDL для окна 1550 нм и приёмные микросборки 10 Гбит/с с PIN- и лавинными фотодиодами по SFF-8431."
+        },
+        {
+          "title": "Гальваническая развязка в промышленных системах управления",
+          "text": "Транзисторные и диодная оптопары для коммутации цепей постоянного тока с развязкой входа и выхода, напряжение изоляции до 1500 В."
+        },
+        {
+          "title": "Источники опорного напряжения в измерительной технике",
+          "text": "Прецизионные термокомпенсированные стабилитроны на номинал 6,4 В с нормированным дрейфом и низкочастотным шумом."
+        },
+        {
+          "title": "Индикация в приборах и панелях",
+          "text": "Семисегментные, матричные и шкальные индикаторы красного и зелёного свечения, включая цифровые индикаторы с КМОП-управлением."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Чем отличаются KFDL и IFDL и как выбрать по длине волны?",
+          "a": "KFDL — кремний: 400-1100 нм с пиком чувствительности на 850 нм, площадка 500 мкм, умножение тип. 100 (не менее 80); подходит для видимых и ближних ИК-источников, например лазеров 905 нм. IFDL — InGaAs: 900-1700 нм с пиком на 1550 нм, площадка 200 мкм, умножение тип. 30 (не менее 20), чувствительность 0,9 А/Вт; подходит для телекоммуникационных длин волн и безопасных для глаз дальномеров на 1550 нм. Обе серии дают полосу 0,6-0,7 ГГц и ёмкость 2-3 пФ при M = 10."
+        },
+        {
+          "q": "Какие корпуса доступны и есть ли бескорпусные кристаллы?",
+          "a": "KFDL поставляется в корпусе TO-5 с тремя выводами. IFDL — в TO-5, TO-46 и в виде кристалла на керамическом основании. Диоды поставляются в металлостеклянных и металлокерамических корпусах и бескорпусными кристаллами для гибридных интегральных схем; новые СВЧ-диоды выпускаются в корпусах DFN с открытой теплоотводящей площадкой."
+        },
+        {
+          "q": "Можно ли заказать характеристики под задачу?",
+          "a": "Производитель сам выращивает эпитаксиальные структуры на InP, GaAs, GaP, GaN и кремнии, разрабатывает оптоэлектронные приборы с конструкторской и технологической документацией, изготавливает кристаллы по меза- и планарной технологии и корпусирует приборы в металлокерамические корпуса, в том числе по технологии flip-chip. Запросы на структуры или приборы с заданными параметрами идут через оператора."
+        },
+        {
+          "q": "Что входит в каталог 2026 и как получить конкретный даташит?",
+          "a": "Каталог охватывает диоды, гибридные микросхемы, оптопары, стабилитроны, цифровые индикаторы и новые разработки: лавинные фотодиоды, гетероструктуры, диодную оптопару, СВЧ-диоды в DFN, SMD-излучатель на лазерном диоде и приёмные оптические микросборки. Полные даташиты двух серий лавинных фотодиодов размещены на этой странице; по другим типам укажите тип в запросе, и мы получим даташит у производителя."
+        },
+        {
+          "q": "Какие сертификаты есть у производителя?",
+          "a": "Система менеджмента качества сертифицирована по ГОСТ Р ИСО 9001-2015, есть сертификат соответствия № ЕС 06.093.0474-2025 и три патента, перечисленные в каталоге. Копии сертификатов предоставляются по запросу."
+        },
+        {
+          "q": "Как проходит поставка?",
+          "a": "Склада в Индии нет. Компоненты изготавливаются под заказ в России, срок подтверждается по каждому заказу вместе с количеством, корпусом и городом доставки. Упаковка и условия поставки согласуются в коммерческом предложении."
+        },
+        {
+          "q": "Как узнать цену и срок?",
+          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и укажите тип компонента, количество и требования к корпусу. Мы подтвердим у производителя наличие, срок и цену."
+        }
+      ]
+    }
+  }
+}
