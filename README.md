@@ -30,6 +30,10 @@
 - Токены дизайна (цвета, шрифты, размеры) — `src/styles/global.css`, блок `@theme`.
 - Адрес сайта и base — env `SITE_URL`, `BASE_PATH` (`.env.example`). CI для GitHub Pages — `.github/workflows/deploy.yml`.
 
+## Люди
+
+- Коллекция `people` (`src/content/people/*.json`, схема в `src/content.config.ts`): добавить человека = JSON плюс фото в `src/content/people/photos/<slug>.jpg`. Фото не кадрируются руками, кроп делает CSS (`object-cover`), форматы и размеры даёт `astro:assets`. Секция «О компании» на главной выводит группу `leadership` по `order` через `PersonRow.astro`; `bio` и `focus` — резерв под будущую страницу, не выводятся. Об учредителях на сайте только фраза в тексте секции, имена не публикуются.
+
 ## Главная
 
 Порядок секций главной и карточек «С кем мы работаем» задаётся только в `src/data/site.ts`
