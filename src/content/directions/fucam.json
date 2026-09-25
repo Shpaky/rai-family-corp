@@ -1,0 +1,196 @@
+{
+  "order": 100,
+  "brand": "Fucam",
+  "category": "construction",
+  "status": "coming",
+  "published": true,
+  "audiences": [],
+  "source": "Fucam",
+  "tags": ["fire-protection", "flame-retardant", "wood", "textile"],
+  "featured": false,
+  "manufacturer": null,
+  "howToBuy": {
+    "stockInIndia": false
+  },
+  "documents": [
+    {
+      "label": "Fucam presentation (EN)",
+      "url": "/docs/fucam/Fucam-Presentation-en.pdf",
+      "type": "presentation"
+    }
+  ],
+  "i18n": {
+    "en": {
+      "title": "Fucam fire-retardant compositions for wood and textile",
+      "summary": "Water-based fire-retardant and fire-fighting compositions with neutral pH for wood, textile and construction materials. The direction is in preparation: technical data sheets and certificates have been requested from the manufacturer.",
+      "body": [
+        "Fucam is presented by the manufacturer as a new generation of multi-purpose fire prevention solutions: durable, eco-friendly and easy to use. According to the manufacturer the compositions are safe for humans and the environment, non-toxic, have a neutral pH of 7, and are applied to wood and textile by brush, roller, dipping or spraying. Intended end users are industrial and construction materials, fabrics and textile, paints, adhesives and coatings, automotive textile, private houses, home interiors and furniture.",
+        "The line ready for the market consists of fire retardants for wood and textile, the FFS fire-fighting solution and fire-proof polyurethane. Non-flammable paints, a fire-fighting capsule, a car fire extinguisher, a fire retardant for plastic and a fire sticker are listed by the manufacturer as developments. Technical characteristics, test reports and certificates are not yet available, so the direction is shown as coming."
+      ],
+      "products": [
+        {
+          "name": "Wood and textile",
+          "text": "Fire retardant for wood and textile, ready for the market according to the manufacturer. Applied by brush, roller, dipping or spraying; neutral pH 7. Consumption, fire-protection efficiency group and flammability class of treated material will be added when the technical data sheet is received.",
+          "specs": [
+            "pH 7, non-toxic according to the manufacturer",
+            "Application by brush, roller, dipping or spraying"
+          ]
+        },
+        {
+          "name": "FFS",
+          "text": "Fire-fighting solution, ready for the market according to the manufacturer. Characteristics not yet available.",
+          "specs": []
+        },
+        {
+          "name": "Polyurethane",
+          "text": "Fire-proof polyurethane, ready for the market according to the manufacturer. Characteristics not yet available.",
+          "specs": []
+        }
+      ],
+      "forWhom": [
+        "Construction material and timber structure manufacturers",
+        "Textile and furniture producers",
+        "Paint, adhesive and coating manufacturers",
+        "Automotive textile",
+        "Fire protection material distributors"
+      ],
+      "facts": [
+        "Neutral pH 7 according to the manufacturer",
+        "Four application methods: brush, roller, dipping, spraying",
+        "Three products ready for the market: wood and textile retardant, FFS, fire-proof polyurethane"
+      ],
+      "logistics": null,
+      "keyFigures": ["pH 7, non-toxic", "Brush, roller, dip, spray"],
+      "manufacturerNote": null,
+      "howToBuy": {
+        "dispatch": null,
+        "moq": null,
+        "packaging": null,
+        "priceNote": "On request: material, area or volume",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Timber structures and construction materials",
+          "text": "Fire retardant for wood applied by brush, roller, dipping or spraying; industrial and construction materials named by the manufacturer as end users."
+        },
+        {
+          "title": "Fabrics and textile",
+          "text": "Fire retardant for textile, including automotive textile, applied by dipping or spraying."
+        },
+        {
+          "title": "Home interiors and furniture",
+          "text": "Private houses, interiors and furniture named by the manufacturer among the end users."
+        },
+        {
+          "title": "Paints, adhesives and coatings",
+          "text": "Manufacturers of paints, adhesives and coatings as users of the compositions; non-flammable paints are in development."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Which materials can be treated?",
+          "a": "Wood and textile with the ready-for-market fire retardants, applied by brush, roller, dipping or spraying; the manufacturer also names construction materials, automotive textile, furniture and interiors. A fire retardant for plastic is in development."
+        },
+        {
+          "q": "How does it differ from conventional flame retardants?",
+          "a": "According to the manufacturer the compositions are water-based, non-toxic, safe for humans and the environment and have a neutral pH of 7, whereas the presentation describes conventional solutions as hazardous or expensive. Independent test data and comparisons have not been provided yet and will be added when received."
+        },
+        {
+          "q": "What is in the line and what is in development?",
+          "a": "Ready for the market: fire retardants for wood and textile, the FFS fire-fighting solution and fire-proof polyurethane. In development: non-flammable paints, a fire-fighting capsule, a car fire extinguisher, a fire retardant for plastic and a fire sticker; the release dates are being clarified with the manufacturer."
+        },
+        {
+          "q": "How do I request samples and a price?",
+          "a": "Use the Get best price or WhatsApp buttons on this page and tell us the material and the area or volume. The direction is in preparation: we will forward the request to the manufacturer and come back with the technical data sheets, samples, lead time and price."
+        }
+      ]
+    },
+    "ru": {
+      "title": "Огнезащитные составы Fucam для дерева и текстиля",
+      "summary": "Огнезащитные и огнетушащие составы на водной основе с нейтральным pH для дерева, текстиля и стройматериалов. Направление в подготовке: технические паспорта и сертификаты запрошены у производителя.",
+      "body": [
+        "Fucam представлен производителем как многофункциональные огнезащитные решения нового поколения: долговечные, экологичные и простые в применении. По данным производителя составы безопасны для людей и окружающей среды, нетоксичны, имеют нейтральный pH 7 и наносятся на дерево и текстиль кистью, валиком, окунанием или распылением. Конечные пользователи: промышленность и стройматериалы, ткани и текстиль, краски, клеи и покрытия, автотекстиль, частные дома, интерьер и мебель.",
+        "Линейка, готовая к рынку, состоит из огнезащитных составов для дерева и текстиля, огнетушащего состава FFS и огнестойкого пенополиуретана. Негорючие краски, огнетушащая капсула, автомобильный огнетушитель, огнезащита пластика и «пожарная наклейка» названы производителем как разработки. Технических характеристик, протоколов испытаний и сертификатов пока нет, поэтому направление показано как готовящееся."
+      ],
+      "products": [
+        {
+          "name": "Дерево",
+          "text": "Огнезащитный состав для дерева и текстиля, по данным производителя готов к рынку. Наносится кистью, валиком, окунанием или распылением; нейтральный pH 7. Расход, группа огнезащитной эффективности и класс горючести обработанного материала будут добавлены по получении технического паспорта.",
+          "specs": [
+            "pH 7, нетоксичен по данным производителя",
+            "Нанесение кистью, валиком, окунанием или распылением"
+          ]
+        },
+        {
+          "name": "FFS",
+          "text": "Огнетушащий состав, по данным производителя готов к рынку. Характеристики пока не предоставлены.",
+          "specs": []
+        },
+        {
+          "name": "ППУ",
+          "text": "Огнестойкий пенополиуретан, по данным производителя готов к рынку. Характеристики пока не предоставлены.",
+          "specs": []
+        }
+      ],
+      "forWhom": [
+        "Производители стройматериалов и деревянных конструкций",
+        "Текстильные и мебельные производства",
+        "Производители красок, клеёв и покрытий",
+        "Автотекстиль",
+        "Дистрибьюторы огнезащитных материалов"
+      ],
+      "facts": [
+        "Нейтральный pH 7 по данным производителя",
+        "Четыре способа нанесения: кисть, валик, окунание, распыление",
+        "Три продукта, готовых к рынку: состав для дерева и текстиля, FFS, огнестойкий пенополиуретан"
+      ],
+      "logistics": null,
+      "keyFigures": ["pH 7, нетоксичный", "Кисть, валик, окунание"],
+      "manufacturerNote": null,
+      "howToBuy": {
+        "dispatch": null,
+        "moq": null,
+        "packaging": null,
+        "priceNote": "По запросу: материал, площадь или объём",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Деревянные конструкции и стройматериалы",
+          "text": "Огнезащитный состав для дерева, наносимый кистью, валиком, окунанием или распылением; промышленность и стройматериалы названы производителем среди конечных пользователей."
+        },
+        {
+          "title": "Ткани и текстиль",
+          "text": "Огнезащитный состав для текстиля, включая автотекстиль, наносится окунанием или распылением."
+        },
+        {
+          "title": "Интерьер и мебель",
+          "text": "Частные дома, интерьеры и мебель названы производителем среди конечных пользователей."
+        },
+        {
+          "title": "Краски, клеи и покрытия",
+          "text": "Производители красок, клеёв и покрытий как пользователи составов; негорючие краски в разработке."
+        }
+      ],
+      "faq": [
+        {
+          "q": "На какие материалы наносится?",
+          "a": "На дерево и текстиль готовыми к рынку огнезащитными составами кистью, валиком, окунанием или распылением; производитель также называет стройматериалы, автотекстиль, мебель и интерьеры. Огнезащита пластика находится в разработке."
+        },
+        {
+          "q": "Чем он отличается от традиционных антипиренов?",
+          "a": "По данным производителя составы на водной основе, нетоксичны, безопасны для людей и среды и имеют нейтральный pH 7, тогда как традиционные решения презентация описывает как опасные или дорогие. Независимые данные испытаний и сравнения пока не предоставлены и будут добавлены по получении."
+        },
+        {
+          "q": "Что в линейке и что в разработке?",
+          "a": "Готовы к рынку: огнезащитные составы для дерева и текстиля, огнетушащий состав FFS и огнестойкий пенополиуретан. В разработке: негорючие краски, огнетушащая капсула, автомобильный огнетушитель, огнезащита пластика и «пожарная наклейка»; сроки выпуска уточняются у производителя."
+        },
+        {
+          "q": "Как запросить образцы и цену?",
+          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и укажите материал и площадь или объём. Направление в подготовке: мы передадим запрос производителю и вернёмся с техническими паспортами, образцами, сроком и ценой."
+        }
+      ]
+    }
+  }
+}
