@@ -18,8 +18,10 @@ interface Props {
   compact?: boolean;
   /** Accepted for uniformity with other home sections; Contacts is always dark. */
   tone?: SectionTone;
+  /** Anchor of the section; null on pages other than home, where the menu keeps pointing to /#contacts. */
+  id?: string | null;
 }
-const { locale, compact = false } = Astro.props;
+const { locale, compact = false, id = 'contacts' } = Astro.props;
 const copy = t(locale);
 const phones = phonesFor(locale);
 const whatsapps = whatsappsFor(locale);
@@ -39,7 +41,7 @@ const rows = [
 ---
 
 <section
-  id="contacts"
+  id={id ?? undefined}
   class:list={[
     'scroll-mt-20 bg-dark text-dark-text',
     compact ? 'py-section-sm' : 'py-section-sm md:py-section',

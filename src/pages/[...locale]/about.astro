@@ -1,0 +1,292 @@
+---
+/*
+  /about/: two business models, leadership, status and mark, company details,
+  contacts. The page header (paper) holds the models block; the three sections
+  below alternate white / paper / white by position, like HOME_SECTIONS on the
+  home page, and Contacts is the only dark surface.
+*/
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import { getCollection } from 'astro:content';
+import Button from '@/components/Button.astro';
+import PersonProfile from '@/components/PersonProfile.astro';
+import Contacts from '@/components/sections/Contacts.astro';
+import StatusLockup from '@/components/StatusLockup.astro';
+import type { SectionTone } from '@/components/sections/types';
+import Base from '@/layouts/Base.astro';
+import { company, postalAddress, registeredOfficeLine } from '@/data/company';
+import { contacts, phonesFor } from '@/data/contacts';
+import { ABOUT_B2B_AUDIENCES, type AboutB2bAudience } from '@/data/site';
+import type { Locale } from '@/i18n/config';
+import { href, localePaths, t } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return localePaths();
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const copy = t(locale);
+const page = copy.aboutPage;
+const home = href(locale);
+const path = 'about/';
+
+// Sections after the page header: white, paper, white (index parity, as on the home page).
+const toneAt = (i: number): SectionTone => (i % 2 === 0 ? 'white' : 'surface');
+const bg = (tone: SectionTone) => (tone === 'surface' ? 'bg-surface' : 'bg-white');
+
+const b2bLinks: Record<AboutB2bAudience, string> = {
+  distributors: href(locale, 'directions/'),
+  manufacturers: `${home}#services`,
+};
+const b2bOrder = ABOUT_B2B_AUDIENCES[locale];
+
+const leadership = (await getCollection('people', (e) => e.data.group === 'leadership')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+// "23 August 2024" / "23 августа 2024" from the ISO date in company.ts.
+const registeredOn = new Intl.DateTimeFormat(locale === 'ru' ? 'ru' : 'en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+})
+  .formatToParts(new Date(company.registeredOn))
+  .filter((part) => ['day', 'month', 'year'].includes(part.type))
+  .map((part) => part.value)
+  .join(' ');
+
+const details = [
+  { key: 'legalName', value: company.legalName },
+  { key: 'llpin', value: company.llpin },
+  { key: 'registered', value: null },
+  { key: 'jurisdiction', value: company.jurisdiction[locale] },
+  { key: 'office', value: registeredOfficeLine() },
+] as const;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: page.title,
+  description: page.description,
+  url: getAbsoluteLocaleUrl(locale, path),
+  inLanguage: locale,
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Rai Family Corp',
+    legalName: company.legalName,
+    foundingDate: company.registeredOn,
+    url: getAbsoluteLocaleUrl('en', ''),
+    address: postalAddress(),
+    ...(phonesFor(locale).length > 0
+      ? { telephone: phonesFor(locale).map((p) => p.replace(/[^\d+]/g, '')) }
+      : {}),
+    ...(contacts.email ? { email: contacts.email } : {}),
+  },
+  relatedLink: Object.values(company.proofLinks),
+};
+
+const externalArrow = 'M7 17 17 7M8 7h9v9';
+const arrow = 'M5 12h14M13 6l6 6-6 6';
+const textLink =
+  'inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-primary-hover';
+---
+
+<Base locale={locale} title={page.title} description={page.description} path={path} jsonLd={jsonLd}>
+  <header class="bg-surface">
+    <div class="container-page py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="text-sm font-semibold text-muted">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href={home} class="hover:text-primary">Rai Family Corp</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">{copy.about.eyebrow}</li>
+        </ol>
+      </nav>
+      <p class="eyebrow mt-6 text-eyebrow">{copy.about.eyebrow}</p>
+      <h1 class="mt-3 text-h1 font-bold text-balance text-ink md:text-display">{page.h1}</h1>
+      <p class="mt-5 max-w-3xl text-lead text-pretty text-ink-soft">{page.lead}</p>
+
+      <div class="mt-10 grid gap-5 lg:grid-cols-12 lg:gap-6">
+        <section
+          class="grid grid-rows-subgrid row-span-4 gap-y-4 rounded-card border border-line border-t-4 border-t-primary bg-white p-7 shadow-card lg:col-span-7"
+          aria-labelledby="b2b-title"
+        >
+          <abbr
+            title={copy.segmentsExpanded.B2B}
+            class="justify-self-start rounded-pill bg-primary-soft px-2.5 py-1 text-xs font-bold tracking-wide text-primary no-underline"
+            >B2B</abbr
+          >
+          <h2 id="b2b-title" class="text-h3 font-bold text-ink">{page.b2b.title}</h2>
+          <dl class="space-y-4">
+            {
+              b2bOrder.map((key) => (
+                <div>
+                  <dt class="font-bold text-ink">{page.b2b.audiences[key].title}</dt>
+                  <dd class="mt-1 text-base leading-relaxed text-ink-soft">
+                    {page.b2b.audiences[key].text}
+                  </dd>
+                </div>
+              ))
+            }
+          </dl>
+          <ul class="flex flex-wrap gap-x-6 gap-y-2 self-end">
+            {
+              b2bOrder.map((key) => (
+                <li>
+                  <a href={b2bLinks[key]} class={textLink}>
+                    {page.b2b.links[key]}
+                    <svg
+                      class="size-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d={arrow} />
+                    </svg>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section
+          class="grid grid-rows-subgrid row-span-4 gap-y-4 rounded-card border border-line border-t-4 border-t-gold bg-warm p-7 shadow-card lg:col-span-5"
+          aria-labelledby="b2c-title"
+        >
+          <abbr
+            title={copy.segmentsExpanded.B2C}
+            class="justify-self-start rounded-pill bg-warm-strong px-2.5 py-1 text-xs font-bold tracking-wide text-dark no-underline"
+            >B2C</abbr
+          >
+          <h2 id="b2c-title" class="text-h3 font-bold text-ink">{page.b2c.title}</h2>
+          <dl>
+            <div>
+              <dt class="font-bold text-ink">{page.b2c.audience.title}</dt>
+              <dd class="mt-1 text-base leading-relaxed text-ink-soft">{page.b2c.audience.text}</dd>
+            </div>
+          </dl>
+          <p class="self-end">
+            <a href={company.store.url} target="_blank" rel="noopener" class={textLink}>
+              {copy.audiences.items.consumers.cta}
+              {
+                page.b2c.linkNote && (
+                  <span class="font-semibold text-muted">({page.b2c.linkNote})</span>
+                )
+              }
+              <span class="sr-only">, {copy.external.newTab}</span>
+              <svg
+                class="size-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d={externalArrow}></path>
+              </svg>
+            </a>
+          </p>
+        </section>
+      </div>
+    </div>
+  </header>
+
+  <section
+    class:list={['py-section-sm md:py-section', bg(toneAt(0))]}
+    aria-labelledby="leadership-title"
+  >
+    <div class="container-page">
+      <h2 id="leadership-title" class="text-h2 font-bold text-ink md:text-h1">
+        {copy.about.leadership}
+      </h2>
+      <p class="mt-4 max-w-3xl text-lead text-ink-soft">{page.leadershipIntro}</p>
+      <ul class="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-12">
+        {
+          leadership.map((entry) => (
+            <li>
+              <PersonProfile entry={entry} locale={locale} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section
+    class:list={['py-section-sm md:py-section', bg(toneAt(1))]}
+    aria-labelledby="status-title"
+  >
+    <div class="container-page">
+      <h2 id="status-title" class="text-h2 font-bold text-balance text-ink md:text-h1">
+        {page.status.title}
+      </h2>
+      <div class="mt-8 grid gap-8 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-7">
+          <StatusLockup locale={locale} variant="footer" />
+          <p class="mt-4 max-w-md text-sm leading-relaxed text-muted">{copy.footer.operator}</p>
+        </div>
+        <p class="text-base leading-relaxed text-ink-soft lg:col-span-5">
+          {copy.footer.madeInRussia}
+        </p>
+      </div>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <Button href={`${home}#pavilion`} variant="secondary">{copy.hero.pavilionLink}</Button>
+        <a href={company.proofLinks.recProgramme} target="_blank" rel="noopener" class={textLink}>
+          {page.status.programme}
+          {
+            page.status.programmeNote && (
+              <span class="font-semibold text-muted">({page.status.programmeNote})</span>
+            )
+          }
+          <span class="sr-only">, {copy.external.newTab}</span>
+          <svg
+            class="size-4 shrink-0"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d={externalArrow}></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class:list={['py-section-sm md:py-section', bg(toneAt(2))]}
+    aria-labelledby="details-title"
+  >
+    <div class="container-page">
+      <h2 id="details-title" class="text-h2 font-bold text-ink md:text-h1">{page.details.title}</h2>
+      <dl class="mt-8 grid gap-x-10 gap-y-6 md:grid-cols-2">
+        {
+          details.map((row) => (
+            <div>
+              <dt class="eyebrow text-muted">{page.details[row.key]}</dt>
+              <dd class="mt-2 text-lg font-semibold text-ink">
+                {row.key === 'registered' ? (
+                  <>
+                    <time datetime={company.registeredOn}>{registeredOn}</time>, {company.registrar}
+                  </>
+                ) : (
+                  row.value
+                )}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <Contacts locale={locale} id={null} />
+</Base>

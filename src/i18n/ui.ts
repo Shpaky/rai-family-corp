@@ -2,6 +2,8 @@
   All site copy. EN is the source; RU is the translation.
 */
 export type AudienceKey = 'manufacturers' | 'distributors' | 'institutions' | 'consumers';
+/** The two B2B audiences of the /about/ page. */
+export type AboutB2bAudience = 'distributors' | 'manufacturers';
 interface Photo {
   alt: string;
   caption: string;
@@ -145,6 +147,42 @@ interface Copy {
   };
   footer: { legal: string; operator: string; rights: string; madeInRussia: string };
   notFound: { title: string; text: string; back: string };
+  /** External links: screen-reader note for target="_blank". */
+  external: { newTab: string };
+  /** /about/ page. Reused keys: about.eyebrow (crumb and eyebrow), about.leadership (H2), footer.operator and footer.madeInRussia (status), hero.pavilionLink, audiences.items.consumers.cta. */
+  aboutPage: {
+    title: string;
+    description: string;
+    h1: string;
+    lead: string;
+    b2b: {
+      title: string;
+      /** Order per locale: ABOUT_B2B_AUDIENCES in src/data/site.ts. */
+      audiences: Record<AboutB2bAudience, { title: string; text: string }>;
+      links: Record<AboutB2bAudience, string>;
+    };
+    b2c: {
+      title: string;
+      audience: { title: string; text: string };
+      /** Language note next to the shop link, null when the shop is in the page language. */
+      linkNote: string | null;
+    };
+    leadershipIntro: string;
+    status: {
+      title: string;
+      programme: string;
+      /** Language note next to the programme link, null when the page is in Russian. */
+      programmeNote: string | null;
+    };
+    details: {
+      title: string;
+      legalName: string;
+      llpin: string;
+      registered: string;
+      jurisdiction: string;
+      office: string;
+    };
+  };
 }
 
 export const ui: Record<'en' | 'ru', Copy> = {
@@ -389,6 +427,55 @@ export const ui: Record<'en' | 'ru', Copy> = {
       text: 'The page may have moved or never existed.',
       back: 'Back to home',
     },
+    external: { newTab: 'opens in a new tab' },
+    aboutPage: {
+      title: 'About Rai Family Corp: B2B and B2C operator of Russian products in India',
+      description:
+        'Rai Family Corp LLP works in two models: B2B as the operator of the «Made in Russia» National Pavilion in Navi Mumbai, importer and distributor, and B2C through its own online shop The Rus Store. Leadership, status, company details.',
+      h1: 'Two business models: B2B and B2C',
+      lead: 'Rai Family Corp LLP works with Russian products in India in two models: B2B as the operator of the «Made in Russia» National Pavilion, importer and distributor, and B2C as the owner of The Rus Store online shop.',
+      b2b: {
+        title: 'Pavilion, import and distribution',
+        audiences: {
+          distributors: {
+            title:
+              'Indian distributors, retail chains, government bodies and development institutions',
+            text: 'Russian brands and product lines that we import, certify and distribute in India, with technical and safety documents on every direction page.',
+          },
+          manufacturers: {
+            title: 'Russian manufacturers',
+            text: 'Direct distribution channels and marketing in India, and the whole route to the shelf: market research, product and packaging adaptation, certification, import procedures, legal support and logistics.',
+          },
+        },
+        links: {
+          distributors: 'Directions catalogue',
+          manufacturers: 'Services for manufacturers',
+        },
+      },
+      b2c: {
+        title: 'The Rus Store, our online shop',
+        audience: {
+          title: 'Buyers in India',
+          text: 'Russian products online, with delivery across India.',
+        },
+        linkNote: null,
+      },
+      leadershipIntro:
+        'The company was founded in 2024 by a group of international entrepreneurs with many years of experience across countries and industries, including India.',
+      status: {
+        title: 'Status and the «Made in Russia» mark',
+        programme: 'REC programme page: Russian national pavilions abroad',
+        programmeNote: 'in Russian',
+      },
+      details: {
+        title: 'Company details',
+        legalName: 'Legal name',
+        llpin: 'LLPIN',
+        registered: 'Registered',
+        jurisdiction: 'Jurisdiction',
+        office: 'Registered office',
+      },
+    },
   },
 
   ru: {
@@ -632,6 +719,51 @@ export const ui: Record<'en' | 'ru', Copy> = {
       title: 'Страница не найдена',
       text: 'Возможно, страница переехала или никогда не существовала.',
       back: 'На главную',
+    },
+    external: { newTab: 'откроется в новой вкладке' },
+    aboutPage: {
+      title: 'О компании Rai Family Corp: B2B и B2C оператор российских товаров в Индии',
+      description:
+        'Rai Family Corp LLP работает в двух моделях: B2B как оператор Национального Павильона «Сделано в России» в Нави-Мумбаи, импортёр и дистрибьютор, и B2C через собственный интернет-магазин The Rus Store. Руководство, статус, реквизиты.',
+      h1: 'Две модели бизнеса: B2B и B2C',
+      lead: 'Rai Family Corp LLP работает с российскими товарами в Индии в двух моделях: B2B как оператор Национального Павильона «Сделано в России», импортёр и дистрибьютор, и B2C как владелец интернет-магазина The Rus Store.',
+      b2b: {
+        title: 'Павильон, импорт и дистрибуция',
+        audiences: {
+          manufacturers: {
+            title: 'Российские производители',
+            text: 'Прямые каналы дистрибуции и маркетинговое продвижение в Индии, а за ними весь маршрут до полки: исследование рынка, адаптация продукта и упаковки, сертификация, импортные процедуры, юридическое сопровождение и логистика.',
+          },
+          distributors: {
+            title: 'Индийские дистрибьюторы, ритейл, госструктуры и институты развития',
+            text: 'Российские бренды и линейки, которые мы ввозим, сертифицируем и распространяем в Индии, с техническими документами на странице каждого направления.',
+          },
+        },
+        links: { manufacturers: 'Услуги производителям', distributors: 'Каталог направлений' },
+      },
+      b2c: {
+        title: 'The Rus Store, наш интернет-магазин',
+        audience: {
+          title: 'Покупатели в Индии',
+          text: 'Российские товары онлайн с доставкой по Индии. Для производителя это розничный канал, где его продукт продаётся конечному покупателю.',
+        },
+        linkNote: 'на английском',
+      },
+      leadershipIntro:
+        'Компания учреждена в 2024 году группой международных предпринимателей с многолетним опытом работы в разных странах и отраслях, включая Индию.',
+      status: {
+        title: 'Статус и знак «Сделано в России»',
+        programme: 'Страница программы РЭЦ «Российские национальные павильоны за рубежом»',
+        programmeNote: null,
+      },
+      details: {
+        title: 'Реквизиты',
+        legalName: 'Юридическое лицо',
+        llpin: 'LLPIN',
+        registered: 'Регистрация',
+        jurisdiction: 'Юрисдикция',
+        office: 'Зарегистрированный офис',
+      },
     },
   },
 };

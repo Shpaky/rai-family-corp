@@ -133,6 +133,12 @@
   }
 }
 
+/* Profile card on /about/: portrait column plus text column; the name row is as tall as its text, the summary row takes the rest. */
+@utility grid-profile {
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+}
+
 @utility eyebrow {
   font-size: var(--text-eyebrow);
   line-height: var(--text-eyebrow--line-height);
