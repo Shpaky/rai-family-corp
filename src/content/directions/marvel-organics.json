@@ -1,0 +1,248 @@
+{
+  "order": 80,
+  "brand": "Marvel Organics",
+  "category": "agro",
+  "status": "on-order",
+  "published": true,
+  "audiences": [],
+  "source": "Marvel Organics",
+  "tags": ["fertilizers", "microbiological", "organic", "waste-recycling"],
+  "featured": true,
+  "manufacturer": {
+    "name": "IR-Organix LLC",
+    "city": null,
+    "founded": null
+  },
+  "howToBuy": {
+    "stockInIndia": false
+  },
+  "documents": [
+    {
+      "label": "Application regulations 2018 (EN)",
+      "url": "/docs/marvel-organics/Marvel-Organics-Application-Regulations-2018-en.pdf",
+      "type": "tds"
+    }
+  ],
+  "i18n": {
+    "en": {
+      "title": "Marvel Organics microbiological fertilizers",
+      "summary": "A concentrated microbiological preparation that restores soil fertility and suppresses pathogenic microflora in crop production, plus preparations for recycling organic waste into fertilizer. Made to order from Russia.",
+      "body": [
+        "Marvel Organics is a liquid concentrate of live soil microorganisms: the antipathogenic bacterium Bacillus subtilis, the nitrogen-fixing bacterium Azotobacter chroococcum and the fungus Trichoderma viride, together with growth regulators of microbial origin, vitamins, L-amino acids and peptides. According to the manufacturer it enriches the soil microbiome, fixes atmospheric nitrogen, converts organic and mineral elements from the bound state into forms available to plants, suppresses fungal and bacterial pathogens and allows the dose of mineral fertilizers to be reduced. The manufacturer’s own field trials in 2016-2017 recorded yield increases from 9.5% to 27% depending on the crop and a 30-70% reduction of nitrates in produce.",
+        "The application regulations cover three technologies: pre-sowing soil treatment, treatment of seeds, tubers and seedlings, and foliar treatment by growth stage. The dose is 5 or 10 l/ha depending on the crop, applied in 100-300 l/ha of working solution; seedlings are treated with a 2% solution. The preparation is compatible with most protectants, herbicides and fungicides in tank mixes, except preparations containing chlorine and copper; it is added last, 5-10 minutes after the sprayer tank is three-quarters full.",
+        "The second line is microbiological preparations for accelerated recycling of organic waste: sewage sludge, poultry litter and substandard vegetables are turned into odourless organic fertilizer with pathogenic microflora neutralised. The manufacturer also runs its own laboratory and works with each client in three stages: soil sampling and analysis, recommendations, and integration of the preparation into the treatment cycle."
+      ],
+      "products": [
+        {
+          "name": "Fertilizer",
+          "text": "Microbiological fertilizer for crop production: soil treatment, root and foliar treatment of plants, treatment of trees and shrubs throughout the growing season. For grain, leguminous crops and perennial grasses, corn, sunflower, potatoes, vegetables in the open field and in greenhouses, and stubble residues.",
+          "specs": [
+            "Strains: Bacillus subtilis, Azotobacter chroococcum, Trichoderma viride; cell concentration not less than 1.4·10⁷ CFU/ml",
+            "Biologically active elements: growth regulators of microbial origin, vitamins, L-amino acids, peptides, poly- and oligosaccharides",
+            "Dose 5-10 l/ha in 100-300 l/ha of working solution; 2% solution for seedlings; stubble residues 10 l/ha",
+            "Compatible in tank mixes with most protectants, herbicides and fungicides; not with chlorine- or copper-containing preparations",
+            "Hazard class IV according to SP 2.1.7.1386-03, fire and explosion-proof",
+            "Storage and transport at 0…+35 °C; shelf life 2 years from the date of manufacture"
+          ]
+        },
+        {
+          "name": "Waste recycling",
+          "text": "Microbiological preparations for accelerated recycling of organic waste: sewage sludge, poultry litter and substandard vegetables. According to the manufacturer they neutralise pathogens in fresh waste, remove odours within 2-3 days, speed up the decomposition of organic matter into simple compounds and turn the waste into organic fertilizer that restores the fertility of degraded soils.",
+          "specs": [
+            "Application rate in the manufacturer’s trials: 1 l of preparation per 1 t of organic raw material",
+            "Fermentation 5-14 days for livestock and poultry waste according to the manufacturer",
+            "Result: crumbly, odourless organic fertilizer with the pathogenic microflora neutralised"
+          ]
+        },
+        {
+          "name": "Soil programme",
+          "text": "Soil analysis and an application programme for each client in three stages: soil sampling and physico-chemical and microbiological analysis in the manufacturer’s laboratory; analysis of results and recommendations for each crop; integration of Marvel Organics into the client’s plant treatment cycle with supply and delivery to the warehouse.",
+          "specs": []
+        }
+      ],
+      "forWhom": [
+        "Agroholdings and farms",
+        "Greenhouse complexes",
+        "Organic waste processors and poultry farms",
+        "Water utilities (sewage sludge)",
+        "Agro preparation distributors"
+      ],
+      "facts": [
+        "Bacillus subtilis, Azotobacter chroococcum and Trichoderma viride, not less than 1.4·10⁷ CFU/ml",
+        "Dose 5-10 l/ha in 100-300 l/ha of working solution",
+        "Storage and transport at 0…+35 °C, shelf life 2 years",
+        "Hazard class IV according to SP 2.1.7.1386-03",
+        "Compatible in tank mixes except with chlorine and copper preparations",
+        "Manufacturer is a member of the International Federation of Organic Agriculture Movements (IFOAM)"
+      ],
+      "logistics": "Made to order from Russia, lead time per order.",
+      "keyFigures": ["≥1.4·10⁷ CFU/ml", "5-10 l/ha"],
+      "manufacturerNote": "IR-Organix LLC, Vladikavkaz, Republic of North Ossetia-Alania, Russia. Own laboratory and scientific staff in agrochemistry, microbiology and applied agronomy; member of the International Federation of Organic Agriculture Movements (IFOAM).",
+      "howToBuy": {
+        "dispatch": "Made to order; lead time per order",
+        "moq": null,
+        "packaging": null,
+        "priceNote": "On request: crop, area and volume",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Grain and leguminous crops",
+          "text": "Pre-sowing soil treatment, treatment at tillering or at the 2-3 leaf stage together with herbicides, and foliar treatment at heading or full pods: 5 l/ha in 100-300 l/ha of solution."
+        },
+        {
+          "title": "Corn and sunflower",
+          "text": "Pre-sowing soil treatment and two foliar treatments by leaf stage, 5 l/ha each; 15 l of the preparation per hectare per season."
+        },
+        {
+          "title": "Potatoes and open-field vegetables",
+          "text": "Tuber treatment during planting in a tank mix with the dressing agent, 10 l/ha; foliar treatment at vegetative growth and flowering; 2% solution for seedlings."
+        },
+        {
+          "title": "Greenhouse vegetables",
+          "text": "Seedling treatment and 1-2 applications by drip irrigation and foliar spraying at 15-20 day intervals, 10 l/ha; 30 l per hectare per season."
+        },
+        {
+          "title": "Poultry litter and sewage sludge",
+          "text": "Recycling of poultry litter, wastewater sludge and substandard vegetables into organic fertilizer: 1 l of preparation per tonne of raw material in the manufacturer’s trials."
+        }
+      ],
+      "faq": [
+        {
+          "q": "What is in the preparation and how does it work?",
+          "a": "Live cultures of Bacillus subtilis, which suppresses pathogens and synthesises amino acids and vitamins, Azotobacter chroococcum, which converts atmospheric nitrogen into a form available to plants, and Trichoderma viride, which suppresses phytopathogens by parasitism and competition for the substrate, with growth regulators, vitamins, L-amino acids and peptides. Cell concentration is not less than 1.4·10⁷ CFU/ml. According to the manufacturer the preparation enriches the soil microbiome, improves nutrient uptake and reduces the need for mineral fertilizers."
+        },
+        {
+          "q": "What are the doses and application methods?",
+          "a": "Three technologies: pre-sowing soil treatment, treatment of seeds, tubers and seedlings, and foliar treatment by growth stage. The dose is 5 l/ha for grain, leguminous crops, corn and sunflower and 10 l/ha for potatoes, vegetables and stubble residues, in 100-300 l/ha of working solution; seedlings are treated with a 2% solution. Per season the regulations give 15 l/ha for grain and corn, 25 l/ha for potatoes and 30 l/ha for vegetables."
+        },
+        {
+          "q": "Is it compatible in tank mixes?",
+          "a": "Yes, with most protectants, herbicides and fungicides, except preparations containing chlorine and copper, so the treatment schedule does not have to change. Shake the concentrate before use; tap water or water from natural sources is suitable; fill the sprayer tank three-quarters, add the other components and pour in Marvel Organics last, 5-10 minutes later."
+        },
+        {
+          "q": "How does it differ from chemical fertilizers?",
+          "a": "It does not supply nutrients directly: according to the manufacturer it restores the soil microbiome, fixes nitrogen and releases bound nutrients, so the dose of mineral fertilizers can be reduced, and it suppresses fungal and bacterial pathogens. The manufacturer’s 2016-2017 field trials recorded yield increases from 9.5% to 27% by crop and 30-70% lower nitrate content in produce; these are the manufacturer’s figures."
+        },
+        {
+          "q": "How does organic waste recycling work?",
+          "a": "A separate line of preparations is added to sewage sludge, poultry litter or substandard vegetables, in the manufacturer’s trials at 1 l per tonne of raw material with a thickening agent such as peat, soil or sand. Within days the odour disappears, pathogenic microflora is neutralised and after fermentation the mass becomes a crumbly organic fertilizer that can be spread on fields."
+        },
+        {
+          "q": "How do I get a price and a lead time?",
+          "a": "Use the Get best price or WhatsApp buttons on this page and tell us the crop, the area and the volume you need. We will confirm the packaging, lead time and price with the manufacturer."
+        }
+      ]
+    },
+    "ru": {
+      "title": "Микробиологические удобрения Marvel Organics",
+      "summary": "Концентрированный микробиологический препарат для восстановления плодородия почвы и подавления патогенной микрофлоры в растениеводстве, а также препараты для переработки органических отходов в удобрение. Под заказ из России.",
+      "body": [
+        "Marvel Organics — жидкий концентрат живых почвенных микроорганизмов: антипатогенной бактерии Bacillus subtilis, азотфиксирующей бактерии Azotobacter chroococcum и гриба Trichoderma viride с регуляторами роста микробного происхождения, витаминами, L-аминокислотами и пептидами. По данным производителя препарат обогащает почвенную микробиоту, фиксирует атмосферный азот, переводит органические и минеральные элементы из связанного состояния в доступную растениям форму, подавляет грибные и бактериальные патогены и позволяет снизить дозу минеральных удобрений. Собственные полевые испытания производителя 2016-2017 годов показали прибавку урожайности от 9,5 до 27 % по культурам и снижение содержания нитратов в продукции на 30-70 %.",
+        "Регламент применения охватывает три технологии: предпосевную обработку почвы, обработку семян, клубней и рассады и листовые обработки по фазам. Доза 5 или 10 л/га в зависимости от культуры в 100-300 л/га рабочего раствора; рассада обрабатывается 2 % раствором. Препарат совместим в баковых смесях с большинством протравителей, гербицидов и фунгицидов, кроме хлор- и медьсодержащих; его добавляют последним, через 5-10 минут после заполнения бака опрыскивателя на три четверти.",
+        "Вторая линейка — микробиологические препараты для ускоренной переработки органических отходов: осадки сточных вод, птичий помёт и некондиционные овощи превращаются в органическое удобрение без запаха с нейтрализованной патогенной микрофлорой. У производителя собственная лаборатория, работа с клиентом идёт в три этапа: отбор проб и анализ почвы, рекомендации, интеграция препарата в цикл обработки."
+      ],
+      "products": [
+        {
+          "name": "Удобрение",
+          "text": "Микробиологическое удобрение для растениеводства: обработка почвы, корневая и листовая обработка растений, обработка деревьев и кустарников в течение всего сезона. Для зерновых, бобовых и многолетних трав, кукурузы, подсолнечника, картофеля, овощей открытого и защищённого грунта и стерни.",
+          "specs": [
+            "Штаммы: Bacillus subtilis, Azotobacter chroococcum, Trichoderma viride; концентрация клеток не менее 1,4·10⁷ КОЕ/мл",
+            "Биологически активные элементы: регуляторы роста микробного происхождения, витамины, L-аминокислоты, пептиды, поли- и олигосахариды",
+            "Доза 5-10 л/га в 100-300 л/га рабочего раствора; 2 % раствор для рассады; стерня 10 л/га",
+            "Совместим в баковых смесях с большинством протравителей, гербицидов и фунгицидов; не совместим с хлор- и медьсодержащими препаратами",
+            "IV класс опасности по СП 2.1.7.1386-03, пожаро- и взрывобезопасен",
+            "Хранение и транспортировка при 0…+35 °C; срок годности 2 года с даты изготовления"
+          ]
+        },
+        {
+          "name": "Переработка",
+          "text": "Микробиологические препараты для ускоренной переработки органических отходов: осадков сточных вод, птичьего помёта и некондиционных овощей. По данным производителя они нейтрализуют патогены в свежих отходах, убирают запах за 2-3 дня, ускоряют разложение органики до простых соединений и превращают отходы в органическое удобрение, восстанавливающее плодородие деградированных почв.",
+          "specs": [
+            "Норма в испытаниях производителя: 1 л препарата на 1 т органического сырья",
+            "Ферментация 5-14 дней для отходов животноводства и птицеводства по данным производителя",
+            "Результат: рассыпчатое органическое удобрение без запаха с нейтрализованной патогенной микрофлорой"
+          ]
+        },
+        {
+          "name": "Программа",
+          "text": "Анализ почвы и программа применения для каждого клиента в три этапа: отбор проб и физико-химический и микробиологический анализ в лаборатории производителя; анализ результатов и рекомендации по каждой культуре; интеграция Marvel Organics в цикл обработки растений с поставкой и доставкой на склад клиента.",
+          "specs": []
+        }
+      ],
+      "forWhom": [
+        "Агрохолдинги и фермерские хозяйства",
+        "Тепличные комплексы",
+        "Переработчики органических отходов и птицефабрики",
+        "Водоканалы (осадки сточных вод)",
+        "Дистрибьюторы агропрепаратов"
+      ],
+      "facts": [
+        "Bacillus subtilis, Azotobacter chroococcum и Trichoderma viride, не менее 1,4·10⁷ КОЕ/мл",
+        "Доза 5-10 л/га в 100-300 л/га рабочего раствора",
+        "Хранение и транспортировка при 0…+35 °C, срок годности 2 года",
+        "IV класс опасности по СП 2.1.7.1386-03",
+        "Совместим в баковых смесях, кроме хлор- и медьсодержащих препаратов",
+        "Производитель — член Международной федерации движений за органическое сельское хозяйство (IFOAM)"
+      ],
+      "logistics": "Под заказ из России, срок по заказу.",
+      "keyFigures": ["≥1,4·10⁷ КОЕ/мл", "5-10 л/га"],
+      "manufacturerNote": "ООО «ИР-Органик» (IR-Organix LLC), Владикавказ, Республика Северная Осетия-Алания. Собственная лаборатория и научный штат в области агрохимии, микробиологии и прикладной агрономии; член Международной федерации движений за органическое сельское хозяйство (IFOAM).",
+      "howToBuy": {
+        "dispatch": "Под заказ; срок по заказу",
+        "moq": null,
+        "packaging": null,
+        "priceNote": "По запросу: культура, площадь, объём",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Зерновые и бобовые",
+          "text": "Предпосевная обработка почвы, обработка в фазе кущения или 2-3 тройчатых листьев вместе с гербицидами и листовая обработка в фазе колошения или полных бобов: 5 л/га в 100-300 л/га раствора."
+        },
+        {
+          "title": "Кукуруза и подсолнечник",
+          "text": "Предпосевная обработка почвы и две листовые обработки по фазам листьев, по 5 л/га; 15 л препарата на гектар за сезон."
+        },
+        {
+          "title": "Картофель и овощи открытого грунта",
+          "text": "Обработка клубней при посадке в баковой смеси с протравителем, 10 л/га; листовые обработки в фазе вегетации и цветения; 2 % раствор для рассады."
+        },
+        {
+          "title": "Овощи в теплицах",
+          "text": "Обработка рассады и 1-2 обработки капельным поливом и по листу с интервалом 15-20 дней, 10 л/га; 30 л на гектар за сезон."
+        },
+        {
+          "title": "Птичий помёт и осадки сточных вод",
+          "text": "Переработка птичьего помёта, осадков сточных вод и некондиционных овощей в органическое удобрение: 1 л препарата на тонну сырья в испытаниях производителя."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Что входит в препарат и как он работает?",
+          "a": "Живые культуры Bacillus subtilis, подавляющей патогены и синтезирующей аминокислоты и витамины, Azotobacter chroococcum, переводящей атмосферный азот в доступную растениям форму, и Trichoderma viride, подавляющей фитопатогены паразитизмом и конкуренцией за субстрат, с регуляторами роста, витаминами, L-аминокислотами и пептидами. Концентрация клеток не менее 1,4·10⁷ КОЕ/мл. По данным производителя препарат обогащает почвенную микробиоту, улучшает усвоение питания и снижает потребность в минеральных удобрениях."
+        },
+        {
+          "q": "Какие нормы и способы внесения?",
+          "a": "Три технологии: предпосевная обработка почвы, обработка семян, клубней и рассады и листовые обработки по фазам. Доза 5 л/га для зерновых, бобовых, кукурузы и подсолнечника и 10 л/га для картофеля, овощей и стерни в 100-300 л/га рабочего раствора; рассада обрабатывается 2 % раствором. За сезон регламент даёт 15 л/га для зерновых и кукурузы, 25 л/га для картофеля и 30 л/га для овощей."
+        },
+        {
+          "q": "Совместим ли он в баковых смесях?",
+          "a": "Да, с большинством протравителей, гербицидов и фунгицидов, кроме хлор- и медьсодержащих препаратов, поэтому схему обработок менять не нужно. Перед применением концентрат взболтать; подходит водопроводная вода и вода из природных источников; бак опрыскивателя заполняют на три четверти, добавляют остальные компоненты и последним, через 5-10 минут, вливают Marvel Organics."
+        },
+        {
+          "q": "Чем он отличается от химических удобрений?",
+          "a": "Он не вносит питательные элементы напрямую: по данным производителя препарат восстанавливает почвенную микробиоту, фиксирует азот и высвобождает связанные элементы, поэтому дозу минеральных удобрений можно снизить, и подавляет грибные и бактериальные патогены. Полевые испытания производителя 2016-2017 годов показали прибавку урожайности от 9,5 до 27 % по культурам и снижение нитратов в продукции на 30-70 %; это цифры производителя."
+        },
+        {
+          "q": "Как работает переработка органических отходов?",
+          "a": "Отдельная линейка препаратов вносится в осадки сточных вод, птичий помёт или некондиционные овощи, в испытаниях производителя по 1 л на тонну сырья с наполнителем: торфом, почвой или песком. За несколько дней уходит запах, патогенная микрофлора нейтрализуется, а после ферментации масса становится рассыпчатым органическим удобрением, которое можно вносить на поля."
+        },
+        {
+          "q": "Как узнать цену и срок?",
+          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и укажите культуру, площадь и нужный объём. Мы подтвердим у производителя фасовку, срок и цену."
+        }
+      ]
+    }
+  }
+}
