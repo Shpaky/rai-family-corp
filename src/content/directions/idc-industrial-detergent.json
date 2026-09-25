@@ -1,0 +1,236 @@
+{
+  "order": 90,
+  "brand": "IDC",
+  "category": "industrial-chemicals",
+  "status": "on-order",
+  "published": true,
+  "audiences": [],
+  "source": "Industrial Detergent Composition",
+  "tags": ["degreasing", "industrial-cleaning", "biodegradable", "surface-preparation"],
+  "featured": true,
+  "manufacturer": null,
+  "howToBuy": {
+    "stockInIndia": false
+  },
+  "documents": [
+    {
+      "label": "IDC presentation (EN)",
+      "url": "/docs/idc-industrial-detergent/IDC-Industrial-Detergent-Presentation-en.pdf",
+      "type": "presentation"
+    }
+  ],
+  "i18n": {
+    "en": {
+      "title": "IDC biodegradable industrial detergent and degreaser",
+      "summary": "A universal water-based concentrate for washing and degreasing metal, equipment and soils in place of solvent, alkali and acid cleaners. Made to order from Russia.",
+      "body": [
+        "Industrial Detergent Composition (IDC) is a universal industrial detergent that replaces cleaners based on oil products, alcohols, trichloroethylene, caustic alkalis and acids in in-process washing of parts and assemblies before electroplating, lacquer, enamel and other coatings. The presentation names the oil and gas industry, machine building, aviation, car repair, tank cleaning, the food industry, textile and leather industries and public utilities as its application areas.",
+        "The concentrate is diluted with water at 1:20 to 1:100, typically to a 0.1-2% working solution with pH 9.0-9.2, and works at +40…+100 °C: water is heated to 40-60 °C, the concentrate is added and stirred. Washing is done in jet washers, by hand with jet guns or brushes, or in ultrasonic baths; jet washing with hot solution removes the heaviest contamination from ferrous and non-ferrous metals. The concentration can be reduced depending on the contamination.",
+        "IDC is biodegradable, contains no chlorine, is non-toxic, non-carcinogenic and non-abrasive, does not oxidise non-ferrous metals and alloys and does not disturb anodised aluminium or delicate polymer coatings. It has demulsifying properties, so oil separates from the wash water instead of forming a stable emulsion, and leaves an anti-corrosion film that passivates washed parts for up to 1,000 hours of in-process storage. Hazard class IV, fire and explosion safe, storage life 24 months."
+      ],
+      "products": [
+        {
+          "name": "Concentrate",
+          "text": "Water-based concentrate of non-ionic surfactants, inorganic salts and specialised additives; a conserved amorphous mixture without chlorine components. Non-toxic, fire and explosion safe, stable in any storage conditions; no special storage, transport or disposal conditions are required.",
+          "specs": [
+            "Hazard class IV (low-hazard) according to GOST 12.1.007-76",
+            "Working solution 0.1-2%, pH 9.0-9.2; free alkali (as NaOH) 0.07-0.1%",
+            "Dilution 1:20 to 1:100 depending on the contamination",
+            "Working temperature +40…+100 °C; water heated to 40-60 °C before adding the concentrate",
+            "Storage life 24 months from the date of manufacture; supplied in vacuum-packed plastic containers",
+            "Composition: non-ionic surfactants, inorganic salts, specialised additives; no chlorine"
+          ]
+        },
+        {
+          "name": "Solutions",
+          "text": "Working solutions by task: degreasing of metal before painting and electroplating; washing before inspection, fault detection and repair where chemical etching is not required; cleaning of new parts after machining; washing of anodised aluminium and delicate polymer coatings; removal of polishing paste; separation of hydrocarbons from water and remediation of oil-contaminated soils; flushing of sewage systems; washing of soot, grime and oily workshop floors; cleaning of laboratory glassware.",
+          "specs": [
+            "Degreasing before plating, powder coating, fault detection and assembly: usual dilution 1:20 to 1:100",
+            "Passivation of washed parts for up to 1,000 hours of in-process storage on the shop floor",
+            "Jet washers, hand washing with jet guns or brushes, ultrasonic washing machines"
+          ]
+        }
+      ],
+      "forWhom": [
+        "Machine-building and repair plants",
+        "Oil and gas and transport companies (tank and equipment cleaning)",
+        "Aircraft repair and car service",
+        "Food and textile producers",
+        "Utilities and environmental contractors"
+      ],
+      "facts": [
+        "Hazard class IV according to GOST 12.1.007-76",
+        "Working solution 0.1-2%, pH 9.0-9.2",
+        "Dilution 1:20 to 1:100",
+        "Working temperature +40…+100 °C",
+        "Passivation of washed parts for up to 1,000 hours",
+        "Biodegradable, chlorine-free, fire and explosion safe",
+        "Storage life 24 months"
+      ],
+      "logistics": "Made to order from Russia, lead time per order.",
+      "keyFigures": ["Dilution 1:20 to 1:100", "pH 9, chlorine-free"],
+      "manufacturerNote": null,
+      "howToBuy": {
+        "dispatch": "Made to order; lead time per order",
+        "moq": null,
+        "packaging": null,
+        "priceNote": "On request: task, volume and required concentration",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Surface preparation before painting and electroplating",
+          "text": "Degreasing of any metals from fats and hydrocarbons after machining and before lacquer, enamel and galvanic coatings, with passivation for up to 1,000 hours."
+        },
+        {
+          "title": "Cleaning of parts before inspection and repair",
+          "text": "Washing before fault detection and repair where chemical etching is not required; new parts after machining without corrosion traces or salt deposits."
+        },
+        {
+          "title": "Tanks and equipment contaminated with oil products",
+          "text": "Flushing, degreasing and passivation of metal and painted surfaces from oil and oil products; demulsifying action separates hydrocarbons from the wash water."
+        },
+        {
+          "title": "Soil remediation after spills",
+          "text": "Washing of soils and land polluted with oil and oil products after leaks and spills; separation of hydrocarbons from aqueous media."
+        },
+        {
+          "title": "Sewage systems",
+          "text": "Flushing of industrial and domestic sewage systems to reduce the concentration of harmful substances."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Which cleaners does IDC replace?",
+          "a": "Industrial detergents based on oil products, alcohols, trichloroethylene, caustic alkali compositions and acids that are traditionally used for in-process washing and degreasing of parts before electroplating, lacquer, enamel and other coatings. IDC is a water-based, biodegradable concentrate of hazard class IV without chlorine."
+        },
+        {
+          "q": "How is the working solution prepared?",
+          "a": "Heat water to 40-60 °C and add the concentrate at 1:20 to 1:100, for example 1 l of concentrate to 50 l of water, then stir. The usual concentrations for degreasing before plating, powder coating, fault detection and assembly are 1:20 to 1:100; the concentration can be reduced for light contamination. The solution works at +40…+100 °C and has a long service life."
+        },
+        {
+          "q": "Which metals and coatings is it safe for?",
+          "a": "According to the presentation IDC does not oxidise non-ferrous metals and alloys, washes ultralight metals, cleans anodised aluminium without disturbing the coating and is suitable for delicate polymer coatings, optics and glass without streaks. It leaves an anti-corrosion film that protects washed parts for up to 1,000 hours of in-process storage."
+        },
+        {
+          "q": "How is it stored and disposed of?",
+          "a": "IDC can be shipped by any means of transport and is stored in vacuum-packed plastic containers; it is non-toxic, fire and explosion safe and stable in any storage conditions, and the presentation states that no special storage, transport or disposal conditions are required. Storage life is 24 months from the date of manufacture."
+        },
+        {
+          "q": "Which documents are available?",
+          "a": "The presentation lists sanitary-epidemiological conclusions, hygienic product characteristics and a certificate of conformity; copies, the technical and safety data sheets and the manufacturer’s details have been requested and will be added to this page when received."
+        },
+        {
+          "q": "How do I get a price and a lead time?",
+          "a": "Use the Get best price or WhatsApp buttons on this page and describe the task, the volume and the required concentration. We will confirm the packaging, lead time and price with the manufacturer."
+        }
+      ]
+    },
+    "ru": {
+      "title": "Биоразлагаемое промышленное моющее средство IDC",
+      "summary": "Универсальный водный концентрат для мойки и обезжиривания металла, оборудования и грунтов вместо растворителей, щелочных и кислотных составов. Под заказ из России.",
+      "body": [
+        "Industrial Detergent Composition (IDC) — универсальное промышленное моющее средство, заменяющее составы на основе нефтепродуктов, спиртов, трихлорэтилена, едких щелочей и кислот при межоперационной мойке деталей и узлов перед гальваническими, лакокрасочными, эмалевыми и другими покрытиями. Презентация называет области применения: нефтегазовая отрасль, машиностроение, авиация, автосервис, очистка цистерн, пищевая, текстильная и кожевенная промышленность, ЖКХ.",
+        "Концентрат разводится водой от 1:20 до 1:100, обычно до рабочего раствора 0,1-2 % с pH 9,0-9,2, и работает при +40…+100 °C: воду нагревают до 40-60 °C, добавляют концентрат и перемешивают. Мойка ведётся в струйных моечных машинах, вручную моечными пистолетами или щётками либо в ультразвуковых ваннах; струйная мойка горячим раствором снимает самые тяжёлые загрязнения с чёрных и цветных металлов. Концентрацию можно снижать в зависимости от загрязнения.",
+        "IDC биоразлагаемо, не содержит хлора, нетоксично, неканцерогенно и неабразивно, не окисляет цветные металлы и сплавы, не нарушает анодированный алюминий и деликатные полимерные покрытия. Оно обладает деэмульгирующими свойствами, поэтому нефтепродукты отделяются от моющей воды, а не образуют стойкую эмульсию, и оставляет антикоррозионную плёнку, пассивирующую вымытые детали на срок до 1000 часов межоперационного хранения. IV класс опасности, пожаро- и взрывобезопасно, срок хранения 24 месяца."
+      ],
+      "products": [
+        {
+          "name": "Концентрат",
+          "text": "Водный концентрат из неионогенных ПАВ, неорганических солей и специальных добавок; консервированная аморфная смесь без хлорсодержащих компонентов. Нетоксичен, пожаро- и взрывобезопасен, стабилен при любых условиях хранения; особых условий хранения, транспортировки и утилизации не требует.",
+          "specs": [
+            "IV класс опасности (малоопасное вещество) по ГОСТ 12.1.007-76",
+            "Рабочий раствор 0,1-2 %, pH 9,0-9,2; свободная щёлочь (в пересчёте на NaOH) 0,07-0,1 %",
+            "Разведение от 1:20 до 1:100 в зависимости от загрязнения",
+            "Рабочая температура +40…+100 °C; воду нагревают до 40-60 °C перед добавлением концентрата",
+            "Срок хранения 24 месяца с даты изготовления; поставка в вакуумной пластиковой таре",
+            "Состав: неионогенные ПАВ, неорганические соли, специальные добавки; без хлора"
+          ]
+        },
+        {
+          "name": "Растворы",
+          "text": "Рабочие растворы по задачам: обезжиривание металла перед окраской и гальваникой; мойка перед контролем, дефектоскопией и ремонтом там, где не нужно химическое травление; очистка новых деталей после механообработки; мойка анодированного алюминия и деликатных полимерных покрытий; удаление полировальной пасты; отделение углеводородов от воды и ремедиация загрязнённых нефтепродуктами грунтов; промывка канализации; мойка копоти, грязи и замасленных полов цехов; мойка лабораторной посуды.",
+          "specs": [
+            "Обезжиривание перед гальваникой, порошковой окраской, дефектоскопией и сборкой: обычное разведение от 1:20 до 1:100",
+            "Пассивация вымытых деталей на срок до 1000 часов межоперационного хранения в цехе",
+            "Струйные моечные машины, ручная мойка пистолетами или щётками, ультразвуковые моечные машины"
+          ]
+        }
+      ],
+      "forWhom": [
+        "Машиностроительные и ремонтные предприятия",
+        "Нефтегазовые и транспортные компании (очистка цистерн и оборудования)",
+        "Авиаремонт и автосервисы",
+        "Пищевые и текстильные производства",
+        "Коммунальные службы и экологические подрядчики"
+      ],
+      "facts": [
+        "IV класс опасности по ГОСТ 12.1.007-76",
+        "Рабочий раствор 0,1-2 %, pH 9,0-9,2",
+        "Разведение от 1:20 до 1:100",
+        "Рабочая температура +40…+100 °C",
+        "Пассивация вымытых деталей до 1000 часов",
+        "Биоразлагаемо, без хлора, пожаро- и взрывобезопасно",
+        "Срок хранения 24 месяца"
+      ],
+      "logistics": "Под заказ из России, срок по заказу.",
+      "keyFigures": ["Разведение 1:20-1:100", "pH 9, без хлора"],
+      "manufacturerNote": null,
+      "howToBuy": {
+        "dispatch": "Под заказ; срок по заказу",
+        "moq": null,
+        "packaging": null,
+        "priceNote": "По запросу: задача, объём и требуемая концентрация",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Подготовка поверхности перед окраской и гальваникой",
+          "text": "Обезжиривание любых металлов от жиров и углеводородов после механообработки и перед лакокрасочными, эмалевыми и гальваническими покрытиями с пассивацией до 1000 часов."
+        },
+        {
+          "title": "Очистка деталей перед контролем и ремонтом",
+          "text": "Мойка перед дефектоскопией и ремонтом там, где не нужно химическое травление; новые детали после механообработки без следов коррозии и солевых отложений."
+        },
+        {
+          "title": "Цистерны и оборудование, загрязнённые нефтепродуктами",
+          "text": "Промывка, обезжиривание и пассивация металлических и окрашенных поверхностей от нефти и нефтепродуктов; деэмульгирующее действие отделяет углеводороды от моющей воды."
+        },
+        {
+          "title": "Ремедиация грунтов после разливов",
+          "text": "Отмывка грунтов и земель, загрязнённых нефтью и нефтепродуктами после утечек и разливов; отделение углеводородов от водной среды."
+        },
+        {
+          "title": "Канализационные системы",
+          "text": "Промывка промышленной и бытовой канализации для снижения концентрации вредных веществ."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Какие составы заменяет IDC?",
+          "a": "Промышленные моющие средства на основе нефтепродуктов, спиртов, трихлорэтилена, едких щелочных составов и кислот, которые традиционно применяют для межоперационной мойки и обезжиривания деталей перед гальваническими, лакокрасочными, эмалевыми и другими покрытиями. IDC — водный биоразлагаемый концентрат IV класса опасности без хлора."
+        },
+        {
+          "q": "Как готовить рабочий раствор?",
+          "a": "Нагреть воду до 40-60 °C и добавить концентрат в соотношении от 1:20 до 1:100, например 1 л концентрата на 50 л воды, затем перемешать. Обычные концентрации для обезжиривания перед гальваникой, порошковой окраской, дефектоскопией и сборкой — от 1:20 до 1:100; при лёгких загрязнениях концентрацию можно снизить. Раствор работает при +40…+100 °C и долго сохраняет свойства."
+        },
+        {
+          "q": "Для каких металлов и покрытий он безопасен?",
+          "a": "По презентации IDC не окисляет цветные металлы и сплавы, моет сверхлёгкие металлы, очищает анодированный алюминий без нарушения покрытия и подходит для деликатных полимерных покрытий, оптики и стекла без разводов. Он оставляет антикоррозионную плёнку, защищающую вымытые детали до 1000 часов межоперационного хранения."
+        },
+        {
+          "q": "Как хранить и утилизировать?",
+          "a": "IDC перевозится любым транспортом и хранится в вакуумной пластиковой таре; он нетоксичен, пожаро- и взрывобезопасен и стабилен при любых условиях хранения, а презентация указывает, что особых условий хранения, транспортировки и утилизации не требуется. Срок хранения 24 месяца с даты изготовления."
+        },
+        {
+          "q": "Какие документы есть?",
+          "a": "Презентация перечисляет санитарно-эпидемиологические заключения, гигиеническую характеристику продукции и сертификат соответствия; копии, технический паспорт, паспорт безопасности и реквизиты производителя запрошены и будут добавлены на эту страницу по получении."
+        },
+        {
+          "q": "Как узнать цену и срок?",
+          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и опишите задачу, объём и требуемую концентрацию. Мы подтвердим у производителя фасовку, срок и цену."
+        }
+      ]
+    }
+  }
+}
