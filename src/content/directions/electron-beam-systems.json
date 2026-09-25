@@ -1,0 +1,265 @@
+{
+  "order": 70,
+  "brand": "Electron Beam Systems",
+  "category": "equipment",
+  "status": "on-order",
+  "published": true,
+  "audiences": [],
+  "source": "Electron Beam Systems",
+  "tags": ["vacuum-equipment", "metal-powders", "electron-beam", "titanium"],
+  "featured": true,
+  "manufacturer": {
+    "name": "Electron Beam Systems LLC",
+    "city": null,
+    "founded": 2016
+  },
+  "howToBuy": {
+    "stockInIndia": false
+  },
+  "documents": [
+    {
+      "label": "EBS-RM PREP granulation plant (EN)",
+      "url": "/docs/electron-beam-systems/EBS-RM-PREP-Granulation-Plant-Booklet-en.pdf",
+      "type": "leaflet"
+    },
+    {
+      "label": "Information letter 2025 (EN)",
+      "url": "/docs/electron-beam-systems/EBS-Information-Letter-2025-en.pdf",
+      "type": "leaflet"
+    }
+  ],
+  "i18n": {
+    "en": {
+      "title": "Electron Beam Systems vacuum and metal powder equipment",
+      "summary": "Plants for spherical granules of nickel and titanium alloys by the PREP method, electron beam melting, welding and coating installations from a Moscow engineering manufacturer. Designed to the customer’s specification, made to order.",
+      "body": [
+        "Electron Beam Systems LLC was established in Moscow in 2016 as a manufacturing and engineering company that brought together specialists in beam technologies. Its staff are graduates of technical universities with experience in the titanium and heat-resistant rolled products markets since 1999. The company has its own design bureau and production and has supplied equipment to Russian and foreign enterprises.",
+        "The EBS-RM plant produces spherical granules of nickel and titanium alloys and intermetallic compounds by centrifugal plasma spraying of a rotating electrode (PREP) in an inert gas. A cast cylindrical billet rotates at up to 38,000 rpm while its end face is melted by an indirect plasma generator; centrifugal forces detach melt droplets that crystallise into spheres in an argon and helium atmosphere, and the powder flows into a sealed container without contact with air, so the chemical composition of the material is not disturbed. After the optimum parameters are selected the plant runs in automated mode with gap control between the plasma generator and the workpiece, process measurement and automatic stop in abnormal situations.",
+        "The rest of the line covers electron beam melting plants for titanium and intermetallics, welding and ingot remelting installations, installations for metal, metal-ceramic and ceramic multilayer and gradient coatings, sieving, magnetic and electrostatic separation of granules, degassing and capsule welding, gas discharge guns with power sources and control systems, and maintenance of electron beam installations. The company develops vacuum equipment to individual technical specifications, trains personnel and supplies the production technology."
+      ],
+      "products": [
+        {
+          "name": "EBS-RM",
+          "text": "Industrial plant for the production of spherical granules from nickel and titanium alloys and intermetallic compounds by centrifugal plasma spraying of a rotating electrode in an inert gas. Granules of high sphericity with a narrow fraction and a low content of gas impurities (O₂, N₂, H₂); up to 1,500 kg per technological cycle and a fast change-over to other metals.",
+          "specs": [
+            "Output up to 25 kg/h; materials: nickel and titanium alloys, intermetallic compounds",
+            "Billet Ø52-80 mm, length 650-750 mm, mass up to 32 kg; rotation up to 38,000 rpm",
+            "Inert gas Ar + He in a ratio of about 1/9; residual pressure 1·10⁻⁵ mmHg",
+            "Heating module: generator power up to 200 kW, arc current 800-1,800 A, 60-120 V, cooling water up to 1.0 m³/h",
+            "Power supply 380 V, 50 Hz, installed capacity up to 300 kW",
+            "Granules 20-150 µm, tap density up to 68%, up to 1,500 kg per technological cycle"
+          ]
+        },
+        {
+          "name": "Melting",
+          "text": "Electron beam melting plants for titanium and intermetallic compounds, welding installations and installations for remelting ingots. Configured to the customer’s technical specification; numeric characteristics are agreed per project.",
+          "specs": []
+        },
+        {
+          "name": "Coating",
+          "text": "Installations for applying metal, metal-ceramic and ceramic multilayer and gradient coatings. Configured to the customer’s technical specification.",
+          "specs": []
+        },
+        {
+          "name": "Processing",
+          "text": "Sieving and magnetic separation of granules, electrostatic separation installations, degassing and capsule welding installations, gas discharge guns with power sources and control systems, and maintenance of electron beam installations.",
+          "specs": []
+        }
+      ],
+      "forWhom": [
+        "Metal powder and granule producers",
+        "Metallurgical and titanium plants",
+        "Companies working with heat-resistant alloys and intermetallics",
+        "Research and engineering centres",
+        "Vacuum equipment integrators"
+      ],
+      "facts": [
+        "EBS-RM output up to 25 kg/h",
+        "Granule fraction 20-150 µm",
+        "Tap density up to 68%",
+        "Up to 1,500 kg of granules per technological cycle",
+        "Billet Ø52-80 mm, mass up to 32 kg",
+        "Rotation up to 38,000 rpm",
+        "Manufacturing 12 months from advance payment; warranty 12 months from commissioning"
+      ],
+      "logistics": "Made to order, 12 months from advance payment.",
+      "keyFigures": ["PREP granules 20-150 µm", "Up to 25 kg/h"],
+      "manufacturerNote": "Electron Beam Systems LLC, Moscow, Russia: a manufacturing and engineering company in electron beam and plasma technologies with its own design bureau and production, established in 2016. Its specialists have worked in the titanium and heat-resistant rolled products markets since 1999. The company has supplied equipment to Russian and foreign enterprises, develops vacuum equipment to individual technical specifications, trains personnel and supplies the production technology.",
+      "howToBuy": {
+        "dispatch": "Manufacturing 12 months from advance payment; delivery terms agreed at the negotiation stage",
+        "moq": null,
+        "packaging": null,
+        "priceNote": "On request: technical specification, material and required output",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Spherical granules of nickel and titanium alloys and intermetallics",
+          "text": "EBS-RM: PREP granules of 20-150 µm with tap density up to 68%, up to 1,500 kg per cycle; for nickel alloys 83% of the volume below 60 µm, for titanium alloys 80% in the 60-100 µm range."
+        },
+        {
+          "title": "Electron beam melting of titanium and intermetallics",
+          "text": "Melting plants using an electron beam for titanium and intermetallic compounds."
+        },
+        {
+          "title": "Welding and ingot remelting",
+          "text": "Welding installations and installations for remelting ingots."
+        },
+        {
+          "title": "Multilayer and gradient coatings",
+          "text": "Installations for metal, metal-ceramic and ceramic multilayer and gradient coatings."
+        },
+        {
+          "title": "Granule preparation",
+          "text": "Sieving and magnetic separation, electrostatic separation, degassing and capsule welding."
+        }
+      ],
+      "faq": [
+        {
+          "q": "What is PREP, and how do its granules differ from atomised powder?",
+          "a": "PREP is the plasma rotating electrode process: the end face of a rotating billet is melted by a plasma torch and centrifugal forces throw off droplets that crystallise into spheres in an inert gas. According to the booklet the granules have high sphericity, a narrow fraction, a low content of gas impurities (O₂, N₂, H₂) and tap density up to 68%, and the powder is collected in a sealed container without contact with air, so the chemical composition is not disturbed."
+        },
+        {
+          "q": "Which materials does EBS-RM process?",
+          "a": "Nickel and titanium alloys and intermetallic compounds; the technical offer also names heat-resistant alloys. For a 52 mm billet the technical offer gives 83% of nickel alloy granules below 60 µm (11% below 45 µm) and 80% of titanium alloy granules in the 60-100 µm range with 15% at 20-60 µm."
+        },
+        {
+          "q": "What is included in the plant?",
+          "a": "Feeding device, vacuum system with forevacuum and high-vacuum stations, inert gas circulation system with two recirculation loops, electrode shield, two-circuit water cooling system, power supply, plasmatron combustion chamber, evaporation chamber, control board, vacuum control system, pneumatic system with compressor, drive unit, granule collecting container, rail track, discarded metal collecting mechanism, service platform, reloading device and hydraulic bogie. The plant is fitted with gap control between the plasma generator and the workpiece, process measurement and automatic stop in abnormal situations."
+        },
+        {
+          "q": "What does the site need?",
+          "a": "Power supply 380 V, 50 Hz with installed capacity up to 300 kW; a water cooling system with an external circuit connected to the factory water supply (20 m³/h at 20 °C, dissipated thermal power up to 275 kW, a chiller as an option); compressed air from the plant’s own compressor; argon and helium for the inert atmosphere."
+        },
+        {
+          "q": "What are the manufacturing time and warranty?",
+          "a": "Manufacturing takes 12 months from receipt of the advance payment. The warranty is 12 months from commissioning, provided the equipment was transported, stored, assembled and operated in line with the manufacturer’s documentation. Final delivery terms are agreed at the negotiation stage."
+        },
+        {
+          "q": "Can other vacuum equipment be ordered to a specification?",
+          "a": "Yes. The manufacturer develops and supplies vacuum equipment to individual technical specifications, including electron beam melting, welding and coating installations and gas discharge guns, provides personnel training and supplies the production technology."
+        },
+        {
+          "q": "How do I get a price and a lead time?",
+          "a": "Use the Get best price or WhatsApp buttons on this page and describe the task: material, required output and the technical specification if you have one. We will confirm the configuration, lead time and price with the manufacturer."
+        }
+      ]
+    },
+    "ru": {
+      "title": "Вакуумное и порошковое оборудование Electron Beam Systems",
+      "summary": "Установки для производства сферических гранул никелевых и титановых сплавов методом PREP, электронно-лучевые плавильные, сварочные и напылительные установки московского инжинирингового производителя. Проектирование под техническое задание, изготовление под заказ.",
+      "body": [
+        "ООО «Электронно-лучевые системы» (Electron Beam Systems LLC) основано в Москве в 2016 году как производственная и инжиниринговая компания, объединившая специалистов в области лучевых технологий. Сотрудники — выпускники технических вузов с опытом работы на рынке титана и жаропрочного проката с 1999 года. У компании собственное конструкторское бюро и производство, есть опыт поставок оборудования российским и зарубежным предприятиям.",
+        "Установка EBS-RM производит сферические гранулы никелевых и титановых сплавов и интерметаллидов методом центробежного плазменного распыления вращающегося электрода (PREP) в инертном газе. Литая цилиндрическая заготовка вращается с частотой до 38 000 мин⁻¹, её торец оплавляется плазмотроном косвенного действия; центробежные силы отрывают капли расплава, которые кристаллизуются в сферы в атмосфере аргона и гелия, а порошок стекает в герметичный контейнер без контакта с воздухом, поэтому химический состав материала не нарушается. После подбора оптимальных параметров установка работает в автоматизированном режиме с контролем зазора между плазмотроном и заготовкой, измерением параметров процесса и автоматической остановкой в нештатных ситуациях.",
+        "Остальная линейка: электронно-лучевые плавильные установки для титана и интерметаллидов, сварочные установки и установки переплава слитков, установки нанесения металлических, металлокерамических и керамических многослойных и градиентных покрытий, рассев, магнитная и электростатическая сепарация гранул, дегазация и заварка капсул, газоразрядные пушки с источниками и системами управления, обслуживание электронно-лучевых установок. Компания разрабатывает вакуумное оборудование по индивидуальным техническим заданиям, обучает персонал и поставляет технологию производства."
+      ],
+      "products": [
+        {
+          "name": "EBS-RM",
+          "text": "Промышленная установка для производства сферических гранул никелевых и титановых сплавов и интерметаллидов центробежным плазменным распылением вращающегося электрода в инертном газе. Гранулы высокой сферичности с узким фракционным составом и низким содержанием газовых примесей (O₂, N₂, H₂); до 1500 кг за технологический цикл и быстрый переход на другие металлы.",
+          "specs": [
+            "Производительность до 25 кг/ч; материалы: никелевые и титановые сплавы, интерметаллиды",
+            "Заготовка Ø52-80 мм, длина 650-750 мм, масса до 32 кг; частота вращения до 38 000 мин⁻¹",
+            "Инертный газ Ar + He в соотношении около 1/9; остаточное давление 1·10⁻⁵ мм рт. ст.",
+            "Нагревательный модуль: мощность генератора до 200 кВт, ток дуги 800-1800 А, 60-120 В, вода до 1,0 м³/ч",
+            "Питание 380 В, 50 Гц, установленная мощность до 300 кВт",
+            "Гранулы 20-150 мкм, насыпная плотность до 68 %, до 1500 кг за технологический цикл"
+          ]
+        },
+        {
+          "name": "Плавка",
+          "text": "Электронно-лучевые плавильные установки для титана и интерметаллидов, сварочные установки и установки переплава слитков. Комплектуются по техническому заданию заказчика; числовые характеристики согласуются по проекту.",
+          "specs": []
+        },
+        {
+          "name": "Покрытия",
+          "text": "Установки нанесения металлических, металлокерамических и керамических многослойных и градиентных покрытий. Комплектуются по техническому заданию заказчика.",
+          "specs": []
+        },
+        {
+          "name": "Обработка",
+          "text": "Рассев и магнитная сепарация гранул, установки электростатической сепарации, установки дегазации и заварки капсул, газоразрядные пушки с источниками и системами управления, обслуживание электронно-лучевых установок.",
+          "specs": []
+        }
+      ],
+      "forWhom": [
+        "Производители металлических порошков и гранул",
+        "Металлургические и титановые производства",
+        "Предприятия, работающие с жаропрочными сплавами и интерметаллидами",
+        "Научные и инжиниринговые центры",
+        "Интеграторы вакуумного оборудования"
+      ],
+      "facts": [
+        "Производительность EBS-RM до 25 кг/ч",
+        "Фракция гранул 20-150 мкм",
+        "Насыпная плотность до 68 %",
+        "До 1500 кг гранул за технологический цикл",
+        "Заготовка Ø52-80 мм массой до 32 кг",
+        "Частота вращения до 38 000 мин⁻¹",
+        "Изготовление 12 месяцев с аванса; гарантия 12 месяцев с ввода в эксплуатацию"
+      ],
+      "logistics": "Под заказ, изготовление 12 месяцев с аванса.",
+      "keyFigures": ["Гранулы PREP 20-150 мкм", "До 25 кг/ч"],
+      "manufacturerNote": "ООО «Электронно-лучевые системы» (Electron Beam Systems LLC), Москва: производственная и инжиниринговая компания в области электронно-лучевых и плазменных технологий с собственным конструкторским бюро и производством, основана в 2016 году. Специалисты компании работают на рынке титана и жаропрочного проката с 1999 года. Есть опыт поставок оборудования российским и зарубежным предприятиям; компания разрабатывает вакуумное оборудование по индивидуальным техническим заданиям, обучает персонал и поставляет технологию производства.",
+      "howToBuy": {
+        "dispatch": "Изготовление 12 месяцев с аванса; условия поставки согласуются при переговорах",
+        "moq": null,
+        "packaging": null,
+        "priceNote": "По запросу: техническое задание, материал и требуемая производительность",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Сферические гранулы никелевых и титановых сплавов и интерметаллидов",
+          "text": "EBS-RM: гранулы PREP 20-150 мкм с насыпной плотностью до 68 %, до 1500 кг за цикл; для никелевых сплавов 83 % объёма мельче 60 мкм, для титановых 80 % в диапазоне 60-100 мкм."
+        },
+        {
+          "title": "Электронно-лучевая плавка титана и интерметаллидов",
+          "text": "Плавильные установки с электронно-лучевым нагревом для титана и интерметаллидов."
+        },
+        {
+          "title": "Сварка и переплав слитков",
+          "text": "Сварочные установки и установки переплава слитков."
+        },
+        {
+          "title": "Многослойные и градиентные покрытия",
+          "text": "Установки нанесения металлических, металлокерамических и керамических многослойных и градиентных покрытий."
+        },
+        {
+          "title": "Подготовка гранул",
+          "text": "Рассев и магнитная сепарация, электростатическая сепарация, дегазация и заварка капсул."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Что такое PREP и чем его гранулы отличаются от распылённого порошка?",
+          "a": "PREP — плазменное центробежное распыление вращающегося электрода: торец вращающейся заготовки оплавляется плазменной дугой, центробежные силы отрывают капли, которые кристаллизуются в сферы в инертном газе. По буклету гранулы отличаются высокой сферичностью, узким фракционным составом, низким содержанием газовых примесей (O₂, N₂, H₂) и насыпной плотностью до 68 %, а порошок собирается в герметичный контейнер без контакта с воздухом, поэтому химический состав не нарушается."
+        },
+        {
+          "q": "Какие материалы перерабатывает EBS-RM?",
+          "a": "Никелевые и титановые сплавы и интерметаллиды; техническое предложение называет также жаропрочные сплавы. Для заготовки 52 мм техническое предложение даёт для никелевых сплавов 83 % гранул мельче 60 мкм (из них 11 % мельче 45 мкм), для титановых — 80 % в диапазоне 60-100 мкм и 15 % в диапазоне 20-60 мкм."
+        },
+        {
+          "q": "Что входит в комплект установки?",
+          "a": "Питатель, вакуумная система с форвакуумной и высоковакуумной станциями, система циркуляции инертного газа с двумя контурами рециркуляции, экран электрода, двухконтурная система водоохлаждения, источник питания, камера сгорания плазмотрона, камера испарения, пульт управления, система контроля вакуума, пневмосистема с компрессором, привод, контейнер для гранул, рельсовый путь, механизм сбора отходов металла, сервисная платформа, устройство перегрузки и гидравлическая тележка. Установка оснащена контролем зазора между плазмотроном и заготовкой, измерением параметров процесса и автоматической остановкой в нештатных ситуациях."
+        },
+        {
+          "q": "Какие требования к площадке?",
+          "a": "Питание 380 В, 50 Гц с установленной мощностью до 300 кВт; водоохлаждение с внешним контуром, подключённым к заводской системе (20 м³/ч при 20 °C, рассеиваемая мощность до 275 кВт, чиллер как опция); сжатый воздух от собственного компрессора установки; аргон и гелий для инертной атмосферы."
+        },
+        {
+          "q": "Каковы сроки изготовления и гарантия?",
+          "a": "Изготовление занимает 12 месяцев с момента получения аванса. Гарантия 12 месяцев с ввода в эксплуатацию при условии, что оборудование транспортировали, хранили, монтировали и эксплуатировали по документации производителя. Окончательные условия поставки согласуются на этапе переговоров."
+        },
+        {
+          "q": "Можно ли заказать другое вакуумное оборудование по ТЗ?",
+          "a": "Да. Производитель разрабатывает и поставляет вакуумное оборудование по индивидуальным техническим заданиям, включая электронно-лучевые плавильные, сварочные и напылительные установки и газоразрядные пушки, обучает персонал и поставляет технологию производства."
+        },
+        {
+          "q": "Как узнать цену и срок?",
+          "a": "Нажмите «Запросить цену» или «WhatsApp» на этой странице и опишите задачу: материал, требуемую производительность и техническое задание, если оно есть. Мы подтвердим у производителя комплектацию, срок и цену."
+        }
+      ]
+    }
+  }
+}
