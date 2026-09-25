@@ -11,6 +11,7 @@ const { locale, path = '' } = Astro.props;
 const copy = t(locale);
 const year = new Date().getFullYear();
 const links = navItems(locale);
+const current = (l: (typeof links)[number]) => Boolean(l.page && path.startsWith(l.page));
 ---
 
 <footer class="border-t border-line bg-white">
@@ -24,7 +25,14 @@ const links = navItems(locale);
         {
           links.map((l) => (
             <li>
-              <a href={l.href} class="text-sm font-semibold text-ink-soft hover:text-primary">
+              <a
+                href={l.href}
+                aria-current={current(l) ? 'page' : undefined}
+                class:list={[
+                  'text-sm font-semibold hover:text-primary',
+                  current(l) ? 'text-primary' : 'text-ink-soft',
+                ]}
+              >
                 {l.label}
               </a>
             </li>

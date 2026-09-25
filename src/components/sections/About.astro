@@ -1,10 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
+import Button from '@/components/Button.astro';
 import PersonCard from '@/components/PersonCard.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import type { SectionTone } from '@/components/sections/types';
 import type { Locale } from '@/i18n/config';
-import { t } from '@/i18n/utils';
+import { href, t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
@@ -42,6 +43,11 @@ const leadership = (await getCollection('people', (e) => e.data.group === 'leade
               </li>
             ))}
           </ul>
+          <p class="mt-6">
+            <Button href={href(locale, 'about/')} variant="secondary">
+              {copy.about.more}
+            </Button>
+          </p>
         </div>
       )
     }

@@ -3,7 +3,25 @@
   "group": "leadership",
   "photo": "./photos/rajiv-thakur.jpg",
   "i18n": {
-    "en": { "name": "Rajiv Thakur", "role": "Managing Director", "bio": [], "focus": null },
-    "ru": { "name": "Раджив Такур", "role": "Генеральный директор", "bio": [], "focus": null }
+    "en": {
+      "name": "Rajiv Thakur",
+      "role": "Managing Director",
+      "bioLead": "Over 40 years in sales and marketing in India and Russia, more than 20 of them in top management.",
+      "bio": [
+        "Country Sales Head of a multinational beverage company in Russia",
+        "Founding partner of a leading Russian mobile phone brand",
+        "FMCG and consumer electronics brand development"
+      ]
+    },
+    "ru": {
+      "name": "Раджив Такур",
+      "role": "Генеральный директор",
+      "bioLead": "Более 40 лет в продажах и маркетинге в Индии и России, из них более 20 лет в топ-менеджменте.",
+      "bio": [
+        "Руководитель продаж по России в международной компании-производителе напитков",
+        "Партнёр-основатель ведущего российского бренда мобильных телефонов",
+        "Развитие брендов FMCG и потребительской электроники"
+      ]
+    }
   }
 }

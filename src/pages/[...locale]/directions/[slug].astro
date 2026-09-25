@@ -56,7 +56,7 @@ const all = groups.flatMap((g) => g.directions);
   props.kind === 'category' ? (
     <Base
       locale={locale}
-      title={`${props.category.data.i18n[locale].name} — ${copy.directions.catalog.title} — Rai Family Corp`}
+      title={`${props.category.data.i18n[locale].name} - ${copy.directions.catalog.title} - Rai Family Corp`}
       description={props.category.data.i18n[locale].description}
       path={`directions/${props.category.id}/`}
       jsonLd={{
@@ -78,7 +78,7 @@ const all = groups.flatMap((g) => g.directions);
   ) : (
     <Base
       locale={locale}
-      title={`${props.entry.data.i18n[locale].title} — Rai Family Corp`}
+      title={`${props.entry.data.i18n[locale].title} - Rai Family Corp`}
       description={props.entry.data.i18n[locale].summary}
       path={`directions/${props.entry.id}/`}
       ogType="article"

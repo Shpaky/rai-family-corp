@@ -6,6 +6,31 @@
   about.paragraphs, footer.operator).
 */
 export const company = {
+  /** Registered name; the site name "Rai Family Corp" stays in ui.ts. */
+  legalName: 'Rai Family Corp LLP',
+  /** LLP identification number per the MCA register. */
+  llpin: 'ACJ-0911',
+  /** Date of incorporation per the register; also foundingDate in JSON-LD. */
+  registeredOn: '2024-08-23',
+  registrar: 'RoC Mumbai',
+  /** Jurisdiction, shown as a value on /about/ (readable, so per locale). */
+  jurisdiction: { en: 'India, Maharashtra', ru: 'Индия, Махараштра' },
+  /** Registered office per the register; the operator's contact address is in contacts.ts. */
+  registeredOffice: {
+    street: 'Office No 1307/1308, 13th Floor, NMS Titanium, Plot No 74, Sector-15, CBD Belapur',
+    locality: 'Navi Mumbai',
+    region: 'Maharashtra',
+    postalCode: '400614',
+    country: 'IN',
+  },
+  /** Public pages that confirm the status; shown on /about/ (programme) and listed as relatedLink in its JSON-LD. */
+  proofLinks: {
+    recProgramme:
+      'https://www.exportcenter.ru/services/prodvizhenie-na-vneshnie-rynki/exhibitions-business-missions/rossiyskie_natsionalnye_pavilony_za_rubezhom/',
+    recMumbai: 'https://www.exportcenter.ru/contacts/world/mumbai/',
+    openingAnnouncement: 'https://t.me/rusexportnews/15233',
+    openingPost: 'https://t.me/rusexportnews/15340',
+  },
   /** Opening date of the Made in Russia National Pavilion in Navi Mumbai. Подтвердить у РЭЦ. */
   pavilionOpened: '2026-08-21',
   /** Whether it is the first pavilion of the programme in India. Подтвердить у РЭЦ. */
@@ -18,3 +43,22 @@ export const company = {
   /** B2C online store run by the company; English only, so the link does not take a locale. */
   store: { name: 'The Rus Store', url: 'https://therusstore.com/' },
 } as const;
+
+/** "Office No …, CBD Belapur, Navi Mumbai 400614" for the details list. */
+export const registeredOfficeLine = () => {
+  const o = company.registeredOffice;
+  return `${o.street}, ${o.locality} ${o.postalCode}`;
+};
+
+/** schema.org PostalAddress of the registered office. */
+export const postalAddress = () => {
+  const o = company.registeredOffice;
+  return {
+    '@type': 'PostalAddress',
+    streetAddress: o.street,
+    addressLocality: o.locality,
+    addressRegion: o.region,
+    postalCode: o.postalCode,
+    addressCountry: o.country,
+  };
+};

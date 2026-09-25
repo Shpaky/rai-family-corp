@@ -18,7 +18,14 @@ function playwrightChrome() {
 const BASE = (process.env.BASE_PATH ?? '/rai-family-corp').replace(/\/$/, '');
 const PORT = 4325;
 const ORIGIN = `http://localhost:${PORT}`;
-const PAGES = ['/', '/ru/', '/directions/', '/directions/d5-additive-and-aqua-stop/'];
+const PAGES = [
+  '/',
+  '/ru/',
+  '/about/',
+  '/ru/about/',
+  '/directions/',
+  '/directions/d5-additive-and-aqua-stop/',
+];
 
 module.exports = {
   ci: {

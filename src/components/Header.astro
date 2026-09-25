@@ -12,6 +12,8 @@ const { locale, path = '' } = Astro.props;
 const copy = t(locale);
 const home = href(locale);
 const links = navItems(locale).filter((l) => l.key !== 'contacts');
+// A menu item is current on its own page (directions/, about/) and on that page's sub-paths.
+const current = (l: (typeof links)[number]) => Boolean(l.page && path.startsWith(l.page));
 ---
 
 <header class="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
@@ -27,7 +29,11 @@ const links = navItems(locale).filter((l) => l.key !== 'contacts');
             <li>
               <a
                 href={l.href}
-                class="text-sm font-semibold text-ink-soft transition-colors hover:text-primary"
+                aria-current={current(l) ? 'page' : undefined}
+                class:list={[
+                  'text-sm font-semibold transition-colors hover:text-primary',
+                  current(l) ? 'text-primary' : 'text-ink-soft',
+                ]}
               >
                 {l.label}
               </a>
@@ -108,7 +114,11 @@ const links = navItems(locale).filter((l) => l.key !== 'contacts');
                 <li>
                   <a
                     href={l.href}
-                    class="block rounded-lg px-3 py-2.5 text-base font-semibold text-ink hover:bg-surface"
+                    aria-current={current(l) ? 'page' : undefined}
+                    class:list={[
+                      'block rounded-lg px-3 py-2.5 text-base font-semibold hover:bg-surface',
+                      current(l) ? 'text-primary' : 'text-ink',
+                    ]}
                   >
                     {l.label}
                   </a>

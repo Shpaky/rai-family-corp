@@ -3,12 +3,23 @@
   "group": "leadership",
   "photo": "./photos/oleg-kalaev.jpg",
   "i18n": {
-    "en": { "name": "Oleg Kalaev", "role": "Chairman", "bio": [], "focus": null },
+    "en": {
+      "name": "Oleg Kalaev",
+      "role": "Chairman",
+      "bioLead": "PhD in Economics.",
+      "bio": [
+        "Many years in government service",
+        "Senior management of major Russian and international companies"
+      ]
+    },
     "ru": {
       "name": "Олег Калаев",
       "role": "Председатель совета директоров",
-      "bio": [],
-      "focus": null
+      "bioLead": "PhD по экономике.",
+      "bio": [
+        "Многолетняя работа в органах государственной власти",
+        "Руководство крупными российскими и международными компаниями"
+      ]
     }
   }
 }

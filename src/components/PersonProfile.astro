@@ -1,0 +1,48 @@
+---
+/*
+  Leadership profile on /about/: portrait on the left, name, role and the
+  experience summary on the right. Below `sm` the portrait and the name share
+  a row and the summary moves under them across the full width. The portrait
+  keeps 4:5 through aspect-ratio only; its width steps are w-48 / w-64 / w-80
+  and are not tied to the cards on the home page (PersonCard.astro).
+*/
+import { Picture } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '@/i18n/config';
+
+interface Props {
+  entry: CollectionEntry<'people'>;
+  locale: Locale;
+}
+const { entry, locale } = Astro.props;
+const text = entry.data.i18n[locale];
+---
+
+<div class="grid grid-cols-5 gap-x-5 gap-y-4 sm:grid-profile sm:gap-x-6">
+  <Picture
+    src={entry.data.photo}
+    alt={text.name}
+    widths={[320, 480, 640]}
+    sizes="(min-width: 1280px) 320px, (min-width: 1024px) 256px, (min-width: 640px) 192px, 40vw"
+    formats={['avif', 'webp']}
+    loading="lazy"
+    pictureAttributes={{ class: 'col-span-2 self-start sm:col-span-1 sm:row-span-2' }}
+    class="aspect-4/5 w-full rounded-card object-cover object-top sm:w-48 lg:w-64 xl:w-80"
+  />
+  <div class="col-span-3 self-center sm:col-span-1 sm:self-start">
+    <p class="font-display text-h3 font-bold text-ink">{text.name}</p>
+    <p class="mt-1 text-sm text-muted">{text.role}</p>
+  </div>
+  <div class="col-span-5 text-base leading-relaxed text-ink-soft sm:col-span-1">
+    {text.bioLead && <p>{text.bioLead}</p>}
+    {
+      text.bio.length > 0 && (
+        <ul class="mt-2 list-disc space-y-1 pl-5 marker:text-muted">
+          {text.bio.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</div>

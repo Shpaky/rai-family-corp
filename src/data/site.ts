@@ -26,6 +26,22 @@ export const AUDIENCE_ORDER: Record<Locale, AudienceKey[]> = {
   ru: ['manufacturers', 'distributors', 'institutions', 'consumers'],
 };
 
+/** Sections with a page of their own: the menu links there instead of to the home anchor. */
+export const SECTION_PAGES: Partial<Record<HomeSectionKey, string>> = {
+  directions: 'directions/',
+  about: 'about/',
+};
+
+/*
+  /about/, B2B block: the two audiences and their links, the locale's primary
+  reader first (EN: Indian distributors and institutions, RU: Russian manufacturers).
+*/
+export type AboutB2bAudience = 'distributors' | 'manufacturers';
+export const ABOUT_B2B_AUDIENCES: Record<Locale, AboutB2bAudience[]> = {
+  en: ['distributors', 'manufacturers'],
+  ru: ['manufacturers', 'distributors'],
+};
+
 // Build-time validation: a broken config fails `npm run build`, not the eye.
 const SECTION_KEYS: HomeSectionKey[] = [
   'audiences',
@@ -46,6 +62,13 @@ for (const [locale, keys] of Object.entries(HOME_SECTIONS)) {
     );
   }
   if (keys.at(-1) !== 'contacts') throw new Error(`HOME_SECTIONS.${locale}: contacts must be last`);
+}
+for (const [locale, order] of Object.entries(ABOUT_B2B_AUDIENCES)) {
+  if (!sameSet(order, ['distributors', 'manufacturers'])) {
+    throw new Error(
+      `ABOUT_B2B_AUDIENCES.${locale}: expected distributors and manufacturers once each`,
+    );
+  }
 }
 for (const [locale, order] of Object.entries(AUDIENCE_ORDER)) {
   if (!sameSet(order, AUDIENCE_KEYS)) {
