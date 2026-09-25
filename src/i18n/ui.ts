@@ -205,7 +205,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
       menu: 'Menu',
       close: 'Close',
       language: 'Language',
-      home: 'Rai Family Corp — home',
+      home: 'Rai Family Corp - home',
       footerMenu: 'Footer navigation',
       footerLanguage: 'Language, footer',
     },
@@ -234,7 +234,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     audiences: {
       eyebrow: 'Who we work with',
-      title: 'One entry point for every side of Russia–India trade',
+      title: 'One entry point for every side of Russia-India trade',
       lead: 'Manufacturers, distributors, institutions and consumers meet Russian products through the same pavilion and the same operator.',
       segments: {
         manufacturers: 'B2B',
@@ -498,7 +498,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
       menu: 'Меню',
       close: 'Закрыть',
       language: 'Язык',
-      home: 'Rai Family Corp — на главную',
+      home: 'Rai Family Corp - на главную',
       footerMenu: 'Навигация в подвале',
       footerLanguage: 'Язык, подвал',
     },
@@ -528,7 +528,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     audiences: {
       eyebrow: 'С кем мы работаем',
-      title: 'Одна точка входа для всех сторон торговли Россия — Индия',
+      title: 'Одна точка входа для всех сторон торговли Россия - Индия',
       lead: 'Производители, дистрибьюторы, институты и покупатели встречают российские товары через один павильон и одного оператора.',
       segments: {
         manufacturers: 'B2B',
@@ -703,7 +703,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     contacts: {
       eyebrow: 'Контакты',
       title: 'Напишите оператору',
-      lead: 'Производитель, дистрибьютор или институт — напишите нам, и мы направим запрос нужному человеку.',
+      lead: 'Производитель, дистрибьютор или институт - напишите нам, и мы направим запрос нужному человеку.',
       email: 'Почта',
       phone: 'Телефон',
       whatsapp: 'WhatsApp',
@@ -717,7 +717,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
         'Оператор Национального Павильона «Сделано в России» в Индии, проекта Российского экспортного центра',
       rights: 'Все права защищены.',
       madeInRussia:
-        '«Сделано в России» — товарный знак Российского экспортного центра, используется с разрешения.',
+        '«Сделано в России» - товарный знак Российского экспортного центра, используется с разрешения.',
     },
     notFound: {
       title: 'Страница не найдена',

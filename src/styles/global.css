@@ -36,7 +36,7 @@
   --color-warm-strong: #f0d5b1;
   --color-focus: var(--color-brand-gold-deep);
 
-  /* Typography — fonts come from Astro's Fonts API (see astro.config.mjs) */
+  /* Typography - fonts come from Astro's Fonts API (see astro.config.mjs) */
   --font-sans: var(--font-body), Arial, sans-serif;
   --font-display: var(--font-display-face), Georgia, serif;
   --text-descriptor: 0.6875rem;
@@ -85,6 +85,8 @@
   h3 {
     font-family: var(--font-display);
     font-weight: 700;
+    /* Playfair Display has old-style figures by default; the "2" in "B2B" would sink below the capitals. */
+    font-variant-numeric: lining-nums;
   }
   :focus-visible {
     outline: 3px solid var(--color-focus);
