@@ -56,6 +56,8 @@ interface Copy {
     paragraphs: string[];
     /** Column label above the leadership rows. */
     leadership: string;
+    /** Button under the leadership cards, leads to /about/. */
+    more: string;
   };
   services: {
     eyebrow: string;
@@ -271,6 +273,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
         'The company provides direct distribution channels and marketing promotion and covers the full range of related work: market research, product and packaging adaptation, certification, import procedures, legal support and logistics.',
       ],
       leadership: 'Leadership',
+      more: 'More about the company',
     },
     services: {
       eyebrow: 'Services',
@@ -564,6 +567,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
         'Компания предоставляет прямые каналы дистрибуции и маркетинговое продвижение и закрывает весь спектр связанных задач - исследование рынка, адаптацию продукта и упаковки, сертификацию, импортные процедуры, юридическое сопровождение и логистику.',
       ],
       leadership: 'Руководство',
+      more: 'Подробнее о компании',
     },
     services: {
       eyebrow: 'Услуги',

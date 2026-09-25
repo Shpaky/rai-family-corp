@@ -26,6 +26,12 @@ export const AUDIENCE_ORDER: Record<Locale, AudienceKey[]> = {
   ru: ['manufacturers', 'distributors', 'institutions', 'consumers'],
 };
 
+/** Sections with a page of their own: the menu links there instead of to the home anchor. */
+export const SECTION_PAGES: Partial<Record<HomeSectionKey, string>> = {
+  directions: 'directions/',
+  about: 'about/',
+};
+
 /*
   /about/, B2B block: the two audiences and their links, the locale's primary
   reader first (EN: Indian distributors and institutions, RU: Russian manufacturers).

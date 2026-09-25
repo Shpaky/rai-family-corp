@@ -54,10 +54,11 @@ for (const [locale, file] of Object.entries(PAGES)) {
     );
 
   // Header menu: first <nav> inside <header>, link targets in order (contacts is a separate button).
+  // A home anchor gives its fragment; a page link (directions/, about/) gives its last path segment.
   const header = html.slice(html.indexOf('<header'), html.indexOf('</header>'));
   const nav = header.slice(header.indexOf('<nav'), header.indexOf('</nav>'));
   const menu = [...nav.matchAll(/href="([^"]+)"/g)].map((m) =>
-    m[1].endsWith('/directions/') ? 'directions' : m[1].split('#')[1],
+    m[1].includes('#') ? m[1].split('#')[1] : m[1].replace(/\/$/, '').split('/').pop(),
   );
   const expectedMenu = expected.filter((k) => k !== 'audiences' && k !== 'contacts');
   if (menu.join() !== expectedMenu.join())
