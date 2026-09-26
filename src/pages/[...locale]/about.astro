@@ -16,6 +16,7 @@ import Base from '@/layouts/Base.astro';
 import { company, postalAddress, registeredOfficeLine } from '@/data/company';
 import { contacts, phonesFor } from '@/data/contacts';
 import { ABOUT_B2B_AUDIENCES, type AboutB2bAudience } from '@/data/site';
+import { documentHref } from '@/lib/directions';
 import type { Locale } from '@/i18n/config';
 import { href, localePaths, t } from '@/i18n/utils';
 
@@ -288,6 +289,21 @@ const textLink =
           ))
         }
       </dl>
+      <div class="mt-8">
+        <p class="eyebrow text-muted">{page.details.documents}</p>
+        <ul class="mt-1.5 flex flex-wrap gap-3">
+          <li>
+            <Button href={documentHref(company.documents.gst)} variant="ghost" external>
+              {`${page.details.gstCertificate} ${copy.directions.pdf}`}
+            </Button>
+          </li>
+          <li>
+            <Button href={documentHref(company.documents.iec)} variant="ghost" external>
+              {`${page.details.iecCertificate} ${copy.directions.pdf}`}
+            </Button>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
