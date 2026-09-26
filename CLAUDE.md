@@ -123,8 +123,8 @@ tailwind, eslint/prettier с astro-плагинами, playwright + axe, lhci).
   (от 1024) / `w-80` (от 1280), до 640 сетка `grid-cols-5` с портретом `col-span-2`; пропорция 4:5
   через `aspect-4/5`, высота не задаётся. Нижняя граница 192 px, верхняя 320 px (исходники 320 / 480 / 640).
 - Реквизиты берутся из `src/data/company.ts` (`legalName`, `llpin`, `registeredOn`, `registrar`,
-  `jurisdiction`, `registeredOffice`, `proofLinks`), подписи в `ui.ts` (`aboutPage.details`). Публикуются
-  только подтверждённые: GSTIN, IEC и часы работы не выводятся и не заменяются заглушками.
+  `gstin`, `iec`, `jurisdiction`, `registeredOffice`, `proofLinks`), подписи в `ui.ts` (`aboutPage.details`).
+  Публикуются только подтверждённые документами значения; часы работы не выводятся и не заменяются заглушками.
 - JSON-LD страницы: `AboutPage` с `mainEntity` типа `Organization` и `relatedLink` из `company.proofLinks`;
   `Organization` в `Seo.astro` берёт `legalName`, `foundingDate` и адрес оттуда же.
 - Внешние ссылки (магазин, страница программы РЭЦ): новая вкладка, `rel="noopener"`, стрелка, sr-only
