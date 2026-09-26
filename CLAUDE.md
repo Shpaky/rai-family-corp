@@ -126,7 +126,8 @@ tailwind, eslint/prettier с astro-плагинами, playwright + axe, lhci).
   `gstin`, `iec`, `jurisdiction`, `registeredOffice`, `proofLinks`), подписи в `ui.ts` (`aboutPage.details`).
   Публикуются только подтверждённые документами значения; часы работы не выводятся и не заменяются заглушками.
   Документы компании лежат в `public/docs/company/` (`company.documents`, кнопки под реквизитами по правилу
-  документов направлений); публикуются только страницы без имён и фото партнёров и без адресов складов.
+  документов направлений); приложения с фото партнёров и адресами складов не публикуются. Сертификат IEC
+  с именем подписанта опубликован по решению заказчика 2026-09-26.
 - JSON-LD страницы: `AboutPage` с `mainEntity` типа `Organization` и `relatedLink` из `company.proofLinks`;
   `Organization` в `Seo.astro` берёт `legalName`, `foundingDate` и адрес оттуда же.
 - Внешние ссылки (магазин, страница программы РЭЦ): новая вкладка, `rel="noopener"`, стрелка, sr-only

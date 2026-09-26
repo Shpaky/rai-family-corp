@@ -21,6 +21,8 @@ export const company = {
   documents: {
     /** Form GST REG-06, page 1 only (amended 20.01.2026); annexures with partners and warehouses are not published. */
     gst: '/docs/company/GST-Registration-Certificate-en.pdf',
+    /** DGFT Importer-Exporter Code certificate, address amended 08.01.2026; published as is by the company's decision (2026-09-26). */
+    iec: '/docs/company/IEC-Certificate-en.pdf',
   },
   /** Jurisdiction, shown as a value on /about/ (readable, so per locale). */
   jurisdiction: { en: 'India, Maharashtra', ru: 'Индия, Махараштра' },
