@@ -1,0 +1,192 @@
+{
+  "order": 110,
+  "brand": "Matkevich Lavage",
+  "category": "health",
+  "status": "coming",
+  "published": true,
+  "audiences": [],
+  "source": "Matkevich lavage",
+  "tags": ["wellness", "enteral-solution", "detox", "patented"],
+  "featured": false,
+  "manufacturer": {
+    "name": "NMC Lavage Global LLC",
+    "city": null,
+    "founded": null
+  },
+  "howToBuy": {
+    "stockInIndia": false
+  },
+  "documents": [
+    {
+      "label": "Patent IN 418946 (EN/HI)",
+      "url": "/docs/matkevich-lavage/Matkevich-Lavage-India-Patent-418946.pdf",
+      "type": "certificate"
+    }
+  ],
+  "i18n": {
+    "en": {
+      "title": "Matkevich Lavage enteral solution concentrates",
+      "summary": "A kit of concentrates for preparing the enteral solution used in the gastrointestinal tract lavage procedure by the Matkevich method. Not a medicinal product; patented in Russia, India and the USA. The direction is in preparation: registration in India has not been completed yet.",
+      "body": [
+        "Matkevich Lavage is a technology of intestinal lavage developed by V. A. Matkevich. It is based on a special enteral solution containing 8 macronutrients and 5 carboxylic acids; the kit supplied by the manufacturer consists of concentrates for preparing this solution. According to the developer, the solution and the concentrates are not classified as medicinal products.",
+        "The procedure, as described by the developer: an adult takes the solution on an empty stomach in portions of 150-200 ml at intervals of 5-7 minutes. The process lasts from 1.5 to 3 hours and ends once the lavage waters become clear. No special exercises are required, the person monitors the procedure themselves, and within 30-40 minutes after completion can return to the normal daily routine. If desired, a specialist's consultation on the suitability and technique of the procedure can be obtained.",
+        "Legal status according to the developer: in the Russian Federation the solution has a declaration and a certificate of conformity as a non-alcoholic beverage; in the Republic of Armenia a state registration certificate has been issued classifying it as a dietary supplement to replenish the body's losses of water and macronutrients. The acid-mineral composition and the enteral solution are protected by patents RU 2713175, IN 418946 and US 12 246 035 B2. Samples of the concentrates are displayed in the «Made in Russia» National Pavilion in Navi Mumbai. Registration of the product in India has not been completed yet, so the direction is shown as coming."
+      ],
+      "products": [
+        {
+          "name": "Concentrate kit",
+          "text": "Matkevich Lavage concentrate kit for preparing the enteral solution for the gastrointestinal tract lavage procedure. Supplied in a box under the Detoxcenter mark. Composition in figures, number of portions per kit and preparation instructions will be added when the technical data sheet is received.",
+          "specs": [
+            "8 macronutrients and 5 carboxylic acids in the prepared solution",
+            "Portions of 150-200 ml at intervals of 5-7 minutes",
+            "Procedure duration 1.5 to 3 hours",
+            "Not a medicinal product: non-alcoholic beverage in Russia, dietary supplement in Armenia",
+            "Patents RU 2713175, IN 418946, US 12 246 035 B2"
+          ]
+        }
+      ],
+      "forWhom": [
+        "Wellness and detox centres",
+        "Sanatoriums and health programmes",
+        "Distributors of dietary supplements and functional drinks",
+        "Medical institutions, after registration in India"
+      ],
+      "facts": [
+        "Indian patent No. 418946 granted 23 January 2023 for 20 years from the filing date 27 December 2019",
+        "Russian patent No. 2713175",
+        "US patent No. 12 246 035 B2",
+        "Certified in Russia as a non-alcoholic beverage: declaration and certificate of conformity",
+        "Registered in Armenia as a dietary supplement",
+        "Portions of 150-200 ml, procedure of 1.5-3 hours according to the developer"
+      ],
+      "logistics": null,
+      "keyFigures": ["Patents RU, IN, US", "8 macronutrients, 5 acids"],
+      "manufacturerNote": "Serial producer of the enteral solution concentrates: NMC Lavage Global LLC. Developer of the technology and patent holder: V. A. Matkevich. Packaging under the Detoxcenter mark.",
+      "howToBuy": {
+        "dispatch": null,
+        "moq": null,
+        "packaging": "Concentrate kit in a box",
+        "priceNote": "On request: after registration of the product in India",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Wellness and detox programmes",
+          "text": "Gastrointestinal tract lavage procedure by the Matkevich method as part of wellness and detox programmes; performed independently in standard cases according to the developer."
+        },
+        {
+          "title": "Sanatoriums and health resorts",
+          "text": "A procedure for health resort programmes, with a specialist's consultation on suitability and technique if desired."
+        },
+        {
+          "title": "«Made in Russia» National Pavilion, Navi Mumbai",
+          "text": "Samples of the concentrates produced by NMC Lavage Global LLC are displayed in the pavilion."
+        }
+      ],
+      "faq": [
+        {
+          "q": "What is in the kit and how is the solution prepared?",
+          "a": "The kit contains concentrates for preparing the enteral solution, which according to the developer includes 8 macronutrients and 5 carboxylic acids. The exact composition, the number of portions per kit and the preparation instructions have been requested from the manufacturer and will be added when the technical data sheet is received."
+        },
+        {
+          "q": "How does the procedure go?",
+          "a": "As described by the developer: the solution is taken on an empty stomach in portions of 150-200 ml at intervals of 5-7 minutes for 1.5 to 3 hours, until the lavage waters become clear. No special exercises are required; within 30-40 minutes after completion the person can return to the normal daily routine. A specialist's consultation on suitability and technique can be obtained if desired."
+        },
+        {
+          "q": "Is the product a medicine?",
+          "a": "No. According to the developer, the solution and the concentrates are not classified as medicinal products: in Russia the solution has a declaration and a certificate of conformity as a non-alcoholic beverage, in Armenia it is registered as a dietary supplement to replenish the body's losses of water and macronutrients."
+        },
+        {
+          "q": "Which patents protect the product?",
+          "a": "Three patents for the acid-mineral composition and the enteral solution: Russia No. 2713175, India No. 418946 (granted 23 January 2023, application of 27 December 2019, 20-year term) and the USA No. 12 246 035 B2. The Indian patent certificate is available on this page."
+        },
+        {
+          "q": "When will it be available in India?",
+          "a": "After registration of the product in India; the direction has the status coming until then. Use the Get best price or WhatsApp buttons on this page to leave a request, and we will come back with the timeline, samples and terms once registration is completed."
+        }
+      ]
+    },
+    "ru": {
+      "title": "Концентраты энтерального раствора «Лаваж Маткевича»",
+      "summary": "Комплект концентратов для приготовления энтерального раствора для процедуры промывания желудочно-кишечного тракта по методу Маткевича. Не лекарственное средство; запатентован в России, Индии и США. Направление в подготовке: регистрация в Индии ещё не пройдена.",
+      "body": [
+        "«Лаваж Маткевича» - технология кишечного лаважа, разработанная В. А. Маткевичем. В её основе специальный энтеральный раствор из 8 макронутриентов и 5 карбоновых кислот; производитель поставляет комплект концентратов для приготовления этого раствора. По данным разработчика раствор и концентраты не относятся к лекарственным средствам.",
+        "Процедура по описанию разработчика: взрослый принимает раствор натощак порциями 150-200 мл с интервалом 5-7 минут. Процесс длится от 1,5 до 3 часов и заканчивается, когда промывные воды становятся прозрачными. Специальные упражнения не нужны, человек контролирует процедуру сам, а через 30-40 минут после завершения возвращается к обычному режиму дня. При желании можно получить консультацию специалиста о целесообразности и технике процедуры.",
+        "Правовой статус по данным разработчика: в Российской Федерации на раствор оформлены декларация и сертификат соответствия как на безалкогольный напиток; в Республике Армения выдано свидетельство о государственной регистрации как биологически активной добавки для восполнения потерь воды и макронутриентов. Композиция кислот и минералов для раствора и сам энтеральный раствор защищены патентами RU 2713175, IN 418946 и US 12 246 035 B2. Образцы концентратов выставлены в Национальном Павильоне «Сделано в России» в Нави-Мумбаи. Регистрация продукта в Индии ещё не пройдена, поэтому направление показано как готовящееся."
+      ],
+      "products": [
+        {
+          "name": "Комплект концентратов",
+          "text": "Комплект концентратов «Лаваж Маткевича» для приготовления энтерального раствора для процедуры промывания желудочно-кишечного тракта. Поставляется в коробке под маркой «Детоксцентр». Состав числом, число порций в комплекте и способ приготовления будут добавлены по получении технического листа.",
+          "specs": [
+            "8 макронутриентов и 5 карбоновых кислот в готовом растворе",
+            "Порции 150-200 мл с интервалом 5-7 минут",
+            "Продолжительность процедуры от 1,5 до 3 часов",
+            "Не лекарственное средство: безалкогольный напиток в РФ, биологически активная добавка в Армении",
+            "Патенты RU 2713175, IN 418946, US 12 246 035 B2"
+          ]
+        }
+      ],
+      "forWhom": [
+        "Велнес- и детокс-центры",
+        "Санатории и оздоровительные программы",
+        "Дистрибьюторы биологически активных добавок и функциональных напитков",
+        "Медицинские учреждения после регистрации в Индии"
+      ],
+      "facts": [
+        "Патент Индии № 418946 выдан 23.01.2023 на 20 лет с даты подачи заявки 27.12.2019",
+        "Патент РФ № 2713175",
+        "Патент США № 12 246 035 B2",
+        "В РФ сертифицирован как безалкогольный напиток: декларация и сертификат соответствия",
+        "В Армении зарегистрирован как биологически активная добавка",
+        "Порции 150-200 мл, процедура 1,5-3 часа по данным разработчика"
+      ],
+      "logistics": null,
+      "keyFigures": ["Патенты РФ, Индия, США", "8 макронутриентов, 5 кислот"],
+      "manufacturerNote": "Серийный производитель концентратов энтерального раствора: ООО «НМЦ «Лаваж Глобал»». Разработчик технологии и патентообладатель: В. А. Маткевич. Упаковка под маркой «Детоксцентр».",
+      "howToBuy": {
+        "dispatch": null,
+        "moq": null,
+        "packaging": "Комплект концентратов в коробке",
+        "priceNote": "По запросу: после регистрации продукта в Индии",
+        "incoterms": null
+      },
+      "references": [
+        {
+          "title": "Велнес- и детокс-программы",
+          "text": "Процедура промывания желудочно-кишечного тракта по методу Маткевича в составе велнес- и детокс-программ; в стандартных случаях по данным разработчика выполняется самостоятельно."
+        },
+        {
+          "title": "Санаторно-курортные учреждения",
+          "text": "Процедура для программ санаториев и курортов, при желании с консультацией специалиста о целесообразности и технике."
+        },
+        {
+          "title": "Национальный Павильон «Сделано в России», Нави-Мумбаи",
+          "text": "В павильоне выставлены образцы концентратов производства ООО «НМЦ «Лаваж Глобал»»."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Что входит в комплект и как готовится раствор?",
+          "a": "В комплекте концентраты для приготовления энтерального раствора, который по данным разработчика содержит 8 макронутриентов и 5 карбоновых кислот. Точный состав, число порций в комплекте и способ приготовления запрошены у производителя и будут добавлены по получении технического листа."
+        },
+        {
+          "q": "Как проходит процедура?",
+          "a": "По описанию разработчика: раствор принимают натощак порциями 150-200 мл с интервалом 5-7 минут в течение 1,5-3 часов, пока промывные воды не станут прозрачными. Специальные упражнения не нужны; через 30-40 минут после завершения можно вернуться к обычному режиму дня. При желании можно получить консультацию специалиста о целесообразности и технике."
+        },
+        {
+          "q": "Является ли продукт лекарством?",
+          "a": "Нет. По данным разработчика раствор и концентраты не относятся к лекарственным средствам: в России на раствор оформлены декларация и сертификат соответствия как на безалкогольный напиток, в Армении он зарегистрирован как биологически активная добавка для восполнения потерь воды и макронутриентов."
+        },
+        {
+          "q": "Какие патенты есть у продукта?",
+          "a": "Три патента на композицию кислот и минералов и энтеральный раствор: Россия № 2713175, Индия № 418946 (выдан 23.01.2023 по заявке от 27.12.2019, срок 20 лет) и США № 12 246 035 B2. Сертификат индийского патента доступен на этой странице."
+        },
+        {
+          "q": "Когда продукт будет доступен в Индии?",
+          "a": "После регистрации продукта в Индии; до этого направление имеет статус «готовится». Нажмите «Запросить цену» или «WhatsApp» на этой странице, чтобы оставить запрос, и мы вернёмся со сроками, образцами и условиями после завершения регистрации."
+        }
+      ]
+    }
+  }
+}
