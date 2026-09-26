@@ -19,7 +19,7 @@ export const company = {
   iec: 'ABJFR7716C',
   /** Published company documents under public/docs/company/ (base-aware via documentHref). */
   documents: {
-    /** Form GST REG-06, page 1 only (amended 20.01.2026); annexures with partners and warehouses are not published. */
+    /** Form GST REG-06 with annexures A and B, amended 20.01.2026; published in full by the company's decision (2026-09-26). */
     gst: '/docs/company/GST-Registration-Certificate-en.pdf',
     /** DGFT Importer-Exporter Code certificate, address amended 08.01.2026; published as is by the company's decision (2026-09-26). */
     iec: '/docs/company/IEC-Certificate-en.pdf',
