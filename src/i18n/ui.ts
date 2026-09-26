@@ -185,6 +185,9 @@ interface Copy {
       registered: string;
       jurisdiction: string;
       office: string;
+      /** Label above the document buttons and the buttons themselves. */
+      documents: string;
+      gstCertificate: string;
     };
   };
 }
@@ -481,6 +484,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
         registered: 'Registered',
         jurisdiction: 'Jurisdiction',
         office: 'Registered office',
+        documents: 'Documents',
+        gstCertificate: 'GST registration certificate (EN)',
       },
     },
   },
@@ -773,6 +778,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
         registered: 'Регистрация',
         jurisdiction: 'Юрисдикция',
         office: 'Зарегистрированный офис',
+        documents: 'Документы',
+        gstCertificate: 'Свидетельство о регистрации GST (EN)',
       },
     },
   },

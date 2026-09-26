@@ -15,8 +15,13 @@ export const company = {
   registrar: 'RoC Mumbai',
   /** GST registration number (Form GST REG-06, Maharashtra); taxID in JSON-LD. */
   gstin: '27ABJFR7716C1Z3',
-  /** Importer-Exporter Code (DGFT certificate of 21.12.2024). */
+  /** Importer-Exporter Code (DGFT certificate of 21.12.2024, address amended 08.01.2026). */
   iec: 'ABJFR7716C',
+  /** Published company documents under public/docs/company/ (base-aware via documentHref). */
+  documents: {
+    /** Form GST REG-06, page 1 only (amended 20.01.2026); annexures with partners and warehouses are not published. */
+    gst: '/docs/company/GST-Registration-Certificate-en.pdf',
+  },
   /** Jurisdiction, shown as a value on /about/ (readable, so per locale). */
   jurisdiction: { en: 'India, Maharashtra', ru: 'Индия, Махараштра' },
   /** Registered office per the register; the operator's contact address is in contacts.ts. */
