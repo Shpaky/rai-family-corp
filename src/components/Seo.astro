@@ -30,6 +30,7 @@ const organization = {
   url: getAbsoluteLocaleUrl('en', ''),
   ...(contacts.sameAs.length > 0 ? { sameAs: contacts.sameAs } : {}),
   foundingDate: company.registeredOn,
+  taxID: company.gstin,
   ...(contacts.email ? { email: contacts.email } : {}),
   ...(phonesFor(locale).length > 0
     ? { telephone: phonesFor(locale).map((p) => p.replace(/[^\d+]/g, '')) }

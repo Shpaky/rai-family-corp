@@ -180,6 +180,8 @@ interface Copy {
       title: string;
       legalName: string;
       llpin: string;
+      gstin: string;
+      iec: string;
       registered: string;
       jurisdiction: string;
       office: string;
@@ -474,6 +476,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
         title: 'Company details',
         legalName: 'Legal name',
         llpin: 'LLPIN',
+        gstin: 'GSTIN',
+        iec: 'IEC',
         registered: 'Registered',
         jurisdiction: 'Jurisdiction',
         office: 'Registered office',
@@ -764,6 +768,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
         title: 'Реквизиты',
         legalName: 'Юридическое лицо',
         llpin: 'LLPIN',
+        gstin: 'GSTIN',
+        iec: 'IEC',
         registered: 'Регистрация',
         jurisdiction: 'Юрисдикция',
         office: 'Зарегистрированный офис',

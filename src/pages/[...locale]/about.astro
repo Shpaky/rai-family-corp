@@ -57,6 +57,8 @@ const registeredOn = new Intl.DateTimeFormat(locale === 'ru' ? 'ru' : 'en-GB', {
 const details = [
   { key: 'legalName', value: company.legalName },
   { key: 'llpin', value: company.llpin },
+  { key: 'gstin', value: company.gstin },
+  { key: 'iec', value: company.iec },
   { key: 'registered', value: null },
   { key: 'jurisdiction', value: company.jurisdiction[locale] },
   { key: 'office', value: registeredOfficeLine() },
@@ -74,6 +76,7 @@ const jsonLd = {
     name: 'Rai Family Corp',
     legalName: company.legalName,
     foundingDate: company.registeredOn,
+    taxID: company.gstin,
     url: getAbsoluteLocaleUrl('en', ''),
     address: postalAddress(),
     ...(phonesFor(locale).length > 0
