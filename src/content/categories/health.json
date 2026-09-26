@@ -1,0 +1,16 @@
+{
+  "order": 27,
+  "tone": "warm",
+  "i18n": {
+    "en": {
+      "name": "Health and wellness",
+      "lead": "Russian products for health and wellness supplied to India after registration: enteral solution concentrates, dietary supplements and functional drinks for wellness centres and distributors.",
+      "description": "Russian health and wellness products in India after registration: enteral solution concentrates, supplements, functional drinks. Rai Family Corp."
+    },
+    "ru": {
+      "name": "Здоровье и велнес",
+      "lead": "Российские продукты для здоровья и велнеса, поставляемые в Индию после регистрации: концентраты энтерального раствора, биологически активные добавки и функциональные напитки для велнес-центров и дистрибьюторов.",
+      "description": "Российские продукты для здоровья и велнеса в Индии после регистрации: концентраты энтерального раствора, добавки, функциональные напитки. Rai Family Corp."
+    }
+  }
+}
