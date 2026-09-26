@@ -2,13 +2,13 @@
 
 /*
   Design tokens. The only place where raw values live (npm run lint:tokens).
-  Variant F: warm palette derived from The Rus Store and the gold of the RAI wordmark;
+  Variant H: warm palette derived from The Rus Store and the gold of the RAI wordmark;
   the Made in Russia mark keeps its own blue and red.
 */
 @theme {
   --color-brand-gold: #d4b06a; /* light gold: logo on dark */
   --color-brand-gold-deep: #8a6b35; /* deep gold: logo on light */
-  --color-brand-accent: #a8452a; /* terracotta */
+  --color-brand-accent: #9d5a10; /* burnt ochre */
   --color-brand-dark: #4d5a2c;
   --color-brand-cream: #fff2de; /* The Rus Store cream */
 
@@ -21,15 +21,15 @@
   --color-surface-strong: #e8ead5;
 
   --color-primary: var(--color-brand-accent);
-  --color-primary-hover: #87361f;
-  --color-primary-soft: #f9e8e1;
+  --color-primary-hover: #7d4709;
+  --color-primary-soft: #f7ead6;
   --color-accent: var(--color-brand-gold-deep);
   --color-accent-hover: #6f5427;
   --color-gold: var(--color-brand-gold);
   --color-gold-deep: var(--color-brand-gold-deep);
   --color-gold-text: #e6cc95; /* gold for small text on the dark surface, 4.8:1 on olive; the wordmark keeps --color-gold */
   --color-numbers: var(--color-brand-gold-deep);
-  --color-eyebrow: #a8452a;
+  --color-eyebrow: var(--color-brand-accent);
   --color-dark: var(--color-brand-dark);
   --color-dark-text: #f5f4e8;
   --color-warm: var(--color-brand-cream);
