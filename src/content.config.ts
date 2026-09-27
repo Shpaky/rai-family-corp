@@ -96,7 +96,7 @@ const directions = defineCollection({
       status: z.enum(['active', 'on-order', 'coming']).default('active'),
       /** false hides the direction everywhere (card, page, sitemap) without deleting its content. */
       published: z.boolean().default(true),
-      /** Reserved: not rendered or filtered anywhere yet; every hub direction is B2B, retail lives on therusstore.com. */
+      /** Reserved: not rendered or filtered anywhere yet; every direction on the site is B2B, retail lives on therusstore.com. */
       audiences: z.array(z.enum(['b2b', 'b2c'])).default([]),
       /** Name of the source sub-folder in ./directions (see npm run check:directions). */
       source: z.string(),
