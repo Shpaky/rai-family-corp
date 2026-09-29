@@ -534,8 +534,14 @@ export const manufacturersPage: Record<Locale, ManufacturersPage> = {
   },
 };
 
+/** FAQ items that have an answer: the only ones shown and listed in the FAQPage JSON-LD. */
+export const answeredFaq = (locale: Locale) =>
+  manufacturersPage[locale].faq.items.filter(
+    (item): item is { q: string; a: string } => item.a !== null,
+  );
+
 // Build-time validation: fixed counts from the page brief. No template literals in this
-// file: check:content scans it for currency symbols, "$" included.
+// file: check:content scans it for currency symbols.
 for (const [locale, page] of Object.entries(manufacturersPage)) {
   const counts = [
     ['route.steps', page.route.steps.length, 6],

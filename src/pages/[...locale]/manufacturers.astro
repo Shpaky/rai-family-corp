@@ -1,0 +1,148 @@
+---
+/*
+  /manufacturers/: how we work with Russian manufacturers. Page header on paper,
+  then the sections of MANUFACTURERS_SECTIONS that have data, alternating white /
+  paper by position, and the dark "Where to start" block as the only dark
+  surface. Copy lives in src/data/manufacturers.ts; empty data renders nothing.
+*/
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import Faq from '@/components/manufacturers/Faq.astro';
+import Models from '@/components/manufacturers/Models.astro';
+import NotDoing from '@/components/manufacturers/NotDoing.astro';
+import Requirements from '@/components/manufacturers/Requirements.astro';
+import Route from '@/components/manufacturers/Route.astro';
+import Start from '@/components/manufacturers/Start.astro';
+import Status from '@/components/manufacturers/Status.astro';
+import type { SectionTone } from '@/components/sections/types';
+import Base from '@/layouts/Base.astro';
+import {
+  MANUFACTURERS_SECTIONS,
+  answeredFaq,
+  manufacturersPage,
+  type ManufacturersSectionKey,
+} from '@/data/manufacturers';
+import type { Locale } from '@/i18n/config';
+import { href, localePaths, t } from '@/i18n/utils';
+
+export function getStaticPaths() {
+  return localePaths();
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const copy = t(locale);
+const data = manufacturersPage[locale];
+const home = href(locale);
+const path = 'manufacturers/';
+const url = getAbsoluteLocaleUrl(locale, path);
+
+const components = {
+  route: Route,
+  requirements: Requirements,
+  models: Models,
+  status: Status,
+  notDoing: NotDoing,
+  faq: Faq,
+} as const;
+const hasData: Record<ManufacturersSectionKey, boolean> = {
+  route: data.route.steps.length > 0,
+  requirements: data.requirements.common.length > 0,
+  models: data.models.items.length > 0,
+  status: true,
+  notDoing: data.notDoing.items.length > 0,
+  faq: answeredFaq(locale).length > 0,
+};
+// Rendered sections only, so the white / paper alternation has no gaps.
+const sections = MANUFACTURERS_SECTIONS.filter((key) => hasData[key]).map((key, i) => ({
+  key,
+  Component: components[key],
+  tone: (i % 2 === 0 ? 'white' : 'surface') as SectionTone,
+}));
+
+const organization = {
+  '@type': 'Organization',
+  name: 'Rai Family Corp',
+  url: getAbsoluteLocaleUrl('en', ''),
+};
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': url,
+      url,
+      name: data.meta.title,
+      description: data.meta.description,
+      inLanguage: locale,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'Rai Family Corp',
+        url: getAbsoluteLocaleUrl(locale, ''),
+      },
+      about: organization,
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Rai Family Corp',
+          item: getAbsoluteLocaleUrl(locale, ''),
+        },
+        { '@type': 'ListItem', position: 2, name: copy.nav.manufacturers, item: url },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      inLanguage: locale,
+      mainEntity: answeredFaq(locale).map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    },
+  ],
+};
+---
+
+<Base
+  locale={locale}
+  title={data.meta.title}
+  description={data.meta.description}
+  path={path}
+  jsonLd={jsonLd}
+>
+  <header class="bg-surface">
+    <div class="container-page py-12 md:py-16">
+      <nav aria-label="Breadcrumb" class="text-sm font-semibold text-muted">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href={home} class="hover:text-primary">Rai Family Corp</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page">{copy.nav.manufacturers}</li>
+        </ol>
+      </nav>
+      <p class="eyebrow mt-6 text-eyebrow">{data.hero.eyebrow}</p>
+      <h1 class="mt-3 text-h2 font-bold text-balance text-ink sm:text-h1 md:text-display">
+        {data.hero.title}
+      </h1>
+      <p class="mt-5 max-w-3xl text-lead text-pretty text-ink-soft">{data.hero.lead}</p>
+    </div>
+  </header>
+
+  {sections.map(({ Component, tone }) => <Component locale={locale} tone={tone} />)}
+
+  <Start locale={locale} />
+
+  <script is:inline>
+    // Folds data-collapse="mobile" blocks below md and opens them from md; without JS they stay open.
+    (() => {
+      const mq = matchMedia('(max-width: 767px)');
+      const sync = () => {
+        for (const d of document.querySelectorAll('details[data-collapse="mobile"]'))
+          d.open = !mq.matches;
+      };
+      sync();
+      mq.addEventListener('change', sync);
+    })();
+  </script>
+</Base>
