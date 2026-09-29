@@ -15,7 +15,6 @@ interface Copy {
   meta: { siteName: string; title: string; description: string };
   nav: {
     about: string;
-    services: string;
     /** Menu item of the services section; leads to /manufacturers/. */
     manufacturers: string;
     directions: string;
@@ -50,7 +49,8 @@ interface Copy {
     lead: string;
     /** Business model label shown on each card. */
     segments: Record<AudienceKey, 'B2B' | 'B2C'>;
-    items: Record<AudienceKey, { title: string; text: string; cta: string }>;
+    /** `cta` is the link label; manufacturers take services.more (link to /manufacturers/). */
+    items: Record<AudienceKey, { title: string; text: string; cta?: string }>;
   };
   about: {
     eyebrow: string;
@@ -165,7 +165,8 @@ interface Copy {
       title: string;
       /** Order per locale: ABOUT_B2B_AUDIENCES in src/data/site.ts. */
       audiences: Record<AboutB2bAudience, { title: string; text: string }>;
-      links: Record<AboutB2bAudience, string>;
+      /** Link labels; manufacturers take services.more (link to /manufacturers/). */
+      links: { distributors: string };
     };
     b2c: {
       title: string;
@@ -225,7 +226,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     nav: {
       about: 'About',
-      services: 'Services',
       manufacturers: 'For manufacturers',
       directions: 'Directions',
       pavilion: 'Pavilion',
@@ -275,7 +275,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
         manufacturers: {
           title: 'Russian manufacturers',
           text: 'Enter the Indian market through the «Made in Russia» pavilion: market assessment, adaptation, certification, import and distribution under one contract.',
-          cta: 'See services',
         },
         distributors: {
           title: 'Indian distributors and retail',
@@ -482,7 +481,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
         },
         links: {
           distributors: 'Directions catalogue',
-          manufacturers: 'Services for manufacturers',
         },
       },
       b2c: {
@@ -536,7 +534,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     nav: {
       about: 'О компании',
-      services: 'Услуги',
       manufacturers: 'Производителям',
       directions: 'Направления',
       pavilion: 'Павильон',
@@ -587,7 +584,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
         manufacturers: {
           title: 'Российские производители',
           text: 'Выход на рынок Индии через павильон «Сделано в России»: оценка рынка, адаптация, сертификация, импорт и дистрибуция по одному договору.',
-          cta: 'Смотреть услуги',
         },
         distributors: {
           title: 'Индийские дистрибьюторы и ритейл',
@@ -791,7 +787,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
             text: 'Российские бренды и линейки, которые мы ввозим, сертифицируем и распространяем в Индии, с техническими документами на странице каждого направления.',
           },
         },
-        links: { manufacturers: 'Услуги производителям', distributors: 'Каталог направлений' },
+        links: { distributors: 'Каталог направлений' },
       },
       b2c: {
         title: 'The Rus Store, наш интернет-магазин',

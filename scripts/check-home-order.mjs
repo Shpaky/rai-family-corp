@@ -3,7 +3,7 @@
 // Run after `npm run build`.
 import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
-import { HOME_SECTIONS } from '../src/data/site.ts';
+import { HOME_SECTIONS, SECTION_PAGES } from '../src/data/site.ts';
 
 const bgOf = (tag) => {
   const cls = tag.match(/class="([^"]*)"/)?.[1] ?? '';
@@ -54,24 +54,32 @@ for (const [locale, file] of Object.entries(PAGES)) {
     );
 
   // Header menu: first <nav> inside <header>, link targets in order (contacts is a separate button).
-  // A home anchor gives its fragment; a page link (directions/, about/) gives its last path segment.
+  // A home anchor gives its fragment; a page link (directions/, manufacturers/, about/) gives its
+  // last path segment, expected as the section's SECTION_PAGES entry.
   const header = html.slice(html.indexOf('<header'), html.indexOf('</header>'));
   const nav = header.slice(header.indexOf('<nav'), header.indexOf('</nav>'));
   const menu = [...nav.matchAll(/href="([^"]+)"/g)].map((m) =>
     m[1].includes('#') ? m[1].split('#')[1] : m[1].replace(/\/$/, '').split('/').pop(),
   );
-  const expectedMenu = expected.filter((k) => k !== 'audiences' && k !== 'contacts');
+  const expectedMenu = expected
+    .filter((k) => k !== 'audiences' && k !== 'contacts')
+    .map((k) => SECTION_PAGES[k]?.replace(/\/$/, '') ?? k);
   if (menu.join() !== expectedMenu.join())
     fail(`${locale}: menu ${menu.join(' · ')} ≠ ${expectedMenu.join(' · ')}`);
   else console.log(`ok   ${locale}: menu ${menu.join(' · ')}`);
 
-  // First audience card links to the first section after audiences.
+  // First audience card links to the first section after audiences: its home anchor, or its
+  // own page when the section has one (RU: services → manufacturers/).
   const aud = main.slice(main.indexOf('id="audiences"'));
   const firstLi = aud.slice(aud.indexOf('<li'), aud.indexOf('</li>'));
-  const target = firstLi.match(/href="[^"]*#([a-z]+)"/)?.[1];
-  const want = expected[expected.indexOf('audiences') + 1];
-  if (target !== want)
-    fail(`${locale}: first audience card links to #${target}, expected #${want}`);
-  else console.log(`ok   ${locale}: first audience card → #${target}`);
+  const link = firstLi.match(/href="([^"]+)"/)?.[1] ?? '';
+  const target = link.includes('#')
+    ? `#${link.split('#')[1]}`
+    : link.replace(/^.*\/([^/]+)\/$/, '$1/');
+  const section = expected[expected.indexOf('audiences') + 1];
+  const want = [`#${section}`, SECTION_PAGES[section]].filter(Boolean);
+  if (!want.includes(target))
+    fail(`${locale}: first audience card links to ${target}, expected ${want.join(' or ')}`);
+  else console.log(`ok   ${locale}: first audience card → ${target}`);
 }
 process.exit(failed ? 1 : 0);

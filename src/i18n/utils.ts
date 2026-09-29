@@ -44,18 +44,27 @@ export function withCount(template: string, count: number, locale: Locale): stri
     .replace(/\{count\}/g, String(count));
 }
 
+/** Menu label of a home section; the services section is "For manufacturers" and leads to its page. */
+const NAV_LABEL = {
+  directions: 'directions',
+  services: 'manufacturers',
+  pavilion: 'pavilion',
+  about: 'about',
+  contacts: 'contacts',
+} as const;
+
 export interface NavItem {
-  key: 'directions' | 'services' | 'pavilion' | 'about' | 'contacts';
+  key: keyof typeof NAV_LABEL;
   label: string;
   href: string;
-  /** Site path of the item's own page (directions/, about/), for the active state in the menus. */
+  /** Site path of the item's own page (directions/, manufacturers/, about/), for the active state in the menus. */
   page?: string;
 }
 
 /**
  * Menu items in the order of the home sections of the locale (src/data/site.ts).
- * Sections without a `nav.*` label (audiences) are skipped; sections listed in
- * SECTION_PAGES (directions, about) link to their page, the rest to home anchors.
+ * Sections without a menu label (audiences) are skipped; sections listed in
+ * SECTION_PAGES (directions, services, about) link to their page, the rest to home anchors.
  */
 export function navItems(locale: Locale): NavItem[] {
   const nav = ui[locale].nav;
@@ -65,7 +74,7 @@ export function navItems(locale: Locale): NavItem[] {
     return [
       {
         key,
-        label: nav[key],
+        label: nav[NAV_LABEL[key]],
         href: SECTION_PAGES[key] ? href(locale, SECTION_PAGES[key]) : `${home}#${key}`,
         page: SECTION_PAGES[key],
       },

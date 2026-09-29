@@ -29,6 +29,7 @@ export const AUDIENCE_ORDER: Record<Locale, AudienceKey[]> = {
 /** Sections with a page of their own: the menu links there instead of to the home anchor. */
 export const SECTION_PAGES: Partial<Record<HomeSectionKey, string>> = {
   directions: 'directions/',
+  services: 'manufacturers/',
   about: 'about/',
 };
 
