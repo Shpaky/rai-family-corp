@@ -16,6 +16,8 @@ interface Copy {
   nav: {
     about: string;
     services: string;
+    /** Menu item of the services section; leads to /manufacturers/. */
+    manufacturers: string;
     directions: string;
     pavilion: string;
     contacts: string;
@@ -64,6 +66,8 @@ interface Copy {
     title: string;
     lead: string;
     pillars: Record<PillarKey, { title: string; text: string; items: string[] }>;
+    /** Button under the stages, leads to /manufacturers/; also the manufacturers link on /about/ and in Audiences. */
+    more: string;
   };
   directions: {
     eyebrow: string;
@@ -191,6 +195,24 @@ interface Copy {
       iecCertificate: string;
     };
   };
+  /** /manufacturers/ page: interface strings; the page copy is in src/data/manufacturers.ts. Reused keys: nav.manufacturers (crumb), hero.pavilionLink, footer.madeInRussia, aboutPage.status.programmeNote, directions.cta.whatsapp. */
+  manufacturersPage: {
+    /** Row labels of a step card. */
+    rows: { whatWeDo: string; fromYou: string; result: string; timing: string };
+    /** Summary of the folded rows of a step on phones. */
+    stepMore: string;
+    /** Summary of the folded part of the common list on phones, template for withCount(). */
+    listMore: string;
+    forAnyProduct: string;
+    byCategory: string;
+    /** Bold lead-ins of the two paragraphs of a category. */
+    access: string;
+    prepare: string;
+    /** Bottom line of a cooperation model card. */
+    termsLabel: string;
+    /** Text link to the REC programme page. */
+    recLink: string;
+  };
 }
 
 export const ui: Record<'en' | 'ru', Copy> = {
@@ -204,6 +226,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     nav: {
       about: 'About',
       services: 'Services',
+      manufacturers: 'For manufacturers',
       directions: 'Directions',
       pavilion: 'Pavilion',
       contacts: 'Contacts',
@@ -325,6 +348,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
           ],
         },
       },
+      more: 'How we work with manufacturers',
     },
     directions: {
       eyebrow: 'Directions',
@@ -490,6 +514,17 @@ export const ui: Record<'en' | 'ru', Copy> = {
         iecCertificate: 'IEC certificate (EN)',
       },
     },
+    manufacturersPage: {
+      rows: { whatWeDo: 'What we do', fromYou: 'From you', result: 'Result', timing: 'Timing' },
+      stepMore: 'More about this step',
+      listMore: '{count} more {count:item|items}',
+      forAnyProduct: 'For any product',
+      byCategory: 'By category',
+      access: 'Market access.',
+      prepare: 'What to prepare.',
+      termsLabel: 'Terms on request',
+      recLink: 'REC programme page',
+    },
   },
 
   ru: {
@@ -502,6 +537,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     nav: {
       about: 'О компании',
       services: 'Услуги',
+      manufacturers: 'Производителям',
       directions: 'Направления',
       pavilion: 'Павильон',
       contacts: 'Контакты',
@@ -624,6 +660,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
           ],
         },
       },
+      more: 'Как мы работаем с производителями',
     },
     directions: {
       eyebrow: 'Направления',
@@ -784,6 +821,17 @@ export const ui: Record<'en' | 'ru', Copy> = {
         gstCertificate: 'Свидетельство о регистрации GST (EN)',
         iecCertificate: 'Сертификат IEC (EN)',
       },
+    },
+    manufacturersPage: {
+      rows: { whatWeDo: 'Что делаем', fromYou: 'От вас', result: 'Результат', timing: 'Срок' },
+      stepMore: 'Подробнее о шаге',
+      listMore: 'Ещё {count} {count:пункт|пункта|пунктов}',
+      forAnyProduct: 'Для любого продукта',
+      byCategory: 'По категориям',
+      access: 'Маршрут допуска.',
+      prepare: 'Что подготовить.',
+      termsLabel: 'Условия по запросу',
+      recLink: 'Страница программы РЭЦ',
     },
   },
 };

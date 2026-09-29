@@ -1,5 +1,5 @@
 // Prices are never published on the site: fails when a direction JSON or the
-// UI dictionary mentions a currency or an amount of money. No exceptions.
+// UI dictionary or the manufacturers page data mentions a currency or an amount of money. No exceptions.
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 
@@ -10,6 +10,7 @@ const FILES = [
     .filter((n) => n.endsWith('.json'))
     .map((n) => join(DIR, n)),
   join(ROOT, 'src/i18n/ui.ts'),
+  join(ROOT, 'src/data/manufacturers.ts'),
 ];
 
 const RULES = [
