@@ -68,13 +68,8 @@ const check = 'M20 6 9 17l-5-5';
         <h3 class="eyebrow font-sans text-eyebrow">{copy.byCategory}</h3>
         <div class="mt-4 flex flex-col gap-2.5">
           {
-            data.categories.map((category, i) => (
-              <Collapsible
-                summary={category.title}
-                variant="card"
-                open={i === 0}
-                collapseOnMobile={i === 0}
-              >
+            data.categories.map((category) => (
+              <Collapsible summary={category.title} variant="card">
                 <p class="text-base leading-relaxed text-ink-soft">
                   <strong class="font-bold text-ink">{copy.access}</strong> {category.access}
                 </p>
