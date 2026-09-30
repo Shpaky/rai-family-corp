@@ -9,8 +9,6 @@ interface Photo {
   caption: string;
 }
 
-export type PillarKey = 'intelligence' | 'product' | 'development' | 'compliance';
-
 interface Copy {
   meta: { siteName: string; title: string; description: string };
   nav: {
@@ -59,11 +57,13 @@ interface Copy {
     /** Button under the leadership cards, leads to /about/. */
     more: string;
   };
+  /** Home Services section; the groups and their services are in src/data/services.ts. */
   services: {
     eyebrow: string;
     title: string;
     lead: string;
-    pillars: Record<PillarKey, { title: string; text: string; items: string[] }>;
+    /** Button under the cards, leads to /manufacturers/. */
+    more: string;
   };
   directions: {
     eyebrow: string;
@@ -284,47 +284,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
     services: {
       eyebrow: 'Services',
       title: 'From market research to the shelf',
-      lead: 'Fourteen services, grouped into four stages of bringing a Russian product to India. Each is available separately or as one managed programme.',
-      pillars: {
-        intelligence: {
-          title: 'Market intelligence',
-          text: 'Know the market before committing to it.',
-          items: [
-            'Market monitoring and competitive research',
-            'Market potential assessment',
-            'Price positioning',
-          ],
-        },
-        product: {
-          title: 'Product and brand adaptation',
-          text: 'Make the product fit the Indian shelf and the Indian buyer.',
-          items: [
-            'Product adaptation to the local market',
-            'Packaging and design adaptation',
-            'Branding and positioning',
-          ],
-        },
-        development: {
-          title: 'Business development',
-          text: 'Turn interest into contracts and sales.',
-          items: [
-            'B2B meetings and negotiations',
-            'Tastings and promotional events',
-            'Contract facilitation',
-            'Distribution',
-          ],
-        },
-        compliance: {
-          title: 'Compliance, import and logistics',
-          text: 'Cross the border correctly, the first time.',
-          items: [
-            'Legal support of transactions',
-            'Product certification, permits and licences',
-            'Import consulting: requirements, restrictions, duties and taxes',
-            'Logistics',
-          ],
-        },
-      },
+      lead: 'Eight service areas: from analytics and certification to marketplaces, exhibitions and legal support. Each service is available on its own or as part of a single programme.',
+      more: 'How we work with manufacturers',
     },
     directions: {
       eyebrow: 'Directions',
@@ -583,47 +544,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
     services: {
       eyebrow: 'Услуги',
       title: 'От исследования рынка до полки',
-      lead: 'Четырнадцать услуг, сгруппированных в четыре этапа вывода российского товара в Индию. Каждая доступна отдельно или в составе единой программы.',
-      pillars: {
-        intelligence: {
-          title: 'Аналитика рынка',
-          text: 'Понять рынок до того, как в него вкладываться.',
-          items: [
-            'Мониторинг рынка и конкурентная разведка',
-            'Оценка рыночного потенциала',
-            'Ценовое позиционирование',
-          ],
-        },
-        product: {
-          title: 'Адаптация продукта и бренда',
-          text: 'Сделать продукт подходящим для индийской полки и индийского покупателя.',
-          items: [
-            'Адаптация продукта к локальному рынку',
-            'Адаптация упаковки и дизайна',
-            'Брендинг и позиционирование',
-          ],
-        },
-        development: {
-          title: 'Развитие бизнеса',
-          text: 'Превратить интерес в контракты и продажи.',
-          items: [
-            'Организация B2B-встреч и переговоров',
-            'Дегустации и промо-акции',
-            'Содействие в заключении контрактов',
-            'Дистрибуция',
-          ],
-        },
-        compliance: {
-          title: 'Сертификация, импорт и логистика',
-          text: 'Пересечь границу правильно с первого раза.',
-          items: [
-            'Юридическое сопровождение сделок',
-            'Сертификация продукции, разрешения и лицензии',
-            'Импорт-консалтинг: требования, ограничения, пошлины и налоги',
-            'Логистика',
-          ],
-        },
-      },
+      lead: 'Восемь направлений услуг: от аналитики и сертификации до маркетплейсов, выставок и юридического сопровождения. Каждая услуга доступна отдельно или в составе единой программы.',
+      more: 'Как мы работаем с производителями',
     },
     directions: {
       eyebrow: 'Направления',
