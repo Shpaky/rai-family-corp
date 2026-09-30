@@ -14,7 +14,6 @@ import NotDoing from '@/components/manufacturers/NotDoing.astro';
 import Requirements from '@/components/manufacturers/Requirements.astro';
 import Route from '@/components/manufacturers/Route.astro';
 import Start from '@/components/manufacturers/Start.astro';
-import Status from '@/components/manufacturers/Status.astro';
 import type { SectionTone } from '@/components/sections/types';
 import Base from '@/layouts/Base.astro';
 import {
@@ -43,7 +42,6 @@ const components = {
   catalog: Catalog,
   requirements: Requirements,
   models: Models,
-  status: Status,
   notDoing: NotDoing,
   faq: Faq,
 } as const;
@@ -52,7 +50,6 @@ const hasData: Record<ManufacturersSectionKey, boolean> = {
   catalog: services[locale].groups.length > 0,
   requirements: data.requirements.common.length > 0,
   models: data.models.items.length > 0,
-  status: true,
   notDoing: data.notDoing.items.length > 0,
   faq: answeredFaq(locale).length > 0,
 };
