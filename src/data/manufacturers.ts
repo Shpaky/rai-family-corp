@@ -6,13 +6,13 @@
   steps of the route link to their groups (`serviceGroups`).
 
   Empty data renders nothing, never a placeholder: a step without `timing` has
-  no Timing row, empty `status.benefits` hides the benefits list, empty
+  no Timing row, empty
   `notDoing.items` drops the whole section and the promise of it in the page
   lead (`hero.leadWithNotDoing`), a question with `a: null` is not shown and is
   not in the FAQPage JSON-LD. Pending facts are listed in TODO.md.
 */
 import type { Locale } from '../i18n/config';
-import { company } from './company';
+import { ui } from '../i18n/ui';
 import type { ServiceGroupSlug } from './services';
 
 /**
@@ -21,13 +21,12 @@ import type { ServiceGroupSlug } from './services';
  * (white, paper, ...), as HOME_SECTIONS on the home page.
  */
 export type ManufacturersSectionKey =
-  'route' | 'catalog' | 'requirements' | 'models' | 'status' | 'notDoing' | 'faq';
+  'route' | 'catalog' | 'requirements' | 'models' | 'notDoing' | 'faq';
 export const MANUFACTURERS_SECTIONS: ManufacturersSectionKey[] = [
   'route',
   'catalog',
   'requirements',
   'models',
-  'status',
   'notDoing',
   'faq',
 ];
@@ -74,18 +73,13 @@ export interface ManufacturersPage {
   models: {
     title: string;
     lead: string;
-    items: { title: string; text: string }[];
+    items: {
+      title: string;
+      text: string;
+      /** Text link above "Terms on request"; `href` is a home page anchor, resolved per locale. */
+      link: { label: string; href: string } | null;
+    }[];
     footnote: string;
-  };
-  status: {
-    title: string;
-    text: string;
-    benefitsTitle: string;
-    /** What pavilion residency gives; empty until confirmed by the Russian Export Center. */
-    benefits: string[];
-    /** Home page anchor, resolved per locale. */
-    pavilionHref: string;
-    recHref: string;
   };
   /** The whole section is skipped while `items` is empty. */
   notDoing: { title: string; items: string[] };
@@ -103,11 +97,11 @@ export interface ManufacturersPage {
   };
 }
 
-const status = {
-  pavilionHref: '#pavilion',
-  recHref: company.proofLinks.recProgramme,
-  benefits: [] as string[],
-};
+/** Link of the pavilion residency card: the pavilion section of the home page (TODO: /pavilion/ once it exists). */
+const pavilionLink = (locale: Locale) => ({
+  label: ui[locale].hero.pavilionLink,
+  href: '#pavilion',
+});
 
 export const manufacturersPage: Record<Locale, ManufacturersPage> = {
   en: {
@@ -271,28 +265,26 @@ export const manufacturersPage: Record<Locale, ManufacturersPage> = {
         {
           title: 'Distribution',
           text: 'We act as importer and distributor: we bring the product in, hold it at a warehouse in India and sell to distributors, retail chains, projects and through our seller accounts on Amazon.in and Flipkart.',
+          link: null,
         },
         {
           title: 'Representation',
           text: "We represent the manufacturer in India: we run certification, negotiations and promotion, while supplies go under the manufacturer's contracts with Indian buyers.",
+          link: null,
         },
         {
           title: 'Pavilion residency',
           text: 'Product samples at the «Made in Russia» pavilion in Navi Mumbai, showings to Indian distributors and retail chains, tastings and meetings.',
+          link: pavilionLink('en'),
         },
         {
           title: 'Individual services',
           text: 'Any service from the list is available on its own: market research, certification, packaging adaptation, exhibitions, marketplaces, import consulting.',
+          link: null,
         },
       ],
       footnote:
         'Terms depend on the product category, volumes and the split of certification and promotion costs.',
-    },
-    status: {
-      ...status,
-      title: 'The pavilion and operator status',
-      text: 'Rai Family Corp LLP is the operator of the «Made in Russia» National Pavilion in Navi Mumbai, a Russian Export Center project. The pavilion opened on 21 August 2026 and operates permanently.',
-      benefitsTitle: 'What taking part in the pavilion gives',
     },
     notDoing: { title: 'What we do not do', items: [] },
     faq: {
@@ -502,28 +494,26 @@ export const manufacturersPage: Record<Locale, ManufacturersPage> = {
         {
           title: 'Дистрибуция',
           text: 'Мы выступаем импортёром и дистрибьютором: ввозим продукт, храним на складе в Индии и продаём дистрибьюторам, сетям, в проекты и через наши аккаунты продавца на Amazon.in и Flipkart.',
+          link: null,
         },
         {
           title: 'Представительство',
           text: 'Мы представляем производителя в Индии: ведём сертификацию, переговоры и продвижение, а поставки идут по контрактам производителя с индийскими покупателями.',
+          link: null,
         },
         {
           title: 'Резидентство в павильоне',
           text: 'Образцы продукта в павильоне «Сделано в России» в Нави-Мумбаи, показы индийским дистрибьюторам и сетям, дегустации и встречи.',
+          link: pavilionLink('ru'),
         },
         {
           title: 'Отдельные услуги',
           text: 'Любая услуга из перечня доступна отдельно: исследование рынка, сертификация, адаптация упаковки, выставки, маркетплейсы, импорт-консалтинг.',
+          link: null,
         },
       ],
       footnote:
         'Условия зависят от категории продукта, объёмов и распределения расходов на сертификацию и продвижение.',
-    },
-    status: {
-      ...status,
-      title: 'Павильон и статус оператора',
-      text: 'Rai Family Corp LLP - оператор Национального Павильона «Сделано в России» в Нави-Мумбаи, проекта Российского экспортного центра. Павильон открыт 21 августа 2026 года и работает постоянно.',
-      benefitsTitle: 'Что даёт участие в павильоне',
     },
     notDoing: { title: 'Чего мы не делаем', items: [] },
     faq: {

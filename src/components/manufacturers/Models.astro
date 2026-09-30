@@ -3,7 +3,7 @@ import SectionHeading from '@/components/SectionHeading.astro';
 import type { SectionTone } from '@/components/sections/types';
 import { manufacturersPage } from '@/data/manufacturers';
 import type { Locale } from '@/i18n/config';
-import { t } from '@/i18n/utils';
+import { href, t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
@@ -13,6 +13,10 @@ const { locale, tone = 'white' } = Astro.props;
 const data = manufacturersPage[locale].models;
 const copy = t(locale).manufacturersPage;
 const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
+const home = href(locale);
+// Same text link as the B2B card on /about/; it sits above "Terms on request", which stays at the bottom.
+const textLink =
+  'mt-4 inline-flex items-center gap-1.5 self-start text-sm font-bold text-primary hover:text-primary-hover';
 ---
 
 <section class:list={['py-section-sm md:py-section', bg]} aria-labelledby="models-title">
@@ -24,6 +28,23 @@ const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
           <li class="flex flex-col rounded-card border border-line border-t-4 border-t-primary bg-white p-6 shadow-card md:p-7">
             <h3 class="text-h3 font-bold text-ink">{item.title}</h3>
             <p class="mt-3 flex-1 text-base leading-relaxed text-ink-soft">{item.text}</p>
+            {item.link && (
+              <a href={`${home}${item.link.href}`} class={textLink}>
+                {item.link.label}
+                <svg
+                  class="size-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            )}
             <p class="mt-4 text-sm font-semibold text-muted">{copy.termsLabel}</p>
           </li>
         ))

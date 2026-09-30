@@ -194,7 +194,7 @@ interface Copy {
       iecCertificate: string;
     };
   };
-  /** /manufacturers/ page: interface strings; the page copy is in src/data/manufacturers.ts, the services in src/data/services.ts. Reused keys: nav.manufacturers (crumb), hero.pavilionLink, footer.madeInRussia, aboutPage.status.programmeNote, external.newTab. */
+  /** /manufacturers/ page: interface strings; the page copy is in src/data/manufacturers.ts, the services in src/data/services.ts. Reused keys: nav.manufacturers (crumb), hero.pavilionLink (link of the pavilion residency card). */
   manufacturersPage: {
     /** Row labels of a step card. */
     rows: { whatWeDo: string; fromYou: string; result: string; timing: string };
@@ -211,8 +211,6 @@ interface Copy {
     prepare: string;
     /** Bottom line of a cooperation model card. */
     termsLabel: string;
-    /** Text link to the REC programme page. */
-    recLink: string;
   };
 }
 
@@ -480,7 +478,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
       access: 'Market access.',
       prepare: 'What to prepare.',
       termsLabel: 'Terms on request',
-      recLink: 'REC programme page',
     },
   },
 
@@ -747,7 +744,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
       access: 'Маршрут допуска.',
       prepare: 'Что подготовить.',
       termsLabel: 'Условия по запросу',
-      recLink: 'Страница программы РЭЦ',
     },
   },
 };
