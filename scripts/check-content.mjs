@@ -12,6 +12,7 @@ const FILES = [
     .map((n) => join(DIR, n)),
   join(ROOT, 'src/i18n/ui.ts'),
   join(ROOT, 'src/data/services.ts'),
+  join(ROOT, 'src/data/manufacturers.ts'),
 ];
 
 const RULES = [

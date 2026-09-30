@@ -23,6 +23,8 @@ const PAGES = [
   '/ru/',
   '/about/',
   '/ru/about/',
+  '/manufacturers/',
+  '/ru/manufacturers/',
   '/directions/',
   '/directions/d5-additive-and-aqua-stop/',
 ];

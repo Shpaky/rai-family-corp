@@ -1,0 +1,56 @@
+---
+/*
+  "Where to start": the page's only dark surface. Email and WhatsApp links are
+  built with the same helpers and number as the direction pages. No brand ochre
+  on the olive: the buttons sit on light plates (secondary and ghost).
+*/
+import Button from '@/components/Button.astro';
+import { contacts, whatsappUrl, whatsappsFor } from '@/data/contacts';
+import { manufacturersPage } from '@/data/manufacturers';
+import type { Locale } from '@/i18n/config';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const data = manufacturersPage[locale].start;
+const mailto = contacts.email
+  ? `mailto:${contacts.email}?subject=${encodeURIComponent(data.subject)}`
+  : null;
+const whatsappNumber = whatsappsFor(locale)[0];
+const whatsapp = whatsappNumber ? whatsappUrl(whatsappNumber, data.subject) : null;
+---
+
+<section class="bg-dark py-section-sm text-dark-text md:py-section" aria-labelledby="start-title">
+  <div class="container-page grid gap-8 lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <p class="eyebrow text-gold-text">{data.eyebrow}</p>
+      <h2 id="start-title" class="mt-3 text-h2 font-bold text-balance md:text-h1">
+        {data.title}
+      </h2>
+      <p class="mt-4 text-lead text-dark-text/80">{data.text}</p>
+      {
+        (mailto || whatsapp) && (
+          <div class="mt-8 flex flex-wrap gap-3">
+            {mailto && (
+              <Button href={mailto} variant="secondary">
+                {data.emailButton}
+              </Button>
+            )}
+            {whatsapp && (
+              <Button href={whatsapp} variant="ghost" external>
+                {data.whatsappButton}
+              </Button>
+            )}
+          </div>
+        )
+      }
+    </div>
+    <div class="rounded-card bg-white/10 p-6 lg:col-span-6">
+      <h3 class="eyebrow font-sans text-dark-text">{data.firstEmailTitle}</h3>
+      <ol class="mt-4 list-decimal space-y-2 pl-5 text-base leading-relaxed">
+        {data.firstEmail.map((item) => <li>{item}</li>)}
+      </ol>
+    </div>
+  </div>
+</section>
