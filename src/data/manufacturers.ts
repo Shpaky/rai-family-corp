@@ -7,8 +7,9 @@
 
   Empty data renders nothing, never a placeholder: a step without `timing` has
   no Timing row, empty `status.benefits` hides the benefits list, empty
-  `notDoing.items` drops the whole section, a question with `a: null` is not
-  shown and is not in the FAQPage JSON-LD. Pending facts are listed in TODO.md.
+  `notDoing.items` drops the whole section and the promise of it in the page
+  lead (`hero.leadWithNotDoing`), a question with `a: null` is not shown and is
+  not in the FAQPage JSON-LD. Pending facts are listed in TODO.md.
 */
 import type { Locale } from '../i18n/config';
 import { company } from './company';
@@ -37,7 +38,13 @@ export type RequirementCategory =
 
 export interface ManufacturersPage {
   meta: { title: string; description: string };
-  hero: { eyebrow: string; title: string; lead: string };
+  hero: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    /** The lead that also promises "what we do not do"; used only while notDoing.items is not empty. */
+    leadWithNotDoing: string;
+  };
   route: {
     title: string;
     lead: string;
@@ -112,7 +119,9 @@ export const manufacturersPage: Record<Locale, ManufacturersPage> = {
     hero: {
       eyebrow: 'For Russian manufacturers',
       title: 'How we work with manufacturers',
-      lead: 'This page is for the manufacturer and its export manager deciding whether to bring a product to India through the operator of the «Made in Russia» pavilion. It sets out the steps from the factory to the Indian dealer and shelf, what we will need from you, the models we work in, and what we do not do.',
+      lead: 'This page is for the manufacturer and its export manager deciding whether to bring a product to India through the operator of the «Made in Russia» pavilion. It sets out the steps from the factory to the Indian dealer and shelf, what we will need from you, and the models we work in.',
+      leadWithNotDoing:
+        'This page is for the manufacturer and its export manager deciding whether to bring a product to India through the operator of the «Made in Russia» pavilion. It sets out the steps from the factory to the Indian dealer and shelf, what we will need from you, the models we work in, and what we do not do.',
     },
     route: {
       title: 'The route to the shelf',
@@ -341,7 +350,9 @@ export const manufacturersPage: Record<Locale, ManufacturersPage> = {
     hero: {
       eyebrow: 'Российским производителям',
       title: 'Как мы работаем с производителями',
-      lead: 'Эта страница для производителя и его экспортного менеджера, которые решают, выводить ли продукт в Индию через оператора павильона «Сделано в России». Здесь порядок шагов от завода до индийского дилера и полки, что понадобится от вас, в каких моделях мы работаем и чего не делаем.',
+      lead: 'Эта страница для производителя и его экспортного менеджера, которые решают, выводить ли продукт в Индию через оператора павильона «Сделано в России». Здесь порядок шагов от завода до индийского дилера и полки, что понадобится от вас и в каких моделях мы работаем.',
+      leadWithNotDoing:
+        'Эта страница для производителя и его экспортного менеджера, которые решают, выводить ли продукт в Индию через оператора павильона «Сделано в России». Здесь порядок шагов от завода до индийского дилера и полки, что понадобится от вас, в каких моделях мы работаем и чего не делаем.',
     },
     route: {
       title: 'Маршрут до полки',
