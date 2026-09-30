@@ -34,9 +34,9 @@ const path = 'about/';
 const toneAt = (i: number): SectionTone => (i % 2 === 0 ? 'white' : 'surface');
 const bg = (tone: SectionTone) => (tone === 'surface' ? 'bg-surface' : 'bg-white');
 
-const b2bLinks: Record<AboutB2bAudience, string> = {
-  distributors: href(locale, 'directions/'),
-  manufacturers: `${home}#services`,
+const b2bLinks: Record<AboutB2bAudience, { href: string; label: string }> = {
+  distributors: { href: href(locale, 'directions/'), label: page.b2b.links.distributors },
+  manufacturers: { href: href(locale, 'manufacturers/'), label: copy.services.more },
 };
 const b2bOrder = ABOUT_B2B_AUDIENCES[locale];
 
@@ -135,8 +135,8 @@ const textLink =
             {
               b2bOrder.map((key) => (
                 <li>
-                  <a href={b2bLinks[key]} class={textLink}>
-                    {page.b2b.links[key]}
+                  <a href={b2bLinks[key].href} class={textLink}>
+                    {b2bLinks[key].label}
                     <svg
                       class="size-4"
                       viewBox="0 0 24 24"

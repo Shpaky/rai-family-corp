@@ -9,13 +9,12 @@ interface Photo {
   caption: string;
 }
 
-export type PillarKey = 'intelligence' | 'product' | 'development' | 'compliance';
-
 interface Copy {
   meta: { siteName: string; title: string; description: string };
   nav: {
     about: string;
-    services: string;
+    /** Menu item of the services section and crumb of /manufacturers/. */
+    manufacturers: string;
     directions: string;
     pavilion: string;
     contacts: string;
@@ -48,7 +47,8 @@ interface Copy {
     lead: string;
     /** Business model label shown on each card. */
     segments: Record<AudienceKey, 'B2B' | 'B2C'>;
-    items: Record<AudienceKey, { title: string; text: string; cta: string }>;
+    /** `cta` is the link label; manufacturers take services.more (link to /manufacturers/). */
+    items: Record<AudienceKey, { title: string; text: string; cta?: string }>;
   };
   about: {
     eyebrow: string;
@@ -59,11 +59,13 @@ interface Copy {
     /** Button under the leadership cards, leads to /about/. */
     more: string;
   };
+  /** Home Services section; the groups and their services are in src/data/services.ts. */
   services: {
     eyebrow: string;
     title: string;
     lead: string;
-    pillars: Record<PillarKey, { title: string; text: string; items: string[] }>;
+    /** Button under the cards, leads to /manufacturers/; also the manufacturers link on /about/ and in Audiences. */
+    more: string;
   };
   directions: {
     eyebrow: string;
@@ -161,7 +163,8 @@ interface Copy {
       title: string;
       /** Order per locale: ABOUT_B2B_AUDIENCES in src/data/site.ts. */
       audiences: Record<AboutB2bAudience, { title: string; text: string }>;
-      links: Record<AboutB2bAudience, string>;
+      /** Link labels; manufacturers take services.more (link to /manufacturers/). */
+      links: { distributors: string };
     };
     b2c: {
       title: string;
@@ -191,6 +194,26 @@ interface Copy {
       iecCertificate: string;
     };
   };
+  /** /manufacturers/ page: interface strings; the page copy is in src/data/manufacturers.ts, the services in src/data/services.ts. Reused keys: nav.manufacturers (crumb), hero.pavilionLink, footer.madeInRussia, aboutPage.status.programmeNote, external.newTab. */
+  manufacturersPage: {
+    /** Row labels of a step card. */
+    rows: { whatWeDo: string; fromYou: string; result: string; timing: string };
+    /** Summary of the folded rows of a step on phones. */
+    stepMore: string;
+    /** Label of the row with links to the service groups of a step. */
+    servicesLabel: string;
+    /** Summary of the folded part of the common list on phones, template for withCount(). */
+    listMore: string;
+    forAnyProduct: string;
+    byCategory: string;
+    /** Bold lead-ins of the two paragraphs of a category. */
+    access: string;
+    prepare: string;
+    /** Bottom line of a cooperation model card. */
+    termsLabel: string;
+    /** Text link to the REC programme page. */
+    recLink: string;
+  };
 }
 
 export const ui: Record<'en' | 'ru', Copy> = {
@@ -203,7 +226,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     nav: {
       about: 'About',
-      services: 'Services',
+      manufacturers: 'For manufacturers',
       directions: 'Directions',
       pavilion: 'Pavilion',
       contacts: 'Contacts',
@@ -252,7 +275,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
         manufacturers: {
           title: 'Russian manufacturers',
           text: 'Enter the Indian market through the «Made in Russia» pavilion: market assessment, adaptation, certification, import and distribution under one contract.',
-          cta: 'See services',
         },
         distributors: {
           title: 'Indian distributors and retail',
@@ -284,47 +306,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
     services: {
       eyebrow: 'Services',
       title: 'From market research to the shelf',
-      lead: 'Fourteen services, grouped into four stages of bringing a Russian product to India. Each is available separately or as one managed programme.',
-      pillars: {
-        intelligence: {
-          title: 'Market intelligence',
-          text: 'Know the market before committing to it.',
-          items: [
-            'Market monitoring and competitive research',
-            'Market potential assessment',
-            'Price positioning',
-          ],
-        },
-        product: {
-          title: 'Product and brand adaptation',
-          text: 'Make the product fit the Indian shelf and the Indian buyer.',
-          items: [
-            'Product adaptation to the local market',
-            'Packaging and design adaptation',
-            'Branding and positioning',
-          ],
-        },
-        development: {
-          title: 'Business development',
-          text: 'Turn interest into contracts and sales.',
-          items: [
-            'B2B meetings and negotiations',
-            'Tastings and promotional events',
-            'Contract facilitation',
-            'Distribution',
-          ],
-        },
-        compliance: {
-          title: 'Compliance, import and logistics',
-          text: 'Cross the border correctly, the first time.',
-          items: [
-            'Legal support of transactions',
-            'Product certification, permits and licences',
-            'Import consulting: requirements, restrictions, duties and taxes',
-            'Logistics',
-          ],
-        },
-      },
+      lead: 'Eight service areas: from analytics and certification to marketplaces, exhibitions and legal support. Each service is available on its own or as part of a single programme.',
+      more: 'How we work with manufacturers',
     },
     directions: {
       eyebrow: 'Directions',
@@ -456,10 +439,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
             text: 'Direct distribution channels and marketing in India, and the whole route to the shelf: market research, product and packaging adaptation, certification, import procedures, legal support and logistics.',
           },
         },
-        links: {
-          distributors: 'Directions catalogue',
-          manufacturers: 'Services for manufacturers',
-        },
+        links: { distributors: 'Directions catalogue' },
       },
       b2c: {
         title: 'The Rus Store, our online shop',
@@ -490,6 +470,18 @@ export const ui: Record<'en' | 'ru', Copy> = {
         iecCertificate: 'IEC certificate (EN)',
       },
     },
+    manufacturersPage: {
+      rows: { whatWeDo: 'What we do', fromYou: 'From you', result: 'Result', timing: 'Timing' },
+      stepMore: 'More about this step',
+      servicesLabel: 'Services:',
+      listMore: '{count} more {count:item|items}',
+      forAnyProduct: 'For any product',
+      byCategory: 'By category',
+      access: 'Market access.',
+      prepare: 'What to prepare.',
+      termsLabel: 'Terms on request',
+      recLink: 'REC programme page',
+    },
   },
 
   ru: {
@@ -501,7 +493,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     nav: {
       about: 'О компании',
-      services: 'Услуги',
+      manufacturers: 'Производителям',
       directions: 'Направления',
       pavilion: 'Павильон',
       contacts: 'Контакты',
@@ -551,7 +543,6 @@ export const ui: Record<'en' | 'ru', Copy> = {
         manufacturers: {
           title: 'Российские производители',
           text: 'Выход на рынок Индии через павильон «Сделано в России»: оценка рынка, адаптация, сертификация, импорт и дистрибуция по одному договору.',
-          cta: 'Смотреть услуги',
         },
         distributors: {
           title: 'Индийские дистрибьюторы и ритейл',
@@ -583,47 +574,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
     services: {
       eyebrow: 'Услуги',
       title: 'От исследования рынка до полки',
-      lead: 'Четырнадцать услуг, сгруппированных в четыре этапа вывода российского товара в Индию. Каждая доступна отдельно или в составе единой программы.',
-      pillars: {
-        intelligence: {
-          title: 'Аналитика рынка',
-          text: 'Понять рынок до того, как в него вкладываться.',
-          items: [
-            'Мониторинг рынка и конкурентная разведка',
-            'Оценка рыночного потенциала',
-            'Ценовое позиционирование',
-          ],
-        },
-        product: {
-          title: 'Адаптация продукта и бренда',
-          text: 'Сделать продукт подходящим для индийской полки и индийского покупателя.',
-          items: [
-            'Адаптация продукта к локальному рынку',
-            'Адаптация упаковки и дизайна',
-            'Брендинг и позиционирование',
-          ],
-        },
-        development: {
-          title: 'Развитие бизнеса',
-          text: 'Превратить интерес в контракты и продажи.',
-          items: [
-            'Организация B2B-встреч и переговоров',
-            'Дегустации и промо-акции',
-            'Содействие в заключении контрактов',
-            'Дистрибуция',
-          ],
-        },
-        compliance: {
-          title: 'Сертификация, импорт и логистика',
-          text: 'Пересечь границу правильно с первого раза.',
-          items: [
-            'Юридическое сопровождение сделок',
-            'Сертификация продукции, разрешения и лицензии',
-            'Импорт-консалтинг: требования, ограничения, пошлины и налоги',
-            'Логистика',
-          ],
-        },
-      },
+      lead: 'Восемь направлений услуг: от аналитики и сертификации до маркетплейсов, выставок и юридического сопровождения. Каждая услуга доступна отдельно или в составе единой программы.',
+      more: 'Как мы работаем с производителями',
     },
     directions: {
       eyebrow: 'Направления',
@@ -754,7 +706,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
             text: 'Российские бренды и линейки, которые мы ввозим, сертифицируем и распространяем в Индии, с техническими документами на странице каждого направления.',
           },
         },
-        links: { manufacturers: 'Услуги производителям', distributors: 'Каталог направлений' },
+        links: { distributors: 'Каталог направлений' },
       },
       b2c: {
         title: 'The Rus Store, наш интернет-магазин',
@@ -784,6 +736,18 @@ export const ui: Record<'en' | 'ru', Copy> = {
         gstCertificate: 'Свидетельство о регистрации GST (EN)',
         iecCertificate: 'Сертификат IEC (EN)',
       },
+    },
+    manufacturersPage: {
+      rows: { whatWeDo: 'Что делаем', fromYou: 'От вас', result: 'Результат', timing: 'Срок' },
+      stepMore: 'Подробнее о шаге',
+      servicesLabel: 'Услуги:',
+      listMore: 'Ещё {count} {count:пункт|пункта|пунктов}',
+      forAnyProduct: 'Для любого продукта',
+      byCategory: 'По категориям',
+      access: 'Маршрут допуска.',
+      prepare: 'Что подготовить.',
+      termsLabel: 'Условия по запросу',
+      recLink: 'Страница программы РЭЦ',
     },
   },
 };

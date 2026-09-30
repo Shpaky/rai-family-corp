@@ -1,9 +1,15 @@
 ---
+/*
+  Home teaser of the services: the eight groups of src/data/services.ts as
+  compact cards (number, title, one-line summary) and a button to
+  /manufacturers/, where the full list is published. No lists here.
+*/
+import Button from '@/components/Button.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import type { SectionTone } from '@/components/sections/types';
+import { services } from '@/data/services';
 import type { Locale } from '@/i18n/config';
-import type { PillarKey } from '@/i18n/ui';
-import { t } from '@/i18n/utils';
+import { href, t } from '@/i18n/utils';
 
 interface Props {
   locale: Locale;
@@ -13,7 +19,7 @@ interface Props {
 const { locale, tone = 'white' } = Astro.props;
 const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
 const copy = t(locale);
-const order: PillarKey[] = ['intelligence', 'product', 'development', 'compliance'];
+const groups = services[locale].groups;
 ---
 
 <section
@@ -28,44 +34,25 @@ const order: PillarKey[] = ['intelligence', 'product', 'development', 'complianc
       title={copy.services.title}
       lead={copy.services.lead}
     />
-    <ol class="mt-12 grid gap-5 md:grid-cols-2">
+    <ol class="mt-10 grid gap-4 md:mt-12 md:grid-cols-2 md:gap-5 xl:grid-cols-4 xl:gap-4">
       {
-        order.map((key, i) => {
-          const pillar = copy.services.pillars[key];
-          return (
-            <li class="rounded-card border border-line bg-white p-7 shadow-card md:p-9">
-              <div class="flex items-baseline gap-4">
-                <span class="text-h2 font-bold text-gold-deep tabular-nums">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div>
-                  <h3 class="text-h3 font-bold text-ink">{pillar.title}</h3>
-                  <p class="mt-1 text-base text-muted">{pillar.text}</p>
-                </div>
-              </div>
-              <ul class="mt-6 divide-y divide-line border-t border-line">
-                {pillar.items.map((item) => (
-                  <li class="flex items-start gap-3 py-3 text-base leading-snug text-ink-soft">
-                    <svg
-                      class="mt-1 size-4 shrink-0 text-primary"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          );
-        })
+        groups.map((group) => (
+          <li class="rounded-card border border-line bg-white p-6 shadow-card">
+            <div class="flex items-baseline gap-4">
+              <span class="text-h2 font-bold text-gold-deep tabular-nums xl:text-h3">
+                {group.id}
+              </span>
+              <h3 class="text-h3 font-bold text-ink xl:text-lg xl:leading-snug">{group.title}</h3>
+            </div>
+            <p class="mt-3 text-base leading-relaxed text-ink-soft">{group.brief}</p>
+          </li>
+        ))
       }
     </ol>
+    <p class="mt-10">
+      <Button href={href(locale, 'manufacturers/')} variant="secondary">
+        {copy.services.more}
+      </Button>
+    </p>
   </div>
 </section>

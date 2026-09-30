@@ -1,0 +1,64 @@
+---
+/*
+  Full list of services: the eight groups of src/data/services.ts, one <details>
+  per group with the anchor #services-<slug> that the route steps link to.
+  The only place on the site where the services are listed.
+*/
+import Collapsible from '@/components/Collapsible.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import type { SectionTone } from '@/components/sections/types';
+import { manufacturersPage } from '@/data/manufacturers';
+import { services } from '@/data/services';
+import type { Locale } from '@/i18n/config';
+
+interface Props {
+  locale: Locale;
+  tone?: SectionTone;
+}
+const { locale, tone = 'white' } = Astro.props;
+const data = manufacturersPage[locale].catalog;
+const groups = services[locale].groups;
+const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
+const check = 'M20 6 9 17l-5-5';
+---
+
+<section class:list={['py-section-sm md:py-section', bg]} aria-labelledby="catalog-title">
+  <div class="container-page">
+    <SectionHeading id="catalog-title" title={data.title} lead={data.lead} />
+    <div class="mt-8 flex flex-col gap-2.5 md:mt-12">
+      {
+        groups.map((group, i) => (
+          <Collapsible
+            id={`services-${group.slug}`}
+            summary={group.title}
+            number={group.id}
+            variant="card"
+            open={i === 0}
+            collapseOnMobile={i === 0}
+            class="scroll-mt-20"
+          >
+            <ul class="divide-y divide-line border-t border-line">
+              {group.items.map((item) => (
+                <li class="flex items-start gap-3 py-3 text-base leading-snug text-ink-soft">
+                  <svg
+                    class="mt-1 size-4 shrink-0 text-primary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d={check} />
+                  </svg>
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+          </Collapsible>
+        ))
+      }
+    </div>
+  </div>
+</section>

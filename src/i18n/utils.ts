@@ -1,7 +1,7 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { DEFAULT_LOCALE, LOCALES, isLocale, type Locale } from './config';
 import { ui } from './ui';
-import { HOME_SECTIONS, SECTION_PAGES } from '../data/site';
+import { HOME_SECTIONS, SECTION_NAV, SECTION_PAGES } from '../data/site';
 
 /** Locale from a `[...locale]` rest param (undefined → default). */
 export function localeFromParam(param: string | undefined): Locale {
@@ -45,17 +45,18 @@ export function withCount(template: string, count: number, locale: Locale): stri
 }
 
 export interface NavItem {
-  key: 'directions' | 'services' | 'pavilion' | 'about' | 'contacts';
+  /** Key of the label in `nav` (SECTION_NAV in src/data/site.ts). */
+  key: (typeof SECTION_NAV)[keyof typeof SECTION_NAV];
   label: string;
   href: string;
-  /** Site path of the item's own page (directions/, about/), for the active state in the menus. */
+  /** Site path of the item's own page (directions/, manufacturers/, about/), for the active state in the menus. */
   page?: string;
 }
 
 /**
  * Menu items in the order of the home sections of the locale (src/data/site.ts).
- * Sections without a `nav.*` label (audiences) are skipped; sections listed in
- * SECTION_PAGES (directions, about) link to their page, the rest to home anchors.
+ * Sections without a menu item (audiences) are skipped; sections listed in
+ * SECTION_PAGES (directions, services, about) link to their page, the rest to home anchors.
  */
 export function navItems(locale: Locale): NavItem[] {
   const nav = ui[locale].nav;
@@ -64,8 +65,8 @@ export function navItems(locale: Locale): NavItem[] {
     if (key === 'audiences') return [];
     return [
       {
-        key,
-        label: nav[key],
+        key: SECTION_NAV[key],
+        label: nav[SECTION_NAV[key]],
         href: SECTION_PAGES[key] ? href(locale, SECTION_PAGES[key]) : `${home}#${key}`,
         page: SECTION_PAGES[key],
       },

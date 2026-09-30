@@ -1,0 +1,81 @@
+---
+import Collapsible from '@/components/Collapsible.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import type { SectionTone } from '@/components/sections/types';
+import { manufacturersPage } from '@/data/manufacturers';
+import { serviceGroup } from '@/data/services';
+import type { Locale } from '@/i18n/config';
+import { t } from '@/i18n/utils';
+
+interface Props {
+  locale: Locale;
+  tone?: SectionTone;
+}
+const { locale, tone = 'white' } = Astro.props;
+const data = manufacturersPage[locale].route;
+const copy = t(locale).manufacturersPage;
+const labels = copy.rows;
+const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
+
+// "What we do" is always visible; the rest folds on phones. Timing only when set.
+const folded = (step: (typeof data.steps)[number]) =>
+  [
+    [labels.fromYou, step.fromYou],
+    [labels.result, step.result],
+    [labels.timing, step.timing],
+  ].filter((row): row is [string, string] => Boolean(row[1]));
+
+// Label before the text on phones, above it from md, in a 104 px column on the left from lg.
+const row = 'border-t border-line py-3 lg:flex lg:gap-4';
+const dt = 'eyebrow inline text-muted md:block lg:w-26 lg:shrink-0 lg:pt-1';
+const dd = 'inline text-base leading-relaxed text-ink-soft md:mt-1 md:block lg:mt-0 lg:flex-1';
+
+// Links to the groups of the step in the list below. Built as one string: markup
+// formatting would put a space before each comma.
+const link =
+  'font-semibold text-primary underline-offset-4 hover:text-primary-hover hover:underline';
+const groupLinks = (step: (typeof data.steps)[number]) =>
+  step.serviceGroups
+    .map(
+      (slug) =>
+        `<a href="#services-${slug}" class="${link}">${serviceGroup(locale, slug).title}</a>`,
+    )
+    .join(', ');
+---
+
+<section class:list={['py-section-sm md:py-section', bg]} aria-labelledby="route-title">
+  <div class="container-page">
+    <SectionHeading id="route-title" title={data.title} lead={data.lead} />
+    <ol class="mt-8 grid gap-4 md:mt-12 md:grid-cols-2 md:gap-5">
+      {
+        data.steps.map((step) => (
+          <li class="rounded-card border border-line bg-white p-6 shadow-card md:p-7">
+            <div class="flex items-baseline gap-4">
+              <span class="text-h2 font-bold text-gold-deep tabular-nums">{step.num}</span>
+              <h3 class="text-h3 font-bold text-ink">{step.title}</h3>
+            </div>
+            <dl class="mt-3 md:mt-6">
+              <div class={row}>
+                <dt class={dt}>{labels.whatWeDo}</dt> <dd class={dd}>{step.whatWeDo}</dd>
+              </div>
+            </dl>
+            <Collapsible summary={copy.stepMore} open collapseOnMobile>
+              <dl>
+                {folded(step).map(([label, value]) => (
+                  <div class={row}>
+                    <dt class={dt}>{label}</dt> <dd class={dd}>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </Collapsible>
+            <p class:list={[row, 'pb-0']}>
+              <span class={dt}>{copy.servicesLabel}</span>
+              <span class={dd} set:html={groupLinks(step)} />
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="mt-8 max-w-3xl text-sm leading-relaxed text-muted">{data.footnote}</p>
+  </div>
+</section>

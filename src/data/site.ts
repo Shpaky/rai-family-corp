@@ -29,8 +29,21 @@ export const AUDIENCE_ORDER: Record<Locale, AudienceKey[]> = {
 /** Sections with a page of their own: the menu links there instead of to the home anchor. */
 export const SECTION_PAGES: Partial<Record<HomeSectionKey, string>> = {
   directions: 'directions/',
+  services: 'manufacturers/',
   about: 'about/',
 };
+
+/**
+ * Menu item of each home section: the key of its label in `nav` (src/i18n/ui.ts).
+ * The services section is the "For manufacturers" item; audiences has no item.
+ */
+export const SECTION_NAV = {
+  directions: 'directions',
+  services: 'manufacturers',
+  pavilion: 'pavilion',
+  about: 'about',
+  contacts: 'contacts',
+} as const satisfies Partial<Record<HomeSectionKey, string>>;
 
 /*
   /about/, B2B block: the two audiences and their links, the locale's primary
