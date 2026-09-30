@@ -27,14 +27,12 @@ const check = 'M20 6 9 17l-5-5';
     <SectionHeading id="catalog-title" title={data.title} lead={data.lead} />
     <div class="mt-8 flex flex-col gap-2.5 md:mt-12">
       {
-        groups.map((group, i) => (
+        groups.map((group) => (
           <Collapsible
             id={`services-${group.slug}`}
             summary={group.title}
             number={group.id}
             variant="card"
-            open={i === 0}
-            collapseOnMobile={i === 0}
             class="scroll-mt-20"
           >
             <ul class="divide-y divide-line border-t border-line">
