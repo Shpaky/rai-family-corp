@@ -17,8 +17,8 @@ const bg = tone === 'surface' ? 'bg-surface' : 'bg-white';
 const copy = t(locale);
 const home = href(locale);
 
-const targets: Record<AudienceKey, { href: string; external?: boolean }> = {
-  manufacturers: { href: `${home}#services` },
+const targets: Record<AudienceKey, { href: string; label?: string; external?: boolean }> = {
+  manufacturers: { href: href(locale, 'manufacturers/'), label: copy.services.more },
   distributors: { href: `${home}#directions` },
   institutions: { href: `${home}#pavilion` },
   consumers: { href: company.store.url, external: true },
@@ -98,7 +98,7 @@ const icons: Record<AudienceKey, string> = {
                 rel={targets[key].external ? 'noopener' : undefined}
                 class="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-primary-hover"
               >
-                {item.cta}
+                {targets[key].label ?? item.cta}
                 <svg
                   class="size-4 motion-safe:transition-transform motion-safe:group-hover:translate-x-0.5"
                   viewBox="0 0 24 24"
