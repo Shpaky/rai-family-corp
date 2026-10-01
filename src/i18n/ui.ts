@@ -30,8 +30,10 @@ interface Copy {
     eyebrow: string;
     title: string;
     lead: string;
-    ctaPrimary: string;
-    ctaSecondary: string;
+    /** Button labels; which two are shown, in which order, is HERO_ACTIONS in src/data/site.ts. */
+    contact: string;
+    directions: string;
+    manufacturers: string;
     pavilionLink: string;
     /** Pavilion card: what the pavilion covers. */
     cardTitle: string;
@@ -240,8 +242,9 @@ export const ui: Record<'en' | 'ru', Copy> = {
       eyebrow: 'Rai Family Corp LLP · India',
       title: 'Russian products and technologies for India. One operator, the whole route.',
       lead: 'Rai Family Corp LLP gives Russian manufacturers direct distribution channels and marketing in India, and handles the full cycle of import, certification and logistics.',
-      ctaPrimary: 'Contact us',
-      ctaSecondary: 'Explore directions',
+      contact: 'Contact us',
+      directions: 'Explore directions',
+      manufacturers: 'Bring your product to India',
       pavilionLink: 'About the pavilion',
       cardTitle: 'From industrial technologies and agriculture to consumer goods.',
     },
@@ -506,8 +509,9 @@ export const ui: Record<'en' | 'ru', Copy> = {
       eyebrow: 'Rai Family Corp LLP · Индия',
       title: 'Российские товары и технологии для Индии. Один оператор, весь путь.',
       lead: 'Rai Family Corp LLP даёт российским производителям прямые каналы дистрибуции и маркетинговое продвижение в Индии и берёт на себя полный цикл импорта, сертификации и логистики.',
-      ctaPrimary: 'Связаться',
-      ctaSecondary: 'Смотреть направления',
+      contact: 'Связаться',
+      directions: 'Смотреть направления',
+      manufacturers: 'Вывести продукт в Индию',
       pavilionLink: 'О павильоне',
       cardTitle:
         'От промышленных технологий и сельского хозяйства до товаров народного потребления.',

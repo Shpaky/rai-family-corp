@@ -46,6 +46,30 @@ export const SECTION_NAV = {
 } as const satisfies Partial<Record<HomeSectionKey, string>>;
 
 /*
+  Hero buttons of the home page, per locale. The first button speaks to the
+  locale's primary reader (RU: the Russian manufacturer, to /ru/manufacturers/;
+  EN: the Indian buyer, to the directions feed), "Contact us" is second in both.
+  `key` names the label in ui.hero; `path` is a home anchor or a page path,
+  resolved with the locale and base by Hero.astro. Two buttons, never a third.
+*/
+export type HeroActionKey = 'manufacturers' | 'directions' | 'contact';
+export interface HeroAction {
+  key: HeroActionKey;
+  path: string;
+  variant: 'primary' | 'secondary';
+}
+export const HERO_ACTIONS: Record<Locale, HeroAction[]> = {
+  en: [
+    { key: 'directions', path: '#directions', variant: 'primary' },
+    { key: 'contact', path: '#contacts', variant: 'secondary' },
+  ],
+  ru: [
+    { key: 'manufacturers', path: 'manufacturers/', variant: 'primary' },
+    { key: 'contact', path: '#contacts', variant: 'secondary' },
+  ],
+};
+
+/*
   /about/, B2B block: the two audiences and their links, the locale's primary
   reader first (EN: Indian distributors and institutions, RU: Russian manufacturers).
 */
@@ -89,4 +113,8 @@ for (const [locale, order] of Object.entries(AUDIENCE_ORDER)) {
       `AUDIENCE_ORDER.${locale}: expected each of ${AUDIENCE_KEYS.join(', ')} exactly once, got ${order.join(', ')}`,
     );
   }
+}
+for (const [locale, actions] of Object.entries(HERO_ACTIONS)) {
+  if (actions.length !== 2 || actions[0].variant !== 'primary' || actions[1].key !== 'contact')
+    throw new Error(`HERO_ACTIONS.${locale}: expected a primary button, then the contact button`);
 }
