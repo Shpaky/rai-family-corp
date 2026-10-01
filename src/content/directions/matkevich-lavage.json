@@ -9,7 +9,7 @@
   "tags": ["wellness", "enteral-solution", "detox", "patented"],
   "featured": false,
   "manufacturer": {
-    "name": "NMC Lavage Global LLC",
+    "name": "Scientific and Methodological Center \"Lavage Global\" LLC",
     "city": null,
     "founded": null
   },
@@ -28,9 +28,9 @@
       "title": "Matkevich Lavage enteral solution concentrates",
       "summary": "A kit of concentrates for preparing the enteral solution used in the gastrointestinal tract lavage procedure by the Matkevich method. Not a medicinal product; patented in Russia, India and the USA. The direction is in preparation: registration in India has not been completed yet.",
       "body": [
-        "Matkevich Lavage is a technology of intestinal lavage developed by V. A. Matkevich. It is based on a special enteral solution containing 8 macronutrients and 5 carboxylic acids; the kit supplied by the manufacturer consists of concentrates for preparing this solution. According to the developer, the solution and the concentrates are not classified as medicinal products.",
-        "The procedure, as described by the developer: an adult takes the solution on an empty stomach in portions of 150-200 ml at intervals of 5-7 minutes. The process lasts from 1.5 to 3 hours and ends once the lavage waters become clear. No special exercises are required, the person monitors the procedure themselves, and within 30-40 minutes after completion can return to the normal daily routine. If desired, a specialist's consultation on the suitability and technique of the procedure can be obtained.",
-        "Legal status according to the developer: in the Russian Federation the solution has a declaration and a certificate of conformity as a non-alcoholic beverage; in the Republic of Armenia a state registration certificate has been issued classifying it as a dietary supplement to replenish the body's losses of water and macronutrients. The acid-mineral composition and the enteral solution are protected by patents RU 2713175, IN 418946 and US 12 246 035 B2. Samples of the concentrates are displayed in the «Made in Russia» National Pavilion in Navi Mumbai. Registration of the product in India has not been completed yet, so the direction is shown as coming."
+        "Matkevich Lavage is a technology of intestinal lavage developed by V. A. Matkevich. It is based on a special enteral solution containing 8 macronutrients and 5 carboxylic acids; the kit supplied by the manufacturer consists of concentrates for preparing this solution. According to the abstract of US patent 12,246,035 B2, the composition and the solution contain sodium phosphates (mono-, di- or tri-substituted) or potassium phosphates (mono- or di-substituted), sodium chloride, sodium acetate, potassium chloride, calcium chloride, magnesium sulphate, citric acid and water; the osmolarity of the solution is preferably 280-310 mOsm/L, and the solution may further contain aminopolycarboxylic and short-chain carboxylic (fatty) acids to give a pH of 4.61-5.8. According to the developer, the solution contains the macroelements potassium, sodium, calcium, magnesium, phosphorus, carbon, chlorine and sulfur and no dyes, allergens, sorbitol or artificial sweeteners. According to the developer, the solution and the concentrates are not classified as medicinal products.",
+        "The procedure, as described by the developer: an adult takes the solution on an empty stomach in portions of 150-200 ml at intervals of 5-7 minutes. By the developer’s description, bowel emptying begins 0.5-1.5 hours after the first portion. The process lasts from 1.5 to 3 hours and ends once the lavage waters become clear. No special exercises are required, the person monitors the procedure themselves, and within 30-40 minutes after completion can return to the normal daily routine. If desired, a specialist's consultation on the suitability and technique of the procedure can be obtained.",
+        "Legal status according to the developer: in the Russian Federation the solution has a declaration and a certificate of conformity as a non-alcoholic beverage; in the Republic of Armenia a state registration certificate has been issued classifying it as a dietary supplement to replenish the body's losses of water and macronutrients. The acid-mineral composition and the enteral solution are protected by patents RU 2713175 (priority 4 February 2019, registered 4 February 2020, valid to 4 February 2039), IN 418946 (filed 27 December 2019, granted 23 January 2023) and US 12,246,035 B2 (granted 11 March 2025, PCT/RU2019/001036). Samples of the concentrates are displayed in the «Made in Russia» National Pavilion in Navi Mumbai. Registration of the product in India has not been completed yet, so the direction is shown as coming."
       ],
       "products": [
         {
@@ -41,7 +41,12 @@
             "Portions of 150-200 ml at intervals of 5-7 minutes",
             "Procedure duration 1.5 to 3 hours",
             "Not a medicinal product: non-alcoholic beverage in Russia, dietary supplement in Armenia",
-            "Patents RU 2713175, IN 418946, US 12 246 035 B2"
+            "Patents RU 2713175, IN 418946, US 12,246,035 B2",
+            "Solution composition per US patent 12,246,035 B2: sodium or potassium phosphates, sodium, potassium and calcium chlorides, sodium acetate, magnesium sulphate, citric acid, water",
+            "Osmolarity 280-310 mOsm/L (preferred range per the patent)",
+            "pH 4.61-5.8 (per the patent)",
+            "Macroelements K, Na, Ca, Mg, P, C, Cl, S (developer’s data)",
+            "No dyes, allergens, sorbitol or artificial sweeteners (developer’s data)"
           ]
         }
       ],
@@ -52,16 +57,17 @@
         "Medical institutions, after registration in India"
       ],
       "facts": [
-        "Indian patent No. 418946 granted 23 January 2023 for 20 years from the filing date 27 December 2019",
-        "Russian patent No. 2713175",
-        "US patent No. 12 246 035 B2",
+        "Indian patent No. 418946: application of 27 December 2019, granted 23 January 2023",
+        "Russian patent No. 2713175: priority 4 February 2019, registered 4 February 2020, valid to 4 February 2039",
+        "US patent No. 12,246,035 B2: granted 11 March 2025, PCT/RU2019/001036",
+        "Solution osmolarity 280-310 mOsm/L, pH 4.61-5.8 (US patent)",
         "Certified in Russia as a non-alcoholic beverage: declaration and certificate of conformity",
         "Registered in Armenia as a dietary supplement",
         "Portions of 150-200 ml, procedure of 1.5-3 hours according to the developer"
       ],
       "logistics": null,
       "keyFigures": ["Patents RU, IN, US", "8 macronutrients, 5 acids"],
-      "manufacturerNote": "Serial producer of the enteral solution concentrates: NMC Lavage Global LLC. Developer of the technology and patent holder: V. A. Matkevich. Packaging under the Detoxcenter mark.",
+      "manufacturerNote": "Serial producer of the enteral solution concentrates: Scientific and Methodological Center \"Lavage Global\" LLC. Developer of the technology and patent holder: V. A. Matkevich. The method was developed at the Toxicology Department of the Sklifosovsky Research Institute of Emergency Medicine (Moscow) in 1983, according to the developer. Packaging under the Detoxcenter mark.",
       "howToBuy": {
         "dispatch": null,
         "moq": null,
@@ -80,13 +86,13 @@
         },
         {
           "title": "«Made in Russia» National Pavilion, Navi Mumbai",
-          "text": "Samples of the concentrates produced by NMC Lavage Global LLC are displayed in the pavilion."
+          "text": "Samples of the concentrates produced by Scientific and Methodological Center \"Lavage Global\" LLC are displayed in the pavilion."
         }
       ],
       "faq": [
         {
           "q": "What is in the kit and how is the solution prepared?",
-          "a": "The kit contains concentrates for preparing the enteral solution, which according to the developer includes 8 macronutrients and 5 carboxylic acids. The exact composition, the number of portions per kit and the preparation instructions have been requested from the manufacturer and will be added when the technical data sheet is received."
+          "a": "The kit contains concentrates for preparing the enteral solution, which according to the developer includes 8 macronutrients and 5 carboxylic acids. By the abstract of US patent 12,246,035 B2 the composition contains sodium or potassium phosphates, sodium chloride, sodium acetate, potassium chloride, calcium chloride, magnesium sulphate, citric acid and water, with aminopolycarboxylic and short-chain carboxylic acids to give a pH of 4.61-5.8; the preferred osmolarity of the solution is 280-310 mOsm/L. The developer states that the solution contains no dyes, allergens, sorbitol or artificial sweeteners. The exact composition, the number of portions per kit and the preparation instructions have been requested from the manufacturer and will be added when the technical data sheet is received."
         },
         {
           "q": "How does the procedure go?",
@@ -98,7 +104,7 @@
         },
         {
           "q": "Which patents protect the product?",
-          "a": "Three patents for the acid-mineral composition and the enteral solution: Russia No. 2713175, India No. 418946 (granted 23 January 2023, application of 27 December 2019, 20-year term) and the USA No. 12 246 035 B2. The Indian patent certificate is available on this page."
+          "a": "Three patents: Russian patent No. 2713175 «Acid-mineral composition and V. A. Matkevich enteral solution for lavage of the gastrointestinal tract and/or correction of homeostasis disorders» (priority 4 February 2019, registered 4 February 2020, valid to 4 February 2039), Indian patent No. 418946 «Acid-mineral composition for an enteral solution» (application of 27 December 2019, granted 23 January 2023 for 20 years) and US patent No. 12,246,035 B2 «Acid-mineral composition for an enteral solution» (granted 11 March 2025, PCT/RU2019/001036, WO2020/162788). The Indian patent certificate is available on this page."
         },
         {
           "q": "When will it be available in India?",
@@ -110,9 +116,9 @@
       "title": "Концентраты энтерального раствора «Лаваж Маткевича»",
       "summary": "Комплект концентратов для приготовления энтерального раствора для процедуры промывания желудочно-кишечного тракта по методу Маткевича. Не лекарственное средство; запатентован в России, Индии и США. Направление в подготовке: регистрация в Индии ещё не пройдена.",
       "body": [
-        "«Лаваж Маткевича» - технология кишечного лаважа, разработанная В. А. Маткевичем. В её основе специальный энтеральный раствор из 8 макронутриентов и 5 карбоновых кислот; производитель поставляет комплект концентратов для приготовления этого раствора. По данным разработчика раствор и концентраты не относятся к лекарственным средствам.",
-        "Процедура по описанию разработчика: взрослый принимает раствор натощак порциями 150-200 мл с интервалом 5-7 минут. Процесс длится от 1,5 до 3 часов и заканчивается, когда промывные воды становятся прозрачными. Специальные упражнения не нужны, человек контролирует процедуру сам, а через 30-40 минут после завершения возвращается к обычному режиму дня. При желании можно получить консультацию специалиста о целесообразности и технике процедуры.",
-        "Правовой статус по данным разработчика: в Российской Федерации на раствор оформлены декларация и сертификат соответствия как на безалкогольный напиток; в Республике Армения выдано свидетельство о государственной регистрации как биологически активной добавки для восполнения потерь воды и макронутриентов. Композиция кислот и минералов для раствора и сам энтеральный раствор защищены патентами RU 2713175, IN 418946 и US 12 246 035 B2. Образцы концентратов выставлены в Национальном Павильоне «Сделано в России» в Нави-Мумбаи. Регистрация продукта в Индии ещё не пройдена, поэтому направление показано как готовящееся."
+        "«Лаваж Маткевича» - технология кишечного лаважа, разработанная В. А. Маткевичем. В её основе специальный энтеральный раствор из 8 макронутриентов и 5 карбоновых кислот; производитель поставляет комплект концентратов для приготовления этого раствора. По реферату патента США US 12 246 035 B2 композиция и раствор содержат фосфаты натрия (одно-, двух- или трёхзамещённые) или калия (одно- или двухзамещённые), хлорид натрия, ацетат натрия, хлорид калия, хлорид кальция, сульфат магния, лимонную кислоту и воду; осмолярность раствора предпочтительно 280-310 мОсм/л, дополнительно раствор может содержать аминополикарбоновые и короткоцепочечные карбоновые (жирные) кислоты до pH 4,61-5,8. По данным разработчика раствор содержит макроэлементы калий, натрий, кальций, магний, фосфор, углерод, хлор и серу и не содержит красителей, аллергенов, сорбита и искусственных подсластителей. По данным разработчика раствор и концентраты не относятся к лекарственным средствам.",
+        "Процедура по описанию разработчика: взрослый принимает раствор натощак порциями 150-200 мл с интервалом 5-7 минут. По описанию разработчика опорожнение кишечника начинается через 0,5-1,5 часа после первой порции. Процесс длится от 1,5 до 3 часов и заканчивается, когда промывные воды становятся прозрачными. Специальные упражнения не нужны, человек контролирует процедуру сам, а через 30-40 минут после завершения возвращается к обычному режиму дня. При желании можно получить консультацию специалиста о целесообразности и технике процедуры.",
+        "Правовой статус по данным разработчика: в Российской Федерации на раствор оформлены декларация и сертификат соответствия как на безалкогольный напиток; в Республике Армения выдано свидетельство о государственной регистрации как биологически активной добавки для восполнения потерь воды и макронутриентов. Композиция кислот и минералов для раствора и сам энтеральный раствор защищены патентами RU 2713175 (приоритет 04.02.2019, регистрация 04.02.2020, действует до 04.02.2039), IN 418946 (заявка от 27.12.2019, выдан 23.01.2023) и US 12 246 035 B2 (выдан 11.03.2025, PCT/RU2019/001036). Образцы концентратов выставлены в Национальном Павильоне «Сделано в России» в Нави-Мумбаи. Регистрация продукта в Индии ещё не пройдена, поэтому направление показано как готовящееся."
       ],
       "products": [
         {
@@ -123,7 +129,12 @@
             "Порции 150-200 мл с интервалом 5-7 минут",
             "Продолжительность процедуры от 1,5 до 3 часов",
             "Не лекарственное средство: безалкогольный напиток в РФ, биологически активная добавка в Армении",
-            "Патенты RU 2713175, IN 418946, US 12 246 035 B2"
+            "Патенты RU 2713175, IN 418946, US 12 246 035 B2",
+            "Состав раствора по патенту US 12 246 035 B2: фосфаты натрия или калия, хлориды натрия, калия и кальция, ацетат натрия, сульфат магния, лимонная кислота, вода",
+            "Осмолярность 280-310 мОсм/л (предпочтительный диапазон по патенту)",
+            "pH 4,61-5,8 (по патенту)",
+            "Макроэлементы K, Na, Ca, Mg, P, C, Cl, S (по данным разработчика)",
+            "Без красителей, аллергенов, сорбита и искусственных подсластителей (по данным разработчика)"
           ]
         }
       ],
@@ -134,16 +145,17 @@
         "Медицинские учреждения после регистрации в Индии"
       ],
       "facts": [
-        "Патент Индии № 418946 выдан 23.01.2023 на 20 лет с даты подачи заявки 27.12.2019",
-        "Патент РФ № 2713175",
-        "Патент США № 12 246 035 B2",
+        "Патент Индии № 418946: заявка от 27.12.2019, выдан 23.01.2023",
+        "Патент РФ № 2713175: приоритет 04.02.2019, регистрация 04.02.2020, действует до 04.02.2039",
+        "Патент США № 12 246 035 B2: выдан 11.03.2025, PCT/RU2019/001036",
+        "Осмолярность раствора 280-310 мОсм/л, pH 4,61-5,8 (по патенту США)",
         "В РФ сертифицирован как безалкогольный напиток: декларация и сертификат соответствия",
         "В Армении зарегистрирован как биологически активная добавка",
         "Порции 150-200 мл, процедура 1,5-3 часа по данным разработчика"
       ],
       "logistics": null,
       "keyFigures": ["Патенты РФ, Индия, США", "8 макронутриентов, 5 кислот"],
-      "manufacturerNote": "Серийный производитель концентратов энтерального раствора: ООО «НМЦ «Лаваж Глобал»». Разработчик технологии и патентообладатель: В. А. Маткевич. Упаковка под маркой «Детоксцентр».",
+      "manufacturerNote": "Серийный производитель концентратов энтерального раствора: ООО «НМЦ «Лаваж Глобал»». Разработчик технологии и патентообладатель: В. А. Маткевич. Метод разработан в отделении токсикологии НИИ скорой помощи им. Н. В. Склифосовского (Москва) в 1983 году, по данным разработчика. Упаковка под маркой «Детоксцентр».",
       "howToBuy": {
         "dispatch": null,
         "moq": null,
@@ -168,7 +180,7 @@
       "faq": [
         {
           "q": "Что входит в комплект и как готовится раствор?",
-          "a": "В комплекте концентраты для приготовления энтерального раствора, который по данным разработчика содержит 8 макронутриентов и 5 карбоновых кислот. Точный состав, число порций в комплекте и способ приготовления запрошены у производителя и будут добавлены по получении технического листа."
+          "a": "В комплекте концентраты для приготовления энтерального раствора, который по данным разработчика содержит 8 макронутриентов и 5 карбоновых кислот. По реферату патента США US 12 246 035 B2 композиция содержит фосфаты натрия или калия, хлорид натрия, ацетат натрия, хлорид калия, хлорид кальция, сульфат магния, лимонную кислоту и воду, с аминополикарбоновыми и короткоцепочечными карбоновыми кислотами до pH 4,61-5,8; предпочтительная осмолярность раствора 280-310 мОсм/л. По данным разработчика раствор не содержит красителей, аллергенов, сорбита и искусственных подсластителей. Точный состав, число порций в комплекте и способ приготовления запрошены у производителя и будут добавлены по получении технического листа."
         },
         {
           "q": "Как проходит процедура?",
@@ -180,7 +192,7 @@
         },
         {
           "q": "Какие патенты есть у продукта?",
-          "a": "Три патента на композицию кислот и минералов и энтеральный раствор: Россия № 2713175, Индия № 418946 (выдан 23.01.2023 по заявке от 27.12.2019, срок 20 лет) и США № 12 246 035 B2. Сертификат индийского патента доступен на этой странице."
+          "a": "Три патента: патент РФ № 2713175 «Кислотно-минеральная композиция и энтеральный раствор В. А. Маткевича для лаважа желудочно-кишечного тракта и/или коррекции нарушений гомеостаза» (приоритет 04.02.2019, регистрация 04.02.2020, действует до 04.02.2039), патент Индии № 418946 «Acid-mineral composition for an enteral solution» (заявка от 27.12.2019, выдан 23.01.2023 на 20 лет) и патент США № 12 246 035 B2 «Acid-mineral composition for an enteral solution» (выдан 11.03.2025, PCT/RU2019/001036, WO2020/162788). Сертификат индийского патента доступен на этой странице."
         },
         {
           "q": "Когда продукт будет доступен в Индии?",
