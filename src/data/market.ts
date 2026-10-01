@@ -24,11 +24,16 @@ export interface MarketTile extends MarketSource {
   label: string;
 }
 
+export interface MarketLine extends MarketSource {
+  /** One sentence; the source and year are already in it, in brackets. */
+  text: string;
+}
+
 export interface Market {
   /** Four tiles under the page lead, in this order. */
   tiles: MarketTile[];
-  /** One sentence under the tiles; its figures name the source and year inline. */
-  after: { text: string; sources: MarketSource[] };
+  /** Two sentences under the tiles, each its own paragraph, in this order. */
+  after: MarketLine[];
 }
 
 const UN_WPP = 'https://population.un.org/wpp/';
@@ -62,20 +67,27 @@ export const market: Record<Locale, Market> = {
         url: MOC_TRADE,
       },
       {
-        value: '958 m',
-        label: 'internet users, 230 m of them shop online',
+        value: '715 m',
+        label: 'people in the middle class by 2031',
+        source: 'PRICE',
+        asOf: '2021',
+        url: PRICE_MIDDLE_CLASS,
+      },
+    ],
+    after: [
+      {
+        text: 'A young country: median age 29 (UN, 2024).',
+        source: 'UN',
+        asOf: '2024',
+        url: UN_WPP,
+      },
+      {
+        text: 'A digital country: 958 million internet users (IAMAI and Kantar, 2025).',
         source: 'IAMAI and Kantar',
         asOf: '2025',
         url: IAMAI,
       },
     ],
-    after: {
-      text: 'A young country with a growing middle class: median age 29 (UN, 2024); 715 million people in the middle class by 2031, as projected by PRICE.',
-      sources: [
-        { source: 'UN', asOf: '2024', url: UN_WPP },
-        { source: 'PRICE', asOf: '2021', url: PRICE_MIDDLE_CLASS },
-      ],
-    },
   },
   ru: {
     tiles: [
@@ -101,28 +113,35 @@ export const market: Record<Locale, Market> = {
         url: MOC_TRADE,
       },
       {
-        value: '958 млн',
-        label: 'интернет-пользователей, 230 млн из них покупают онлайн',
+        value: '715 млн',
+        label: 'человек в среднем классе к 2031 году',
+        source: 'PRICE',
+        asOf: '2021',
+        url: PRICE_MIDDLE_CLASS,
+      },
+    ],
+    after: [
+      {
+        text: 'Молодая страна: медианный возраст 29 лет (ООН, 2024).',
+        source: 'ООН',
+        asOf: '2024',
+        url: UN_WPP,
+      },
+      {
+        text: 'Цифровая страна: 958 млн интернет-пользователей (IAMAI и Kantar, 2025).',
         source: 'IAMAI и Kantar',
         asOf: '2025',
         url: IAMAI,
       },
     ],
-    after: {
-      text: 'Молодая страна с растущим средним классом: медианный возраст 29 лет (ООН, 2024); к 2031 году в среднем классе будет 715 млн человек по прогнозу PRICE.',
-      sources: [
-        { source: 'ООН', asOf: '2024', url: UN_WPP },
-        { source: 'PRICE', asOf: '2021', url: PRICE_MIDDLE_CLASS },
-      ],
-    },
   },
 };
 
 // Build-time validation: a figure without a source, a year or a URL fails `npm run build`.
 for (const [locale, data] of Object.entries(market)) {
-  if (data.tiles.length !== 4)
-    throw new Error(`market.${locale}: expected 4 tiles, got ${data.tiles.length}`);
-  const all: MarketSource[] = [...data.tiles, ...data.after.sources];
+  if (data.tiles.length !== 4 || data.after.length !== 2)
+    throw new Error(`market.${locale}: expected 4 tiles and 2 lines under them`);
+  const all: MarketSource[] = [...data.tiles, ...data.after];
   for (const item of all) {
     if (!item.source || !item.asOf || !/^https:\/\//.test(item.url))
       throw new Error(`market.${locale}: every figure needs source, asOf and an https URL`);
