@@ -1,10 +1,10 @@
 ---
 /*
   Page header of /manufacturers/ on paper: breadcrumbs, eyebrow, H1 and the lead
-  from src/data/manufacturers.ts, then the four market figures and the sentence
-  about the middle class from src/data/market.ts, inside the same section. The
-  figures are plain text with a source and year under each; no icons, charts or
-  counters. No copy in the component.
+  from src/data/manufacturers.ts, then the four market figures and two
+  sentences under them, each its own paragraph, from src/data/market.ts, inside
+  the same section. The figures are plain text with a source and year under
+  each; no icons, charts or counters. No copy in the component.
 */
 import { manufacturersPage } from '@/data/manufacturers';
 import { market } from '@/data/market';
@@ -51,6 +51,14 @@ const home = href(locale);
         ))
       }
     </ul>
-    <p class="mt-8 max-w-3xl text-base leading-relaxed text-ink-soft">{after.text}</p>
+    <div class="mt-8 max-w-3xl">
+      {
+        after.map((line, i) => (
+          <p class:list={['text-base leading-relaxed text-ink-soft', i > 0 && 'mt-1.5']}>
+            {line.text}
+          </p>
+        ))
+      }
+    </div>
   </div>
 </header>
