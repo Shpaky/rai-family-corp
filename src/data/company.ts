@@ -1,9 +1,11 @@
 /*
-  Facts about the pavilion that still need confirmation from the Russian Export
-  Center ("подтвердить у РЭЦ"). The visible strings in src/i18n/ui.ts are
-  literals for now; if any value here changes, update the strings listed in the
-  pull request that introduced them (meta.description, trust.*, pavilion.*,
-  about.paragraphs, footer.operator).
+  Company and pavilion data. Opening date and first-in-programme status in
+  India were verified on 2026-10-14; see proofLinks and
+  PayloadForCodex/Pavilion/pavilion-facts-verification.md.
+  The official English pavilion name remains unconfirmed.
+  Visible pavilion strings are separate literals in src/i18n/ui.ts and
+  src/content/directions/matkevich-lavage.json; changing fields here does
+  not update them automatically. Opening does not date operator authority.
 */
 export const company = {
   /** Registered name; the site name "Rai Family Corp" stays in ui.ts. */
@@ -34,19 +36,25 @@ export const company = {
     postalCode: '400614',
     country: 'IN',
   },
-  /** Public pages that confirm the status; shown on /about/ (programme) and listed as relatedLink in its JSON-LD. */
+  /** Public sources about the programme, pavilion, operator and opening; listed as relatedLink on /about/. Publication dates and scope differ by source. */
   proofLinks: {
     recProgramme:
       'https://www.exportcenter.ru/services/prodvizhenie-na-vneshnie-rynki/exhibitions-business-missions/rossiyskie_natsionalnye_pavilony_za_rubezhom/',
     recMumbai: 'https://www.exportcenter.ru/contacts/world/mumbai/',
     openingAnnouncement: 'https://t.me/rusexportnews/15233',
+    /** Opening report, post 15340: 2026-08-21T14:02:29Z; read in the public feed. Checked 2026-10-14. */
     openingPost: 'https://t.me/rusexportnews/15340',
+    /** REC announcement published 2026-08-12; scheduled opening 2026-08-21. Checked 2026-10-14. */
+    openingAnnouncementRec:
+      'https://www.exportcenter.ru/press_center/rets-otkroet-v-indii-pervyy-natsionalnyy-pavilon-sdelano-v-rossii/',
+    /** REC pavilion page; publication date unavailable. Checked 2026-10-14. */
+    pavilionIndia: 'https://www.exportcenter.ru/pavilions/india/pavilions/',
   },
-  /** Opening date of the Made in Russia National Pavilion in Navi Mumbai. Подтвердить у РЭЦ. */
+  /** Opening date, supported jointly by proofLinks.openingAnnouncementRec and proofLinks.openingPost; checked 2026-10-14. Not the start date of operator authority. */
   pavilionOpened: '2026-08-21',
-  /** Whether it is the first pavilion of the programme in India. Подтвердить у РЭЦ. */
+  /** First permanent national pavilion of REC's Made in Russia programme in India; supported by the announcement and opening report, checked 2026-10-14. */
   firstInIndia: true,
-  /** Official English name of the pavilion. Подтвердить у РЭЦ. */
+  /** Working English rendering. Official English name not established as of 2026-10-14; field name retained for compatibility. */
   officialPavilionName: '«Made in Russia» National Pavilion',
   /** Russian companies present in the pavilion. Open sources, checked 2026-09-14; update the date when the number changes. */
   pavilionResidents: 52,
