@@ -2,7 +2,8 @@
   Company and pavilion data. Opening date and first-in-programme status in
   India were verified on 2026-10-14; see proofLinks and
   PayloadForCodex/Pavilion/pavilion-facts-verification.md.
-  The official English pavilion name remains unconfirmed.
+  The English name was approved by the client on 2026-10-14 using REC terminology;
+  see proofLinks.recPavilionsPresentation (pages 1, 3 and 7).
   Visible pavilion strings are separate literals in src/i18n/ui.ts and
   src/content/directions/matkevich-lavage.json; changing fields here does
   not update them automatically. Opening does not date operator authority.
@@ -40,6 +41,9 @@ export const company = {
   proofLinks: {
     recProgramme:
       'https://www.exportcenter.ru/services/prodvizhenie-na-vneshnie-rynki/exhibitions-business-missions/rossiyskie_natsionalnye_pavilony_za_rubezhom/',
+    /** REC English presentation: plural on page 1, brand on page 3, singular on page 7. Checked 2026-10-14. */
+    recPavilionsPresentation:
+      'https://www.exportcenter.ru/upload/rossiyskie-natsionalnye-pavilony/%D0%A0%D0%9D%D0%9F_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B_new(en).pdf',
     recMumbai: 'https://www.exportcenter.ru/contacts/world/mumbai/',
     openingAnnouncement: 'https://t.me/rusexportnews/15233',
     /** Opening report, post 15340: 2026-08-21T14:02:29Z; read in the public feed. Checked 2026-10-14. */
@@ -54,8 +58,8 @@ export const company = {
   pavilionOpened: '2026-08-21',
   /** First permanent national pavilion of REC's Made in Russia programme in India; supported by the announcement and opening report, checked 2026-10-14. */
   firstInIndia: true,
-  /** Working English rendering. Official English name not established as of 2026-10-14; field name retained for compatibility. */
-  officialPavilionName: '«Made in Russia» National Pavilion',
+  /** Client-approved English name, 2026-10-14, based on REC terminology in recPavilionsPresentation. Made in Russia is the programme brand. */
+  officialPavilionName: 'Russian National Pavilion',
   /** Russian companies present in the pavilion. Open sources, checked 2026-09-14; update the date when the number changes. */
   pavilionResidents: 52,
   pavilionResidentsCheckedOn: '2026-09-14',
