@@ -11,9 +11,6 @@ playwright-report/
 .env.*
 !.env.example
 
-# Local Codex context and task materials stay outside the repository
-/PayloadForCodex/
-
 # Brand guide PDF stays local only (12 MB, not for the public repo)
 *.pdf
 # Direction documents are published; the brand guide still is not
