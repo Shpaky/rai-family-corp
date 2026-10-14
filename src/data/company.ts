@@ -4,6 +4,8 @@
   PayloadForCodex/Pavilion/pavilion-facts-verification.md.
   The English name was approved by the client on 2026-10-14 using REC terminology;
   see proofLinks.recPavilionsPresentation (pages 1, 3 and 7).
+  The client also approved keeping «Made in Russia» National Pavilion in site copy,
+  mirroring the Russian name; it need not match officialPavilionName verbatim.
   Visible pavilion strings are separate literals in src/i18n/ui.ts and
   src/content/directions/matkevich-lavage.json; changing fields here does
   not update them automatically. Opening does not date operator authority.

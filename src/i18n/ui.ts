@@ -220,9 +220,9 @@ export const ui: Record<'en' | 'ru', Copy> = {
   en: {
     meta: {
       siteName: 'Rai Family Corp',
-      title: 'Rai Family Corp: operator of the Russian National Pavilion in India',
+      title: 'Rai Family Corp: operator of the «Made in Russia» National Pavilion in India',
       description:
-        'Rai Family Corp LLP is the operator of the Russian National Pavilion in Navi Mumbai, a Russian Export Center project and the first in India. Distribution, marketing, import, certification and logistics for Russian products.',
+        'Rai Family Corp LLP is the operator of the «Made in Russia» National Pavilion in Navi Mumbai, a Russian Export Center project and the first in India. Distribution, marketing, import, certification and logistics for Russian products.',
     },
     nav: {
       about: 'About',
@@ -298,7 +298,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
       eyebrow: 'About the company',
       title: 'The official gateway for Russian products and technologies into India',
       paragraphs: [
-        'Rai Family Corp LLP is an Indian company founded by a group of international entrepreneurs with many years of experience across countries and industries, including India. Since 21 August 2026 it has been the operator of the Russian National Pavilion in Navi Mumbai, a Russian Export Center project. The pavilion is where Russian manufacturers meet Indian distributors, retail chains and institutions.',
+        'Rai Family Corp LLP is an Indian company founded by a group of international entrepreneurs with many years of experience across countries and industries, including India. Since 21 August 2026 it has been the operator of the «Made in Russia» National Pavilion in Navi Mumbai, a Russian Export Center project. The pavilion is where Russian manufacturers meet Indian distributors, retail chains and institutions.',
         'The company provides direct distribution channels and marketing promotion and covers the full range of related work: market research, product and packaging adaptation, certification, import procedures, legal support and logistics.',
       ],
       leadership: 'Leadership',
@@ -370,7 +370,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     pavilion: {
       eyebrow: 'Pavilion',
-      title: 'Russian National Pavilion, Navi Mumbai',
+      title: '«Made in Russia» National Pavilion, Navi Mumbai',
       subtitle:
         'A Russian Export Center project · opened 21 August 2026 · CBD Belapur, Navi Mumbai',
       text: 'The first «Made in Russia» pavilion in India, a Russian Export Center project opened on 21 August 2026. It is the physical home of Russian products in the country: a showroom for distributors and institutions, a venue for tastings and B2B meetings, and the office of the operator, Rai Family Corp.',
@@ -410,7 +410,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     footer: {
       legal: 'Rai Family Corp LLP',
       operator:
-        'Operator of the Russian National Pavilion in India, a Russian Export Center project',
+        'Operator of the «Made in Russia» National Pavilion in India, a Russian Export Center project',
       rights: 'All rights reserved.',
       madeInRussia:
         '«Made in Russia» is a trademark of the Russian Export Center, used with permission.',
@@ -424,9 +424,9 @@ export const ui: Record<'en' | 'ru', Copy> = {
     aboutPage: {
       title: 'About Rai Family Corp: B2B and B2C operator of Russian products in India',
       description:
-        'Rai Family Corp LLP works in two models: B2B as the operator of the Russian National Pavilion in Navi Mumbai, importer and distributor, and B2C through its own online shop The Rus Store. Leadership, status, company details.',
+        'Rai Family Corp LLP works in two models: B2B as the operator of the «Made in Russia» National Pavilion in Navi Mumbai, importer and distributor, and B2C through its own online shop The Rus Store. Leadership, status, company details.',
       h1: 'Two business models: B2B and B2C',
-      lead: 'Rai Family Corp LLP works with Russian products in India in two models: B2B as the operator of the Russian National Pavilion, importer and distributor, and B2C as the owner of The Rus Store online shop.',
+      lead: 'Rai Family Corp LLP works with Russian products in India in two models: B2B as the operator of the «Made in Russia» National Pavilion, importer and distributor, and B2C as the owner of The Rus Store online shop.',
       b2b: {
         title: 'Pavilion, import and distribution',
         audiences: {
