@@ -38,11 +38,11 @@ const full = await getImage({ src, width: Math.min(src.width, 1920), format: 'we
     <Picture
       src={src}
       formats={['avif', 'webp']}
-      widths={interior ? [480, 768, 1024] : [320, 480, 768]}
-      sizes={interior ? '(min-width: 768px) 33vw, 80vw' : '(min-width: 1024px) 25vw, 50vw'}
+      widths={interior ? [480, 768, 1024] : [320, 480, 768, 1024]}
+      sizes={interior ? '(min-width: 768px) 33vw, 80vw' : '(min-width: 768px) 33vw, 100vw'}
       alt={alt}
       loading="lazy"
-      class:list={['w-full bg-surface object-contain', interior ? 'aspect-4/3' : 'aspect-3/2']}
+      class="aspect-4/3 w-full bg-surface object-contain"
     />
     <figcaption class="flex justify-between gap-3 p-3 text-xs text-muted">
       <span

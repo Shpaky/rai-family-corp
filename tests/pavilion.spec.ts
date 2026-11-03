@@ -32,6 +32,39 @@ for (const locale of ['', 'ru/']) {
     await expect(page.locator('#news details').last().locator('li')).toHaveCount(6);
     for (const width of [320, 360, 768, 1280]) {
       await page.setViewportSize({ width, height: 800 });
+      const frames = await page.locator('[data-photo] img').evaluateAll(async (images) => {
+        await document.fonts.ready;
+        await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+        return Promise.all(
+          images.map(async (node) => {
+            const img = node as HTMLImageElement;
+            img.loading = 'eager';
+            await img.decode();
+            const { x, y, width, height } = img.getBoundingClientRect();
+            return { x, y, width, height, fit: getComputedStyle(img).objectFit };
+          }),
+        );
+      });
+      const opening = frames.slice(0, 6);
+      expect(opening).toHaveLength(6);
+      for (const frame of frames) {
+        expect(frame.width / frame.height).toBeCloseTo(4 / 3, 2);
+        expect(frame.fit).toBe('contain');
+      }
+      if (width >= 768) {
+        expect(new Set(opening.map((frame) => frame.y)).size).toBe(2);
+        for (let i = 0; i < opening.length; i++) {
+          const frame = opening[i];
+          const interior = frames[6 + (i % 3)];
+          expect(Math.abs(frame.x - interior.x)).toBeLessThan(1);
+          expect(Math.abs(frame.width - interior.width)).toBeLessThan(1);
+          expect(Math.abs(frame.height - interior.height)).toBeLessThan(1);
+          expect(frame.y).toBe(opening[i < 3 ? 0 : 3].y);
+        }
+      } else {
+        expect(new Set(opening.map((frame) => frame.x)).size).toBe(1);
+        expect(new Set(opening.map((frame) => frame.y)).size).toBe(6);
+      }
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
       );
@@ -47,7 +80,7 @@ for (const locale of ['', 'ru/']) {
     await expect(page.locator('[data-resident]:visible')).toHaveCount(44);
     await page.locator('#news details summary').last().click();
     await expect(page.locator('#news details').last().locator('li')).toHaveCount(6);
-    await expect(page.locator('[data-photo]')).toHaveCount(7);
+    await expect(page.locator('[data-photo]')).toHaveCount(9);
     for (const photo of await page.locator('[data-photo]').all()) {
       await expect(photo).toHaveAttribute('href', /\.webp$/);
     }
@@ -102,12 +135,22 @@ for (const locale of ['', 'ru/']) {
     await expect(page.locator('#pavilion picture')).toHaveCount(0);
     await expect(page.locator('#pavilion a[href$="pavilion/"]')).toHaveCount(1);
     await page.goto(`${locale}pavilion/`);
-    const opening = ['opening-guests', 'opening-moment', 'opening-group', 'opening-hall'];
+    const opening = [
+      'opening-guests',
+      'opening-moment',
+      'opening-group',
+      'opening-hall',
+      'opening-conversations',
+      'opening-hall-wide',
+    ];
     const interior = ['showroom', 'shelves', 'stage'];
     const ids = await page
       .locator('[data-photo]')
       .evaluateAll((links) => links.map((a) => a.getAttribute('data-photo')));
     expect(ids).toEqual([...opening, ...interior]);
+    await expect(page.locator('section[aria-labelledby="gallery-title"] [data-photo]')).toHaveCount(
+      6,
+    );
     await expect(page.locator('#about-pavilion [data-photo]')).toHaveCount(3);
     await expect(page.locator('main > section').first().locator('img')).toHaveAttribute(
       'src',
@@ -140,8 +183,12 @@ for (const locale of ['', 'ru/']) {
         (await link.getAttribute('data-title'))!,
       );
       if (opening.includes(id)) {
+        await expect(link.locator('time')).toHaveAttribute('datetime', '2026-08-21');
+        await expect(link.locator('time')).toHaveText('21.08.2026');
         await expect(page.locator('#photo-caption')).toBeVisible();
-        await expect(page.locator('#photo-caption')).toContainText('2026');
+        await expect(page.locator('#photo-caption')).toHaveText(
+          locale ? 'Нави-Мумбаи · 21 августа 2026' : 'Navi Mumbai · 21 August 2026',
+        );
       } else {
         await expect(page.locator('#photo-caption')).toBeHidden();
         await expect(page.locator('#photo-caption')).toHaveText('');
