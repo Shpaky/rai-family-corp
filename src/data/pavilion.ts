@@ -1,9 +1,11 @@
-import photo0 from '@/assets/pavilion/meeting-area.jpg';
-import photo1 from '@/assets/pavilion/product-displays.jpg';
-import photo2 from '@/assets/pavilion/opening-guests.jpg';
-import photo3 from '@/assets/pavilion/opening-moment.jpg';
-import photo4 from '@/assets/pavilion/opening-group.jpg';
-import photo5 from '@/assets/pavilion/opening-hall.jpg';
+import meetingArea from '@/assets/pavilion/meeting-area.jpg';
+import openingGuests from '@/assets/pavilion/opening-guests.jpg';
+import openingMoment from '@/assets/pavilion/opening-moment.jpg';
+import openingGroup from '@/assets/pavilion/opening-group.jpg';
+import openingHall from '@/assets/pavilion/opening-hall.jpg';
+import showroom from '@/assets/pavilion/showroom.jpg';
+import shelves from '@/assets/pavilion/shelves.jpg';
+import stage from '@/assets/pavilion/stage.jpg';
 import logo1 from '@/assets/pavilion/residents/01.png';
 import logo2 from '@/assets/pavilion/residents/02.png';
 import logo3 from '@/assets/pavilion/residents/03.png';
@@ -48,7 +50,23 @@ import logo41 from '@/assets/pavilion/residents/41.png';
 import logo42 from '@/assets/pavilion/residents/42.png';
 import logo43 from '@/assets/pavilion/residents/43.png';
 import logo44 from '@/assets/pavilion/residents/44.png';
-export const pavilionPhotos = [photo0, photo1, photo2, photo3, photo4, photo5];
+export const pavilionPhotos = {
+  'meeting-area': meetingArea,
+  'opening-guests': openingGuests,
+  'opening-moment': openingMoment,
+  'opening-group': openingGroup,
+  'opening-hall': openingHall,
+  showroom,
+  shelves,
+  stage,
+};
+export const openingPhotoIds = [
+  'opening-guests',
+  'opening-moment',
+  'opening-group',
+  'opening-hall',
+] as const;
+export const interiorPhotoIds = ['showroom', 'shelves', 'stage'] as const;
 export const pavilionResidents = [
   { order: 1, url: 'https://wildsiberia.org/', logo: logo1, darkBacking: false },
   { order: 2, url: 'https://www.makfa.ru/', logo: logo2, darkBacking: false },
