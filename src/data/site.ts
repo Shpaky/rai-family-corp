@@ -31,6 +31,7 @@ export const SECTION_PAGES: Partial<Record<HomeSectionKey, string>> = {
   directions: 'directions/',
   services: 'manufacturers/',
   about: 'about/',
+  pavilion: 'pavilion/',
 };
 
 /**

@@ -21,6 +21,8 @@ const ORIGIN = `http://localhost:${PORT}`;
 const PAGES = [
   '/',
   '/ru/',
+  '/pavilion/',
+  '/ru/pavilion/',
   '/about/',
   '/ru/about/',
   '/manufacturers/',

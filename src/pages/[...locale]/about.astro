@@ -239,7 +239,9 @@ const textLink =
         </p>
       </div>
       <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-        <Button href={`${home}#pavilion`} variant="secondary">{copy.hero.pavilionLink}</Button>
+        <Button href={href(locale, 'pavilion/')} variant="secondary"
+          >{copy.hero.pavilionLink}</Button
+        >
         <a href={company.proofLinks.recProgramme} target="_blank" rel="noopener" class={textLink}>
           {page.status.programme}
           {

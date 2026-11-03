@@ -92,10 +92,10 @@ export interface ManufacturersPage {
   };
 }
 
-/** Link of the pavilion residency card: the pavilion section of the home page (TODO: /pavilion/ once it exists). */
+/** Link of the pavilion residency card: the pavilion page. */
 const pavilionLink = (locale: Locale) => ({
   label: ui[locale].hero.pavilionLink,
-  href: '#pavilion',
+  href: 'pavilion/',
 });
 
 export const manufacturersPage: Record<Locale, ManufacturersPage> = {

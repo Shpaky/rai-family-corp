@@ -1,0 +1,473 @@
+---
+import { Picture, getImage } from 'astro:assets';
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import Base from '@/layouts/Base.astro';
+import Button from '@/components/Button.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import Collapsible from '@/components/Collapsible.astro';
+import ArticleBody from '@/components/pavilion/ArticleBody.astro';
+import { pavilionPageCopy } from '@/i18n/ui';
+import {
+  pavilionPhotos,
+  pavilionResidents,
+  pavilionMedia,
+  pavilionNewsDates,
+  meetingPhone,
+  meetingWhatsapp,
+  officePhone,
+} from '@/data/pavilion';
+import { company } from '@/data/company';
+import { contacts } from '@/data/contacts';
+import type { Locale } from '@/i18n/config';
+import { href, localePaths, t } from '@/i18n/utils';
+export function getStaticPaths() {
+  return localePaths();
+}
+const { locale } = Astro.props as { locale: Locale };
+const copy = t(locale);
+const page = pavilionPageCopy[locale];
+const fullPhotos = await Promise.all(
+  pavilionPhotos.map((src) => getImage({ src, width: Math.min(src.width, 1920), format: 'webp' })),
+);
+const anchors = ['about-pavilion', 'residents', 'news', 'visit'];
+const actions = [
+  { label: page.resident, url: href(locale, 'manufacturers/') + '#pavilion-residency' },
+  { label: page.visit, url: '#visit' },
+];
+if (locale === 'en') actions.reverse();
+const section = 'scroll-mt-20 py-section-sm md:py-section';
+const link = 'text-sm font-bold text-primary hover:text-primary-hover';
+const url = getAbsoluteLocaleUrl(locale, 'pavilion/');
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      url,
+      name: page.title,
+      description: page.lead,
+      inLanguage: locale,
+      isPartOf: { '@type': 'WebSite', url: getAbsoluteLocaleUrl(locale, '') },
+      about: { '@type': 'Organization', name: 'Rai Family Corp LLP' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: copy.nav.home,
+          item: getAbsoluteLocaleUrl(locale, ''),
+        },
+        { '@type': 'ListItem', position: 2, name: copy.nav.pavilion, item: url },
+      ],
+    },
+  ],
+};
+---
+
+<Base locale={locale} title={page.title} description={page.lead} path="pavilion/" jsonLd={jsonLd}>
+  <section class="bg-surface pt-section-sm md:pt-section" aria-labelledby="pavilion-heading">
+    <div class="container-page">
+      <nav aria-label={page.breadcrumb} class="mb-6 text-sm text-muted">
+        <a href={href(locale)}>{copy.nav.home}</a> / <span aria-current="page"
+          >{copy.nav.pavilion}</span
+        >
+      </nav>
+      <div class="grid items-center gap-12 pb-section-sm lg:grid-cols-2">
+        <div>
+          <p class="eyebrow text-eyebrow">{page.kicker}</p><h1
+            id="pavilion-heading"
+            class="mt-3 text-h2 text-balance md:text-h1"
+          >
+            {page.title}
+          </h1><p class="mt-6 text-lead text-ink-soft">{page.lead}</p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            {
+              actions.map((action, i) => (
+                <Button href={action.url} variant={i === 0 ? 'primary' : 'secondary'} size="lg">
+                  {action.label}
+                </Button>
+              ))
+            }
+          </div>
+          <p class="mt-6 text-sm text-muted">{page.opened}</p>
+        </div>
+        <figure class="overflow-hidden rounded-card border border-line bg-white shadow-card">
+          <Picture
+            src={pavilionPhotos[0]}
+            formats={['avif', 'webp']}
+            widths={[400, 640, 960, 1280]}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            alt={page.photos[0]}
+            loading="eager"
+            fetchpriority="high"
+            class="aspect-4/3 w-full object-contain"
+          /><figcaption class="px-4 py-3 text-xs text-muted">
+            {page.photos[0]} · 21.08.2026
+          </figcaption>
+        </figure>
+      </div>
+      <nav
+        aria-label={page.onPage}
+        class="flex flex-wrap gap-x-6 gap-y-3 border-t border-line py-4"
+      >
+        {
+          anchors.map((id, i) => (
+            <a class={link} href={'#' + id}>
+              {page.anchors[i]} ↓
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+  </section>
+  <section class={section} aria-labelledby="gallery-title">
+    <div class="container-page">
+      <SectionHeading id="gallery-title" title={page.gallery} lead={page.galleryLead} />
+      <div class="mt-12 grid grid-cols-2 gap-5 lg:grid-cols-3">
+        {
+          pavilionPhotos.map((photo, i) => (
+            <a
+              data-photo
+              href={fullPhotos[i].src}
+              aria-label={`${page.enlarge}: ${page.photos[i]}, 21.08.2026`}
+              class="overflow-hidden rounded-card border border-line bg-white shadow-card hover:shadow-card-hover"
+            >
+              <figure>
+                <>
+                  <Picture
+                    src={photo}
+                    formats={['avif', 'webp']}
+                    widths={[320, 480, 768]}
+                    sizes="(min-width: 768px) 33vw, 50vw"
+                    alt={page.photos[i]}
+                    loading="lazy"
+                    class="aspect-3/2 w-full bg-surface object-contain"
+                  />
+                  <figcaption class="flex justify-between gap-3 p-3 text-xs text-muted">
+                    <>
+                      <span>
+                        {page.photos[i]}
+                        <time datetime="2026-08-21" class="block">
+                          21.08.2026
+                        </time>
+                      </span>
+                      <span aria-hidden="true" class="text-primary">
+                        ↗
+                      </span>
+                    </>
+                  </figcaption>
+                </>
+              </figure>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <section id="about-pavilion" class:list={[section, 'bg-surface']} aria-labelledby="about-title">
+    <div class="container-page">
+      <div class="max-w-3xl">
+        <SectionHeading id="about-title" title={page.anchors[0]} />{
+          page.aboutP.map((p) => <p class="mt-6 leading-relaxed text-ink-soft">{p}</p>)
+        }<a
+          class:list={[link, 'mt-6 inline-flex']}
+          href={company.proofLinks.pavilionIndia}
+          target="_blank"
+          rel="noopener">{page.rec} ↗<span class="sr-only">, {copy.external.newTab}</span></a
+        >
+      </div>
+    </div>
+  </section>
+  <section class={section} aria-labelledby="capabilities-title">
+    <div class="container-page">
+      <SectionHeading id="capabilities-title" title={page.cap} /><div
+        class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+      >
+        {
+          page.caps.map((c, i) => (
+            <article>
+              <>
+                <span
+                  aria-hidden="true"
+                  class="mb-6 block border-b border-line pb-4 font-display text-h2 text-gold-deep"
+                >
+                  0{i + 1}
+                </span>
+                <h3 class="text-h3">{c[0]}</h3>
+                <p class="mt-3 leading-relaxed text-ink-soft">{c[1]}</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <section id="residents" class={section} aria-labelledby="residents-title">
+    <div class="container-page">
+      <SectionHeading id="residents-title" title={page.residents} lead={page.residentsP} />
+      <ol id="resident-list" class="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        {
+          pavilionResidents.map((r, i) => (
+            <li data-resident class="flex min-w-0">
+              <a
+                href={r.url}
+                target="_blank"
+                rel="noopener"
+                class="relative flex w-full flex-col items-center gap-4 rounded-card border border-line bg-white px-3 py-6 text-center shadow-card hover:shadow-card-hover md:px-5"
+              >
+                <>
+                  <span aria-hidden="true" class="absolute top-2 right-2 text-primary">
+                    ↗
+                  </span>
+                  <span
+                    class:list={[
+                      'mt-2 w-full max-w-52 overflow-hidden rounded-pill',
+                      r.darkBacking && 'bg-ink',
+                    ]}
+                  >
+                    <Picture
+                      src={r.logo}
+                      formats={['avif', 'webp']}
+                      widths={[208, 416]}
+                      sizes="208px"
+                      alt=""
+                      loading="lazy"
+                      class="aspect-2/1 w-full object-contain"
+                    />
+                  </span>
+                  <span>
+                    <>
+                      <strong class="block text-sm md:text-base">
+                        {page.residentEntries[i].name}
+                      </strong>
+                      <span class="mt-2 block text-xs text-muted">
+                        {page.residentEntries[i].legal}
+                      </span>
+                    </>
+                  </span>
+                  <span class="sr-only">{copy.external.newTab}</span>
+                </>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+      <div class="mt-8 text-center">
+        <button
+          hidden
+          id="residents-toggle"
+          aria-controls="resident-list"
+          aria-expanded="false"
+          data-more={page.more}
+          data-less={page.less}
+          class="cursor-pointer rounded-pill bg-primary-soft px-5 py-2.5 text-sm font-bold text-primary hover:bg-surface-strong"
+          >{page.more}</button
+        >
+      </div>
+    </div>
+  </section>
+  <section id="news" class:list={[section, 'bg-surface']} aria-labelledby="news-title">
+    <div class="container-page">
+      <SectionHeading id="news-title" title={page.news} lead={page.newsP} />
+      <div class="my-12 grid gap-5 md:grid-cols-2">
+        {
+          page.articles.slice(0, 2).map((n, i) => (
+            <article class="flex flex-col items-start rounded-card border border-line bg-white p-7 shadow-card">
+              <>
+                <div class="mb-6 flex w-full flex-wrap justify-between gap-4">
+                  <>
+                    <time datetime={pavilionNewsDates[i]} class="text-sm font-semibold text-muted">
+                      {page.dates[i]}
+                    </time>
+                    <span class="rounded-pill bg-primary-soft px-2.5 py-1 text-xs font-bold text-primary">
+                      {page.upcoming}
+                    </span>
+                  </>
+                </div>
+                <h3 class="text-h3">{page.eventNames[i]}</h3>
+                <p class="mt-4 text-sm text-muted">{page.venues[i]}</p>
+                <p class="my-6 border-l-2 border-line pl-3 text-sm">{page.stands[i]}</p>
+                <Collapsible summary={page.details} class="mt-auto w-full">
+                  <>
+                    <p class="my-4 font-bold">{n.title}</p>
+                    <ArticleBody
+                      paragraphs={n.paragraphs.filter((p) => !p.startsWith('['))}
+                      locale={locale}
+                    />
+                  </>
+                </Collapsible>
+                <Button href={meetingWhatsapp} external variant="secondary" class="mt-6">
+                  {page.meeting} ↗<span class="sr-only">, {copy.external.newTab}</span>
+                </Button>
+              </>
+            </article>
+          ))
+        }
+      </div>
+      <p class="eyebrow mb-3 text-eyebrow">{page.past}</p><div
+        class="divide-y divide-line border-y border-line"
+      >
+        {
+          page.articles.slice(2).map((n, k) => {
+            const i = k + 2;
+            return (
+              <details data-news class="group py-4">
+                <>
+                  <summary class="grid cursor-pointer list-none gap-2 marker:hidden md:grid-cols-4">
+                    <>
+                      <time
+                        datetime={pavilionNewsDates[i]}
+                        class="text-sm font-semibold text-muted"
+                      >
+                        {page.dates[i]}
+                      </time>
+                      <span class="md:col-span-3">
+                        <>
+                          <span class="flex justify-between gap-4 font-bold">
+                            {n.title}
+                            <span aria-hidden="true" class="text-primary group-open:rotate-180">
+                              ⌄
+                            </span>
+                          </span>
+                          <span class="mt-2 block text-xs text-muted">{page.types[i]}</span>
+                        </>
+                      </span>
+                    </>
+                  </summary>
+                  <div class="mt-6 max-w-3xl pb-4">
+                    {i === 6 && (
+                      <figure class="mb-6 max-w-lg">
+                        <Picture
+                          src={pavilionPhotos[5]}
+                          formats={['avif', 'webp']}
+                          widths={[512, 1024]}
+                          sizes="512px"
+                          alt={page.photos[5]}
+                          loading="lazy"
+                          class="w-full rounded-card"
+                        />
+                        <figcaption class="mt-2 text-xs text-muted">{page.photoDate}</figcaption>
+                      </figure>
+                    )}
+                    <ArticleBody paragraphs={n.paragraphs} locale={locale} />
+                    {i === 6 && (
+                      <>
+                        <h3 class="mt-6 text-h3">{page.media}</h3>
+                        <ul class="mt-4 space-y-4">
+                          {pavilionMedia.map((m, j) => (
+                            <li>
+                              <a href={m.url} target="_blank" rel="noopener" class={link}>
+                                {page.mediaEntries[j].name} ↗
+                                <span class="sr-only">, {copy.external.newTab}</span>
+                              </a>
+                              <small class="block text-muted">
+                                {m.lang} · {m.date} · {page.mediaEntries[j].label}
+                              </small>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                  </div>
+                </>
+              </details>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+  <section
+    id="visit"
+    class:list={[section, 'bg-dark text-dark-text']}
+    aria-labelledby="visit-title"
+  >
+    <div class="container-page grid gap-12 md:grid-cols-2">
+      <div>
+        <h2 id="visit-title" class="text-h2 font-bold md:text-h1">{page.visiting}</h2><p
+          class="mt-6 text-dark-text"
+        >
+          {page.addressIntro}
+        </p><address class="mt-4 leading-relaxed not-italic">
+          {page.address.map((line) => <span class="block">{line}</span>)}
+        </address><a
+          href={contacts.mapUrl}
+          target="_blank"
+          rel="noopener"
+          class:list={['mt-6 inline-flex text-sm font-bold text-gold-text']}
+          >{page.map} ↗<span class="sr-only">, {copy.external.newTab}</span></a
+        ><div class="mt-8 border-t border-white/20 pt-6">
+          <strong>{page.hours}</strong><p class="mt-2 text-sm text-dark-text">{page.closed}</p>
+        </div>
+      </div><div class="rounded-card border border-line bg-white text-ink p-7 md:p-10">
+        <h3 class="text-h3">{page.welcome}</h3><p class="mt-4 leading-relaxed text-ink-soft">
+          {page.noRegistration}
+        </p><a class="mt-6 block text-h3 font-bold text-primary" href={'tel:' + meetingPhone}
+          >+91 70457 43899</a
+        ><div class="mt-6 flex flex-wrap gap-3">
+          <Button href={meetingWhatsapp} external
+            >{page.whatsapp} ↗<span class="sr-only">, {copy.external.newTab}</span></Button
+          ><Button href={'tel:' + meetingPhone} variant="secondary">{page.call}</Button>
+        </div><p class="mt-8 border-t border-line pt-6 text-sm text-muted">
+          {page.office}<a class="mt-2 block font-bold text-primary" href={'tel:' + officePhone}
+            >+91 83693 93073</a
+          >
+        </p>
+      </div>
+    </div>
+  </section>
+  <dialog
+    id="photo-dialog"
+    aria-labelledby="photo-title"
+    class="fixed inset-0 m-auto max-h-dvh w-full max-w-5xl overflow-auto rounded-card bg-white p-5 backdrop:bg-ink/80"
+  >
+    <form method="dialog" class="flex justify-end">
+      <button
+        autofocus
+        class="cursor-pointer rounded-pill bg-primary-soft px-5 py-2.5 font-bold text-primary"
+        >{page.close}</button
+      >
+    </form><h2 id="photo-title" class="my-4 text-h3"></h2><div id="photo-content"></div><p
+      class="mt-3 text-sm text-muted"
+    >
+      {page.photoDate}
+    </p>
+  </dialog>
+</Base>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('#residents-toggle');
+  const residents = [...document.querySelectorAll<HTMLElement>('[data-resident]')];
+  if (toggle) {
+    toggle.hidden = false;
+    const sync = () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      residents.slice(12).forEach((r) => (r.hidden = !expanded));
+      toggle.textContent = expanded ? toggle.dataset.less! : toggle.dataset.more!;
+    };
+    sync();
+    toggle.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', String(toggle.getAttribute('aria-expanded') !== 'true'));
+      sync();
+    });
+  }
+  const dialog = document.querySelector<HTMLDialogElement>('#photo-dialog')!;
+  let trigger: HTMLAnchorElement | null = null;
+  document.querySelectorAll<HTMLAnchorElement>('[data-photo]').forEach((a) =>
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      trigger = a;
+      const img = a.querySelector('img')!.cloneNode() as HTMLImageElement;
+      img.removeAttribute('srcset');
+      img.removeAttribute('sizes');
+      img.src = a.href;
+      img.loading = 'eager';
+      img.className = 'w-full h-auto max-h-96 md:max-h-128 object-contain';
+      document.querySelector('#photo-content')!.replaceChildren(img);
+      document.querySelector('#photo-title')!.textContent = img.alt;
+      dialog.showModal();
+    }),
+  );
+  dialog.addEventListener('close', () => trigger?.focus());
+</script>
