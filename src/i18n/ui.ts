@@ -1051,6 +1051,8 @@ export const pavilionPageCopy = {
       'opening-moment': 'Момент официального открытия',
       'opening-group': 'Групповой снимок на открытии',
       'opening-hall': 'Общий вид зала на открытии',
+      'opening-conversations': 'Общение гостей на открытии',
+      'opening-hall-wide': 'Гости в зале павильона',
     },
     articles: [
       {
@@ -1411,6 +1413,8 @@ export const pavilionPageCopy = {
       'opening-moment': 'A moment from the official opening',
       'opening-group': 'Group photograph at the opening',
       'opening-hall': 'The room during the official opening',
+      'opening-conversations': 'Guests in conversation at the opening',
+      'opening-hall-wide': 'Guests in the pavilion hall',
     },
     articles: [
       {

@@ -3,6 +3,8 @@ import openingGuests from '@/assets/pavilion/opening-guests.jpg';
 import openingMoment from '@/assets/pavilion/opening-moment.jpg';
 import openingGroup from '@/assets/pavilion/opening-group.jpg';
 import openingHall from '@/assets/pavilion/opening-hall.jpg';
+import openingConversations from '@/assets/pavilion/opening-conversations.jpg';
+import openingHallWide from '@/assets/pavilion/opening-hall-wide.jpg';
 import showroom from '@/assets/pavilion/showroom.jpg';
 import shelves from '@/assets/pavilion/shelves.jpg';
 import stage from '@/assets/pavilion/stage.jpg';
@@ -56,6 +58,8 @@ export const pavilionPhotos = {
   'opening-moment': openingMoment,
   'opening-group': openingGroup,
   'opening-hall': openingHall,
+  'opening-conversations': openingConversations,
+  'opening-hall-wide': openingHallWide,
   showroom,
   shelves,
   stage,
@@ -65,6 +69,8 @@ export const openingPhotoIds = [
   'opening-moment',
   'opening-group',
   'opening-hall',
+  'opening-conversations',
+  'opening-hall-wide',
 ] as const;
 export const interiorPhotoIds = ['showroom', 'shelves', 'stage'] as const;
 export const pavilionResidents = [
