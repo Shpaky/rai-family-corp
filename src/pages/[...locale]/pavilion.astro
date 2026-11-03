@@ -1,14 +1,17 @@
 ---
-import { Picture, getImage } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import { getAbsoluteLocaleUrl } from 'astro:i18n';
 import Base from '@/layouts/Base.astro';
 import Button from '@/components/Button.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import Collapsible from '@/components/Collapsible.astro';
 import ArticleBody from '@/components/pavilion/ArticleBody.astro';
+import PhotoLink from '@/components/pavilion/PhotoLink.astro';
 import { pavilionPageCopy } from '@/i18n/ui';
 import {
   pavilionPhotos,
+  openingPhotoIds,
+  interiorPhotoIds,
   pavilionResidents,
   pavilionMedia,
   pavilionNewsDates,
@@ -26,9 +29,6 @@ export function getStaticPaths() {
 const { locale } = Astro.props as { locale: Locale };
 const copy = t(locale);
 const page = pavilionPageCopy[locale];
-const fullPhotos = await Promise.all(
-  pavilionPhotos.map((src) => getImage({ src, width: Math.min(src.width, 1920), format: 'webp' })),
-);
 const actions = [
   { label: page.resident, url: href(locale, 'manufacturers/') + '#pavilion-residency' },
   { label: page.visit, url: '#visit' },
@@ -94,16 +94,16 @@ const jsonLd = {
         </div>
         <figure class="overflow-hidden rounded-card border border-line bg-white shadow-card">
           <Picture
-            src={pavilionPhotos[0]}
+            src={pavilionPhotos['meeting-area']}
             formats={['avif', 'webp']}
             widths={[400, 640, 960, 1280]}
             sizes="(min-width: 1024px) 50vw, 100vw"
-            alt={page.photos[0]}
+            alt={page.photos['meeting-area']}
             loading="eager"
             fetchpriority="high"
             class="aspect-4/3 w-full object-contain"
           /><figcaption class="px-4 py-3 text-xs text-muted">
-            {page.photos[0]} · 21.08.2026
+            {page.photos['meeting-area']} · 21.08.2026
           </figcaption>
         </figure>
       </div>
@@ -112,42 +112,19 @@ const jsonLd = {
   <section class={section} aria-labelledby="gallery-title">
     <div class="container-page">
       <SectionHeading id="gallery-title" title={page.gallery} lead={page.galleryLead} />
-      <div class="mt-12 grid grid-cols-2 gap-5 lg:grid-cols-3">
+      <div class="mt-12 grid grid-cols-2 gap-5 lg:grid-cols-4">
         {
-          pavilionPhotos.map((photo, i) => (
-            <a
-              data-photo
-              href={fullPhotos[i].src}
-              aria-label={`${page.enlarge}: ${page.photos[i]}, 21.08.2026`}
-              class="overflow-hidden rounded-card border border-line bg-white shadow-card hover:shadow-card-hover"
-            >
-              <figure>
-                <>
-                  <Picture
-                    src={photo}
-                    formats={['avif', 'webp']}
-                    widths={[320, 480, 768]}
-                    sizes="(min-width: 768px) 33vw, 50vw"
-                    alt={page.photos[i]}
-                    loading="lazy"
-                    class="aspect-3/2 w-full bg-surface object-contain"
-                  />
-                  <figcaption class="flex justify-between gap-3 p-3 text-xs text-muted">
-                    <>
-                      <span>
-                        {page.photos[i]}
-                        <time datetime="2026-08-21" class="block">
-                          21.08.2026
-                        </time>
-                      </span>
-                      <span aria-hidden="true" class="text-primary">
-                        ↗
-                      </span>
-                    </>
-                  </figcaption>
-                </>
-              </figure>
-            </a>
+          openingPhotoIds.map((id) => (
+            <PhotoLink
+              id={id}
+              src={pavilionPhotos[id]}
+              alt={page.photos[id]}
+              caption={page.photos[id]}
+              enlarge={page.enlarge}
+              date="2026-08-21"
+              dateLabel="21.08.2026"
+              detailCaption={page.photoDate}
+            />
           ))
         }
       </div>
@@ -165,6 +142,23 @@ const jsonLd = {
           rel="noopener">{page.rec} ↗<span class="sr-only">, {copy.external.newTab}</span></a
         >
       </div>
+      <ul
+        class="mt-12 flex min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:mt-16 md:grid md:grid-cols-3 md:overflow-visible md:pb-0"
+      >
+        {
+          interiorPhotoIds.map((id) => (
+            <li class="w-4/5 shrink-0 snap-start md:w-auto">
+              <PhotoLink
+                id={id}
+                src={pavilionPhotos[id]}
+                {...copy.pavilion.photos[id]}
+                enlarge={page.enlarge}
+                interior
+              />
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
   <section class={section} aria-labelledby="capabilities-title">
@@ -327,11 +321,11 @@ const jsonLd = {
                     {i === 6 && (
                       <figure class="mb-6 max-w-lg">
                         <Picture
-                          src={pavilionPhotos[5]}
+                          src={pavilionPhotos['opening-hall']}
                           formats={['avif', 'webp']}
                           widths={[512, 1024]}
                           sizes="512px"
-                          alt={page.photos[5]}
+                          alt={page.photos['opening-hall']}
                           loading="lazy"
                           class="w-full rounded-card"
                         />
@@ -426,9 +420,10 @@ const jsonLd = {
         >{page.close}</button
       >
     </form><h2 id="photo-title" class="my-4 text-h3"></h2><div id="photo-content"></div><p
+      id="photo-caption"
       class="mt-3 text-sm text-muted"
+      hidden
     >
-      {page.photoDate}
     </p>
   </dialog>
 </Base>
@@ -461,7 +456,10 @@ const jsonLd = {
       img.loading = 'eager';
       img.className = 'w-full h-auto max-h-96 md:max-h-128 object-contain';
       document.querySelector('#photo-content')!.replaceChildren(img);
-      document.querySelector('#photo-title')!.textContent = img.alt;
+      document.querySelector('#photo-title')!.textContent = a.dataset.title || img.alt;
+      const caption = document.querySelector<HTMLElement>('#photo-caption')!;
+      caption.textContent = a.dataset.caption || '';
+      caption.hidden = !a.dataset.caption;
       dialog.showModal();
     }),
   );

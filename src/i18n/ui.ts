@@ -765,8 +765,8 @@ export const pavilionPageCopy = {
     visit: 'Как посетить',
     resident: 'Стать резидентом',
     aboutTitle: 'О павильоне',
-    gallery: 'Павильон в фотографиях',
-    galleryLead: 'Интерьер и официальное открытие павильона. Нави-Мумбаи, 21 августа 2026 года.',
+    gallery: 'Открытие павильона',
+    galleryLead: 'Официальное открытие павильона. Нави-Мумбаи, 21 августа 2026 года.',
     aboutP: [
       'Национальный павильон «Сделано в России» в Нави-Мумбаи входит в программу Российского экспортного центра по продвижению российских товаров за рубежом. Здесь производители могут представить продукцию, а индийские покупатели - познакомиться с образцами и обсудить сотрудничество.',
       'Rai Family Corp LLP - официальный оператор павильона в Индии. Компания сопровождает выход российских производителей на местный рынок: от импорта, сертификации и логистики до дистрибуции и маркетингового продвижения.',
@@ -1045,14 +1045,13 @@ export const pavilionPageCopy = {
     office: 'Телефон офиса',
     close: 'Закрыть',
     photoDate: 'Нави-Мумбаи · 21 августа 2026',
-    photos: [
-      'Зона встреч и экспозиция',
-      'Экспозиция продукции',
-      'Гости официального открытия',
-      'Момент официального открытия',
-      'Групповой снимок на открытии',
-      'Общий вид зала на открытии',
-    ],
+    photos: {
+      'meeting-area': 'Зона встреч и экспозиция',
+      'opening-guests': 'Гости официального открытия',
+      'opening-moment': 'Момент официального открытия',
+      'opening-group': 'Групповой снимок на открытии',
+      'opening-hall': 'Общий вид зала на открытии',
+    },
     articles: [
       {
         title: 'Rai Family Corp LLP примет участие в Annapoorna Inter Food 2026',
@@ -1127,8 +1126,8 @@ export const pavilionPageCopy = {
     visit: 'Plan your visit',
     resident: 'Become a resident',
     aboutTitle: 'About the pavilion',
-    gallery: 'Inside the pavilion',
-    galleryLead: 'The pavilion interior and official opening. Navi Mumbai, 21 August 2026.',
+    gallery: 'Pavilion opening',
+    galleryLead: 'The pavilion’s official opening. Navi Mumbai, 21 August 2026.',
     aboutP: [
       'The «Made in Russia» National Pavilion in Navi Mumbai is part of the Russian Export Center’s programme promoting Russian products abroad. It provides a venue where manufacturers can present their products and Indian buyers can explore samples and discuss cooperation.',
       'Rai Family Corp LLP is the pavilion’s official operator in India. The company supports Russian manufacturers entering the local market through import services, certification support, logistics, distribution and marketing.',
@@ -1406,14 +1405,13 @@ export const pavilionPageCopy = {
     office: 'Office telephone',
     close: 'Close',
     photoDate: 'Navi Mumbai · 21 August 2026',
-    photos: [
-      'Meeting area and product displays',
-      'Product displays',
-      'Guests at the official opening',
-      'A moment from the official opening',
-      'Group photograph at the opening',
-      'The room during the official opening',
-    ],
+    photos: {
+      'meeting-area': 'Meeting area and product displays',
+      'opening-guests': 'Guests at the official opening',
+      'opening-moment': 'A moment from the official opening',
+      'opening-group': 'Group photograph at the opening',
+      'opening-hall': 'The room during the official opening',
+    },
     articles: [
       {
         title: 'Meet Rai Family Corp LLP at Annapoorna Inter Food 2026',
