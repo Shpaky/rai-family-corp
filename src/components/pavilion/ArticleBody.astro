@@ -1,0 +1,46 @@
+---
+import type { Locale } from '@/i18n/config';
+import { t } from '@/i18n/utils';
+interface Props {
+  paragraphs: string[];
+  locale: Locale;
+}
+const { paragraphs, locale } = Astro.props;
+// Only the two inline conventions used in the supplied editorial copy. Text is escaped by Astro.
+const tokens = (text: string) =>
+  text.split(/(\*\*.*?\*\*|\[.*?\]\(https?:[^\s)]+\))/g).map((part) => {
+    const link = part.match(/^\[(.*?)\]\((https?:[^\s)]+)\)$/);
+    return link
+      ? { text: link[1], url: link[2], bold: false }
+      : {
+          text: part.startsWith('**') ? part.slice(2, -2) : part,
+          url: null,
+          bold: part.startsWith('**'),
+        };
+  });
+---
+
+<div class="space-y-4 text-base leading-relaxed text-ink-soft">
+  {
+    paragraphs.map((paragraph) => (
+      <p>
+        {tokens(paragraph).map((token) =>
+          token.url ? (
+            <a
+              href={token.url}
+              target="_blank"
+              rel="noopener"
+              class="font-semibold text-primary underline underline-offset-4"
+            >
+              {token.text} ↗<span class="sr-only">, {t(locale).external.newTab}</span>
+            </a>
+          ) : token.bold ? (
+            <strong>{token.text}</strong>
+          ) : (
+            token.text
+          ),
+        )}
+      </p>
+    ))
+  }
+</div>

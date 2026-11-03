@@ -20,7 +20,7 @@ const home = href(locale);
 const targets: Record<AudienceKey, { href: string; label?: string; external?: boolean }> = {
   manufacturers: { href: href(locale, 'manufacturers/'), label: copy.services.more },
   distributors: { href: `${home}#directions` },
-  institutions: { href: `${home}#pavilion` },
+  institutions: { href: href(locale, 'pavilion/') },
   consumers: { href: company.store.url, external: true },
 };
 const order = AUDIENCE_ORDER[locale];

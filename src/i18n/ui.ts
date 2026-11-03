@@ -751,3 +751,731 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
   },
 };
+
+/** Pavilion page copy, transferred from the customer’s 2026-11-03 review edition. */
+export const pavilionPageCopy = {
+  ru: {
+    kicker: 'Проект Российского экспортного центра',
+    title: 'Национальный павильон «Сделано в России» в Нави-Мумбаи',
+    lead: 'Постоянная площадка для знакомства с российской продукцией и деловых встреч в Индии. Официальный оператор Rai Family Corp LLP помогает российским производителям и индийским партнёрам обсуждать поставки и развивать сотрудничество.',
+    opened: 'Открыт 21 августа 2026 года · Нави-Мумбаи, Индия',
+    visit: 'Как посетить',
+    resident: 'Стать резидентом',
+    anchors: ['О павильоне', 'Резиденты', 'Новости и события', 'Посещение'],
+    gallery: 'Павильон в фотографиях',
+    galleryLead: 'Интерьер и официальное открытие павильона. Нави-Мумбаи, 21 августа 2026 года.',
+    aboutP: [
+      'Национальный павильон «Сделано в России» в Нави-Мумбаи входит в программу Российского экспортного центра по продвижению российских товаров за рубежом. Здесь производители могут представить продукцию, а индийские покупатели - познакомиться с образцами и обсудить сотрудничество.',
+      'Rai Family Corp LLP - официальный оператор павильона в Индии. Компания сопровождает выход российских производителей на местный рынок: от импорта, сертификации и логистики до дистрибуции и маркетингового продвижения.',
+    ],
+    rec: 'Павильон на сайте РЭЦ',
+    cap: 'Возможности павильона',
+    caps: [
+      [
+        'Знакомство с продукцией',
+        'Посмотрите представленные товары и обсудите их особенности с оператором.',
+      ],
+      [
+        'Демонстрации и дегустации',
+        'Обсудите с командой подходящий формат знакомства с интересующей продукцией.',
+      ],
+      [
+        'Деловые встречи',
+        'Встретьтесь с оператором, чтобы обсудить поставки, дистрибуцию и сотрудничество.',
+      ],
+      [
+        'Поддержка производителей',
+        'Обсудите представление продукции в павильоне и дальнейшую работу на индийском рынке.',
+      ],
+    ],
+    residentEntries: [
+      {
+        name: 'Дикая Сибирь',
+        legal: 'ООО «Дикая Сибирь»',
+      },
+      {
+        name: 'MAKFA',
+        legal: 'АО «МАКФА»',
+      },
+      {
+        name: 'ГЛАВПРОДУКТ',
+        legal: 'ООО «Гарант»',
+      },
+      {
+        name: 'ЭФКО-Каскад',
+        legal: 'ООО «КРЦ «ЭФКО-Каскад»',
+      },
+      {
+        name: 'Татспиртпром',
+        legal: 'АО «Татспиртпром»',
+      },
+      {
+        name: 'Мираторг',
+        legal: 'ООО «ТК «Мираторг»',
+      },
+      {
+        name: 'Объединённые кондитеры',
+        legal: 'ООО «Объединенные кондитеры»',
+      },
+      {
+        name: 'Алмадез',
+        legal: 'ООО «Базовая дезинфекция»',
+      },
+      {
+        name: 'Свитлогорье',
+        legal: 'АО «ДМЗ» · Дмитровский Молочный Завод',
+      },
+      {
+        name: 'РОСА',
+        legal: 'МК РОСА · «Алтайская сказка»',
+      },
+      {
+        name: 'Союзпищепром',
+        legal: 'ООО «Объединение «Союзпищепром»',
+      },
+      {
+        name: 'OK Beauty',
+        legal: 'ООО «Фэйм Лэйбл»',
+      },
+      {
+        name: 'Меренга',
+        legal: 'ООО «Карамелия»',
+      },
+      {
+        name: 'PASSIM',
+        legal: 'ООО «Первая Крупяная Компания»',
+      },
+      {
+        name: 'Салют Алко',
+        legal: 'ООО «Салют Алко»',
+      },
+      {
+        name: 'TORERO',
+        legal: 'ООО «Кондитер-Мастер»',
+      },
+      {
+        name: 'Дербентский коньячный комбинат',
+        legal: 'АО «ДКК»',
+      },
+      {
+        name: 'Сибэкохим',
+        legal: 'ООО ОПК «Сибэкохим»',
+      },
+      {
+        name: 'Сташевское Био',
+        legal: 'Сташевское',
+      },
+      {
+        name: 'BioFoodLab',
+        legal: 'Bite · Bitey',
+      },
+      {
+        name: 'Helmetex',
+        legal: 'ООО «Хелметекс»',
+      },
+      {
+        name: 'BOTAVIKOS',
+        legal: 'ООО «Ботавикос»',
+      },
+      {
+        name: 'Алтайский букет',
+        legal: 'ООО «Алтайский букет»',
+      },
+      {
+        name: 'ALTARIA',
+        legal: 'ООО «Алтария»',
+      },
+      {
+        name: 'Саратов-Лавр',
+        legal: '«Эстетика вкуса»',
+      },
+      {
+        name: 'Модный дом Нины Ручкиной',
+        legal: '«Русские в моде»',
+      },
+      {
+        name: 'Кахети',
+        legal: 'ООО «Кахети»',
+      },
+      {
+        name: 'pamilee',
+        legal: 'ООО «Джи-Эл-Пи»',
+      },
+      {
+        name: 'Сокровища Крыма',
+        legal: 'ООО «Экобренды»',
+      },
+      {
+        name: 'Афанасий',
+        legal: 'Частная пивоварня «Афанасий»',
+      },
+      {
+        name: 'Хлебный Спас',
+        legal: 'ООО «Диал-К»',
+      },
+      {
+        name: 'Агро Экспорт ДВ',
+        legal: 'ООО «Агро Экспорт ДВ»',
+      },
+      {
+        name: 'RCH Cosmetics',
+        legal: 'ООО «Рид-Косметикс»',
+      },
+      {
+        name: 'B&B',
+        legal: 'АО «Би-энд-Би»',
+      },
+      {
+        name: 'Сладонеж',
+        legal: 'ООО ТПК «Сладонеж»',
+      },
+      {
+        name: 'Аква-Кристалл',
+        legal: 'ООО «Аква-Кристалл»',
+      },
+      {
+        name: 'Berdinberg',
+        legal: 'ООО «ДигЗИВ-БЛ»',
+      },
+      {
+        name: 'Высший Вкус',
+        legal: 'ООО «Высший Вкус»',
+      },
+      {
+        name: 'Kennerton',
+        legal: 'ООО «Фишер Аудио»',
+      },
+      {
+        name: 'ZERAPY',
+        legal: 'ИП Леснов Георгий Феликсович',
+      },
+      {
+        name: 'GLS Pharmaceuticals',
+        legal: 'ООО «Джи Эл Эс Фармасьютикалз»',
+      },
+      {
+        name: 'Global White',
+        legal: 'ООО «Глобал Дент»',
+      },
+      {
+        name: 'LAVR',
+        legal: 'ООО ТД «ЛАВР»',
+      },
+      {
+        name: 'Лаваж Глобал',
+        legal: 'Научно-методический центр',
+      },
+    ],
+    residents: 'Резиденты павильона',
+    media: 'Публикации об открытии',
+    residentsP:
+      'Познакомьтесь с компаниями, представленными в павильоне. Подробнее о продукции - на их официальных сайтах.',
+    more: 'Показать весь список',
+    less: 'Свернуть список',
+    news: 'Новости и события',
+    newsP:
+      'События павильона, новости Rai Family Corp LLP, предстоящие выставки и публикации в СМИ.',
+    upcoming: 'Скоро',
+    dates: [
+      '9-11 декабря 2026',
+      '10-12 декабря 2026',
+      '26 октября 2026',
+      '22 октября 2026',
+      '18-19 октября 2026',
+      '7 октября 2026',
+      '21 августа 2026',
+    ],
+    types: [
+      'Анонс',
+      'Анонс',
+      'В СМИ · Партнёрский материал',
+      'Событие · Пуна, Индия',
+      'Новость компании',
+      'В СМИ · Партнёрский материал',
+      'Событие · Нави-Мумбаи',
+    ],
+    stands: ['Стенд A27', 'Стенд 1.A25 · Зал Jasmine 1'],
+    details: 'Подробнее об участии',
+    meeting: 'Договориться о встрече',
+    mediaEntries: [
+      {
+        name: 'The Times of India',
+        label: 'Spotlight',
+      },
+      {
+        name: 'Hindustan Times',
+        label: 'Genesis',
+      },
+      {
+        name: 'Рамблер / ТАСС',
+        label: 'Перепечатка ТАСС / TASS republication',
+      },
+      {
+        name: 'Financial One / ТАСС',
+        label: 'Перепечатка ТАСС / TASS republication',
+      },
+      {
+        name: 'ABP Live',
+        label: 'Sponsored',
+      },
+      {
+        name: 'The Tribune',
+        label: 'Sponsored',
+      },
+    ],
+    past: 'События и публикации',
+    visiting: 'Как посетить павильон',
+    address: [
+      'Офис 1307/1308, 13-й этаж, NMS Titanium',
+      'Plot No 74, Sector-15, CBD Belapur',
+      'Нави-Мумбаи, Махараштра 400614, Индия',
+    ],
+    addressIntro: 'Павильон находится по адресу офиса Rai Family Corp LLP.',
+    map: 'Открыть карту',
+    hours: 'Пн-Пт · 11:00-18:00',
+    closed: 'По местному времени Индии (IST). Суббота, воскресенье и праздничные дни - выходные.',
+    welcome: 'Приходите познакомиться',
+    noRegistration:
+      'Предварительная регистрация не требуется. Чтобы договориться о встрече с командой, позвоните или напишите в WhatsApp.',
+    call: 'Позвонить',
+    whatsapp: 'Написать в WhatsApp',
+    office: 'Телефон офиса',
+    close: 'Закрыть',
+    photoDate: 'Нави-Мумбаи · 21 августа 2026',
+    photos: [
+      'Зона встреч и экспозиция',
+      'Экспозиция продукции',
+      'Гости официального открытия',
+      'Момент официального открытия',
+      'Групповой снимок на открытии',
+      'Общий вид зала на открытии',
+    ],
+    articles: [
+      {
+        title: 'Rai Family Corp LLP примет участие в Annapoorna Inter Food 2026',
+        paragraphs: [
+          '9-11 декабря Rai Family Corp LLP примет участие в международной выставке продуктов питания и напитков Annapoorna Inter Food 2026 в Bombay Exhibition Centre, Мумбаи.',
+          'Приглашаем импортёров, дистрибьюторов, представителей розничных сетей и HoReCa встретиться с нашей командой на стенде **A27**, познакомиться с деятельностью компании и обсудить возможности сотрудничества.',
+          'Чтобы договориться о встрече, позвоните или напишите в WhatsApp: **+91 70457 43899**.',
+          '[Договориться о встрече](https://wa.me/917045743899)',
+        ],
+      },
+      {
+        title: 'Встречайте Rai Family Corp LLP на Cosmoprof India 2026',
+        paragraphs: [
+          '10-12 декабря Rai Family Corp LLP примет участие в Cosmoprof India 2026 - профессиональной выставке индустрии красоты в Jio World Convention Centre, Мумбаи.',
+          'Приглашаем дистрибьюторов, представителей розничных сетей и других участников отрасли обсудить сотрудничество и продвижение российских брендов на индийском рынке. Наша команда будет работать на стенде **1.A25 в зале Jasmine 1**.',
+          'Чтобы договориться о встрече, позвоните или напишите в WhatsApp: **+91 70457 43899**.',
+          '[Договориться о встрече](https://wa.me/917045743899)',
+        ],
+      },
+      {
+        title: 'The Economic Times - о роли павильона в продвижении российских товаров',
+        paragraphs: [
+          'The Economic Times рассматривает три направления развития российского экспорта в Индию: постоянный павильон в Нави-Мумбаи, электронную торговлю и деловые связи, формируемые на международном форуме «Сделано в России» в Москве.',
+          'В материале показано, как павильон помогает индийским покупателям знакомиться с продукцией, запрашивать образцы и вести переговоры, а работа оператора поддерживает взаимодействие с российскими производителями между выставками и деловыми визитами.',
+          '[Читать материал на английском](https://economictimes.indiatimes.com/industry/services/retail/mumbai-marketplace-moscow-three-ms-for-russian-exports-to-india/articleshow/135210953.cms)',
+        ],
+      },
+      {
+        title:
+          'Павильон «Сделано в России» представлен на российско-индийском круглом столе в Пуне',
+        paragraphs: [
+          '22 октября в Пуне состоялся российско-индийский круглый стол, организованный Генеральным консульством России в Мумбаи совместно с Торгово-промышленной палатой Маратха (MCCIA). В мероприятии участвовали представители павильона «Сделано в России», Сбербанка, местных компаний и деловых объединений.',
+          'В ходе презентации павильона участникам рассказали о возможностях продвижения российской продукции в Индии и установления прямых контактов с производителями. Обсуждение было посвящено развитию торгово-экономического и инвестиционного сотрудничества, с особым вниманием к деловым связям с предприятиями Пуны.',
+          '[Сообщение Генконсульства в Telegram - на английском](https://t.me/rusmumbai/2924)',
+        ],
+      },
+      {
+        title: 'Rai Family Corp LLP и Helmetex обсудили локализацию производства в Индии',
+        paragraphs: [
+          '18-19 октября Rai Family Corp LLP провела встречу и переговоры с руководством российской компании Helmetex.',
+          'Стороны обсудили планы локализации производства продукции Helmetex на территории Индии. Для создания совместного предприятия найден индийский партнёр. Проект находится на стадии подготовки к реализации.',
+        ],
+      },
+      {
+        title:
+          'The Times of India - о павильоне и роли Rai Family в российско-индийском сотрудничестве',
+        paragraphs: [
+          'В материале об INNOPROM. India издание The Times of India рассматривает развитие торговых связей между российскими производителями и индийскими покупателями.',
+          'Отдельное внимание уделено национальному павильону «Сделано в России» в Нави-Мумбаи и его оператору Rai Family Corp LLP. Публикация рассказывает о роли компании в продвижении продукции, логистике и работе с местными каналами продаж, а также о возможностях постоянной площадки для знакомства с товарами и обсуждения поставок.',
+          '[Читать материал на английском](https://timesofindia.indiatimes.com/business/a-diverse-product-mix-and-new-markets-to-match-at-innoprom-india/articleshow/134760240.cms)',
+        ],
+      },
+      {
+        title: 'В Нави-Мумбаи открылся национальный павильон «Сделано в России»',
+        paragraphs: [
+          '21 августа 2026 года в Нави-Мумбаи состоялось официальное открытие первого в Индии постоянно действующего национального павильона «Сделано в России». Проект реализуется Российским экспортным центром, официальный оператор павильона - Rai Family Corp LLP.',
+          'Павильон предоставляет российским производителям постоянную площадку для демонстрации продукции и деловых встреч. Индийские импортёры, дистрибьюторы и представители розничных сетей могут познакомиться с товарами, оценить образцы и обсудить возможности сотрудничества.',
+          'Rai Family Corp LLP обеспечивает работу площадки и сопровождает выход российских производителей на индийский рынок, включая логистику, таможенное оформление и маркетинговую поддержку.',
+        ],
+      },
+    ],
+    onPage: 'На этой странице',
+    breadcrumb: 'Навигационная цепочка',
+    enlarge: 'Увеличить',
+    eventNames: ['Annapoorna Inter Food 2026', 'Cosmoprof India 2026'],
+    venues: ['Bombay Exhibition Centre, Mumbai', 'Jio World Convention Centre, Mumbai'],
+  },
+  en: {
+    kicker: 'A Russian Export Center project',
+    title: '«Made in Russia» National Pavilion in Navi Mumbai',
+    lead: 'A permanent venue in India for exploring Russian products and meeting business partners. Official operator Rai Family Corp LLP helps Russian manufacturers and Indian partners discuss supply opportunities and develop cooperation.',
+    opened: 'Opened on 21 August 2026 · Navi Mumbai, India',
+    visit: 'Plan your visit',
+    resident: 'Become a resident',
+    anchors: ['About the pavilion', 'Residents', 'News & Events', 'Visit us'],
+    gallery: 'Inside the pavilion',
+    galleryLead: 'The pavilion interior and official opening. Navi Mumbai, 21 August 2026.',
+    aboutP: [
+      'The «Made in Russia» National Pavilion in Navi Mumbai is part of the Russian Export Center’s programme promoting Russian products abroad. It provides a venue where manufacturers can present their products and Indian buyers can explore samples and discuss cooperation.',
+      'Rai Family Corp LLP is the pavilion’s official operator in India. The company supports Russian manufacturers entering the local market through import services, certification support, logistics, distribution and marketing.',
+    ],
+    rec: 'Pavilion on the REC website · RU',
+    cap: 'Pavilion capabilities',
+    caps: [
+      [
+        'Explore products',
+        'View the products on display and discuss their features with the operator.',
+      ],
+      [
+        'Product demonstrations and tastings',
+        'Contact the team to discuss a suitable format for exploring the products that interest you.',
+      ],
+      [
+        'Business meetings',
+        'Meet the operator to discuss supply, distribution and partnership opportunities.',
+      ],
+      [
+        'Support for manufacturers',
+        'Discuss showcasing your products at the pavilion and developing your presence in India.',
+      ],
+    ],
+    residentEntries: [
+      {
+        name: 'Wild Siberia',
+        legal: 'Wild Siberia LLC',
+      },
+      {
+        name: 'MAKFA',
+        legal: 'MAKFA JSC',
+      },
+      {
+        name: 'GLAVPRODUCT',
+        legal: 'Garant LLC',
+      },
+      {
+        name: 'EFKO-Kaskad',
+        legal: 'KRC EFKO-Kaskad LLC',
+      },
+      {
+        name: 'Tatspirtprom',
+        legal: 'Tatspirtprom JSC',
+      },
+      {
+        name: 'Miratorg',
+        legal: 'Trading Company Miratorg LLC',
+      },
+      {
+        name: 'United Confectioners',
+        legal: 'United Confectioners LLC',
+      },
+      {
+        name: 'Almadez',
+        legal: 'Bazovaya Dezinfektsiya LLC',
+      },
+      {
+        name: 'Svitlogorye',
+        legal: 'DMZ JSC · Dmitrov Dairy Plant',
+      },
+      {
+        name: 'ROSA',
+        legal: 'MK ROSA · Altayskaya Skazka',
+      },
+      {
+        name: 'Soyuzpishcheprom',
+        legal: 'Soyuzpishcheprom Association',
+      },
+      {
+        name: 'OK Beauty',
+        legal: 'Fame Label LLC',
+      },
+      {
+        name: 'Merenga',
+        legal: 'Karameliya LLC',
+      },
+      {
+        name: 'PASSIM',
+        legal: 'Pervaya Krupyanaya Kompaniya LLC',
+      },
+      {
+        name: 'Salut Alko',
+        legal: 'Salut Alko LLC',
+      },
+      {
+        name: 'TORERO',
+        legal: 'Konditer-Master LLC',
+      },
+      {
+        name: 'Derbent Cognac Plant',
+        legal: 'DKK JSC',
+      },
+      {
+        name: 'Sibekohim',
+        legal: 'OPK Sibekohim LLC',
+      },
+      {
+        name: 'Stashevskoe Bio',
+        legal: 'Stashevskoe',
+      },
+      {
+        name: 'BioFoodLab',
+        legal: 'Bite · Bitey',
+      },
+      {
+        name: 'Helmetex',
+        legal: 'Helmetex LLC',
+      },
+      {
+        name: 'BOTAVIKOS',
+        legal: 'Botavikos LLC',
+      },
+      {
+        name: 'Altai Buket',
+        legal: 'Altai Buket LLC',
+      },
+      {
+        name: 'ALTARIA',
+        legal: 'Altaria LLC',
+      },
+      {
+        name: 'Saratov-Lavr',
+        legal: 'Estetika Vkusa',
+      },
+      {
+        name: 'Nina Ruchkina Fashion House',
+        legal: 'Russkie v Mode',
+      },
+      {
+        name: 'Kaheti',
+        legal: 'Kaheti LLC',
+      },
+      {
+        name: 'pamilee',
+        legal: 'JLP LLC',
+      },
+      {
+        name: 'Sokrovishcha Kryma',
+        legal: 'Ecobrands LLC',
+      },
+      {
+        name: 'Afanasiy',
+        legal: 'Afanasiy Private Brewery',
+      },
+      {
+        name: 'Khlebny Spas',
+        legal: 'Dial-K LLC',
+      },
+      {
+        name: 'Agro Export DV',
+        legal: 'Agro Export DV LLC',
+      },
+      {
+        name: 'RCH Cosmetics',
+        legal: 'Reed-Cosmetics LLC',
+      },
+      {
+        name: 'B&B',
+        legal: 'B&B JSC',
+      },
+      {
+        name: 'Sladonezh',
+        legal: 'TPK Sladonezh LLC',
+      },
+      {
+        name: 'Akva-Kristall',
+        legal: 'Akva-Kristall LLC',
+      },
+      {
+        name: 'Berdinberg',
+        legal: 'DigZIV-BL LLC',
+      },
+      {
+        name: 'Vysshiy Vkus',
+        legal: 'Vysshiy Vkus LLC',
+      },
+      {
+        name: 'Kennerton',
+        legal: 'Fischer Audio LLC',
+      },
+      {
+        name: 'ZERAPY',
+        legal: 'Georgiy Feliksovich Lesnov · Sole proprietor',
+      },
+      {
+        name: 'GLS Pharmaceuticals',
+        legal: 'GLS Pharmaceuticals LLC',
+      },
+      {
+        name: 'Global White',
+        legal: 'Global Dent LLC',
+      },
+      {
+        name: 'LAVR',
+        legal: 'LAVR Trading House LLC',
+      },
+      {
+        name: 'Lavage Global',
+        legal: 'Scientific and Methodological Center',
+      },
+    ],
+    residents: 'Pavilion residents',
+    media: 'Media coverage',
+    residentsP:
+      'Explore the companies represented at the pavilion. Visit their official websites to learn more about their products.',
+    more: 'View all residents',
+    less: 'Show fewer residents',
+    news: 'News & Events',
+    newsP: 'Pavilion events, Rai Family Corp LLP news, upcoming exhibitions and media coverage.',
+    upcoming: 'Upcoming',
+    dates: [
+      '9-11 December 2026',
+      '10-12 December 2026',
+      '26 October 2026',
+      '22 October 2026',
+      '18-19 October 2026',
+      '7 October 2026',
+      '21 August 2026',
+    ],
+    types: [
+      'Upcoming event',
+      'Upcoming event',
+      'In the media · Partner content',
+      'Event · Pune, India',
+      'Company news',
+      'In the media · Partner content',
+      'Event · Navi Mumbai',
+    ],
+    stands: ['Stand A27', 'Stand 1.A25 · Jasmine Hall 1'],
+    details: 'About our participation',
+    meeting: 'Arrange a meeting',
+    mediaEntries: [
+      {
+        name: 'The Times of India',
+        label: 'Spotlight',
+      },
+      {
+        name: 'Hindustan Times',
+        label: 'Genesis',
+      },
+      {
+        name: 'Рамблер / ТАСС',
+        label: 'TASS republication',
+      },
+      {
+        name: 'Financial One / ТАСС',
+        label: 'TASS republication',
+      },
+      {
+        name: 'ABP Live',
+        label: 'Sponsored',
+      },
+      {
+        name: 'The Tribune',
+        label: 'Sponsored',
+      },
+    ],
+    past: 'Events & media coverage',
+    visiting: 'Visiting the pavilion',
+    address: [
+      'Office No 1307/1308, 13th Floor, NMS Titanium',
+      'Plot No 74, Sector-15, CBD Belapur',
+      'Navi Mumbai, Maharashtra 400614, India',
+    ],
+    addressIntro: 'The pavilion is located at the Rai Family Corp LLP office.',
+    map: 'Open map',
+    hours: 'Mon-Fri · 11:00 am-6:00 pm',
+    closed: 'India Standard Time (IST). Closed on Saturdays, Sundays and public holidays.',
+    welcome: 'Come and meet us',
+    noRegistration:
+      'No advance registration is required. To arrange a meeting with the team, call or message us on WhatsApp.',
+    call: 'Call us',
+    whatsapp: 'Message on WhatsApp',
+    office: 'Office telephone',
+    close: 'Close',
+    photoDate: 'Navi Mumbai · 21 August 2026',
+    photos: [
+      'Meeting area and product displays',
+      'Product displays',
+      'Guests at the official opening',
+      'A moment from the official opening',
+      'Group photograph at the opening',
+      'The room during the official opening',
+    ],
+    articles: [
+      {
+        title: 'Meet Rai Family Corp LLP at Annapoorna Inter Food 2026',
+        paragraphs: [
+          'Rai Family Corp LLP will take part in Annapoorna Inter Food 2026, the international food and beverage trade exhibition, on 9-11 December at the Bombay Exhibition Centre in Mumbai.',
+          'We invite importers, distributors, retailers and hospitality professionals to meet our team at **Stand A27**, learn about our work and explore opportunities for cooperation.',
+          'To arrange a meeting, call or message us on WhatsApp: **+91 70457 43899**.',
+          '[Arrange a meeting](https://wa.me/917045743899)',
+        ],
+      },
+      {
+        title: 'Meet Rai Family Corp LLP at Cosmoprof India 2026',
+        paragraphs: [
+          'Rai Family Corp LLP will participate in Cosmoprof India 2026, the beauty industry trade exhibition, on 10-12 December at the Jio World Convention Centre in Mumbai.',
+          'We welcome distributors, retailers and other beauty industry professionals to discuss partnerships and opportunities to bring Russian brands to the Indian market. Meet our team at **Stand 1.A25 in Jasmine Hall 1**.',
+          'To arrange a meeting, call or message us on WhatsApp: **+91 70457 43899**.',
+          '[Arrange a meeting](https://wa.me/917045743899)',
+        ],
+      },
+      {
+        title: 'The Economic Times explores the pavilion’s role in bringing Russian goods to India',
+        paragraphs: [
+          'The Economic Times examines three channels supporting Russian exports to India: the permanent pavilion in Navi Mumbai, e-commerce and business connections developed through the «Made in Russia» International Export Forum in Moscow.',
+          'The article explains how the pavilion gives Indian buyers a place to explore products, request samples and hold discussions, while the operator maintains contact with Russian manufacturers between exhibitions and business visits.',
+          '[Read the article](https://economictimes.indiatimes.com/industry/services/retail/mumbai-marketplace-moscow-three-ms-for-russian-exports-to-india/articleshow/135210953.cms)',
+        ],
+      },
+      {
+        title: '«Made in Russia» Pavilion presented at Russia-India roundtable in Pune',
+        paragraphs: [
+          'On 22 October, Pune hosted a Russia-India roundtable jointly organised by the Consulate General of Russia in Mumbai and the Mahratta Chamber of Commerce, Industries and Agriculture (MCCIA). Representatives of the «Made in Russia» Pavilion, Sberbank, local companies and business associations attended the event.',
+          'A presentation of the pavilion introduced opportunities to promote Russian products in India and connect directly with manufacturers. Discussions focused on expanding trade, economic and investment cooperation, with particular attention to business ties with companies in Pune.',
+          '[Read the Consulate General’s update on Telegram](https://t.me/rusmumbai/2924)',
+        ],
+      },
+      {
+        title: 'Rai Family Corp LLP and Helmetex discuss local production in India',
+        paragraphs: [
+          'On 18-19 October, Rai Family Corp LLP met with the management of Russian company Helmetex for business discussions.',
+          'The talks focused on plans to establish local production of Helmetex products in India. An Indian partner has been identified for the planned joint venture. The project is at the preparatory stage.',
+        ],
+      },
+      {
+        title:
+          'The Times of India highlights the pavilion and Rai Family’s role in Russia-India trade',
+        paragraphs: [
+          'In an article about INNOPROM. India, The Times of India explores the development of trade connections between Russian manufacturers and Indian buyers.',
+          'The publication also features the «Made in Russia» National Pavilion in Navi Mumbai and its operator, Rai Family Corp LLP. It describes the company’s role in product promotion, logistics and local sales channels, and explains how the permanent venue enables buyers to explore products and discuss supply opportunities.',
+          '[Read the article](https://timesofindia.indiatimes.com/business/a-diverse-product-mix-and-new-markets-to-match-at-innoprom-india/articleshow/134760240.cms)',
+        ],
+      },
+      {
+        title: '«Made in Russia» National Pavilion opens in Navi Mumbai',
+        paragraphs: [
+          'India’s first permanent «Made in Russia» National Pavilion officially opened in Navi Mumbai on 21 August 2026. The project is run by the Russian Export Center, with Rai Family Corp LLP serving as the pavilion’s official operator.',
+          'The pavilion gives Russian manufacturers a permanent venue for product displays and business meetings. Indian importers, distributors and retailers can explore products, assess samples and discuss opportunities for cooperation.',
+          'Rai Family Corp LLP operates the venue and supports Russian manufacturers entering the Indian market, including assistance with logistics, customs clearance and marketing.',
+        ],
+      },
+    ],
+    onPage: 'On this page',
+    breadcrumb: 'Breadcrumb',
+    enlarge: 'Enlarge',
+    eventNames: ['Annapoorna Inter Food 2026', 'Cosmoprof India 2026'],
+    venues: ['Bombay Exhibition Centre, Mumbai', 'Jio World Convention Centre, Mumbai'],
+  },
+};
