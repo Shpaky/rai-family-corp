@@ -29,7 +29,6 @@ const page = pavilionPageCopy[locale];
 const fullPhotos = await Promise.all(
   pavilionPhotos.map((src) => getImage({ src, width: Math.min(src.width, 1920), format: 'webp' })),
 );
-const anchors = ['about-pavilion', 'residents', 'news', 'visit'];
 const actions = [
   { label: page.resident, url: href(locale, 'manufacturers/') + '#pavilion-residency' },
   { label: page.visit, url: '#visit' },
@@ -108,18 +107,6 @@ const jsonLd = {
           </figcaption>
         </figure>
       </div>
-      <nav
-        aria-label={page.onPage}
-        class="flex flex-wrap gap-x-6 gap-y-3 border-t border-line py-4"
-      >
-        {
-          anchors.map((id, i) => (
-            <a class={link} href={'#' + id}>
-              {page.anchors[i]} ↓
-            </a>
-          ))
-        }
-      </nav>
     </div>
   </section>
   <section class={section} aria-labelledby="gallery-title">
@@ -169,7 +156,7 @@ const jsonLd = {
   <section id="about-pavilion" class:list={[section, 'bg-surface']} aria-labelledby="about-title">
     <div class="container-page">
       <div class="max-w-3xl">
-        <SectionHeading id="about-title" title={page.anchors[0]} />{
+        <SectionHeading id="about-title" title={page.aboutTitle} />{
           page.aboutP.map((p) => <p class="mt-6 leading-relaxed text-ink-soft">{p}</p>)
         }<a
           class:list={[link, 'mt-6 inline-flex']}
@@ -401,18 +388,27 @@ const jsonLd = {
         ><div class="mt-8 border-t border-white/20 pt-6">
           <strong>{page.hours}</strong><p class="mt-2 text-sm text-dark-text">{page.closed}</p>
         </div>
-      </div><div class="rounded-card border border-line bg-white text-ink p-7 md:p-10">
-        <h3 class="text-h3">{page.welcome}</h3><p class="mt-4 leading-relaxed text-ink-soft">
+      </div><div class="rounded-card bg-white/10 text-dark-text p-7 md:p-10">
+        <h3 class="text-h3">{page.welcome}</h3><p class="mt-4 leading-relaxed text-dark-text">
           {page.noRegistration}
-        </p><a class="mt-6 block text-h3 font-bold text-primary" href={'tel:' + meetingPhone}
-          >+91 70457 43899</a
+        </p><a
+          class="mt-6 block text-h3 font-bold text-dark-text underline underline-offset-4 hover:no-underline focus-visible:outline-dark-text"
+          href={'tel:' + meetingPhone}>+91 70457 43899</a
         ><div class="mt-6 flex flex-wrap gap-3">
-          <Button href={meetingWhatsapp} external
-            >{page.whatsapp} ↗<span class="sr-only">, {copy.external.newTab}</span></Button
-          ><Button href={'tel:' + meetingPhone} variant="secondary">{page.call}</Button>
-        </div><p class="mt-8 border-t border-line pt-6 text-sm text-muted">
-          {page.office}<a class="mt-2 block font-bold text-primary" href={'tel:' + officePhone}
-            >+91 83693 93073</a
+          <Button
+            href={meetingWhatsapp}
+            variant="secondary"
+            class="hover:text-primary-hover focus-visible:outline-dark-text"
+            external>{page.whatsapp} ↗<span class="sr-only">, {copy.external.newTab}</span></Button
+          ><Button
+            href={'tel:' + meetingPhone}
+            variant="ghost"
+            class="focus-visible:outline-dark-text">{page.call}</Button
+          >
+        </div><p class="mt-8 border-t border-white/20 pt-6 text-sm text-dark-text">
+          {page.office}<a
+            class="mt-2 block font-bold text-dark-text underline underline-offset-4 hover:no-underline focus-visible:outline-dark-text"
+            href={'tel:' + officePhone}>+91 83693 93073</a
           >
         </p>
       </div>
