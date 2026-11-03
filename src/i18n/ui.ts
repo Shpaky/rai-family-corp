@@ -137,6 +137,7 @@ interface Copy {
     addressLabel: string;
     address: string[];
     map: string;
+    more: string;
     /** Photo captions; `alt` describes the picture, `caption` names the role of the space. */
     photos: { showroom: Photo; shelves: Photo; stage: Photo };
   };
@@ -381,6 +382,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
         'Navi Mumbai, Thane, Maharashtra 400614, India',
       ],
       map: 'Open in Google Maps',
+      more: 'More about the pavilion',
       photos: {
         showroom: {
           alt: 'Showroom of the «Made in Russia» pavilion: shelves with Russian products, a round table and a lectern with the mark',
@@ -649,6 +651,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
         'Navi Mumbai, Thane, Maharashtra 400614, India',
       ],
       map: 'Открыть в Google Maps',
+      more: 'Подробнее о павильоне',
       photos: {
         showroom: {
           alt: 'Шоурум павильона «Сделано в России»: полки с российскими товарами, круглый стол и трибуна со знаком',
@@ -761,7 +764,7 @@ export const pavilionPageCopy = {
     opened: 'Открыт 21 августа 2026 года · Нави-Мумбаи, Индия',
     visit: 'Как посетить',
     resident: 'Стать резидентом',
-    anchors: ['О павильоне', 'Резиденты', 'Новости и события', 'Посещение'],
+    aboutTitle: 'О павильоне',
     gallery: 'Павильон в фотографиях',
     galleryLead: 'Интерьер и официальное открытие павильона. Нави-Мумбаи, 21 августа 2026 года.',
     aboutP: [
@@ -1111,7 +1114,6 @@ export const pavilionPageCopy = {
         ],
       },
     ],
-    onPage: 'На этой странице',
     breadcrumb: 'Навигационная цепочка',
     enlarge: 'Увеличить',
     eventNames: ['Annapoorna Inter Food 2026', 'Cosmoprof India 2026'],
@@ -1124,7 +1126,7 @@ export const pavilionPageCopy = {
     opened: 'Opened on 21 August 2026 · Navi Mumbai, India',
     visit: 'Plan your visit',
     resident: 'Become a resident',
-    anchors: ['About the pavilion', 'Residents', 'News & Events', 'Visit us'],
+    aboutTitle: 'About the pavilion',
     gallery: 'Inside the pavilion',
     galleryLead: 'The pavilion interior and official opening. Navi Mumbai, 21 August 2026.',
     aboutP: [
@@ -1472,7 +1474,6 @@ export const pavilionPageCopy = {
         ],
       },
     ],
-    onPage: 'On this page',
     breadcrumb: 'Breadcrumb',
     enlarge: 'Enlarge',
     eventNames: ['Annapoorna Inter Food 2026', 'Cosmoprof India 2026'],
