@@ -390,44 +390,54 @@ const jsonLd = {
         ><div class="mt-8 border-t border-white/20 pt-6">
           <strong>{page.hours}</strong><p class="mt-2 text-sm text-dark-text">{page.closed}</p>
         </div>
-      </div><div class="rounded-card bg-white/10 text-dark-text p-7 md:p-10">
+      </div><div class="@container rounded-card bg-white/10 text-dark-text p-7 md:p-10">
         <h3 class="text-h3">{page.welcome}</h3><p class="mt-4 leading-relaxed text-dark-text">
           {page.noRegistration}
         </p>
-        {
-          visitContacts.map((contact) => (
-            <div class="mt-6" data-visit-contact={contact.phone}>
-              <a
-                class="block text-h3 font-bold text-dark-text underline underline-offset-4 hover:no-underline focus-visible:outline-dark-text"
-                href={telUri(contact.phone)}
-              >
-                {contact.label}
-              </a>
-              <div class="mt-6 flex flex-wrap gap-3">
-                {contact.whatsapp && (
-                  <Button
-                    href={whatsappUrl(contact.whatsapp)}
-                    variant="secondary"
-                    class="hover:text-primary-hover focus-visible:outline-dark-text"
-                    external
-                  >
-                    {page.whatsapp}
-                    <span class="sr-only"> {contact.label}</span> ↗
-                    <span class="sr-only">, {copy.external.newTab}</span>
-                  </Button>
-                )}
-                <Button
-                  href={telUri(contact.phone)}
-                  variant="ghost"
-                  class="focus-visible:outline-dark-text"
-                >
-                  {page.call}
-                  <span class="sr-only"> {contact.label}</span>
-                </Button>
-              </div>
-            </div>
-          ))
-        }
+        <dl class="mt-6 grid gap-6 @md:grid-cols-2">
+          <div data-visit-channel="phone">
+            <dt class="eyebrow text-dark-text">{copy.contacts.phone}</dt>
+            <dd class="mt-2 text-lg font-bold">
+              <ul class="space-y-1">
+                {
+                  visitContacts.map((contact) => (
+                    <li>
+                      <a
+                        href={telUri(contact.phone)}
+                        class="whitespace-nowrap underline-offset-4 hover:underline focus-visible:outline-dark-text"
+                      >
+                        {contact.label}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </dd>
+          </div>
+          <div data-visit-channel="whatsapp">
+            <dt class="eyebrow text-dark-text">{copy.contacts.whatsapp}</dt>
+            <dd class="mt-2 text-lg font-bold">
+              <ul class="space-y-1">
+                {
+                  visitContacts.map(
+                    (contact) =>
+                      contact.whatsapp && (
+                        <li>
+                          <a
+                            href={whatsappUrl(contact.whatsapp)}
+                            rel="noopener"
+                            class="whitespace-nowrap underline-offset-4 hover:underline focus-visible:outline-dark-text"
+                          >
+                            {contact.label}
+                          </a>
+                        </li>
+                      ),
+                  )
+                }
+              </ul>
+            </dd>
+          </div>
+        </dl>
         <p class="mt-8 border-t border-white/20 pt-6 text-sm text-dark-text">
           {page.office}<a
             class="mt-2 block font-bold text-dark-text underline underline-offset-4 hover:no-underline focus-visible:outline-dark-text"
