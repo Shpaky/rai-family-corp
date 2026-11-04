@@ -240,31 +240,72 @@ for (const locale of ['', 'ru/']) {
       whatsapp: 'https://wa.me/917045743899',
     };
     const ordered = locale ? [ru, india] : [india, ru];
-    const groups = page.locator('[data-visit-contact]');
+    const groups = page.locator('[data-visit-channel]');
     await expect(groups).toHaveCount(2);
-    for (const [i, contact] of ordered.entries()) {
-      const links = groups.nth(i).locator('a');
-      await expect(links).toHaveCount(3);
-      await expect(links.first()).toHaveText(contact.phone);
-      expect(await links.evaluateAll((nodes) => nodes.map((a) => a.getAttribute('href')))).toEqual([
-        contact.tel,
-        contact.whatsapp,
-        contact.tel,
-      ]);
-      for (const link of await links.all())
-        await expect(link).toHaveAccessibleName(new RegExp(contact.phone.replace(/[+]/g, '\\+')));
-      await expect(links.nth(1)).toHaveAttribute('target', '_blank');
-      await expect(links.nth(1)).toHaveAttribute('rel', 'noopener');
+    await expect(groups.nth(0)).toHaveAttribute('data-visit-channel', 'phone');
+    await expect(groups.nth(1)).toHaveAttribute('data-visit-channel', 'whatsapp');
+    await expect(groups.locator('dt')).toHaveText([locale ? 'Телефон' : 'Phone', 'WhatsApp']);
+    await expect(
+      page.locator('#visit button, #visit a.rounded-pill, [data-visit-contact]'),
+    ).toHaveCount(0);
+    for (const [i, channel] of ['tel', 'whatsapp'].entries()) {
+      const links = groups.nth(i).locator('dd ul li a');
+      await expect(links).toHaveCount(2);
+      await expect(links).toHaveText(ordered.map((contact) => contact.phone));
+      expect(await links.evaluateAll((nodes) => nodes.map((a) => a.getAttribute('href')))).toEqual(
+        ordered.map((contact) => contact[channel as 'tel' | 'whatsapp']),
+      );
+      for (const [j, contact] of ordered.entries()) {
+        await expect(links.nth(j)).toHaveAccessibleName(contact.phone);
+        if (channel === 'whatsapp') {
+          await expect(links.nth(j)).not.toHaveAttribute('target');
+          await expect(links.nth(j)).toHaveAttribute('rel', 'noopener');
+        }
+      }
     }
     const links = groups.locator('a');
     await links.first().focus();
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
       await expect(links.nth(i)).toBeFocused();
       await page.keyboard.press('Tab');
     }
     await expect(page.locator('#visit a[href="tel:+918369393073"]')).toBeFocused();
     await expect(page.locator('#visit a[href="https://wa.me/918369393073"]')).toHaveCount(0);
     await expect(page.locator('#news article a[href="https://wa.me/917045743899"]')).toHaveCount(2);
+    for (const width of [360, 600, 768, 1024, 1280]) {
+      await page.setViewportSize({ width, height: 800 });
+      const boxes = await groups.evaluateAll((nodes) =>
+        nodes.map((node) => {
+          const { x, y, width, height } = node.getBoundingClientRect();
+          return { x, y, width, height };
+        }),
+      );
+      if (width === 600 || width === 1280) {
+        expect(boxes[0].y).toBe(boxes[1].y);
+        expect(boxes[1].x).toBeGreaterThan(boxes[0].x + boxes[0].width);
+      } else {
+        expect(boxes[0].x).toBe(boxes[1].x);
+        expect(boxes[1].y).toBeGreaterThan(boxes[0].y + boxes[0].height);
+      }
+      for (const link of await links.all()) {
+        expect(
+          await link.evaluate((a) => {
+            const range = document.createRange();
+            range.selectNodeContents(a);
+            const text = range.getBoundingClientRect();
+            const block = a.closest('dd')!.getBoundingClientRect();
+            return (
+              text.left >= block.left &&
+              text.right <= block.right &&
+              text.height <= parseFloat(getComputedStyle(a).lineHeight)
+            );
+          }),
+        ).toBe(true);
+      }
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+        true,
+      );
+    }
     for (const route of ['', 'about/']) {
       await page.goto(locale + route);
       const company = page.locator('section[aria-labelledby="contacts-title"]');
