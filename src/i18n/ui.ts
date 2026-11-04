@@ -767,7 +767,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
 };
 
 /** Pavilion page copy, transferred from the customer’s 2026-11-03 review edition. */
-export const pavilionPageCopy = {
+const pavilionPageCopy = {
   ru: {
     kicker: 'Проект Российского экспортного центра',
     title: 'Национальный павильон «Сделано в России» в Нави-Мумбаи',
@@ -1071,8 +1071,8 @@ export const pavilionPageCopy = {
         paragraphs: [
           '9-11 декабря Rai Family Corp LLP примет участие в международной выставке продуктов питания и напитков Annapoorna Inter Food 2026 в Bombay Exhibition Centre, Мумбаи.',
           'Приглашаем импортёров, дистрибьюторов, представителей розничных сетей и HoReCa встретиться с нашей командой на стенде **A27**, познакомиться с деятельностью компании и обсудить возможности сотрудничества.',
-          'Чтобы договориться о встрече, позвоните или напишите в WhatsApp: **+91 70457 43899**.',
-          '[Договориться о встрече](https://wa.me/917045743899)',
+          'Чтобы договориться о встрече, позвоните или напишите в WhatsApp: **{meetingPhone}**.',
+          '[Договориться о встрече]({meetingWhatsapp})',
         ],
       },
       {
@@ -1080,8 +1080,8 @@ export const pavilionPageCopy = {
         paragraphs: [
           '10-12 декабря Rai Family Corp LLP примет участие в Cosmoprof India 2026 - профессиональной выставке индустрии красоты в Jio World Convention Centre, Мумбаи.',
           'Приглашаем дистрибьюторов, представителей розничных сетей и других участников отрасли обсудить сотрудничество и продвижение российских брендов на индийском рынке. Наша команда будет работать на стенде **1.A25 в зале Jasmine 1**.',
-          'Чтобы договориться о встрече, позвоните или напишите в WhatsApp: **+91 70457 43899**.',
-          '[Договориться о встрече](https://wa.me/917045743899)',
+          'Чтобы договориться о встрече, позвоните или напишите в WhatsApp: **{meetingPhone}**.',
+          '[Договориться о встрече]({meetingWhatsapp})',
         ],
       },
       {
@@ -1433,8 +1433,8 @@ export const pavilionPageCopy = {
         paragraphs: [
           'Rai Family Corp LLP will take part in Annapoorna Inter Food 2026, the international food and beverage trade exhibition, on 9-11 December at the Bombay Exhibition Centre in Mumbai.',
           'We invite importers, distributors, retailers and hospitality professionals to meet our team at **Stand A27**, learn about our work and explore opportunities for cooperation.',
-          'To arrange a meeting, call or message us on WhatsApp: **+91 70457 43899**.',
-          '[Arrange a meeting](https://wa.me/917045743899)',
+          'To arrange a meeting, call or message us on WhatsApp: **{meetingPhone}**.',
+          '[Arrange a meeting]({meetingWhatsapp})',
         ],
       },
       {
@@ -1442,8 +1442,8 @@ export const pavilionPageCopy = {
         paragraphs: [
           'Rai Family Corp LLP will participate in Cosmoprof India 2026, the beauty industry trade exhibition, on 10-12 December at the Jio World Convention Centre in Mumbai.',
           'We welcome distributors, retailers and other beauty industry professionals to discuss partnerships and opportunities to bring Russian brands to the Indian market. Meet our team at **Stand 1.A25 in Jasmine Hall 1**.',
-          'To arrange a meeting, call or message us on WhatsApp: **+91 70457 43899**.',
-          '[Arrange a meeting](https://wa.me/917045743899)',
+          'To arrange a meeting, call or message us on WhatsApp: **{meetingPhone}**.',
+          '[Arrange a meeting]({meetingWhatsapp})',
         ],
       },
       {
@@ -1493,3 +1493,26 @@ export const pavilionPageCopy = {
     venues: ['Bombay Exhibition Centre, Mumbai', 'Jio World Convention Centre, Mumbai'],
   },
 };
+
+/** Resolve both event paragraphs and editorial links from the selected locale contact. */
+export function getPavilionPageCopy(
+  locale: import('./config').Locale,
+  meetingContact: { label: string; whatsapp: string },
+) {
+  const copy = pavilionPageCopy[locale];
+  return {
+    ...copy,
+    articles: copy.articles.map((article, index) =>
+      index < 2
+        ? {
+            ...article,
+            paragraphs: article.paragraphs.map((paragraph) =>
+              paragraph
+                .replace('{meetingPhone}', meetingContact.label)
+                .replace('{meetingWhatsapp}', meetingContact.whatsapp),
+            ),
+          }
+        : article,
+    ),
+  };
+}
