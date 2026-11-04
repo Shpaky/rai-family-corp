@@ -225,3 +225,62 @@ for (const locale of ['', 'ru/']) {
     }
   });
 }
+
+for (const locale of ['', 'ru/']) {
+  test(`pavilion visit contacts and locale order: ${locale || 'en'}`, async ({ page }) => {
+    await page.goto(`${locale}pavilion/`);
+    const ru = {
+      phone: '+7 965 157 73 00',
+      tel: 'tel:+79651577300',
+      whatsapp: 'https://wa.me/79651577300',
+    };
+    const india = {
+      phone: '+91 70457 43899',
+      tel: 'tel:+917045743899',
+      whatsapp: 'https://wa.me/917045743899',
+    };
+    const ordered = locale ? [ru, india] : [india, ru];
+    const groups = page.locator('[data-visit-contact]');
+    await expect(groups).toHaveCount(2);
+    for (const [i, contact] of ordered.entries()) {
+      const links = groups.nth(i).locator('a');
+      await expect(links).toHaveCount(3);
+      await expect(links.first()).toHaveText(contact.phone);
+      expect(await links.evaluateAll((nodes) => nodes.map((a) => a.getAttribute('href')))).toEqual([
+        contact.tel,
+        contact.whatsapp,
+        contact.tel,
+      ]);
+      for (const link of await links.all())
+        await expect(link).toHaveAccessibleName(new RegExp(contact.phone.replace(/[+]/g, '\\+')));
+      await expect(links.nth(1)).toHaveAttribute('target', '_blank');
+      await expect(links.nth(1)).toHaveAttribute('rel', 'noopener');
+    }
+    const links = groups.locator('a');
+    await links.first().focus();
+    for (let i = 0; i < 6; i++) {
+      await expect(links.nth(i)).toBeFocused();
+      await page.keyboard.press('Tab');
+    }
+    await expect(page.locator('#visit a[href="tel:+918369393073"]')).toBeFocused();
+    await expect(page.locator('#visit a[href="https://wa.me/918369393073"]')).toHaveCount(0);
+    await expect(page.locator('#news article a[href="https://wa.me/917045743899"]')).toHaveCount(2);
+    for (const route of ['', 'about/']) {
+      await page.goto(locale + route);
+      const company = page.locator('section[aria-labelledby="contacts-title"]');
+      const numbers = locale
+        ? ['+79651577300', '+919082099228']
+        : ['+919082099228', '+79651577300'];
+      expect(
+        await company
+          .locator('a[href^="tel:"]')
+          .evaluateAll((nodes) => nodes.map((a) => a.getAttribute('href'))),
+      ).toEqual(numbers.map((n) => `tel:${n}`));
+      expect(
+        await company
+          .locator('a[href^="https://wa.me/"]')
+          .evaluateAll((nodes) => nodes.map((a) => a.getAttribute('href'))),
+      ).toEqual(numbers.map((n) => `https://wa.me/${n.slice(1)}`));
+    }
+  });
+}

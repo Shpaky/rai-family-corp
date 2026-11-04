@@ -21,7 +21,7 @@ import {
   officePhone,
 } from '@/data/pavilion';
 import { company } from '@/data/company';
-import { contacts } from '@/data/contacts';
+import { contacts, telUri, whatsappUrl } from '@/data/contacts';
 import type { Locale } from '@/i18n/config';
 import { href, localePaths, t } from '@/i18n/utils';
 export function getStaticPaths() {
@@ -30,6 +30,19 @@ export function getStaticPaths() {
 const { locale } = Astro.props as { locale: Locale };
 const copy = t(locale);
 const page = pavilionPageCopy[locale];
+const indianVisitContact = {
+  phone: meetingPhone,
+  label: '+91 70457 43899',
+  whatsapp: meetingPhone,
+};
+const russianVisitContact = contacts.phone
+  ? { phone: contacts.phone, label: contacts.phone, whatsapp: contacts.whatsapp }
+  : null;
+const visitContacts = (
+  locale === 'ru'
+    ? [russianVisitContact, indianVisitContact]
+    : [indianVisitContact, russianVisitContact]
+).filter((contact) => contact !== null);
 const actions = [
   { label: page.resident, url: href(locale, 'manufacturers/') + '#pavilion-residency' },
   { label: page.visit, url: '#visit' },
@@ -380,21 +393,42 @@ const jsonLd = {
       </div><div class="rounded-card bg-white/10 text-dark-text p-7 md:p-10">
         <h3 class="text-h3">{page.welcome}</h3><p class="mt-4 leading-relaxed text-dark-text">
           {page.noRegistration}
-        </p><a
-          class="mt-6 block text-h3 font-bold text-dark-text underline underline-offset-4 hover:no-underline focus-visible:outline-dark-text"
-          href={'tel:' + meetingPhone}>+91 70457 43899</a
-        ><div class="mt-6 flex flex-wrap gap-3">
-          <Button
-            href={meetingWhatsapp}
-            variant="secondary"
-            class="hover:text-primary-hover focus-visible:outline-dark-text"
-            external>{page.whatsapp} ↗<span class="sr-only">, {copy.external.newTab}</span></Button
-          ><Button
-            href={'tel:' + meetingPhone}
-            variant="ghost"
-            class="focus-visible:outline-dark-text">{page.call}</Button
-          >
-        </div><p class="mt-8 border-t border-white/20 pt-6 text-sm text-dark-text">
+        </p>
+        {
+          visitContacts.map((contact) => (
+            <div class="mt-6" data-visit-contact={contact.phone}>
+              <a
+                class="block text-h3 font-bold text-dark-text underline underline-offset-4 hover:no-underline focus-visible:outline-dark-text"
+                href={telUri(contact.phone)}
+              >
+                {contact.label}
+              </a>
+              <div class="mt-6 flex flex-wrap gap-3">
+                {contact.whatsapp && (
+                  <Button
+                    href={whatsappUrl(contact.whatsapp)}
+                    variant="secondary"
+                    class="hover:text-primary-hover focus-visible:outline-dark-text"
+                    external
+                  >
+                    {page.whatsapp}
+                    <span class="sr-only"> {contact.label}</span> ↗
+                    <span class="sr-only">, {copy.external.newTab}</span>
+                  </Button>
+                )}
+                <Button
+                  href={telUri(contact.phone)}
+                  variant="ghost"
+                  class="focus-visible:outline-dark-text"
+                >
+                  {page.call}
+                  <span class="sr-only"> {contact.label}</span>
+                </Button>
+              </div>
+            </div>
+          ))
+        }
+        <p class="mt-8 border-t border-white/20 pt-6 text-sm text-dark-text">
           {page.office}<a
             class="mt-2 block font-bold text-dark-text underline underline-offset-4 hover:no-underline focus-visible:outline-dark-text"
             href={'tel:' + officePhone}>+91 83693 93073</a
