@@ -1,5 +1,9 @@
 ---
 import StatusLockup from '@/components/StatusLockup.astro';
+// Bootstrap Icons, MIT. License is preserved alongside these SVG assets.
+import LinkedInIcon from '@/assets/icons/linkedin.svg';
+import FacebookIcon from '@/assets/icons/facebook.svg';
+import { footerSocialProfiles } from '@/data/contacts';
 import { LOCALES, LOCALE_LABELS, type Locale } from '@/i18n/config';
 import { href, navItems, t } from '@/i18n/utils';
 
@@ -12,6 +16,7 @@ const copy = t(locale);
 const year = new Date().getFullYear();
 const links = navItems(locale);
 const current = (l: (typeof links)[number]) => Boolean(l.page && path.startsWith(l.page));
+const socialIcons = { linkedin: LinkedInIcon, facebook: FacebookIcon };
 ---
 
 <footer class="border-t border-line bg-white">
@@ -19,6 +24,32 @@ const current = (l: (typeof links)[number]) => Boolean(l.page && path.startsWith
     <div class="md:col-span-5">
       <StatusLockup locale={locale} variant="footer" homeLink />
       <p class="mt-4 max-w-sm text-xs leading-relaxed text-muted">{copy.footer.operator}</p>
+      <nav aria-label={copy.footer.socialMedia} class="mt-4">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2">
+          {
+            footerSocialProfiles.map((profile) => {
+              const Icon = socialIcons[profile.id];
+              return (
+                <li>
+                  <a
+                    href={profile.url}
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex items-center gap-2 whitespace-nowrap py-1 text-sm font-semibold text-ink-soft hover:text-primary"
+                  >
+                    <Icon class="size-4 shrink-0" aria-hidden="true" focusable="false" />
+                    <span>
+                      {copy.footer.socialLinks[profile.id]}
+                      <span class="sr-only">, {copy.external.newTab}</span>
+                    </span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </nav>
     </div>
     <nav aria-label={copy.nav.footerMenu} class="md:col-span-4">
       <ul class="grid grid-cols-2 gap-x-6 gap-y-2">

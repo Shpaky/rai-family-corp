@@ -4,6 +4,12 @@
 */
 import type { Locale } from '../i18n/config';
 
+/** Official profiles displayed in the footer, in the same order for both locales. */
+export const footerSocialProfiles = [
+  { id: 'linkedin', url: 'https://www.linkedin.com/company/144693983' },
+  { id: 'facebook', url: 'https://www.facebook.com/profile.php?id=61593478033031' },
+] as const;
+
 export const contacts = {
   email: 'raigroupholding@gmail.com' as string | null,
   /** Russian number; also used for WhatsApp and Telegram. */
