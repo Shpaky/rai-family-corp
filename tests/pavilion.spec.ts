@@ -271,7 +271,32 @@ for (const locale of ['', 'ru/']) {
     }
     await expect(page.locator('#visit a[href="tel:+918369393073"]')).toBeFocused();
     await expect(page.locator('#visit a[href="https://wa.me/918369393073"]')).toHaveCount(0);
-    await expect(page.locator('#news article a[href="https://wa.me/917045743899"]')).toHaveCount(2);
+    const events = page.locator('#news article');
+    await expect(events).toHaveCount(2);
+    const primary = ordered[0];
+    for (const event of await events.all()) {
+      const summary = event.locator('summary');
+      await summary.focus();
+      await page.keyboard.press('Enter');
+      await expect(event.locator('details')).toHaveAttribute('open', '');
+      await expect(event.locator('details p').last()).toHaveText(
+        locale
+          ? 'Чтобы договориться о встрече, позвоните или напишите в WhatsApp: ' +
+              primary.phone +
+              '.'
+          : 'To arrange a meeting, call or message us on WhatsApp: ' + primary.phone + '.',
+      );
+      await expect(event).not.toContainText(ordered[1].phone);
+      const meeting = event.getByRole('link', {
+        name: locale ? 'Договориться о встрече' : 'Arrange a meeting',
+      });
+      await expect(event.locator('a')).toHaveCount(1);
+      await expect(meeting).toHaveAttribute('href', primary.whatsapp);
+      await expect(meeting).toHaveAttribute('target', '_blank');
+      await expect(meeting).toHaveAttribute('rel', 'noopener');
+      await page.keyboard.press('Tab');
+      await expect(meeting).toBeFocused();
+    }
     for (const width of [360, 600, 768, 1024, 1280]) {
       await page.setViewportSize({ width, height: 800 });
       const boxes = await groups.evaluateAll((nodes) =>

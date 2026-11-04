@@ -8,7 +8,7 @@ import SectionHeading from '@/components/SectionHeading.astro';
 import Collapsible from '@/components/Collapsible.astro';
 import ArticleBody from '@/components/pavilion/ArticleBody.astro';
 import PhotoLink from '@/components/pavilion/PhotoLink.astro';
-import { pavilionPageCopy } from '@/i18n/ui';
+import { getPavilionPageCopy } from '@/i18n/ui';
 import {
   pavilionPhotos,
   openingPhotoIds,
@@ -17,7 +17,6 @@ import {
   pavilionMedia,
   pavilionNewsDates,
   meetingPhone,
-  meetingWhatsapp,
   officePhone,
 } from '@/data/pavilion';
 import { company } from '@/data/company';
@@ -29,7 +28,6 @@ export function getStaticPaths() {
 }
 const { locale } = Astro.props as { locale: Locale };
 const copy = t(locale);
-const page = pavilionPageCopy[locale];
 const indianVisitContact = {
   phone: meetingPhone,
   label: '+91 70457 43899',
@@ -43,6 +41,12 @@ const visitContacts = (
     ? [russianVisitContact, indianVisitContact]
     : [indianVisitContact, russianVisitContact]
 ).filter((contact) => contact !== null);
+const primaryContact = locale === 'ru' ? russianVisitContact : indianVisitContact;
+if (!primaryContact?.whatsapp) {
+  throw new Error('The primary pavilion meeting contact is missing for locale: ' + locale);
+}
+const eventWhatsapp = whatsappUrl(primaryContact.whatsapp);
+const page = getPavilionPageCopy(locale, { label: primaryContact.label, whatsapp: eventWhatsapp });
 const actions = [
   { label: page.resident, url: href(locale, 'manufacturers/') + '#pavilion-residency' },
   { label: page.visit, url: '#visit' },
@@ -294,7 +298,7 @@ const jsonLd = {
                     />
                   </>
                 </Collapsible>
-                <Button href={meetingWhatsapp} external variant="secondary" class="mt-6">
+                <Button href={eventWhatsapp} external variant="secondary" class="mt-6">
                   {page.meeting} ↗<span class="sr-only">, {copy.external.newTab}</span>
                 </Button>
               </>
