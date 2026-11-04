@@ -11,8 +11,14 @@
   number before it), `row` a question in a divided list; their summaries stay
   visible at every width.
 */
-interface Props {
-  summary: string;
+import type { HTMLAttributes } from 'astro/types';
+interface Props extends Omit<HTMLAttributes<'details'>, 'class'> {
+  /** Plain text fallback for the named summary slot. */
+  summary?: string;
+  /** Layout overrides for a compound summary, optionally preceded by a prefix slot. */
+  summaryClass?: string;
+  summaryBodyClass?: string;
+  bodyClass?: string;
   open?: boolean;
   collapseOnMobile?: boolean;
   variant?: 'more' | 'card' | 'row';
@@ -30,6 +36,10 @@ const {
   number,
   id,
   class: className = '',
+  summaryClass: customSummaryClass,
+  summaryBodyClass = 'contents',
+  bodyClass: customBodyClass,
+  ...attributes
 } = Astro.props;
 
 const reset = 'cursor-pointer list-none marker:hidden [&::-webkit-details-marker]:hidden';
@@ -45,6 +55,7 @@ const bodyClass = { more: '', card: 'px-5 pb-5', row: 'mt-2' }[variant];
 ---
 
 <details
+  {...attributes}
   id={id}
   class:list={[
     'group/collapsible',
@@ -55,26 +66,31 @@ const bodyClass = { more: '', card: 'px-5 pb-5', row: 'mt-2' }[variant];
   open={open}
   data-collapse={collapseOnMobile ? 'mobile' : undefined}
 >
-  <summary class:list={[reset, summaryClass]}>
+  <summary class:list={[reset, customSummaryClass ?? summaryClass]}>
+    <slot name="prefix" />
     {number && <span class="text-h3 font-bold text-gold-deep tabular-nums">{number}</span>}
-    <span class={variant === 'more' ? undefined : 'flex-1'}>{summary}</span>
-    <svg
-      class:list={[
-        'size-4 shrink-0 text-primary group-open/collapsible:rotate-180 motion-safe:transition-transform',
-        variant === 'row' && 'mt-1',
-      ]}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2.2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      aria-hidden="true"
-    >
-      <path d="m6 9 6 6 6-6"></path>
-    </svg>
+    <span class={summaryBodyClass}>
+      <span class={variant === 'more' ? undefined : 'flex-1'}
+        ><slot name="summary">{summary}</slot></span
+      >
+      <svg
+        class:list={[
+          'size-4 shrink-0 text-primary group-open/collapsible:rotate-180 motion-safe:transition-transform',
+          variant === 'row' && 'mt-1',
+        ]}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m6 9 6 6 6-6"></path>
+      </svg>
+    </span>
   </summary>
-  <div class={bodyClass || undefined}>
+  <div class={customBodyClass ?? (bodyClass || undefined)}>
     <slot />
   </div>
 </details>
