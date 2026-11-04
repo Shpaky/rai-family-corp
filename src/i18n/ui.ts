@@ -152,7 +152,14 @@ interface Copy {
     address: string;
     placeholder: string;
   };
-  footer: { legal: string; operator: string; rights: string; madeInRussia: string };
+  footer: {
+    legal: string;
+    operator: string;
+    rights: string;
+    madeInRussia: string;
+    socialMedia: string;
+    socialLinks: { linkedin: string; facebook: string };
+  };
   notFound: { title: string; text: string; back: string };
   /** External links: screen-reader note for target="_blank". */
   external: { newTab: string };
@@ -411,6 +418,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     footer: {
       legal: 'Rai Family Corp LLP',
+      socialMedia: 'Social media',
+      socialLinks: { linkedin: 'LinkedIn', facebook: 'Facebook' },
       operator:
         'Operator of the «Made in Russia» National Pavilion in India, a Russian Export Center project',
       rights: 'All rights reserved.',
@@ -680,6 +689,8 @@ export const ui: Record<'en' | 'ru', Copy> = {
     },
     footer: {
       legal: 'Rai Family Corp LLP',
+      socialMedia: 'Социальные сети',
+      socialLinks: { linkedin: 'LinkedIn', facebook: 'Facebook' },
       operator:
         'Оператор Национального Павильона «Сделано в России» в Индии, проекта Российского экспортного центра',
       rights: 'Все права защищены.',
