@@ -3,6 +3,7 @@ import { Picture } from 'astro:assets';
 import { getAbsoluteLocaleUrl } from 'astro:i18n';
 import Base from '@/layouts/Base.astro';
 import Button from '@/components/Button.astro';
+import { buttonStyles } from '@/components/buttonStyles';
 import SectionHeading from '@/components/SectionHeading.astro';
 import Collapsible from '@/components/Collapsible.astro';
 import ArticleBody from '@/components/pavilion/ArticleBody.astro';
@@ -238,12 +239,13 @@ const jsonLd = {
       <div class="mt-8 text-center">
         <button
           hidden
+          type="button"
           id="residents-toggle"
           aria-controls="resident-list"
           aria-expanded="false"
           data-more={page.more}
           data-less={page.less}
-          class="cursor-pointer rounded-pill bg-primary-soft px-5 py-2.5 text-sm font-bold text-primary hover:bg-surface-strong"
+          class:list={[buttonStyles({ variant: 'secondary' }), 'cursor-pointer']}
           >{page.more}</button
         >
       </div>
@@ -294,66 +296,59 @@ const jsonLd = {
           page.articles.slice(2).map((n, k) => {
             const i = k + 2;
             return (
-              <details data-news class="group py-4">
-                <>
-                  <summary class="grid cursor-pointer list-none gap-2 marker:hidden md:grid-cols-4">
-                    <>
-                      <time
-                        datetime={pavilionNewsDates[i]}
-                        class="text-sm font-semibold text-muted"
-                      >
-                        {page.dates[i]}
-                      </time>
-                      <span class="md:col-span-3">
-                        <>
-                          <span class="flex justify-between gap-4 font-bold">
-                            {n.title}
-                            <span aria-hidden="true" class="text-primary group-open:rotate-180">
-                              ⌄
-                            </span>
-                          </span>
-                          <span class="mt-2 block text-xs text-muted">{page.types[i]}</span>
-                        </>
-                      </span>
-                    </>
-                  </summary>
-                  <div class="mt-6 max-w-3xl pb-4">
-                    {i === 6 && (
-                      <figure class="mb-6 max-w-lg">
-                        <Picture
-                          src={pavilionPhotos['opening-hall']}
-                          formats={['avif', 'webp']}
-                          widths={[512, 1024]}
-                          sizes="512px"
-                          alt={page.photos['opening-hall']}
-                          loading="lazy"
-                          class="w-full rounded-card"
-                        />
-                        <figcaption class="mt-2 text-xs text-muted">{page.photoDate}</figcaption>
-                      </figure>
-                    )}
-                    <ArticleBody paragraphs={n.paragraphs} locale={locale} />
-                    {i === 6 && (
-                      <>
-                        <h3 class="mt-6 text-h3">{page.media}</h3>
-                        <ul class="mt-4 space-y-4">
-                          {pavilionMedia.map((m, j) => (
-                            <li>
-                              <a href={m.url} target="_blank" rel="noopener" class={link}>
-                                {page.mediaEntries[j].name} ↗
-                                <span class="sr-only">, {copy.external.newTab}</span>
-                              </a>
-                              <small class="block text-muted">
-                                {m.lang} · {m.date} · {page.mediaEntries[j].label}
-                              </small>
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  </div>
-                </>
-              </details>
+              <Collapsible
+                data-news
+                variant="row"
+                class="py-4"
+                summaryClass="grid gap-2 md:grid-cols-4"
+                summaryBodyClass="flex items-start gap-4 md:col-span-3"
+                bodyClass="mt-6 max-w-3xl pb-4"
+              >
+                <time
+                  slot="prefix"
+                  datetime={pavilionNewsDates[i]}
+                  class="text-sm font-semibold text-muted"
+                >
+                  {page.dates[i]}
+                </time>
+                <span slot="summary">
+                  <span class="block font-bold">{n.title}</span>
+                  <span class="mt-2 block text-xs text-muted">{page.types[i]}</span>
+                </span>
+                {i === 6 && (
+                  <figure class="mb-6 max-w-lg">
+                    <Picture
+                      src={pavilionPhotos['opening-hall']}
+                      formats={['avif', 'webp']}
+                      widths={[512, 1024]}
+                      sizes="512px"
+                      alt={page.photos['opening-hall']}
+                      loading="lazy"
+                      class="w-full rounded-card"
+                    />
+                    <figcaption class="mt-2 text-xs text-muted">{page.photoDate}</figcaption>
+                  </figure>
+                )}
+                <ArticleBody paragraphs={n.paragraphs} locale={locale} />
+                {i === 6 && (
+                  <>
+                    <h3 class="mt-6 text-h3">{page.media}</h3>
+                    <ul class="mt-4 space-y-4">
+                      {pavilionMedia.map((m, j) => (
+                        <li>
+                          <a href={m.url} target="_blank" rel="noopener" class={link}>
+                            {page.mediaEntries[j].name} ↗
+                            <span class="sr-only">, {copy.external.newTab}</span>
+                          </a>
+                          <small class="block text-muted">
+                            {m.lang} · {m.date} · {page.mediaEntries[j].label}
+                          </small>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </Collapsible>
             );
           })
         }
@@ -415,9 +410,9 @@ const jsonLd = {
   >
     <form method="dialog" class="flex justify-end">
       <button
+        type="submit"
         autofocus
-        class="cursor-pointer rounded-pill bg-primary-soft px-5 py-2.5 font-bold text-primary"
-        >{page.close}</button
+        class:list={[buttonStyles({ variant: 'secondary' }), 'cursor-pointer']}>{page.close}</button
       >
     </form><h2 id="photo-title" class="my-4 text-h3"></h2><div id="photo-content"></div><p
       id="photo-caption"

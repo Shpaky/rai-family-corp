@@ -9,17 +9,33 @@ for (const locale of ['', 'ru/']) {
     await expect(page.locator('[data-resident]')).toHaveCount(44);
     await expect(page.locator('[data-resident]:visible')).toHaveCount(12);
     const toggle = page.locator('#residents-toggle');
+    await expect(toggle).toHaveAttribute('type', 'button');
+    await expect(toggle).toHaveAttribute('aria-controls', 'resident-list');
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await expect(toggle).toHaveText((await toggle.getAttribute('data-more'))!);
     await toggle.focus();
     await page.keyboard.press('Enter');
     await expect(page.locator('[data-resident]:visible')).toHaveCount(44);
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    await expect(toggle).toHaveText((await toggle.getAttribute('data-less'))!);
     await page.keyboard.press('Enter');
     await expect(toggle).toBeFocused();
     await expect(page.locator('[data-resident]:visible')).toHaveCount(12);
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await expect(toggle).toHaveText((await toggle.getAttribute('data-more'))!);
     const photo = page.locator('[data-photo]').first();
     await photo.focus();
     await page.keyboard.press('Enter');
     await expect(page.locator('dialog')).toBeVisible();
     expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+    const close = page.locator('dialog button');
+    await expect(close).toBeFocused();
+    await expect(close).toHaveAttribute('type', 'submit');
+    await page.keyboard.press('Enter');
+    await expect(page.locator('dialog')).not.toBeVisible();
+    await expect(photo).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page.locator('dialog')).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(photo).toBeFocused();
     await expect(page.locator('dialog')).not.toBeVisible();
@@ -78,11 +94,22 @@ for (const locale of ['', 'ru/']) {
     const page = await context.newPage();
     await page.goto(`${locale}pavilion/`);
     await expect(page.locator('[data-resident]:visible')).toHaveCount(44);
+    await expect(page.locator('#residents-toggle')).toBeHidden();
+    await expect(page.locator('[data-news]')).toHaveCount(5);
     await page.locator('#news details summary').last().click();
     await expect(page.locator('#news details').last().locator('li')).toHaveCount(6);
     await expect(page.locator('[data-photo]')).toHaveCount(9);
     for (const photo of await page.locator('[data-photo]').all()) {
       await expect(photo).toHaveAttribute('href', /\.webp$/);
+    }
+    await page.locator('#news details summary').last().focus();
+    await page.keyboard.press('Space');
+    for (const item of await page.locator('[data-news]').all()) {
+      await item.locator('summary').focus();
+      await page.keyboard.press('Enter');
+      await expect(item).toHaveAttribute('open', '');
+      await page.keyboard.press('Space');
+      await expect(item).not.toHaveAttribute('open');
     }
     await context.close();
   });
