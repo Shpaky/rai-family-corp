@@ -249,7 +249,7 @@ export const ui: Record<'en' | 'ru', Copy> = {
     hero: {
       eyebrow: 'Rai Family Corp LLP · India',
       title: 'Russian products and technologies for India. One operator, the whole route.',
-      lead: 'Rai Family Corp LLP gives Russian manufacturers direct distribution channels and marketing in India, and handles the full cycle of import, certification and logistics.',
+      lead: 'Rai Family Corp LLP gives Indian businesses access to Russian products and technologies and handles import, certification, logistics and local distribution.',
       contact: 'Contact us',
       directions: 'Explore directions',
       manufacturers: 'Bring your product to India',

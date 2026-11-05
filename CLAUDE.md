@@ -227,10 +227,11 @@ tailwind, eslint/prettier с astro-плагинами, playwright + axe, lhci).
   Hero всегда первый, `contacts` всегда последняя; конфиг валидируется при импорте.
 - Кнопки hero задаются по локали в `HERO_ACTIONS` (`src/data/site.ts`), не в компоненте: две кнопки,
   первая (`primary`) обращена к основному читателю локали (RU «Вывести продукт в Индию» на
-  `/ru/manufacturers/`, EN «Explore directions» на `#directions`), вторая (`secondary`) «Связаться» /
+  `/ru/manufacturers/`, EN «Explore directions» на `/directions/`), вторая (`secondary`) «Связаться» /
   «Contact us» на `#contacts` в обеих; третьей кнопки нет. Подписи - `hero.contact`, `hero.directions`,
   `hero.manufacturers` в `ui.ts` (все три ключа в обеих локалях, выводятся по `HERO_ACTIONS`). Тексты
-  hero (eyebrow, H1, лид, карточка) одинаковы по смыслу в обеих локалях и меняются отдельным решением.
+  hero (eyebrow, H1, карточка) одинаковы по смыслу в обеих локалях и меняются отдельным решением.
+  Лид обращается к основному читателю локали: EN - к индийскому закупщику, RU - к российскому производителю.
 - Меню шапки и подвала строится из того же конфига (`navItems()` в `src/i18n/utils.ts`):
   `directions` ведёт на `/directions/`, `services` («Производителям», подпись из `SECTION_NAV`) на
   `/manufacturers/`, `about` на `/about/` (`SECTION_PAGES`), остальные — на якоря главной; `audiences`

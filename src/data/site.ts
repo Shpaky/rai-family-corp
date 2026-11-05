@@ -49,7 +49,7 @@ export const SECTION_NAV = {
 /*
   Hero buttons of the home page, per locale. The first button speaks to the
   locale's primary reader (RU: the Russian manufacturer, to /ru/manufacturers/;
-  EN: the Indian buyer, to the directions feed), "Contact us" is second in both.
+  EN: the Indian buyer, to /directions/), "Contact us" is second in both.
   `key` names the label in ui.hero; `path` is a home anchor or a page path,
   resolved with the locale and base by Hero.astro. Two buttons, never a third.
 */
@@ -61,7 +61,7 @@ export interface HeroAction {
 }
 export const HERO_ACTIONS: Record<Locale, HeroAction[]> = {
   en: [
-    { key: 'directions', path: '#directions', variant: 'primary' },
+    { key: 'directions', path: 'directions/', variant: 'primary' },
     { key: 'contact', path: '#contacts', variant: 'secondary' },
   ],
   ru: [
