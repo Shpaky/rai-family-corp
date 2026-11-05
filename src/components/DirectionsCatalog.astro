@@ -187,7 +187,8 @@ const statuses = ['active', 'on-order', 'coming'] as const;
     form.classList.remove('hidden');
     form.classList.add('flex');
     form.addEventListener('change', apply);
-    form.addEventListener('reset', () => queueMicrotask(apply));
+    // A microtask can run before the browser resets the checkboxes.
+    form.addEventListener('reset', () => setTimeout(apply, 0));
     apply();
   }
 </script>
