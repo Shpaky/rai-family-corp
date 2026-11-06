@@ -771,7 +771,7 @@ const pavilionPageCopy = {
   ru: {
     kicker: 'Проект Российского экспортного центра',
     title: 'Национальный павильон «Сделано в России» в Нави-Мумбаи',
-    lead: 'Постоянная площадка для знакомства с российской продукцией и деловых встреч в Индии. Официальный оператор Rai Family Corp LLP помогает российским производителям и индийским партнёрам обсуждать поставки и развивать сотрудничество.',
+    lead: 'Постоянная площадка в Индии для знакомства с российской продукцией и технологиями, а также для деловых встреч. Официальный оператор павильона Rai Family Corp LLP помогает российским производителям и индийским партнёрам обсуждать поставки и развивать сотрудничество.',
     opened: 'Открыт 21 августа 2026 года · Нави-Мумбаи, Индия',
     visit: 'Как посетить',
     resident: 'Стать резидентом',
@@ -1165,7 +1165,7 @@ const pavilionPageCopy = {
   en: {
     kicker: 'A Russian Export Center project',
     title: '«Made in Russia» National Pavilion in Navi Mumbai',
-    lead: 'A permanent venue in India for exploring Russian products and meeting business partners. Official operator Rai Family Corp LLP helps Russian manufacturers and Indian partners discuss supply opportunities and develop cooperation.',
+    lead: 'A permanent venue in India for exploring Russian products and technologies, as well as for business meetings. Rai Family Corp LLP, the pavilion’s official operator, helps Russian manufacturers and Indian partners discuss supply opportunities and develop cooperation.',
     opened: 'Opened on 21 August 2026 · Navi Mumbai, India',
     visit: 'Plan your visit',
     resident: 'Become a resident',
