@@ -11,6 +11,7 @@ interface Props {
   dateLabel?: string;
   detailCaption?: string;
   interior?: boolean;
+  sizes?: string;
 }
 const {
   id,
@@ -22,6 +23,7 @@ const {
   dateLabel,
   detailCaption,
   interior = false,
+  sizes,
 } = Astro.props;
 const full = await getImage({ src, width: Math.min(src.width, 1920), format: 'webp' });
 ---
@@ -39,7 +41,8 @@ const full = await getImage({ src, width: Math.min(src.width, 1920), format: 'we
       src={src}
       formats={['avif', 'webp']}
       widths={interior ? [480, 768, 1024] : [320, 480, 768, 1024]}
-      sizes={interior ? '(min-width: 768px) 33vw, 80vw' : '(min-width: 768px) 33vw, 100vw'}
+      sizes={sizes ??
+        (interior ? '(min-width: 768px) 33vw, 80vw' : '(min-width: 768px) 33vw, 100vw')}
       alt={alt}
       loading="lazy"
       class="aspect-4/3 w-full bg-surface object-contain"

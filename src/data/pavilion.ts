@@ -1,3 +1,5 @@
+import concreteBooth from '@/assets/pavilion/world-of-concrete-2026-booth.jpg';
+import concreteMeeting from '@/assets/pavilion/world-of-concrete-2026-meeting.jpg';
 import meetingArea from '@/assets/pavilion/meeting-area.jpg';
 import openingGuests from '@/assets/pavilion/opening-guests.jpg';
 import openingMoment from '@/assets/pavilion/opening-moment.jpg';
@@ -53,6 +55,8 @@ import logo42 from '@/assets/pavilion/residents/42.png';
 import logo43 from '@/assets/pavilion/residents/43.png';
 import logo44 from '@/assets/pavilion/residents/44.png';
 export const pavilionPhotos = {
+  'world-of-concrete-2026-booth': concreteBooth,
+  'world-of-concrete-2026-meeting': concreteMeeting,
   'meeting-area': meetingArea,
   'opening-guests': openingGuests,
   'opening-moment': openingMoment,
@@ -73,6 +77,22 @@ export const openingPhotoIds = [
   'opening-hall-wide',
 ] as const;
 export const interiorPhotoIds = ['showroom', 'shelves', 'stage'] as const;
+export const worldOfConcretePhotoIds = [
+  'world-of-concrete-2026-booth',
+  'world-of-concrete-2026-meeting',
+] as const;
+export const worldOfConcreteMedia = [
+  {
+    url: 'https://www.nbmcw.com/news/reports-insights/world-of-concrete-india-2026-opens-amid-rs-12-2-lakh-cr-infra-push-growing-demand-for-advanced-construction-solutions.html',
+    lang: 'EN',
+    date: '04.06.2026',
+  },
+  {
+    url: 'https://tradefairtimes.com/event-gallery-july-2026/',
+    lang: 'EN',
+    date: '13.07.2026',
+  },
+];
 export const pavilionResidents = [
   { order: 1, url: 'https://wildsiberia.org/', logo: logo1, darkBacking: false },
   { order: 2, url: 'https://www.makfa.ru/', logo: logo2, darkBacking: false },
@@ -127,6 +147,7 @@ export const pavilionNewsDates = [
   '2026-10-18',
   '2026-10-07',
   '2026-08-21',
+  '2026-06-03',
 ];
 export const pavilionMedia = [
   {
