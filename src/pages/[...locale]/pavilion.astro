@@ -13,6 +13,8 @@ import {
   pavilionPhotos,
   openingPhotoIds,
   interiorPhotoIds,
+  worldOfConcretePhotoIds,
+  worldOfConcreteMedia,
   pavilionResidents,
   pavilionMedia,
   pavilionNewsDates,
@@ -314,7 +316,8 @@ const jsonLd = {
             const i = k + 2;
             return (
               <Collapsible
-                data-news
+                data-news={n.id ?? true}
+                id={n.id}
                 variant="row"
                 class="py-4"
                 summaryClass="grid gap-2 md:grid-cols-4"
@@ -332,7 +335,7 @@ const jsonLd = {
                   <span class="block font-bold">{n.title}</span>
                   <span class="mt-2 block text-xs text-muted">{page.types[i]}</span>
                 </span>
-                {i === 6 && (
+                {n.id === 'pavilion-opening' && (
                   <figure class="mb-6 max-w-lg">
                     <Picture
                       src={pavilionPhotos['opening-hall']}
@@ -347,7 +350,39 @@ const jsonLd = {
                   </figure>
                 )}
                 <ArticleBody paragraphs={n.paragraphs} locale={locale} />
-                {i === 6 && (
+                {n.id === 'world-of-concrete-2026' && (
+                  <>
+                    <div class="mt-6 grid gap-5 md:grid-cols-2">
+                      {worldOfConcretePhotoIds.map((id) => (
+                        <PhotoLink
+                          id={id}
+                          src={pavilionPhotos[id]}
+                          alt={page.worldOfConcrete.photos[id].alt}
+                          caption={page.worldOfConcrete.photos[id].caption}
+                          enlarge={page.enlarge}
+                          detailCaption={page.worldOfConcrete.detailCaption}
+                          sizes="(min-width: 832px) 374px, (min-width: 768px) calc((100vw - 84px) / 2), calc(100vw - 40px)"
+                        />
+                      ))}
+                    </div>
+                    <h3 class="mt-6 text-h3">{page.worldOfConcrete.media}</h3>
+                    <p class="mt-2 text-sm text-muted">{page.worldOfConcrete.mediaLead}</p>
+                    <ul class="mt-4 space-y-4">
+                      {worldOfConcreteMedia.map((m, j) => (
+                        <li>
+                          <a href={m.url} target="_blank" rel="noopener" class={link}>
+                            {page.worldOfConcrete.mediaEntries[j]} ↗
+                            <span class="sr-only">, {copy.external.newTab}</span>
+                          </a>
+                          <small class="block text-muted">
+                            {m.lang} · {m.date}
+                          </small>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+                {n.id === 'pavilion-opening' && (
                   <>
                     <h3 class="mt-6 text-h3">{page.media}</h3>
                     <ul class="mt-4 space-y-4">

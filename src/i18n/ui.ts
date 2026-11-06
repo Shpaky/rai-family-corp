@@ -998,6 +998,7 @@ const pavilionPageCopy = {
       '18-19 октября 2026',
       '7 октября 2026',
       '21 августа 2026',
+      '3-5 июня 2026',
     ],
     types: [
       'Анонс',
@@ -1007,6 +1008,7 @@ const pavilionPageCopy = {
       'Новость компании',
       'В СМИ · Партнёрский материал',
       'Событие · Нави-Мумбаи',
+      'Событие · Мумбаи',
     ],
     stands: ['Стенд A27', 'Стенд 1.A25 · Зал Jasmine 1'],
     details: 'Подробнее об участии',
@@ -1118,6 +1120,7 @@ const pavilionPageCopy = {
         ],
       },
       {
+        id: 'pavilion-opening',
         title: 'В Нави-Мумбаи открылся национальный павильон «Сделано в России»',
         paragraphs: [
           '21 августа 2026 года в Нави-Мумбаи состоялось официальное открытие первого в Индии постоянно действующего национального павильона «Сделано в России». Проект реализуется Российским экспортным центром, официальный оператор павильона - Rai Family Corp LLP.',
@@ -1125,7 +1128,35 @@ const pavilionPageCopy = {
           'Rai Family Corp LLP обеспечивает работу площадки и сопровождает выход российских производителей на индийский рынок, включая логистику, таможенное оформление и маркетинговую поддержку.',
         ],
       },
+      {
+        id: 'world-of-concrete-2026',
+        title: 'Rai Family Corp LLP на World of Concrete India 2026',
+        paragraphs: [
+          '3-5 июня 2026 года Rai Family Corp LLP приняла участие в World of Concrete India 2026 в выставочном центре Bombay Exhibition Centre, Мумбаи.',
+          'Работа команды проходила на стенде TOKAR LTD, RUSSIA (4.C90), где были представлены добавка Д-5 для бетона и образцы строительных материалов. Представители компании встречались с посетителями выставки и знакомили их с российскими решениями для строительной отрасли.',
+        ],
+      },
     ],
+    worldOfConcrete: {
+      detailCaption:
+        'World of Concrete India 2026, Bombay Exhibition Centre, Мумбаи. 3-5 июня 2026.',
+      media: 'Публикации о выставке',
+      mediaLead: 'Материалы об отраслевой выставке в целом.',
+      mediaEntries: [
+        'NBM&CW: открытие World of Concrete India 2026',
+        'TradeFairTimes: обзор World of Concrete India 2026',
+      ],
+      photos: {
+        'world-of-concrete-2026-booth': {
+          caption: 'У стенда TOKAR на World of Concrete India 2026',
+          alt: 'Участники выставки у стенда TOKAR с материалами Д-5',
+        },
+        'world-of-concrete-2026-meeting': {
+          caption: 'Рабочая встреча на стенде TOKAR',
+          alt: 'Рабочая встреча за столом с образцами бетона на стенде TOKAR',
+        },
+      },
+    },
     breadcrumb: 'Навигационная цепочка',
     enlarge: 'Увеличить',
     eventNames: ['Annapoorna Inter Food 2026', 'Cosmoprof India 2026'],
@@ -1360,6 +1391,7 @@ const pavilionPageCopy = {
       '18-19 October 2026',
       '7 October 2026',
       '21 August 2026',
+      '3-5 June 2026',
     ],
     types: [
       'Upcoming event',
@@ -1369,6 +1401,7 @@ const pavilionPageCopy = {
       'Company news',
       'In the media · Partner content',
       'Event · Navi Mumbai',
+      'Event · Mumbai',
     ],
     stands: ['Stand A27', 'Stand 1.A25 · Jasmine Hall 1'],
     details: 'About our participation',
@@ -1479,6 +1512,7 @@ const pavilionPageCopy = {
         ],
       },
       {
+        id: 'pavilion-opening',
         title: '«Made in Russia» National Pavilion opens in Navi Mumbai',
         paragraphs: [
           'India’s first permanent «Made in Russia» National Pavilion officially opened in Navi Mumbai on 21 August 2026. The project is run by the Russian Export Center, with Rai Family Corp LLP serving as the pavilion’s official operator.',
@@ -1486,7 +1520,35 @@ const pavilionPageCopy = {
           'Rai Family Corp LLP operates the venue and supports Russian manufacturers entering the Indian market, including assistance with logistics, customs clearance and marketing.',
         ],
       },
+      {
+        id: 'world-of-concrete-2026',
+        title: 'Rai Family Corp LLP at World of Concrete India 2026',
+        paragraphs: [
+          'Rai Family Corp LLP took part in World of Concrete India 2026, held on 3-5 June at the Bombay Exhibition Centre in Mumbai.',
+          'The team worked at the TOKAR LTD, RUSSIA stand (4.C90), which featured the D-5 concrete admixture and samples of construction materials. Company representatives met exhibition visitors and introduced Russian solutions for the construction industry.',
+        ],
+      },
     ],
+    worldOfConcrete: {
+      detailCaption:
+        'World of Concrete India 2026, Bombay Exhibition Centre, Mumbai. 3-5 June 2026.',
+      media: 'Exhibition coverage',
+      mediaLead: 'Coverage of the exhibition as a whole.',
+      mediaEntries: [
+        'NBM&CW: World of Concrete India 2026 opens',
+        'TradeFairTimes: World of Concrete India 2026 review',
+      ],
+      photos: {
+        'world-of-concrete-2026-booth': {
+          caption: 'At the TOKAR stand at World of Concrete India 2026',
+          alt: 'Exhibition participants at the TOKAR stand displaying D-5 materials',
+        },
+        'world-of-concrete-2026-meeting': {
+          caption: 'A business meeting at the TOKAR stand',
+          alt: 'A business meeting around concrete samples at the TOKAR stand',
+        },
+      },
+    },
     breadcrumb: 'Breadcrumb',
     enlarge: 'Enlarge',
     eventNames: ['Annapoorna Inter Food 2026', 'Cosmoprof India 2026'],

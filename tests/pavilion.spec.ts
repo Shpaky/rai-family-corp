@@ -44,8 +44,9 @@ for (const locale of ['', 'ru/']) {
     expect(fullFrame).not.toBeNull();
     expect(fullFrame!.y + fullFrame!.height).toBeLessThanOrEqual(page.viewportSize()!.height);
     await page.keyboard.press('Escape');
-    await page.locator('#news details summary').last().click();
-    await expect(page.locator('#news details').last().locator('li')).toHaveCount(6);
+    await page.locator('[data-news="pavilion-opening"] summary').click();
+    await expect(page.locator('[data-news="pavilion-opening"]').locator('li')).toHaveCount(6);
+    await page.locator('[data-news="world-of-concrete-2026"] summary').click();
     for (const width of [320, 360, 768, 1280]) {
       await page.setViewportSize({ width, height: 800 });
       const frames = await page.locator('[data-photo] img').evaluateAll(async (images) => {
@@ -95,14 +96,14 @@ for (const locale of ['', 'ru/']) {
     await page.goto(`${locale}pavilion/`);
     await expect(page.locator('[data-resident]:visible')).toHaveCount(44);
     await expect(page.locator('#residents-toggle')).toBeHidden();
-    await expect(page.locator('[data-news]')).toHaveCount(5);
-    await page.locator('#news details summary').last().click();
-    await expect(page.locator('#news details').last().locator('li')).toHaveCount(6);
-    await expect(page.locator('[data-photo]')).toHaveCount(9);
+    await expect(page.locator('[data-news]')).toHaveCount(6);
+    await page.locator('[data-news="pavilion-opening"] summary').click();
+    await expect(page.locator('[data-news="pavilion-opening"]').locator('li')).toHaveCount(6);
+    await expect(page.locator('[data-photo]')).toHaveCount(11);
     for (const photo of await page.locator('[data-photo]').all()) {
       await expect(photo).toHaveAttribute('href', /\.webp$/);
     }
-    await page.locator('#news details summary').last().focus();
+    await page.locator('[data-news="pavilion-opening"] summary').focus();
     await page.keyboard.press('Space');
     for (const item of await page.locator('[data-news]').all()) {
       await item.locator('summary').focus();
@@ -111,6 +112,13 @@ for (const locale of ['', 'ru/']) {
       await page.keyboard.press('Space');
       await expect(item).not.toHaveAttribute('open');
     }
+    await page.locator('[data-news="world-of-concrete-2026"] summary').click();
+    const exhibitionPhoto = page.locator('[data-photo="world-of-concrete-2026-booth"]');
+    const fullPhoto = await exhibitionPhoto.getAttribute('href');
+    await exhibitionPhoto.click();
+    await expect(page).toHaveURL(
+      new RegExp(fullPhoto!.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'),
+    );
     await context.close();
   });
 }
@@ -171,10 +179,11 @@ for (const locale of ['', 'ru/']) {
       'opening-hall-wide',
     ];
     const interior = ['showroom', 'shelves', 'stage'];
+    const exhibition = ['world-of-concrete-2026-booth', 'world-of-concrete-2026-meeting'];
     const ids = await page
       .locator('[data-photo]')
       .evaluateAll((links) => links.map((a) => a.getAttribute('data-photo')));
-    expect(ids).toEqual([...opening, ...interior]);
+    expect(ids).toEqual([...opening, ...interior, ...exhibition]);
     await expect(page.locator('section[aria-labelledby="gallery-title"] [data-photo]')).toHaveCount(
       6,
     );
@@ -183,8 +192,8 @@ for (const locale of ['', 'ru/']) {
       'src',
       /meeting-area\./,
     );
-    await page.locator('#news details summary').last().click();
-    await expect(page.locator('#news details').last().locator('img')).toHaveAttribute(
+    await page.locator('[data-news="pavilion-opening"] summary').click();
+    await expect(page.locator('[data-news="pavilion-opening"]').locator('img')).toHaveAttribute(
       'src',
       /opening-hall\./,
     );
@@ -195,7 +204,15 @@ for (const locale of ['', 'ru/']) {
     for (const photo of await page.locator('[data-photo]').all()) {
       expect(requested).not.toContain(await photo.evaluate((a) => (a as HTMLAnchorElement).href));
     }
-    for (const id of [...opening, ...interior, opening[0]]) {
+    await page.locator('[data-news="world-of-concrete-2026"] summary').click();
+    for (const id of [
+      ...opening,
+      ...interior,
+      ...exhibition,
+      opening[0],
+      exhibition[0],
+      interior[0],
+    ]) {
       const link = page.locator(`[data-photo="${id}"]`);
       const alt = await link.locator('img').getAttribute('alt');
       const full = await link.evaluate((a) => (a as HTMLAnchorElement).href);
@@ -215,6 +232,14 @@ for (const locale of ['', 'ru/']) {
         await expect(page.locator('#photo-caption')).toBeVisible();
         await expect(page.locator('#photo-caption')).toHaveText(
           locale ? 'Нави-Мумбаи · 21 августа 2026' : 'Navi Mumbai · 21 August 2026',
+        );
+      } else if (exhibition.includes(id)) {
+        await expect(link.locator('time')).toHaveCount(0);
+        await expect(page.locator('#photo-caption')).toBeVisible();
+        await expect(page.locator('#photo-caption')).toHaveText(
+          locale
+            ? 'World of Concrete India 2026, Bombay Exhibition Centre, Мумбаи. 3-5 июня 2026.'
+            : 'World of Concrete India 2026, Bombay Exhibition Centre, Mumbai. 3-5 June 2026.',
         );
       } else {
         await expect(page.locator('#photo-caption')).toBeHidden();
@@ -348,5 +373,71 @@ for (const locale of ['', 'ru/']) {
           .evaluateAll((nodes) => nodes.map((a) => a.getAttribute('href'))),
       ).toEqual(numbers.map((n) => `https://wa.me/${n.slice(1)}`));
     }
+  });
+}
+
+for (const locale of ['', 'ru/']) {
+  test(`World of Concrete event and own coverage: ${locale || 'en'}`, async ({ page }) => {
+    await page.goto(`${locale}pavilion/`);
+    await expect(page.locator('#news article, [data-news]')).toHaveCount(8);
+    const event = page.locator('[data-news="world-of-concrete-2026"]');
+    await expect(event).toHaveAttribute('id', 'world-of-concrete-2026');
+    const dates = await page
+      .locator('[data-news] summary time')
+      .evaluateAll((nodes) => nodes.map((n) => n.getAttribute('datetime')));
+    expect(dates).toEqual([...dates].sort().reverse());
+    expect(dates.slice(-2)).toEqual(['2026-08-21', '2026-06-03']);
+    await expect(event.locator('summary')).toContainText(
+      locale
+        ? 'Rai Family Corp LLP на World of Concrete India 2026'
+        : 'Rai Family Corp LLP at World of Concrete India 2026',
+    );
+    await expect(event.locator('summary time')).toHaveText(
+      locale ? '3-5 июня 2026' : '3-5 June 2026',
+    );
+    await expect(event.locator('summary')).toContainText(
+      locale ? 'Событие · Мумбаи' : 'Event · Mumbai',
+    );
+    await expect(event.locator('summary img, summary a')).toHaveCount(0);
+    const summary = event.locator('summary');
+    await summary.focus();
+    await page.keyboard.press('Enter');
+    await expect(event).toHaveAttribute('open', '');
+    await expect(event).toContainText(
+      locale ? 'TOKAR LTD, RUSSIA (4.C90)' : 'TOKAR LTD, RUSSIA stand (4.C90)',
+    );
+    await expect(
+      event.getByRole('heading', {
+        name: locale ? 'Публикации о выставке' : 'Exhibition coverage',
+      }),
+    ).toBeVisible();
+    await expect(event).toContainText(
+      locale
+        ? 'Материалы об отраслевой выставке в целом.'
+        : 'Coverage of the exhibition as a whole.',
+    );
+    await expect(event.locator('[data-photo]')).toHaveCount(2);
+    const coverage = event.locator('li a');
+    await expect(coverage).toHaveCount(2);
+    const urls = [
+      'https://www.nbmcw.com/news/reports-insights/world-of-concrete-india-2026-opens-amid-rs-12-2-lakh-cr-infra-push-growing-demand-for-advanced-construction-solutions.html',
+      'https://tradefairtimes.com/event-gallery-july-2026/',
+    ];
+    for (const [i, link] of (await coverage.all()).entries()) {
+      await expect(link).toHaveAttribute('href', urls[i]);
+      await expect(link).toHaveAttribute('target', '_blank');
+      await expect(link).toHaveAttribute('rel', 'noopener');
+      await expect(link.locator('.sr-only')).toContainText(
+        locale ? 'откроется в новой вкладке' : 'opens in a new tab',
+      );
+    }
+    await expect(event.locator('li small')).toHaveText(['EN · 04.06.2026', 'EN · 13.07.2026']);
+    const opening = page.locator('[data-news="pavilion-opening"]');
+    await expect(opening.locator('li a')).toHaveCount(6);
+    await expect(opening.locator('img')).toHaveAttribute('src', /opening-hall\./);
+    expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+    await summary.focus();
+    await page.keyboard.press('Space');
+    await expect(event).not.toHaveAttribute('open');
   });
 }
