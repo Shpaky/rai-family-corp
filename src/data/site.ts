@@ -9,9 +9,9 @@ export const SHOW_CATEGORY_TILES = false;
   audience cards is defined; index.astro, the menus and Audiences.astro read it.
   Backgrounds are not configured here: index.astro derives them from position.
   Hero is always first and is not listed. The order differs per locale: the
-  Audiences section works as a table of contents for the three sections below
-  it, so its cards follow the same order, and the locale's primary reader comes
-  first (EN: Indian buyers, RU: Russian manufacturers).
+  audience cards link to the corresponding pages and the store. Their order
+  follows the sections below, with the locale's primary reader first
+  (EN: Indian buyers, RU: Russian manufacturers).
 */
 export type HomeSectionKey =
   'audiences' | 'directions' | 'services' | 'pavilion' | 'about' | 'contacts';
